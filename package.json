@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "bulma": "^1.0.4",
+    "sass": "^1.99.0",
+    "tailwindcss": "^4.2.4"
+  }
+}
