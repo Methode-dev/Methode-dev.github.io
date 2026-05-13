@@ -2,17 +2,17 @@
 <html
   lang="en"
   data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-05-12T15:55:47.732Z"
+  data-ws-last-published="2026-05-13T15:53:05.001Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.MElHVdty.css"
+      href="/assets/static/app_generated_index-6937cd5a.Sf_cu1N1.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg" />
+    <link rel="icon" href="/assets/favicon_MxJdcsW9bJsq-zd8osHjF.ico" />
     <link
       rel="preload"
       href="/assets/Nunito-VariableFont_wght_ewyymLm-PSZppKInuSfzo.ttf"
@@ -32,6 +32,41 @@
         "@type": "WebSite",
         "name": "Méthode"
       }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".w-form.c1w45uhm");
+
+        if (form) {
+          form.addEventListener("submit", async (e) => {
+            // 1. Stop the redirect
+            e.preventDefault();
+
+            // 2. Prepare the data
+            const formData = new FormData(form);
+            const action = form.getAttribute("action");
+
+            try {
+              // 3. Send the request silently
+              const response = await fetch(action, {
+                method: "POST",
+                body: formData,
+              });
+
+              if (response.ok) {
+                // 4. Switch the state to show success message
+                form.setAttribute("state", "success");
+              } else {
+                console.error("Submission failed.");
+                form.setAttribute("state", "error"); // Optional: if you have an error state
+              }
+            } catch (error) {
+              console.error("Network error:", error);
+              form.setAttribute("state", "error");
+            }
+          });
+        }
+      });
     </script>
   </head>
   <body class="w-body">
@@ -117,13 +152,13 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.CV8kJcby.js"
+      src="/assets/entries/entry-server-routing.BPmw71AG.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_credits.J_suD5hl.js"
+      href="/assets/entries/pages_credits.DbiJ_GN_.js"
       as="script"
       type="text/javascript"
     /><link
