@@ -2,13 +2,13 @@
 <html
   lang="fr-FR"
   data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-05-13T15:53:05.001Z"
+  data-ws-last-published="2026-05-16T14:57:27.014Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.Sf_cu1N1.css"
+      href="/assets/static/app_generated_index-6937cd5a.BjJt58s1.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -44,55 +44,86 @@
       }
     </script>
     <script>
-      (function() {
-        document.addEventListener("submit", function(e) {
-          // 1. Target the specific form
-          const form = e.target.closest('form[action*="jcalenge.workers.dev"]');
-          if (!form) return;
-      
-          // 2. Kill all default behavior
-          e.preventDefault();
-          e.stopImmediatePropagation();
-      
-          // 3. Fire the request in the background
-          fetch(form.action, {
-            method: "POST",
-            body: new FormData(form),
-            mode: 'no-cors' 
-          });
-      
-          // 4. MANUAL UI OVERRIDE
-          // Hide the entire form
-          form.style.display = 'none';
-      
-          // Look for the success message. 
-          // In Webstudio, success containers usually have a state="success" attribute.
-          const successBox = form.parentElement.querySelector('[state="success"]');
-      
-          if (successBox) {
+      (function () {
+        document.addEventListener(
+          "submit",
+          function (e) {
+            // 1. Target the specific form
+            const form = e.target.closest(
+              'form[action*="jcalenge.workers.dev"]',
+            );
+            if (!form) return;
+
+            // 2. Kill all default behavior
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            // 3. Fire the request in the background
+            fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              mode: "no-cors",
+            });
+
+            // 4. MANUAL UI OVERRIDE
+            // Hide the entire form
+            form.style.display = "none";
+
+            // Look for the success message.
+            // In Webstudio, success containers usually have a state="success" attribute.
+            const successBox =
+              form.parentElement.querySelector('[state="success"]');
+
+            if (successBox) {
               // Force the success box to show
-              successBox.style.display = 'block';
+              successBox.style.display = "block";
               // Some builders use flex, so if block looks weird, use 'flex'
               // successBox.style.setProperty('display', 'flex', 'important');
-          } else {
+            } else {
               // If we can't find the box, we'll create a simple success message
-              const thanks = document.createElement('div');
+              const thanks = document.createElement("div");
               thanks.innerHTML = "<h3>Merci ! Votre message a été envoyé.</h3>";
               thanks.style.padding = "20px";
               thanks.style.textAlign = "center";
               form.parentElement.appendChild(thanks);
-          }
-      
-        }, true);
+            }
+          },
+          true,
+        );
       })();
-      </script>
+    </script>
   </head>
   <body class="w-body">
     <div class="w-box">
       <main class="w-box">
+        <button
+          class="w-element c1a4mtv3 cgaw1ye cnopd54 c6rsq3t c18lfj9f car6jpv c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 ceixnbg cdnfkux ca2sfx6 cq9osm3 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c1e11xq2 cujwlqe cseij6c cgpvt0p c116ca2 c14xdfw1 crmx05t co3c00h"
+          type="button"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="radix-:R2m:"
+          data-state="closed"
+        >
+          <img
+            alt=""
+            width="25"
+            height="50"
+            src="/assets/icons8-menu-150_XKiXLblHWvtGL_a-yybzy.svg"
+            class="w-image"
+            sizes="100vw"
+            srcset="
+              /assets/icons8-menu-150_XKiXLblHWvtGL_a-yybzy.svg 16w,
+              /assets/icons8-menu-150_XKiXLblHWvtGL_a-yybzy.svg 32w,
+              /assets/icons8-menu-150_XKiXLblHWvtGL_a-yybzy.svg 48w,
+              /assets/icons8-menu-150_XKiXLblHWvtGL_a-yybzy.svg 64w
+            "
+            decoding="async"
+            loading="lazy"
+          />
+        </button>
         <section class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1uup4ib c1x05l0l c1xucrmt c1buloke cmfd5ud ct10b74 cy84l6z"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1uup4ib c1x05l0l c1xucrmt c18yo5kt c6hxj15 c1buloke cmfd5ud ct10b74 cy84l6z"
           >
             <div
               class="w-box ccdo1v8 c1o768ho czfl3ei cnt8zja czlac5t cw1hgdq c7zl7ld"
@@ -127,7 +158,7 @@
               />
               <h1 class="w-heading cmjvuci c10mfbj2 cx6x4m7">
                 <span
-                  class="w-element chzf1zu cfvpqmt c13jxp83 c1tnox2n c1uwdq1j c116ca2 c7ocr49 cfxgjd cd20g8l c5437jk"
+                  class="w-element chzf1zu cfvpqmt c13jxp83 c1tnox2n c1uwdq1j c116ca2 c7ocr49 cfxgjd cd20g8l czseknb"
                   >Progiciels sur mesure</span
                 >
               </h1>
@@ -137,7 +168,7 @@
               </p>
               <a
                 href="/#contact"
-                class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                 >Demander un appel</a
               >
             </div>
@@ -171,7 +202,7 @@
         </section>
         <section id="services" class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
           >
             <div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3">
               <h2
@@ -187,26 +218,25 @@
             <div
               data-ani-children="true"
               data-ani="slide-up"
-              class="w-box c1t9vn71 c1uup4ib c1x05l0l c1xucrmt c8cof31 ct10b74 cy84l6z"
+              class="w-box c1t9vn71 c1uup4ib c1x05l0l c1xucrmt c18yo5kt c6hxj15 c8cof31 ct10b74 cy84l6z"
             >
               <div
-                class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cef5mjv cqinskv"
+                class="w-box cwiypjv cf73tjt c16q3tqn cmm3r05 ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj c7qy5pm c10tm5z1 c1evkju2 c10a7pw9 cqinskv"
               >
                 <div
-                  class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
+                  class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg c6a621j c6gmu9y czzdfbp crtvpc4 cr9prfs ct7270j"
                 >
                   <h3
-                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cqgu1qk c1dcz4q7 c9vu7ie c5u7zze czff8li c1aq2tpr cn2ddi"
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze czff8li c1aq2tpr cn2ddi"
                   >
-                    <span
-                      class="w-element cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze"
-                      >Software</span
-                    >
-                    <span
-                      class="w-element cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze"
-                      >Disputes</span
+                    <span class="w-element"
+                      >Résolution de litiges informatique</span
                     >
                   </h3>
+                  <p class="w-element">
+                    Arbitrage et résolution lors de litiges autours de devis et
+                    missions informatiques
+                  </p>
                   <a
                     class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                     href="#"
@@ -234,14 +264,16 @@
                         </div>
                       </div>
                     </div>
-                    <span class="w-text">Learn more</span></a
+                    <span class="w-text">En savoir plus</span></a
                   >
                 </div>
-                <div class="w-box c1m2siib">
+                <div
+                  class="w-box c1m2siib ccdo1v8 cwajeuz clq98eg c18dk0i2 c7qy5pm c1b9b2da"
+                >
                   <img
                     alt=""
-                    width="960"
-                    height="770"
+                    width="800"
+                    height="650"
                     src="/assets/undraw_web-search_7oif_1_JHvsZ6SSawMc9thxcDYnc.svg"
                     class="w-image"
                     sizes="100vw"
@@ -267,16 +299,20 @@
                 </div>
               </div>
               <div
-                class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1viczck ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cef5mjv cqinskv"
+                class="w-box cwiypjv cf73tjt c16q3tqn cmm3r05 ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1viczck ccdo1v8 cb8kths czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cqinskv chswm2q"
               >
                 <div
                   class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
                 >
                   <h3
-                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 cqgu1qk c1dcz4q7 c9vu7ie c5u7zze cn2ddi"
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c1tnox2n c9vu7ie c5u7zze cn2ddi c18nseoh"
                   >
-                    <span class="w-element">O</span>doo ERPs
+                    <span class="w-element">I</span>ntégration progiciels Odoo
                   </h3>
+                  <p class="w-element">
+                    Création et intégration de progiciels (ERPs) personnalisés
+                    sur base Odoo
+                  </p>
                   <a
                     class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                     href="#"
@@ -304,7 +340,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="w-text">Learn more</span></a
+                    <span class="w-text">En savoir plus</span></a
                   >
                 </div>
                 <div class="w-box c1m2siib">
@@ -345,10 +381,13 @@
                   class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
                 >
                   <h3
-                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 cqgu1qk c1dcz4q7 c9vu7ie c5u7zze cn2ddi"
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze cn2ddi"
                   >
-                    <span class="w-element">L</span>ogistique Maritime
+                    <span class="w-element">L</span>ogistique de transport
                   </h3>
+                  <p class="w-element">
+                    Signatures, pipelines, automatisation de communications...
+                  </p>
                   <a
                     class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                     href="#"
@@ -376,7 +415,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="w-text">Learn more</span></a
+                    <span class="w-text">En savoir plus</span></a
                   >
                 </div>
                 <div class="w-box c1m2siib">
@@ -411,16 +450,20 @@
                 </div>
               </div>
               <div
-                class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1viczck ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cef5mjv cqinskv"
+                class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1viczck ccdo1v8 cb8kths czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cef5mjv cqinskv chswm2q"
               >
                 <div
                   class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
                 >
                   <h3
-                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 cqgu1qk c1dcz4q7 c9vu7ie c5u7zze cn2ddi"
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c1tnox2n c9vu7ie c5u7zze cn2ddi c18nseoh"
                   >
-                    Logiciel de facturation
+                    Progiciel Intégré
                   </h3>
+                  <p class="w-element">
+                    Intégration d&#x27;un ERP directement au sein d&#x27;outils
+                    pré-existants tels qu&#x27;<b class="w-element">Outlook</b>
+                  </p>
                   <a
                     class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                     href="#"
@@ -448,7 +491,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="w-text">Learn more</span></a
+                    <span class="w-text">En savoir plus</span></a
                   >
                 </div>
                 <div class="w-box c1m2siib">
@@ -487,10 +530,16 @@
                   class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
                 >
                   <h3
-                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 cqgu1qk c1dcz4q7 c9vu7ie c5u7zze cn2ddi"
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze cn2ddi"
                   >
                     Optimisations IA
                   </h3>
+                  <p class="w-element">
+                    Analyse, augmentation, triage et utilisation de données (<b
+                      class="w-element"
+                      >ETL</b
+                    >) dans des cadres d&#x27;automatisation
+                  </p>
                   <a
                     class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                     href="#"
@@ -518,7 +567,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="w-text">Learn more</span></a
+                    <span class="w-text">En savoir plus</span></a
                   >
                 </div>
                 <div class="w-box c1m2siib">
@@ -551,16 +600,20 @@
                 </div>
               </div>
               <div
-                class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1viczck ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cef5mjv cqinskv"
+                class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1viczck ccdo1v8 cb8kths czlac5t cw1hgdq c1djcjaj c7qy5pm c10a7pw9 cef5mjv cqinskv chswm2q"
               >
                 <div
                   class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
                 >
                   <h3
-                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 cqgu1qk c1dcz4q7 c9vu7ie c5u7zze cn2ddi"
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c1tnox2n c9vu7ie c5u7zze cn2ddi c18nseoh"
                   >
                     <span class="w-element">O</span>rchestration de livraisons
                   </h3>
+                  <p class="w-element">
+                    Résolution algorithmiques, lien avec des systèmes existants
+                    pour faciliter les systèmes de livraison
+                  </p>
                   <a
                     class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                     href="#"
@@ -588,7 +641,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="w-text">Learn more</span></a
+                    <span class="w-text">En savoir plus</span></a
                   >
                 </div>
                 <div class="w-box c1m2siib">
@@ -625,10 +678,10 @@
         </section>
         <section class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
           >
             <div
-              class="w-box c1t9vn71 czl5fkv cbdpizl c1xucrmt c2eakag c5vt19m cy4x23 cora95j c1v3bltv c1lv3mnb c1wnvppo c1kdwscr c1c2dbk7 ct10b74 cy84l6z c1wl0ip9 cc0e7gb"
+              class="w-box c1t9vn71 czl5fkv cbdpizl c1xucrmt c18yo5kt c6hxj15 c2eakag c5vt19m cy4x23 cora95j c1v3bltv c1lv3mnb c1wnvppo c1kdwscr c1c2dbk7 ct10b74 cy84l6z c1wl0ip9 cc0e7gb"
             >
               <div
                 class="w-box ccdo1v8 c1o768ho czfl3ei cnt8zja czlac5t cw1hgdq"
@@ -642,7 +695,7 @@
                 </p>
                 <a
                   href="/#contact"
-                  class="w-link c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                  class="w-link c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                   >Demander un appel</a
                 >
               </div>
@@ -680,7 +733,7 @@
         </section>
         <section id="process" class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
           >
             <div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3">
               <h2
@@ -709,11 +762,11 @@
                   >
                     <button
                       type="button"
-                      aria-controls="radix-:Rj8m:"
+                      aria-controls="radix-:R16am:"
                       aria-expanded="true"
                       data-state="open"
                       data-orientation="vertical"
-                      id="radix-:R38m:"
+                      id="radix-:R6am:"
                       class="w-item-trigger c1rywd31 c1b6y396 c14gi552 c1ok6zvh c1je04uq c7qy5pm c1djcjaj cn2qhkm c1a828r1 cvdbs7u cuj9e9z ccnffak crih281 c1xkjnkk cv8vzg6 c7w93cq czmxoii cvs3tgp c1o1sy1v c19jk3jx c2eakag c1g4kwxk c17ypiw0 cii7ned c1okfwsq c1dyecy9 cg9hzuo c15yfkik cdpoi55 c6cprby c1e01v49 cl7nq56 c1ivly2j c1u88qv8 c1tpqz5b c1cru4v0 c9f3wre"
                       data-radix-collection-item=""
                     >
@@ -745,9 +798,9 @@
                   </h3>
                   <div
                     data-state="open"
-                    id="radix-:Rj8m:"
+                    id="radix-:R16am:"
                     role="region"
-                    aria-labelledby="radix-:R38m:"
+                    aria-labelledby="radix-:R6am:"
                     data-orientation="vertical"
                     data-ani="expand"
                     class="w-item-content"
@@ -784,11 +837,11 @@
                   >
                     <button
                       type="button"
-                      aria-controls="radix-:Rl8m:"
+                      aria-controls="radix-:R1aam:"
                       aria-expanded="false"
                       data-state="closed"
                       data-orientation="vertical"
-                      id="radix-:R58m:"
+                      id="radix-:Raam:"
                       class="w-item-trigger c1rywd31 c1b6y396 c14gi552 c1ok6zvh c1je04uq c7qy5pm c1djcjaj cn2qhkm c1a828r1 cvdbs7u cuj9e9z ccnffak crih281 c1xkjnkk cv8vzg6 c7w93cq czmxoii cvs3tgp c1o1sy1v c19jk3jx c2eakag c1g4kwxk c17ypiw0 cii7ned c1okfwsq c1dyecy9 cg9hzuo c15yfkik cdpoi55 c6cprby c1e01v49 cl7nq56 c1ivly2j c1u88qv8 c1tpqz5b c1cru4v0 c9f3wre"
                       data-radix-collection-item=""
                     >
@@ -820,10 +873,10 @@
                   </h3>
                   <div
                     data-state="closed"
-                    id="radix-:Rl8m:"
+                    id="radix-:R1aam:"
                     hidden=""
                     role="region"
-                    aria-labelledby="radix-:R58m:"
+                    aria-labelledby="radix-:Raam:"
                     data-orientation="vertical"
                     data-ani="expand"
                     class="w-item-content"
@@ -850,11 +903,11 @@
                   >
                     <button
                       type="button"
-                      aria-controls="radix-:Rn8m:"
+                      aria-controls="radix-:R1eam:"
                       aria-expanded="false"
                       data-state="closed"
                       data-orientation="vertical"
-                      id="radix-:R78m:"
+                      id="radix-:Ream:"
                       class="w-item-trigger c1rywd31 c1b6y396 c14gi552 c1ok6zvh c1je04uq c7qy5pm c1djcjaj cn2qhkm c1a828r1 cvdbs7u cuj9e9z ccnffak crih281 c1xkjnkk cv8vzg6 c7w93cq czmxoii cvs3tgp c1o1sy1v c19jk3jx c2eakag c1g4kwxk c17ypiw0 cii7ned c1okfwsq c1dyecy9 cg9hzuo c15yfkik cdpoi55 c6cprby c1e01v49 cl7nq56 c1ivly2j c1u88qv8 c1tpqz5b c1cru4v0 c9f3wre"
                       data-radix-collection-item=""
                     >
@@ -886,10 +939,10 @@
                   </h3>
                   <div
                     data-state="closed"
-                    id="radix-:Rn8m:"
+                    id="radix-:R1eam:"
                     hidden=""
                     role="region"
-                    aria-labelledby="radix-:R78m:"
+                    aria-labelledby="radix-:Ream:"
                     data-orientation="vertical"
                     data-ani="expand"
                     class="w-item-content"
@@ -916,11 +969,11 @@
                   >
                     <button
                       type="button"
-                      aria-controls="radix-:Rp8m:"
+                      aria-controls="radix-:R1iam:"
                       aria-expanded="false"
                       data-state="closed"
                       data-orientation="vertical"
-                      id="radix-:R98m:"
+                      id="radix-:Riam:"
                       class="w-item-trigger c1rywd31 c1b6y396 c14gi552 c1ok6zvh c1je04uq c7qy5pm c1djcjaj cn2qhkm c1a828r1 cvdbs7u cuj9e9z ccnffak crih281 c1xkjnkk cv8vzg6 c7w93cq czmxoii cvs3tgp c1o1sy1v c19jk3jx c2eakag c1g4kwxk c17ypiw0 cii7ned c1okfwsq c1dyecy9 cg9hzuo c15yfkik cdpoi55 c6cprby c1e01v49 cl7nq56 c1ivly2j c1u88qv8 c1tpqz5b c1cru4v0 c9f3wre"
                       data-radix-collection-item=""
                     >
@@ -952,10 +1005,10 @@
                   </h3>
                   <div
                     data-state="closed"
-                    id="radix-:Rp8m:"
+                    id="radix-:R1iam:"
                     hidden=""
                     role="region"
-                    aria-labelledby="radix-:R98m:"
+                    aria-labelledby="radix-:Riam:"
                     data-orientation="vertical"
                     data-ani="expand"
                     class="w-item-content"
@@ -982,11 +1035,11 @@
                   >
                     <button
                       type="button"
-                      aria-controls="radix-:Rr8m:"
+                      aria-controls="radix-:R1mam:"
                       aria-expanded="false"
                       data-state="closed"
                       data-orientation="vertical"
-                      id="radix-:Rb8m:"
+                      id="radix-:Rmam:"
                       class="w-item-trigger c1rywd31 c1b6y396 c14gi552 c1ok6zvh c1je04uq c7qy5pm c1djcjaj cn2qhkm c1a828r1 cvdbs7u cuj9e9z ccnffak crih281 c1xkjnkk cv8vzg6 c7w93cq czmxoii cvs3tgp c1o1sy1v c19jk3jx c2eakag c1g4kwxk c17ypiw0 cii7ned c1okfwsq c1dyecy9 cg9hzuo c15yfkik cdpoi55 c6cprby c1e01v49 cl7nq56 c1ivly2j c1u88qv8 c1tpqz5b c1cru4v0 c9f3wre"
                       data-radix-collection-item=""
                     >
@@ -1018,10 +1071,10 @@
                   </h3>
                   <div
                     data-state="closed"
-                    id="radix-:Rr8m:"
+                    id="radix-:R1mam:"
                     hidden=""
                     role="region"
-                    aria-labelledby="radix-:Rb8m:"
+                    aria-labelledby="radix-:Rmam:"
                     data-orientation="vertical"
                     data-ani="expand"
                     class="w-item-content"
@@ -1041,7 +1094,7 @@
         </section>
         <section id="team" class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
           >
             <div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3">
               <h2
@@ -1053,13 +1106,13 @@
             <div
               data-ani-children="true"
               data-ani="slide-up"
-              class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c5c3pib ct10b74 cy84l6z c1c09bfw"
+              class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c5c3pib c6hxj15 ct10b74 cy84l6z c1c09bfw"
             >
               <div
                 class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1rmy1ym c1t9vn71 c1o768ho czlac5t cw1hgdq c2eoxx3 czfl3ei c1yil8bl c1evkju2 c10a7pw9 c4vau4b cqinskv"
               >
                 <div
-                  class="w-box ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj csdn0eq ccxws9u"
+                  class="w-box ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj csdn0eq ccxws9u c15p36hi"
                 >
                   <img
                     alt="Picture of Halil"
@@ -1147,7 +1200,7 @@
                   Développeur et intégrateur Odoo et expert en Data &amp; IA.<br />Fort
                   d&#x27;un grand panel d&#x27;expériences et d&#x27;un passif
                   d&#x27;enseignant, Halil saura transformer vos besoins en
-                  solution.
+                  solution.<br /><br /><br />halil.bagdadi@methode.dev
                 </p>
               </div>
               <div
@@ -1238,7 +1291,7 @@
                   Forte d&#x27;expériences très diverse, Adina saura se servir
                   de son expertise en de nombreux domaines : data scraping,
                   intégration, sécurité, web, mobile, bas niveau, réseau, bas
-                  niveau et même web3.
+                  niveau et même web3.<br /><br />adina.cazalens@methode.dev
                 </p>
               </div>
               <div
@@ -1332,7 +1385,7 @@
                   Ancien enseignant et directeur d&#x27;établissement, il est
                   spécialisé des questions complexes et de la manipulation de
                   données. Il a une facilité en gestion de projet et saura
-                  s&#x27;assurer que votre projet sera bien mené.
+                  s&#x27;assurer que votre projet sera bien mené.<br /><br />julien.calenge@methode.dev
                 </p>
               </div>
               <div
@@ -1392,15 +1445,206 @@
                   Son manque d&#x27;expérience en informatique ne doit pas vous
                   faire peur : il soutient sans égal le moral des équipes et
                   leur permet de correctement se concentrer sur le plus
-                  important.
+                  important.<br /><br /><br />oreo@methode.dev
                 </p>
               </div>
+              <img
+                alt=""
+                width="1153"
+                height="743"
+                src="/assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg"
+                class="w-image c1wrkla5 c6a621j c1b6y396 cs0zans cj6xjp9 c83u98k cnopd54 c6rsq3t c18lfj9f car6jpv ckk4wli c15cod9s cbvgw7b c1e8j3as c1pfzmry c1czn0dy cln9c6r clj6jmy c11kh521"
+                sizes="100vw"
+                srcset="
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg   16w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg   32w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg   48w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg   64w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg   96w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg  128w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg  256w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg  384w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg  640w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg  750w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg  828w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 1080w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 1200w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 1920w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 2048w,
+                  /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 3840w
+                "
+                decoding="async"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
+        <div
+          class="w-element c1hzitv3 c1lb8i4l ctdocrn c1xucrmt c18yo5kt cm1pj c1ve8utp c1uheoy7"
+        >
+          <div
+            class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+          >
+            <div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3">
+              <h2
+                class="w-heading chzf1zu c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze"
+              >
+                Pour les académiciens<br />&amp; les curieux
+              </h2>
+            </div>
+            <div
+              class="w-element c1t9vn71 c1ve8utp c1uheoy7 c1xucrmt c18yo5kt c6hxj15 cm1pj ct10b74 cy84l6z"
+            >
+              <div
+                class="w-element ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cef5mjv cqinskv ct10b74 cy84l6z"
+              >
+                <div
+                  class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
+                >
+                  <h3
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c9vu7ie c5u7zze cn2ddi"
+                  >
+                    Vulgarisation
+                  </h3>
+                  <p class="w-element">
+                    Retrouvez nos affiches libres de droit pour vos salles de
+                    classe ou bureaux
+                  </p>
+                  <a
+                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                    href="#"
+                    ><div
+                      class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1cbo8tb c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb cutt5rm c1h4j3zh ckwc04l"
+                    >
+                      <div style="display: contents">
+                        <div style="display: contents">
+                          <div
+                            class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
+                          >
+                            <svg
+                              width="100%"
+                              height="100%"
+                              viewBox="0 0 21 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                                fill="currentColor"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="w-text">En savoir plus</span></a
+                  >
+                </div>
+                <img
+                  alt=""
+                  width="744"
+                  height="539"
+                  src="/assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg"
+                  class="w-image"
+                  sizes="100vw"
+                  srcset="
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg   16w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg   32w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg   48w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg   64w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg   96w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg  128w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg  256w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg  384w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg  640w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg  750w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg  828w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 1080w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 1200w,
+                    /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 1920w
+                  "
+                  decoding="async"
+                  loading="lazy"
+                />
+              </div>
+              <div
+                class="w-element ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cef5mjv cqinskv ct10b74 cy84l6z"
+              >
+                <img
+                  alt=""
+                  width="802"
+                  height="772"
+                  src="/assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg"
+                  class="w-image"
+                  sizes="100vw"
+                  srcset="
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg   16w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg   32w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg   48w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg   64w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg   96w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg  128w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg  256w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg  384w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg  640w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg  750w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg  828w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 1080w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 1200w,
+                    /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 1920w
+                  "
+                  decoding="async"
+                  loading="lazy"
+                />
+                <div
+                  class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"
+                >
+                  <h3
+                    class="w-heading c17s8ozv c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1n50rj9 c1tnox2n c9vu7ie c5u7zze cn2ddi"
+                  >
+                    <span class="w-element">N</span>otre
+                    <b class="w-element">BLOG</b>
+                  </h3>
+                  <p class="w-element">
+                    Apprenez-en davantage sur notre méthode et nos réalisations
+                  </p>
+                  <a
+                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                    href="#"
+                    ><div
+                      class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1cbo8tb c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb cutt5rm c1h4j3zh ckwc04l"
+                    >
+                      <div style="display: contents">
+                        <div style="display: contents">
+                          <div
+                            class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
+                          >
+                            <svg
+                              width="100%"
+                              height="100%"
+                              viewBox="0 0 21 20"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                                fill="currentColor"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="w-text">En savoir plus</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <section id="contact" class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
           >
             <div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3">
               <h2
@@ -1461,7 +1705,7 @@
                   </div>
                   <button
                     type="submit"
-                    class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                    class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                   >
                     Envoyer
                   </button>
@@ -1474,13 +1718,13 @@
       <div style="display: contents">
         <div style="display: contents">
           <footer
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c9tqjor c1buloke cmfd5ud c76w5dv cjj8lsn"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c9tqjor c1ukvq2x c1buloke cmfd5ud c76w5dv cjj8lsn"
           >
             <div
               class="w-box c1mg0fms cnopd54 c6rsq3t c1czifmt c1vxw0rd ccdo1v8 c1o768ho c1p1oiur crsj5vb cef5mjv"
             >
               <div
-                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c1wm1hiu ct10b74 cy84l6z"
+                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c18yo5kt c6hxj15 c1wm1hiu ct10b74 cy84l6z"
               >
                 <a
                   href="/"
@@ -1914,13 +2158,13 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.BPmw71AG.js"
+      src="/assets/entries/entry-server-routing.C8fU51d_.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_index.b9-ie7wu.js"
+      href="/assets/entries/pages_index.BYD59hl4.js"
       as="script"
       type="text/javascript"
     /><link
@@ -1930,7 +2174,7 @@
       type="text/javascript"
     /><link
       rel="modulepreload"
-      href="/assets/chunks/chunk-DeM5twmW.js"
+      href="/assets/chunks/chunk-DdQ6yuAq.js"
       as="script"
       type="text/javascript"
     />

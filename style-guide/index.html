@@ -2,13 +2,13 @@
 <html
   lang="en"
   data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-05-13T13:21:14.092Z"
+  data-ws-last-published="2026-05-16T14:57:27.014Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.BXxglGpu.css"
+      href="/assets/static/app_generated_index-6937cd5a.BjJt58s1.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -44,6 +44,55 @@
         "@type": "WebSite",
         "name": "Méthode"
       }
+    </script>
+    <script>
+      (function () {
+        document.addEventListener(
+          "submit",
+          function (e) {
+            // 1. Target the specific form
+            const form = e.target.closest(
+              'form[action*="jcalenge.workers.dev"]',
+            );
+            if (!form) return;
+
+            // 2. Kill all default behavior
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            // 3. Fire the request in the background
+            fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              mode: "no-cors",
+            });
+
+            // 4. MANUAL UI OVERRIDE
+            // Hide the entire form
+            form.style.display = "none";
+
+            // Look for the success message.
+            // In Webstudio, success containers usually have a state="success" attribute.
+            const successBox =
+              form.parentElement.querySelector('[state="success"]');
+
+            if (successBox) {
+              // Force the success box to show
+              successBox.style.display = "block";
+              // Some builders use flex, so if block looks weird, use 'flex'
+              // successBox.style.setProperty('display', 'flex', 'important');
+            } else {
+              // If we can't find the box, we'll create a simple success message
+              const thanks = document.createElement("div");
+              thanks.innerHTML = "<h3>Merci ! Votre message a été envoyé.</h3>";
+              thanks.style.padding = "20px";
+              thanks.style.textAlign = "center";
+              form.parentElement.appendChild(thanks);
+            }
+          },
+          true,
+        );
+      })();
     </script>
   </head>
   <body class="w-body">
@@ -86,7 +135,7 @@
               </div>
             </div>
             <div
-              class="w-box c19upp1r c10eibw5 c1ugvbzq c1v4tllj ccdo1v8 c7qy5pm cnt8zja cwk7jia ck0l09a c1tf9l6w crvgmco c1rywd31 c6gmu9y c1o768ho c1p1oiur crsj5vb cayvxmk c1g94nmz cv8vzg6 c1ixtuxv c5ue3u8 c1buloke cmfd5ud"
+              class="w-box c19upp1r c10eibw5 c1ugvbzq c1v4tllj c1t9vn71 c7qy5pm cnt8zja cwk7jia ck0l09a c1tf9l6w crvgmco c1rywd31 c6gmu9y c1o768ho c1p1oiur crsj5vb cayvxmk c1g94nmz cv8vzg6 c1ixtuxv c5ue3u8 c1buloke cmfd5ud"
             >
               <div
                 class="w-text ckn4bsd cxdjn99 cwcj9y c1c6k47s cingnp7 c1s3otwf csoxdz2 c1i0lwu c1wdeida c1wchncv"
@@ -96,7 +145,7 @@
             </div>
             <div class="w-box">
               <div
-                class="w-box c19upp1r c10eibw5 c1ugvbzq c1v4tllj c1t9vn71 c7qy5pm cnt8zja c1rywd31 c6gmu9y c1o768ho c1uup4ib c1x05l0l c1xucrmt c5ue3u8 c1740g0 ct10b74 cy84l6z"
+                class="w-box c19upp1r c10eibw5 c1ugvbzq c1v4tllj c1t9vn71 c7qy5pm cnt8zja c1rywd31 c6gmu9y c1o768ho c1uup4ib c1x05l0l c1xucrmt c18yo5kt c6hxj15 c5ue3u8 c1740g0 ct10b74 cy84l6z"
               >
                 <div class="w-box c9tuwwe c8lwhz9">
                   <div
@@ -262,7 +311,7 @@
                 --focus-color
               </div>
               <div
-                class="w-box clgtpcy ceoibj c16d366o c1djf8fx cmpfdrg cttp11i cjk7vll c13wmzhx csyktzv"
+                class="w-box clgtpcy ceoibj c16d366o c1djf8fx cmpfdrg cttp11i cjk7vll c13wmzhx c1yfsdtx"
               ></div>
             </div>
           </div>
@@ -289,15 +338,15 @@
                 class="w-box ccdo1v8 c7qy5pm cveejg9 cj2x9gq c182vb1h cg9rdh0"
               >
                 <a
-                  class="w-link c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                  class="w-link c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                   href="#"
                   >button</a
                 ><a
-                  class="w-link c1cwnbqk csudl2l c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                  class="w-link c1cwnbqk csudl2l c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                   href="#"
                   >is-button-secondary</a
                 ><a
-                  class="w-link c1cwnbqk c1kos6lz c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1lkqi41 ck1tph9 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 c1bij4fw c13o6rn9 cgpvt0p"
+                  class="w-link c1cwnbqk c1kos6lz c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1lkqi41 c1rlke01 ck1tph9 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 c1bij4fw c13o6rn9 cgpvt0p"
                   href="#"
                   >is-button-secondary</a
                 >
@@ -595,7 +644,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                  class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                 >
                   Send Message
                 </button>
@@ -1097,7 +1146,7 @@
             </style>
           </div>
           <nav
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c13rtvuj c1uup4ib c1x05l0l c1djcjaj cqjnlda c1x7t933 c7qy5pm c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj cqjnlda c1x7t933 c7qy5pm c1buloke cmfd5ud"
           >
             <img
               alt=""
@@ -1141,14 +1190,14 @@
               </div>
               <a
                 href="/#contact"
-                class="w-link c1suzd87 csudl2l c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1h731ja c1gi8jfc ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                class="w-link c1suzd87 csudl2l c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 c1h731ja c1gi8jfc ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
                 >Demander un appel</a
               >
             </div>
             <button
               type="button"
               aria-label="Open mobile menu"
-              class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 cdnfkux c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c1g5e5t8 c100mxn2 c118kcqx c1jzcjja c33qspo c19h5d9z c1whdfmb c1h4rosp citwlrj cgpvt0p cn8xhuh c7oijxz"
+              class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1rlke01 cdnfkux c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c1g5e5t8 c100mxn2 c118kcqx c1jzcjja c33qspo c19h5d9z c1whdfmb c1h4rosp citwlrj cgpvt0p cn8xhuh c7oijxz"
               aria-haspopup="dialog"
               aria-expanded="false"
               aria-controls="radix-:R3jm:"
@@ -1177,20 +1226,20 @@
       <main class="w-box">
         <section class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"
           ></div>
         </section>
       </main>
       <div style="display: contents">
         <div style="display: contents">
           <footer
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c9tqjor c1buloke cmfd5ud c76w5dv cjj8lsn"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1p1oiur crsj5vb c9tqjor c1ukvq2x c1buloke cmfd5ud c76w5dv cjj8lsn"
           >
             <div
               class="w-box c1mg0fms cnopd54 c6rsq3t c1czifmt c1vxw0rd ccdo1v8 c1o768ho c1p1oiur crsj5vb cef5mjv"
             >
               <div
-                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c1wm1hiu ct10b74 cy84l6z"
+                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c18yo5kt c6hxj15 c1wm1hiu ct10b74 cy84l6z"
               >
                 <a
                   href="/"
@@ -1624,13 +1673,13 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.27ut2iSh.js"
+      src="/assets/entries/entry-server-routing.C8fU51d_.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_style-guide.Ct4VmAwY.js"
+      href="/assets/entries/pages_style-guide.CmP3NlCs.js"
       as="script"
       type="text/javascript"
     /><link
@@ -1640,7 +1689,7 @@
       type="text/javascript"
     /><link
       rel="modulepreload"
-      href="/assets/chunks/chunk-DeM5twmW.js"
+      href="/assets/chunks/chunk-DdQ6yuAq.js"
       as="script"
       type="text/javascript"
     />

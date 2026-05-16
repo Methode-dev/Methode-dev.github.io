@@ -2,13 +2,13 @@
 <html
   lang="en"
   data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-05-13T15:53:05.001Z"
+  data-ws-last-published="2026-05-16T14:57:27.014Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.Sf_cu1N1.css"
+      href="/assets/static/app_generated_index-6937cd5a.BjJt58s1.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -34,39 +34,53 @@
       }
     </script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector(".w-form.c1w45uhm");
+      (function () {
+        document.addEventListener(
+          "submit",
+          function (e) {
+            // 1. Target the specific form
+            const form = e.target.closest(
+              'form[action*="jcalenge.workers.dev"]',
+            );
+            if (!form) return;
 
-        if (form) {
-          form.addEventListener("submit", async (e) => {
-            // 1. Stop the redirect
+            // 2. Kill all default behavior
             e.preventDefault();
+            e.stopImmediatePropagation();
 
-            // 2. Prepare the data
-            const formData = new FormData(form);
-            const action = form.getAttribute("action");
+            // 3. Fire the request in the background
+            fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+              mode: "no-cors",
+            });
 
-            try {
-              // 3. Send the request silently
-              const response = await fetch(action, {
-                method: "POST",
-                body: formData,
-              });
+            // 4. MANUAL UI OVERRIDE
+            // Hide the entire form
+            form.style.display = "none";
 
-              if (response.ok) {
-                // 4. Switch the state to show success message
-                form.setAttribute("state", "success");
-              } else {
-                console.error("Submission failed.");
-                form.setAttribute("state", "error"); // Optional: if you have an error state
-              }
-            } catch (error) {
-              console.error("Network error:", error);
-              form.setAttribute("state", "error");
+            // Look for the success message.
+            // In Webstudio, success containers usually have a state="success" attribute.
+            const successBox =
+              form.parentElement.querySelector('[state="success"]');
+
+            if (successBox) {
+              // Force the success box to show
+              successBox.style.display = "block";
+              // Some builders use flex, so if block looks weird, use 'flex'
+              // successBox.style.setProperty('display', 'flex', 'important');
+            } else {
+              // If we can't find the box, we'll create a simple success message
+              const thanks = document.createElement("div");
+              thanks.innerHTML = "<h3>Merci ! Votre message a été envoyé.</h3>";
+              thanks.style.padding = "20px";
+              thanks.style.textAlign = "center";
+              form.parentElement.appendChild(thanks);
             }
-          });
-        }
-      });
+          },
+          true,
+        );
+      })();
     </script>
   </head>
   <body class="w-body">
@@ -74,7 +88,7 @@
       <main class="w-box">
         <section class="w-box c1hzitv3 c1lb8i4l">
           <div
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho cgjisu9 c3nx5x8 c1buloke cmfd5ud"
+            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho cgjisu9 c3nx5x8 c1buloke cmfd5ud"
           >
             <h1 class="w-heading cmjvuci c10mfbj2 cx6x4m7">
               Credits &amp; License
@@ -152,13 +166,13 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.BPmw71AG.js"
+      src="/assets/entries/entry-server-routing.C8fU51d_.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_credits.DbiJ_GN_.js"
+      href="/assets/entries/pages_credits.B2osvMfC.js"
       as="script"
       type="text/javascript"
     /><link
