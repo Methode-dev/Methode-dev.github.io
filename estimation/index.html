@@ -2,13 +2,13 @@
 <html
   lang="en"
   data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-06-09T11:58:42.275Z"
+  data-ws-last-published="2026-06-09T12:59:12.140Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.CaQz7mCD.css"
+      href="/assets/static/app_generated_index-6937cd5a.Bsndwtkz.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -546,14 +546,22 @@
                   }
                   .est-form {
                     display: flex;
+                    flex-direction: column;
+                    gap: var(--size-px-2, 10px);
+                    align-items: stretch;
+                    width: fit-content;
+                    max-width: 100%;
+                    margin: 0 auto;
+                  }
+                  .est-form-row {
+                    display: flex;
                     flex-wrap: wrap;
                     gap: var(--size-px-2, 10px);
                     justify-content: center;
                     align-items: stretch;
                   }
-                  .est-email {
-                    flex: 1 1 220px;
-                    max-width: 320px;
+                  .est-email,
+                  .est-note {
                     font-family: inherit;
                     font-size: var(--font-size-1, 1rem);
                     color: var(--foreground-secondary, #191a23);
@@ -564,7 +572,17 @@
                     padding: 14px 18px;
                     box-shadow: 0 4px #000;
                   }
-                  .est-email:focus {
+                  .est-email {
+                    flex: 1 1 220px;
+                    max-width: 320px;
+                  }
+                  .est-note {
+                    width: 100%;
+                    resize: vertical;
+                    line-height: 1.35;
+                  }
+                  .est-email:focus,
+                  .est-note:focus {
                     outline: none;
                     border-color: var(--foreground-accent, #f9a040);
                   }
@@ -604,6 +622,15 @@
                   .est-cta:active {
                     transform: translateY(4px);
                     box-shadow: 0 0 #000;
+                  }
+                  .est-cta[disabled] {
+                    opacity: 0.4;
+                    cursor: not-allowed;
+                    box-shadow: 0 4px rgba(0, 0, 0, 0.35);
+                  }
+                  .est-cta[disabled]:hover {
+                    transform: none;
+                    box-shadow: 0 4px rgba(0, 0, 0, 0.35);
                   }
                   .est-restart {
                     display: block;
@@ -693,7 +720,7 @@
                       ><button
                         type="button"
                         class="est-card"
-                        data-base="6000"
+                        data-base="8000"
                         data-project="automatisation"
                       >
                         <span class="est-card-head"
@@ -704,7 +731,7 @@
                           >Automatiser vos tâches et processus répétitifs grâce
                           à de l'algorithmique ou de l'IA.</span
                         ><span class="est-card-meta"
-                          >À partir de 6 000 €</span
+                          >À partir de 8 000 €</span
                         ></button
                       ><button
                         type="button"
@@ -852,19 +879,25 @@
                         name="message"
                         class="est-msg"
                         value=""
-                      /><input
-                        class="est-email"
-                        type="email"
-                        name="email"
-                        required=""
-                        placeholder="Votre email"
-                      /><button type="submit" class="est-cta">
-                        Discuter de mon projet
-                      </button>
+                      /><textarea
+                        class="est-note"
+                        rows="2"
+                        placeholder="Un message à nous transmettre (facultatif)"
+                      ></textarea>
+                      <div class="est-form-row">
+                        <input
+                          class="est-email"
+                          type="email"
+                          name="email"
+                          required=""
+                          placeholder="Votre email"
+                        /><button type="submit" class="est-cta" disabled="">
+                          Discuter de mon projet
+                        </button>
+                      </div>
                     </form>
                     <div class="est-ok" state="success">
-                      Merci&nbsp;! Nous revenons vers vous très vite avec votre
-                      estimation détaillée.
+                      Merci&nbsp;! Nous revenons vers vous très vite.
                     </div>
                     <button type="button" class="est-restart">
                       Recommencer l'estimation
@@ -908,6 +941,23 @@
                     var prevBtn = root.querySelector(".est-prev");
                     var nextBtn = root.querySelector(".est-next");
                     var runningVal = root.querySelector(".est-running-val");
+                    var ctaForm = root.querySelector(".est-form");
+                    var emailInput = root.querySelector(".est-email");
+                    var noteInput = root.querySelector(".est-note");
+                    var msgField = root.querySelector(".est-msg");
+                    var nameField = root.querySelector(".est-name");
+                    var ctaBtn = root.querySelector(".est-cta");
+                    var lastRecap = "";
+                    function syncCta() {
+                      ctaBtn.disabled = !emailInput.checkValidity();
+                    }
+                    function updateMessage() {
+                      msgField.value =
+                        (noteInput.value ? noteInput.value + "\n\n" : "") +
+                        lastRecap;
+                    }
+                    emailInput.addEventListener("input", syncCta);
+                    noteInput.addEventListener("input", updateMessage);
                     var euro = new Intl.NumberFormat("fr-FR", {
                       style: "currency",
                       currency: "EUR",
@@ -929,7 +979,7 @@
                           },
                           {
                             name: "Standard",
-                            desc: "Plusieurs modules liés à vos données, édition de vos produits, employés et grilles tarifaires. Logique métier modérée.",
+                            desc: "Plusieurs modules liés à vos données, édition de vos produits, employés et grilles tarifaires. Logique métier modérée. Mono-organisation",
                             mult: 1,
                             locks: [
                               "Modules CRM, Comptabilité, Signature, Documents, Projets",
@@ -938,7 +988,7 @@
                           },
                           {
                             name: "Avancé",
-                            desc: "Modules personnalisés, règles métier poussées.",
+                            desc: "Modules personnalisés, règles métier poussées, personnalisation complète. Multi-tenant",
                             mult: 1.85,
                             locks: [
                               "Immersion dans votre entreprise pour intégrer la logique métier",
@@ -998,6 +1048,13 @@
                             info: "Nous intégrons vos process Excel dans le progiciel",
                           },
                           {
+                            name: "Portail client / externes",
+                            add: 8000,
+                            preselected: false,
+                            locked: false,
+                            info: "Un site web tout en un pour vos prospects, clients, etc.",
+                          },
+                          {
                             name: "APIs externes",
                             add: 3000,
                             preselected: false,
@@ -1017,53 +1074,72 @@
                           },
                           {
                             name: "Standard",
-                            desc: "Plusieurs flux, quelques conditions.",
+                            desc: "Plusieurs flux, ou étude nécessaire, quelques conditions.",
                             mult: 1,
                             locks: [],
                             hides: [],
                           },
                           {
                             name: "Avancé",
-                            desc: "Orchestration complexe, IA / LLM.",
+                            desc: "Orchestration complexe, nombreux flux, algorithmique, IA / LLM.",
                             mult: 1.8,
                             locks: [],
                             hides: [],
                           },
                           {
-                            name: "Très complexe",
-                            desc: "Automatisation de toute une partie de votre logique métier",
-                            mult: 3,
+                            name: "Réduction des coûts non-humains",
+                            desc: "Des APIs très chères remplacées par de l'algorithmique avancée",
+                            mult: 2.2,
                             locks: [],
-                            hides: [],
-                            info: "Remplacer l'homme sur une partie du processus",
                           },
                         ],
                         features: [
                           {
                             name: "Connexion à un outil existant (API)",
                             add: 1500,
-                            preselected: true,
+                            preselected: false,
                             locked: false,
                             info: "",
                           },
                           {
                             name: "Traitement par IA / LLM",
                             add: 3000,
-                            preselected: true,
+                            preselected: false,
                             locked: false,
                             info: "",
+                          },
+                          {
+                            name: "Transformation de data",
+                            add: 5000,
+                            preselected: false,
+                            locked: false,
+                            info: "Vous avez de la donnée en vrac et souhaitez l'exploiter",
                           },
                           {
                             name: "Planification automatique",
                             add: 800,
-                            preselected: true,
+                            preselected: false,
                             locked: false,
                             info: "",
                           },
                           {
+                            name: "Extraction de données textuelles",
+                            add: 3000,
+                            info: "Extraction complexe. e.g e-mails ou sondages",
+                            preselected: false,
+                            locked: false,
+                          },
+                          {
+                            name: "Extraction de données visuelles (OCR)",
+                            add: 5000,
+                            info: "Extraction depuis des images e.g factures ou passeports",
+                            preselected: false,
+                            locked: false,
+                          },
+                          {
                             name: "Rapports automatiques",
                             add: 1200,
-                            preselected: true,
+                            preselected: false,
                             locked: false,
                             info: "",
                           },
@@ -1616,17 +1692,15 @@
                         featNames;
                       var rangeText =
                         euro.format(low) + " – " + euro.format(high);
-                      var nameField = root.querySelector(".est-name");
                       if (nameField)
                         nameField.value = euro.format(Math.round(mid));
-                      var msg = root.querySelector(".est-msg");
-                      if (msg) {
-                        msg.value =
-                          "Options : " +
-                          featNames +
-                          "\nEstimation : " +
-                          rangeText;
-                      }
+                      lastRecap =
+                        "Options : " +
+                        featNames +
+                        "\nEstimation : " +
+                        rangeText;
+                      updateMessage();
+                      syncCta();
                       steps.forEach(function (s) {
                         s.classList.remove("is-current");
                       });
@@ -1657,11 +1731,11 @@
                           });
                         grid2.innerHTML = "";
                         grid3.innerHTML = "";
-                        var formEl = root.querySelector(".est-form");
-                        if (formEl) {
-                          formEl.style.display = "";
-                          formEl.reset();
+                        if (ctaForm) {
+                          ctaForm.style.display = "";
+                          ctaForm.reset();
                         }
+                        syncCta();
                         var okEl = root.querySelector(".est-ok");
                         if (okEl) okEl.style.display = "";
                         result.classList.remove("is-current");
@@ -1718,6 +1792,10 @@
                   <div style="display: contents">
                     <div style="display: contents">
                       <a
+                        href="/estimation"
+                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                        >Estimez votre projet</a
+                      ><a
                         href="/#services"
                         class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
                         >Services</a
@@ -2116,13 +2194,13 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.hB-k89rp.js"
+      src="/assets/entries/entry-server-routing.CbwL8gsF.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_estimation.m7xKGtXa.js"
+      href="/assets/entries/pages_estimation.DuXm5XS3.js"
       as="script"
       type="text/javascript"
     /><link

@@ -480,14 +480,25 @@
         /* ---- Formulaire de contact (résultat) ---- */
         .est-form {
             display: flex;
+            flex-direction: column;
+            gap: var(--size-px-2, 10px);
+            align-items: stretch;
+            /* Le formulaire prend la largeur de la ligne email + bouton ;
+               le message (width:100%) s'y aligne donc exactement. */
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .est-form-row {
+            display: flex;
             flex-wrap: wrap;
             gap: var(--size-px-2, 10px);
+            /* Côte à côte si la place le permet, sinon bouton centré dessous */
             justify-content: center;
             align-items: stretch;
         }
-        .est-email {
-            flex: 1 1 220px;
-            max-width: 320px;
+        .est-email,
+        .est-note {
             font-family: inherit;
             font-size: var(--font-size-1, 1rem);
             color: var(--foreground-secondary, #191a23);
@@ -498,7 +509,17 @@
             padding: 14px 18px;
             box-shadow: 0 4px #000;
         }
-        .est-email:focus {
+        .est-email {
+            flex: 1 1 220px;
+            max-width: 320px;
+        }
+        .est-note {
+            width: 100%;
+            resize: vertical;
+            line-height: 1.35;
+        }
+        .est-email:focus,
+        .est-note:focus {
             outline: none;
             border-color: var(--foreground-accent, #f9a040);
         }
@@ -540,6 +561,16 @@
         .est-cta:active {
             transform: translateY(4px);
             box-shadow: 0 0 #000;
+        }
+        /* Grisé tant qu'aucun email valide n'est saisi */
+        .est-cta[disabled] {
+            opacity: 0.4;
+            cursor: not-allowed;
+            box-shadow: 0 4px rgba(0, 0, 0, 0.35);
+        }
+        .est-cta[disabled]:hover {
+            transform: none;
+            box-shadow: 0 4px rgba(0, 0, 0, 0.35);
         }
         .est-restart {
             display: block;
@@ -691,19 +722,27 @@
             >
                 <input type="hidden" name="Nom / Rôle" class="est-name" value="" />
                 <input type="hidden" name="message" class="est-msg" value="" />
-                <input
-                    class="est-email"
-                    type="email"
-                    name="email"
-                    required=""
-                    placeholder="{{CTA_EMAIL_PLACEHOLDER}}"
-                />
-                <button type="submit" class="est-cta">{{CTA_LABEL}}</button>
+                <textarea
+                    class="est-note"
+                    rows="2"
+                    placeholder="Un message à nous transmettre (facultatif)"
+                ></textarea>
+                <div class="est-form-row">
+                    <input
+                        class="est-email"
+                        type="email"
+                        name="email"
+                        required=""
+                        placeholder="{{CTA_EMAIL_PLACEHOLDER}}"
+                    />
+                    <button type="submit" class="est-cta" disabled="">
+                        {{CTA_LABEL}}
+                    </button>
+                </div>
             </form>
 
             <div class="est-ok" state="success">
-                Merci&nbsp;! Nous revenons vers vous très vite avec votre
-                estimation détaillée.
+                Merci&nbsp;! Nous revenons vers vous très vite.
             </div>
 
             <button type="button" class="est-restart">
@@ -753,6 +792,26 @@
             var prevBtn = root.querySelector(".est-prev");
             var nextBtn = root.querySelector(".est-next");
             var runningVal = root.querySelector(".est-running-val");
+            var ctaForm = root.querySelector(".est-form");
+            var emailInput = root.querySelector(".est-email");
+            var noteInput = root.querySelector(".est-note");
+            var msgField = root.querySelector(".est-msg");
+            var nameField = root.querySelector(".est-name");
+            var ctaBtn = root.querySelector(".est-cta");
+            var lastRecap = ""; // récap (options + fourchette) joint au message
+
+            // Grise le bouton tant que l'email n'est pas valide.
+            function syncCta() {
+                ctaBtn.disabled = !emailInput.checkValidity();
+            }
+            // Champ "message" = note facultative de l'utilisateur + récap.
+            function updateMessage() {
+                msgField.value =
+                    (noteInput.value ? noteInput.value + "\n\n" : "") +
+                    lastRecap;
+            }
+            emailInput.addEventListener("input", syncCta);
+            noteInput.addEventListener("input", updateMessage);
 
             var euro = new Intl.NumberFormat("fr-FR", {
                 style: "currency",
@@ -1172,18 +1231,12 @@
                 // Champs envoyés au worker (via le script global d'index.html) :
                 //   • "Nom / Rôle" → la valeur totale estimée
                 //   • "email"      → l'email saisi par l'utilisateur
-                //   • "message"    → les options choisies + la fourchette
-                var nameField = root.querySelector(".est-name");
+                //   • "message"    → note facultative + options + fourchette
                 if (nameField) nameField.value = euro.format(Math.round(mid));
-
-                var msg = root.querySelector(".est-msg");
-                if (msg) {
-                    msg.value =
-                        "Options : " +
-                        featNames +
-                        "\nEstimation : " +
-                        rangeText;
-                }
+                lastRecap =
+                    "Options : " + featNames + "\nEstimation : " + rangeText;
+                updateMessage();
+                syncCta();
 
                 steps.forEach(function (s) {
                     s.classList.remove("is-current");
@@ -1220,11 +1273,11 @@
                     grid3.innerHTML = "";
                     // Réaffiche le formulaire (masqué après envoi) et cache
                     // le message de confirmation.
-                    var formEl = root.querySelector(".est-form");
-                    if (formEl) {
-                        formEl.style.display = "";
-                        formEl.reset();
+                    if (ctaForm) {
+                        ctaForm.style.display = "";
+                        ctaForm.reset();
                     }
+                    syncCta(); // email vidé → bouton de nouveau grisé
                     var okEl = root.querySelector(".est-ok");
                     if (okEl) okEl.style.display = "";
                     result.classList.remove("is-current");

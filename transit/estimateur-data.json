@@ -15,8 +15,8 @@
       "info": "Vous êtes une structure de taille moyenne et souhaitez avoir un logiciel pour transformer tout ou partie de vos processus en un workflow unique.",
       "complexity": [
         { "name": "Simple", "desc": "Aucun module personnalisé, peu d'utilisateurs, design standard.", "mult": 0.85, "locks": [], "hides": ["Immersion dans votre entreprise pour intégrer la logique métier", "APIs externes", "Paiements / Abonnements"] },
-        { "name": "Standard", "desc": "Plusieurs modules liés à vos données, édition de vos produits, employés et grilles tarifaires. Logique métier modérée.", "mult": 1, "locks": ["Modules CRM, Comptabilité, Signature, Documents, Projets"], "hides": [] },
-        { "name": "Avancé", "desc": "Modules personnalisés, règles métier poussées.", "mult": 1.85, "locks": ["Immersion dans votre entreprise pour intégrer la logique métier", "Modules CRM, Comptabilité, Signature, Documents, Projets"], "hides": [] }
+        { "name": "Standard", "desc": "Plusieurs modules liés à vos données, édition de vos produits, employés et grilles tarifaires. Logique métier modérée. Mono-organisation", "mult": 1, "locks": ["Modules CRM, Comptabilité, Signature, Documents, Projets"], "hides": [] },
+        { "name": "Avancé", "desc": "Modules personnalisés, règles métier poussées, personnalisation complète. Multi-tenant", "mult": 1.85, "locks": ["Immersion dans votre entreprise pour intégrer la logique métier", "Modules CRM, Comptabilité, Signature, Documents, Projets"], "hides": [] }
       ],
       "features": [
         { "name": "Tableau de bord & reporting", "add": 0, "preselected": true, "locked": true, "info": "" },
@@ -26,6 +26,7 @@
         { "name": "Immersion dans votre entreprise pour intégrer la logique métier", "add": 2000, "preselected": false, "locked": false, "info": "Nous passons 1 à 2 jours dans vos locaux ou de nombreuses réunions avec vos équipes pour cartographier vos processus et adapter l'outil à votre fonctionnement réel." },
         { "name": "Paiements / Abonnements", "add": 1500, "preselected": false, "locked": false, "info": "Incluant Stripe ou équivalent" },
         { "name": "Import / export Excel", "add": 1000, "preselected": false, "locked": false, "info": "Nous intégrons vos process Excel dans le progiciel"},
+        { "name": "Portail client / externes", "add": 8000, "preselected": false, "locked": false, "info": "Un site web tout en un pour vos prospects, clients, etc."},
         { "name": "APIs externes", "add": 3000, "preselected": false, "locked": false, "info": "Cette option comprend deux à trois APIs externes à titre purement indicatif, contactez nous pour discuter de l'estimation finale"}
       ]
     },
@@ -33,18 +34,21 @@
       "id": "automatisation",
       "title": "Automatisation métier",
       "desc": "Automatiser vos tâches et processus répétitifs grâce à de l'algorithmique ou de l'IA.",
-      "base": 6000,
+      "base": 8000,
       "complexity": [
         { "name": "Simple", "desc": "Un seul flux, règles claires.", "mult": 0.6, "locks": [], "hides": [] },
-        { "name": "Standard", "desc": "Plusieurs flux, quelques conditions.", "mult": 1, "locks": [], "hides": [] },
-        { "name": "Avancé", "desc": "Orchestration complexe, IA / LLM.", "mult": 1.8, "locks": [], "hides": [] },
-        { "name": "Très complexe", "desc": "Automatisation de toute une partie de votre logique métier", "mult": 3, "locks": [], "hides": [], "info": "Remplacer l'homme sur une partie du processus"}
+        { "name": "Standard", "desc": "Plusieurs flux, ou étude nécessaire, quelques conditions.", "mult": 1, "locks": [], "hides": [] },
+        { "name": "Avancé", "desc": "Orchestration complexe, nombreux flux, algorithmique, IA / LLM.", "mult": 1.8, "locks": [], "hides": [] },
+        { "name": "Réduction des coûts non-humains", "desc": "Des APIs très chères remplacées par de l'algorithmique avancée", "mult": 2.2, "locks": []}
       ],
       "features": [
-        { "name": "Connexion à un outil existant (API)", "add": 1500, "preselected": true, "locked": false, "info": "" },
-        { "name": "Traitement par IA / LLM", "add": 3000, "preselected": true, "locked": false, "info": "" },
-        { "name": "Planification automatique", "add": 800, "preselected": true, "locked": false, "info": "" },
-        { "name": "Rapports automatiques", "add": 1200, "preselected": true, "locked": false, "info": "" }
+        { "name": "Connexion à un outil existant (API)", "add": 1500, "preselected": false, "locked": false, "info": "" },
+        { "name": "Traitement par IA / LLM", "add": 3000, "preselected": false, "locked": false, "info": "" },
+        { "name": "Transformation de data", "add": 5000, "preselected": false, "locked": false, "info": "Vous avez de la donnée en vrac et souhaitez l'exploiter" },
+        { "name": "Planification automatique", "add": 800, "preselected": false, "locked": false, "info": "" },
+        { "name": "Extraction de données textuelles", "add": 3000, "info": "Extraction complexe. e.g e-mails ou sondages", "preselected": false, "locked": false},
+        { "name": "Extraction de données visuelles (OCR)", "add": 5000, "info": "Extraction depuis des images e.g factures ou passeports", "preselected": false, "locked": false},
+        { "name": "Rapports automatiques", "add": 1200, "preselected": false, "locked": false, "info": "" }
       ]
     },
     {
