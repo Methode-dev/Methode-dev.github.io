@@ -1,0 +1,1239 @@
+<!--
+  ==================================================================
+  ESTIMATEUR DE PRIX — Développement d'application (3 étapes)
+  ==================================================================
+  Inspiré de genee.tech/prix-developpement-application.
+  Fragment HTML + CSS + JS à coller dans un bloc « Embed / HTML » de
+  Webstudio. Pas de <html>/<head>/<body> : le code s'insère dans la
+  page et hérite de la police (Nunito) et des couleurs du thème déjà
+  chargées sur le site.
+
+  Contrairement au module graphique, cet outil EST interactif : il
+  contient un petit script (sans dépendance externe). Webstudio
+  n'exécute pas le JS dans le Canvas d'édition — l'estimateur ne
+  s'animera donc qu'en mode Aperçu et sur le site publié.
+
+  Tout est préfixé par « est- » pour éviter les conflits de styles.
+
+  Parcours : on choisit un TYPE DE PROJET à l'étape 1, puis on avance
+  avec « Continuer ». Les choix de l'étape 2 (complexité) et de l'étape 3
+  (fonctionnalités) sont PROPRES au projet choisi.
+
+  ------------------------------------------------------------------
+  POUR MODIFIER LES DONNÉES :
+    • Étape 1 — type de projet + prix de base : les boutons
+      .est-card de .est-step[data-step="1"]. Chacun porte un
+      data-base (prix de départ) et un data-project (clé de config).
+    • Étapes 2 & 3 — propres à chaque projet : objet CONFIG dans le
+      script, indexé par la clé data-project. Pour chaque projet :
+        - complexity[] : { name, desc, mult, locks }       → étape 2
+        - features[]   : { name, add, preselected, locked }→ étape 3
+      preselected (true par défaut) dit si l'option est PRÉ-COCHÉE :
+        • true  → incluse dans le prix de base ; « 0 € » tant qu'elle
+                  est cochée, « −X € » (remise) si on la décoche.
+        • false → optionnelle ; « +X € », ajoutée au total si cochée.
+      VERROU (option non décochable, cochée d'office) :
+        • feature.locked = true  → option toujours obligatoire.
+        • complexity.locks = [noms] → options rendues obligatoires
+          uniquement quand ce niveau de complexité est choisi (le
+          verrou est ainsi LIÉ à la sélection de l'étape 2).
+      Le prix de base (data-base) correspond donc au projet avec toutes
+      les options PRÉ-COCHÉES incluses (et les optionnelles décochées).
+    • Marge de la fourchette affichée : champ "range" du JSON. Soit un
+      nombre (0.12 = ±12 %), soit des paliers par prix, ex. :
+      [{ "below": 10000, "value": 0.2 }, { "below": 20000, "value": 0.12 },
+       { "value": 0.09 }] (entrée sans "below" = sinon).
+    • Bouton final : "cta" du JSON → label (texte du bouton), action
+      (URL du formulaire = worker), emailPlaceholder. Le formulaire poste
+      vers le worker ; le script global déjà présent dans index.html
+      (form[action*="jcalenge.workers.dev"]) intercepte l'envoi, masque le
+      formulaire et affiche le message de confirmation. NE PAS réinclure
+      ce script dans l'embed.
+  Le calcul = (base × multiplicateur) − options pré-cochées retirées
+              + options optionnelles ajoutées.
+  ------------------------------------------------------------------
+-->
+<div class="est-root">
+    <style>
+        .est-root,
+        .est-root *,
+        .est-root *::before,
+        .est-root *::after {
+            box-sizing: border-box;
+        }
+
+        .est-root {
+            font-family: Nunito, sans-serif;
+            color: var(--foreground-primary, #000);
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* ---- Carte principale ---- */
+        .est-card-wrap {
+            background: var(--background-primary, #fff);
+            border-radius: var(--radius-4, 2rem);
+            box-shadow: var(--shadow-2, 0 7px 14px rgba(0, 0, 0, 0.1));
+            padding: var(--size-px-6, 28px);
+        }
+
+        /* ---- Barre de progression (3 étapes) ---- */
+        .est-steps {
+            display: flex;
+            align-items: center;
+            gap: var(--size-px-2, 8px);
+            margin-bottom: var(--size-px-6, 28px);
+        }
+
+        .est-stepnum {
+            display: flex;
+            align-items: center;
+            gap: var(--size-px-2, 8px);
+            flex: 0 0 auto;
+        }
+
+        .est-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: var(--font-size-1, 1rem);
+            background: var(--background-primary, #fff);
+            color: var(--foreground-secondary, #191a23);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            /* Petite ombre dure dans le style du site */
+            box-shadow: 0 3px #000;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .est-steplabel {
+            font-size: var(--font-size-1, 0.95rem);
+            font-weight: 700;
+            color: var(--foreground-muted, #898989);
+            white-space: nowrap;
+        }
+
+        .est-line {
+            flex: 1 1 auto;
+            height: 2px;
+            background: var(--gray-6, #e5e5e5);
+            margin: 0 var(--size-px-1, 4px);
+        }
+
+        /* État actif / terminé d'une étape */
+        .est-stepnum.is-active .est-dot,
+        .est-stepnum.is-done .est-dot {
+            background: var(--foreground-accent, #f9a040);
+            color: #fff;
+        }
+        /* L'étape en cours se soulève et son ombre se creuse */
+        .est-stepnum.is-active .est-dot {
+            transform: translateY(-2px);
+            box-shadow: 0 5px #000;
+        }
+        .est-stepnum.is-active .est-steplabel,
+        .est-stepnum.is-done .est-steplabel {
+            color: var(--foreground-secondary, #191a23);
+        }
+
+        /* ---- Titres d'étape ---- */
+        .est-title {
+            margin: 0 0 var(--size-px-1, 4px);
+            font-size: var(--font-size-4, 1.5rem);
+            font-weight: 800;
+            color: var(--foreground-secondary, #191a23);
+        }
+        .est-sub {
+            margin: 0 0 var(--size-px-5, 24px);
+            color: var(--foreground-muted, #898989);
+            font-size: var(--font-size-1, 1rem);
+        }
+
+        /* ---- Affichage des étapes ---- */
+        .est-step {
+            display: none;
+        }
+        .est-step.is-current {
+            display: block;
+        }
+
+        /* ---- Grille de cartes (choix) ---- */
+        .est-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--size-px-3, 16px);
+        }
+
+        .est-card {
+            text-align: left;
+            cursor: pointer;
+            background: var(--background-primary, #fff);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            border-radius: 16px;
+            padding: var(--size-px-4, 20px);
+            font-family: inherit;
+            color: inherit;
+            /* Repère pour l'icône « i » positionnée dans le coin */
+            position: relative;
+            /* Ombre dure « 3D » dans le style du site */
+            box-shadow: 0 4px #000;
+            transition:
+                border-color 0.15s ease,
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: var(--size-px-1, 4px);
+        }
+        /* Au survol, la carte se soulève et l'ombre se creuse */
+        .est-card:hover {
+            border-color: var(--foreground-accent, #f9a040);
+            transform: translateY(-4px);
+            box-shadow: 0 8px #000;
+        }
+        .est-card.is-selected {
+            border-color: var(--foreground-accent, #f9a040);
+            box-shadow:
+                0 4px #000,
+                inset 0 0 0 1px var(--foreground-accent, #f9a040);
+        }
+        .est-card.is-selected:hover {
+            box-shadow:
+                0 8px #000,
+                inset 0 0 0 1px var(--foreground-accent, #f9a040);
+        }
+        /* Option VERROUILLÉE : incluse d'office, non décochable.
+           → grisée + étiquette « Inclus » (la case reste cochée). */
+        .est-card.is-locked {
+            cursor: not-allowed;
+            opacity: 0.6;
+            background: var(--background-secondary, #f3f3f3);
+            border-color: var(--foreground-border, #191a23);
+            box-shadow: 0 4px #000;
+        }
+        .est-card.is-locked:hover {
+            transform: none;
+            box-shadow: 0 4px #000;
+            border-color: var(--foreground-border, #191a23);
+        }
+        .est-card.is-locked .est-card-meta {
+            color: var(--foreground-muted, #898989);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        /* Option MASQUÉE par le choix de l'étape 2 : retirée de l'étape 3. */
+        .est-card.is-hidden {
+            display: none;
+        }
+
+        .est-card-name {
+            font-weight: 800;
+            font-size: var(--font-size-2, 1.1rem);
+            color: var(--foreground-secondary, #191a23);
+        }
+        /* En-tête : nom + icône info sur la même ligne (cartes en colonne) */
+        .est-card-head {
+            display: flex;
+            align-items: center;
+            gap: var(--size-px-1, 6px);
+        }
+
+        /* ---- Icône « i » (coin haut-droit) + infobulle au survol ---- */
+        .est-info {
+            position: absolute;
+            top: var(--size-px-3, 12px);
+            right: var(--size-px-3, 14px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            font-size: 10px;
+            font-weight: 800;
+            font-style: normal;
+            line-height: 1;
+            color: var(--foreground-secondary, #191a23);
+            background: var(--background-primary, #fff);
+            cursor: help;
+            z-index: 2;
+        }
+        /* Réserve la place du coin pour les cartes qui ont un « i » */
+        .est-card:has(.est-info) {
+            padding-right: calc(var(--size-px-4, 20px) + 22px);
+        }
+        .est-tip {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            transform: translateY(4px);
+            width: 220px;
+            max-width: 220px;
+            background: var(--background-primary, #fff);
+            color: var(--foreground-secondary, #191a23);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            border-radius: var(--radius-3, 12px);
+            box-shadow: 0 4px #000;
+            padding: var(--size-px-3, 12px);
+            font-size: var(--font-size-0, 0.8rem);
+            font-weight: 600;
+            line-height: 1.35;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition:
+                opacity 0.15s ease,
+                transform 0.15s ease;
+            z-index: 6;
+        }
+        .est-info:hover .est-tip,
+        .est-info:focus .est-tip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .est-card-desc {
+            font-size: var(--font-size-0, 0.85rem);
+            color: var(--foreground-muted, #898989);
+            line-height: 1.35;
+        }
+        .est-card-meta {
+            margin-top: auto;
+            padding-top: var(--size-px-2, 8px);
+            font-size: var(--font-size-0, 0.85rem);
+            font-weight: 800;
+            color: var(--foreground-accent, #f9a040);
+        }
+
+        /* Petite case à cocher décorative (étape 3) */
+        .est-card.est-check {
+            flex-direction: row;
+            align-items: center;
+            gap: var(--size-px-3, 16px);
+        }
+        .est-box {
+            width: 22px;
+            height: 22px;
+            flex: 0 0 auto;
+            border-radius: var(--radius-1, 6px);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 900;
+            transition:
+                background 0.15s ease,
+                border-color 0.15s ease;
+        }
+        .est-card.is-selected .est-box {
+            background: var(--foreground-accent, #f9a040);
+            border-color: var(--foreground-accent, #f9a040);
+        }
+        .est-check .est-card-body {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            gap: var(--size-px-1, 6px);
+        }
+        .est-check .est-card-meta {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ---- Pied de page : navigation + total ---- */
+        .est-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--size-px-3, 16px);
+            margin-top: var(--size-px-6, 28px);
+            padding-top: var(--size-px-4, 20px);
+            border-top: var(--border-size-1, 1px) solid var(--gray-6, #e5e5e5);
+        }
+
+        .est-running {
+            font-size: var(--font-size-1, 1rem);
+            color: var(--foreground-muted, #898989);
+        }
+        .est-running b {
+            color: var(--foreground-secondary, #191a23);
+            font-weight: 800;
+        }
+
+        .est-nav {
+            display: flex;
+            gap: var(--size-px-2, 8px);
+        }
+
+        .est-btn {
+            font-family: inherit;
+            font-weight: 800;
+            font-size: var(--font-size-1, 1rem);
+            border-radius: 12px;
+            padding: 12px 22px;
+            cursor: pointer;
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            box-shadow: 0 4px #000;
+            transition:
+                transform 0.12s ease,
+                box-shadow 0.12s ease,
+                background 0.15s ease;
+        }
+        /* Au survol : la touche se soulève et l'ombre se creuse */
+        .est-btn:not([disabled]):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px #000;
+        }
+        /* Au clic : la touche s'enfonce sur son ombre */
+        .est-btn:not([disabled]):active {
+            transform: translateY(4px);
+            box-shadow: 0 0 #000;
+        }
+        .est-btn-primary {
+            background: var(--foreground-secondary, #191a23);
+            color: #fff;
+        }
+        .est-btn-ghost {
+            background: var(--background-primary, #fff);
+            color: var(--foreground-secondary, #191a23);
+        }
+        .est-btn[disabled] {
+            opacity: 0.4;
+            cursor: not-allowed;
+            box-shadow: 0 4px rgba(0, 0, 0, 0.35);
+        }
+
+        /* ---- Écran de résultat ---- */
+        .est-result {
+            display: none;
+            text-align: center;
+        }
+        .est-result.is-current {
+            display: block;
+        }
+        .est-result-eyebrow {
+            font-size: var(--font-size-0, 0.85rem);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--foreground-accent, #f9a040);
+            margin: 0 0 var(--size-px-2, 8px);
+        }
+        .est-price {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--foreground-secondary, #191a23);
+            line-height: 1.1;
+            margin: 0 0 var(--size-px-2, 8px);
+        }
+        .est-price small {
+            font-size: var(--font-size-1, 1rem);
+            font-weight: 700;
+            color: var(--foreground-muted, #898989);
+            display: block;
+            margin-top: var(--size-px-2, 8px);
+        }
+
+        .est-recap {
+            text-align: left;
+            background: var(--background-secondary, #f3f3f3);
+            border-radius: var(--radius-3, 12px);
+            padding: var(--size-px-4, 20px);
+            margin: var(--size-px-5, 24px) 0;
+        }
+        .est-recap-row {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--size-px-3, 16px);
+            padding: 6px 0;
+            font-size: var(--font-size-1, 1rem);
+        }
+        .est-recap-row span:first-child {
+            color: var(--foreground-muted, #898989);
+        }
+        .est-recap-row span:last-child {
+            font-weight: 700;
+            color: var(--foreground-secondary, #191a23);
+            text-align: right;
+        }
+
+        /* ---- Formulaire de contact (résultat) ---- */
+        .est-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--size-px-2, 10px);
+            justify-content: center;
+            align-items: stretch;
+        }
+        .est-email {
+            flex: 1 1 220px;
+            max-width: 320px;
+            font-family: inherit;
+            font-size: var(--font-size-1, 1rem);
+            color: var(--foreground-secondary, #191a23);
+            background: var(--background-primary, #fff);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            border-radius: 14px;
+            padding: 14px 18px;
+            box-shadow: 0 4px #000;
+        }
+        .est-email:focus {
+            outline: none;
+            border-color: var(--foreground-accent, #f9a040);
+        }
+        /* Message de confirmation (affiché par le script global après envoi) */
+        .est-ok {
+            display: none;
+            background: var(--background-secondary, #f3f3f3);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            border-radius: 14px;
+            box-shadow: 0 4px #000;
+            padding: var(--size-px-4, 18px);
+            font-weight: 700;
+            color: var(--foreground-secondary, #191a23);
+        }
+
+        .est-cta {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--foreground-accent, #f9a040);
+            color: #fff;
+            font-family: inherit;
+            font-weight: 800;
+            font-size: var(--font-size-2, 1.1rem);
+            border: var(--border-size-1, 1px) solid
+                var(--foreground-border, #191a23);
+            border-radius: 14px;
+            padding: 14px 32px;
+            cursor: pointer;
+            box-shadow: 0 4px #000;
+            transition:
+                transform 0.12s ease,
+                box-shadow 0.12s ease;
+        }
+        .est-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px #000;
+        }
+        .est-cta:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 #000;
+        }
+        .est-restart {
+            display: block;
+            margin: var(--size-px-4, 20px) auto 0;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: var(--font-size-1, 0.95rem);
+            font-weight: 700;
+            color: var(--foreground-muted, #898989);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .est-disclaimer {
+            font-size: var(--font-size-0, 0.8rem);
+            color: var(--foreground-muted, #898989);
+            margin-top: var(--size-px-4, 20px);
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 600px) {
+            .est-grid {
+                grid-template-columns: 1fr;
+            }
+            .est-steplabel {
+                display: none;
+            }
+            .est-foot {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .est-nav {
+                justify-content: space-between;
+            }
+            .est-price {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+
+    <div class="est-card-wrap">
+        <!-- ===================== Indicateur d'étapes ===================== -->
+        <div class="est-steps">
+            <div class="est-stepnum is-active" data-stepnum="1">
+                <span class="est-dot">1</span>
+                <span class="est-steplabel">Type de projet</span>
+            </div>
+            <span class="est-line"></span>
+            <div class="est-stepnum" data-stepnum="2">
+                <span class="est-dot">2</span>
+                <span class="est-steplabel">Complexité</span>
+            </div>
+            <span class="est-line"></span>
+            <div class="est-stepnum" data-stepnum="3">
+                <span class="est-dot">3</span>
+                <span class="est-steplabel">Fonctionnalités</span>
+            </div>
+        </div>
+
+        <!-- ===================== Étape 1 — Type de projet ===================== -->
+        <div class="est-step is-current" data-step="1">
+            <p class="est-title">
+                Quel type de projet souhaitez-vous lancer&nbsp;?
+            </p>
+            <p class="est-sub">
+                Sélectionnez la catégorie la plus proche de votre besoin.
+            </p>
+            <div class="est-grid" data-single="">{{PROJECT_CARDS}}</div>
+        </div>
+
+        <!-- ===================== Étape 2 — Complexité ===================== -->
+        <!-- Les choix sont injectés par le script selon le projet choisi
+             à l'étape 1 (objet CONFIG plus bas). -->
+        <div class="est-step" data-step="2">
+            <p class="est-title">Quel est le niveau de complexité&nbsp;?</p>
+            <p class="est-sub">
+                Plus le périmètre est riche, plus l'effort de conception
+                augmente.
+            </p>
+            <div class="est-grid" data-single=""></div>
+        </div>
+
+        <!-- ===================== Étape 3 — Fonctionnalités ===================== -->
+        <!-- Les choix sont injectés par le script selon le projet choisi
+             à l'étape 1 (objet CONFIG plus bas). -->
+        <div class="est-step" data-step="3">
+            <p class="est-title">Quelles fonctionnalités prévoir&nbsp;?</p>
+            <p class="est-sub">
+                Ces options sont incluses par défaut — décochez celles dont vous
+                n'avez pas besoin pour réduire l'estimation.
+            </p>
+            <div class="est-grid" data-multi=""></div>
+        </div>
+
+        <!-- ===================== Pied de page (navigation) ===================== -->
+        <div class="est-foot" data-foot="">
+            <div class="est-running">
+                Estimation en cours&nbsp;: <b class="est-running-val">—</b>
+            </div>
+            <div class="est-nav">
+                <button
+                    type="button"
+                    class="est-btn est-btn-ghost est-prev"
+                    disabled=""
+                >
+                    Retour
+                </button>
+                <button
+                    type="button"
+                    class="est-btn est-btn-primary est-next"
+                    disabled=""
+                >
+                    Continuer
+                </button>
+            </div>
+        </div>
+
+        <!-- ===================== Écran de résultat ===================== -->
+        <div class="est-result" data-result="">
+            <p class="est-result-eyebrow">Votre estimation</p>
+            <p class="est-price">
+                <span class="est-range">—</span>
+                <small>Budget indicatif, hors taxes</small>
+            </p>
+
+            <div class="est-recap">
+                <div class="est-recap-row">
+                    <span>Type de projet</span
+                    ><span class="est-recap-project">—</span>
+                </div>
+                <div class="est-recap-row">
+                    <span>Complexité</span
+                    ><span class="est-recap-complexity">—</span>
+                </div>
+                <div class="est-recap-row">
+                    <span>Fonctionnalités</span
+                    ><span class="est-recap-features">—</span>
+                </div>
+            </div>
+
+            <!-- Formulaire : déclenche le script global déjà présent dans
+                 index.html (intercepte form[action*="jcalenge.workers.dev"]).
+                 Ne PAS réinclure ce script ici. -->
+            <form
+                class="est-form"
+                action="{{CTA_ACTION}}"
+                method="post"
+                enctype="multipart/form-data"
+            >
+                <input type="hidden" name="Nom / Rôle" class="est-name" value="" />
+                <input type="hidden" name="message" class="est-msg" value="" />
+                <input
+                    class="est-email"
+                    type="email"
+                    name="email"
+                    required=""
+                    placeholder="{{CTA_EMAIL_PLACEHOLDER}}"
+                />
+                <button type="submit" class="est-cta">{{CTA_LABEL}}</button>
+            </form>
+
+            <div class="est-ok" state="success">
+                Merci&nbsp;! Nous revenons vers vous très vite avec votre
+                estimation détaillée.
+            </div>
+
+            <button type="button" class="est-restart">
+                Recommencer l'estimation
+            </button>
+
+            <p class="est-disclaimer">
+                Cette estimation est purement indicative et ne constitue pas un
+                devis. Le prix final dépend du périmètre précis défini ensemble.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            // Marge de la fourchette affichée. Soit un nombre (ex. 0.12 =
+            // ±12 %), soit des paliers par prix : [{below:10000,value:0.2},
+            // {below:20000,value:0.12},{value:0.09}] — la 1re entrée dont le
+            // total est < below s'applique ; l'entrée sans "below" = sinon.
+            var RANGE = {{RANGE}};
+
+            // Marge applicable selon le montant estimé.
+            function rangeFor(v) {
+                if (typeof RANGE === "number") return RANGE;
+                for (var i = 0; i < RANGE.length; i++) {
+                    if (RANGE[i].below == null || v < RANGE[i].below) {
+                        return RANGE[i].value;
+                    }
+                }
+                return 0.12;
+            }
+
+            var root =
+                document.currentScript && document.currentScript.closest
+                    ? document.currentScript.closest(".est-root")
+                    : document.querySelector(".est-root");
+            if (!root) return;
+
+            var steps = Array.prototype.slice.call(
+                root.querySelectorAll(".est-step"),
+            );
+            var stepNums = Array.prototype.slice.call(
+                root.querySelectorAll(".est-stepnum"),
+            );
+            var foot = root.querySelector("[data-foot]");
+            var result = root.querySelector("[data-result]");
+            var prevBtn = root.querySelector(".est-prev");
+            var nextBtn = root.querySelector(".est-next");
+            var runningVal = root.querySelector(".est-running-val");
+
+            var euro = new Intl.NumberFormat("fr-FR", {
+                style: "currency",
+                currency: "EUR",
+                maximumFractionDigits: 0,
+            });
+
+            // =============================================================
+            //  CONFIG — Étapes 2 & 3 propres à CHAQUE type de projet.
+            // =============================================================
+            //  La clé (mvp, automatisation, …) correspond à l'attribut
+            //  data-project du bouton de l'étape 1.
+            //    • complexity[] : choix UNIQUE — { name, desc, mult, locks, hides }
+            //        mult  = multiplicateur appliqué au prix de base.
+            //        locks = (optionnel) liste de NOMS d'options de l'étape 3
+            //                rendues OBLIGATOIRES quand ce niveau est choisi
+            //                (cochées d'office + non décochables). C'est le
+            //                verrou « lié à la sélection de l'étape 2 ».
+            //        hides = (optionnel) liste de NOMS d'options de l'étape 3
+            //                MASQUÉES quand ce niveau est choisi (retirées de
+            //                l'affichage et du calcul). Lié à l'étape 2.
+            //    • features[]   : choix MULTIPLES — { name, add, preselected, locked }
+            //        add        = montant (en €) de l'option.
+            //        preselected= true  → option PRÉ-COCHÉE : incluse dans le
+            //                     prix de base ; la décocher applique « −add »
+            //                     (remise) et affiche « 0 € » tant qu'incluse.
+            //                   = false → option OPTIONNELLE : décochée au
+            //                     départ ; la cocher applique « +add » et
+            //                     l'option affiche « +add € ».
+            //        (absent ⇒ true). C'est LA variable demandée pour
+            //        inverser la logique de prix par option.
+            //        locked     = true → option TOUJOURS obligatoire (cochée
+            //                     d'office, non décochable), quel que soit le
+            //                     niveau de complexité. (absent ⇒ false)
+            //        Verrou dynamique : voir aussi complexity.locks ci-dessus,
+            //        qui verrouille des options selon le choix de l'étape 2.
+            //  Les libellés (« × 1,2 », « 0 € », « +1 500 € », « −1 500 € »)
+            //  sont générés automatiquement — rien à saisir.
+            //  >>> À PERSONNALISER : ce sont des valeurs de départ. <<<
+            // =============================================================
+            var CONFIG = {{CONFIG}};
+
+            var state = {
+                current: 0,
+                project: null,
+                base: null,
+                mult: null,
+                features: [], // options actuellement INCLUSES
+                featuresAll: [], // toutes les options du projet (référence)
+                complexityLocks: [], // options verrouillées par l'étape 2
+                complexityHides: [], // options masquées par l'étape 2
+            };
+
+            var grid2 = steps[1].querySelector(".est-grid");
+            var grid3 = steps[2].querySelector(".est-grid");
+
+            // ---- Construit les étapes 2 & 3 pour le projet choisi ----
+            function buildProjectSteps(projectId) {
+                var cfg = CONFIG[projectId] || { complexity: [], features: [] };
+                // Tout choix précédent (autre projet) est réinitialisé
+                state.mult = null;
+                state.complexityLocks = [];
+                state.complexityHides = [];
+                // Les fonctionnalités sont INCLUSES par défaut : on les met
+                // toutes dans la sélection. Décocher une option retire son
+                // montant du total (le prix de base = plancher « à partir de »).
+                state.featuresAll = cfg.features.map(function (f) {
+                    // preselected absent => incluse par défaut (true)
+                    return {
+                        add: f.add,
+                        name: f.name,
+                        preselected: f.preselected !== false,
+                        locked: f.locked === true,
+                    };
+                });
+                // Seules les options pré-cochées font partie de la sélection
+                // initiale (donc du prix de base).
+                state.features = state.featuresAll.filter(function (f) {
+                    return f.preselected;
+                });
+
+                grid2.innerHTML = cfg.complexity
+                    .map(function (c) {
+                        var label = "× " + String(c.mult).replace(".", ",");
+                        return (
+                            '<button type="button" class="est-card" data-mult="' +
+                            c.mult +
+                            '">' +
+                            '<span class="est-card-head"><span class="est-card-name">' +
+                            c.name +
+                            "</span>" +
+                            infoIcon(c.info) +
+                            "</span>" +
+                            '<span class="est-card-desc">' +
+                            c.desc +
+                            "</span>" +
+                            '<span class="est-card-meta">' +
+                            label +
+                            "</span>" +
+                            "</button>"
+                        );
+                    })
+                    .join("");
+
+                grid3.innerHTML = cfg.features
+                    .map(function (f) {
+                        var pre = f.preselected !== false;
+                        // Pré-cochée : incluse, remise nulle (« 0 € »), elle
+                        //   deviendra « −X € » si on la décoche.
+                        // Non pré-cochée : optionnelle, affiche « +X € » (le
+                        //   montant qu'elle ajoute si on la coche).
+                        var label = pre ? "0 €" : "+" + euro.format(f.add);
+                        var cls =
+                            "est-card est-check" + (pre ? " is-selected" : "");
+                        return (
+                            '<button type="button" class="' +
+                            cls +
+                            '" data-add="' +
+                            f.add +
+                            '" data-preselected="' +
+                            pre +
+                            '">' +
+                            '<span class="est-box">✓</span>' +
+                            '<span class="est-card-body"><span class="est-card-name">' +
+                            f.name +
+                            "</span>" +
+                            infoIcon(f.info) +
+                            "</span>" +
+                            '<span class="est-card-meta">' +
+                            label +
+                            "</span>" +
+                            "</button>"
+                        );
+                    })
+                    .join("");
+
+                // Applique les verrous « toujours » (feature.locked).
+                applyLocks();
+            }
+
+            // ---- Petit « i » avec infobulle (rendu si texte non vide) ----
+            function infoIcon(text) {
+                if (!text) return "";
+                var safe = String(text)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+                return (
+                    '<span class="est-info" tabindex="0">i' +
+                    '<span class="est-tip">' +
+                    safe +
+                    "</span></span>"
+                );
+            }
+
+            // ---- Libellé de prix d'une option selon son état ----
+            function featureLabel(card) {
+                var add = parseFloat(card.getAttribute("data-add"));
+                var pre = card.getAttribute("data-preselected") === "true";
+                var sel = card.classList.contains("is-selected");
+                if (sel) return pre ? "0 €" : "+" + euro.format(add);
+                return pre ? "−" + euro.format(add) : "+" + euro.format(add);
+            }
+
+            // ---- Une option est-elle VERROUILLÉE (non décochable) ? ----
+            //   • feature.locked === true                  → toujours
+            //   • nom listé dans complexity.locks (étape 2) → selon la
+            //     complexité choisie (le verrou est « lié » à l'étape 2)
+            function isLocked(name) {
+                var f = state.featuresAll.filter(function (x) {
+                    return x.name === name;
+                })[0];
+                if (f && f.locked) return true;
+                return state.complexityLocks.indexOf(name) !== -1;
+            }
+
+            // ---- Une option est-elle MASQUÉE par le choix de l'étape 2 ? ----
+            //   nom listé dans complexity.hides → l'option est retirée de
+            //   l'étape 3 et ne compte pas dans le total.
+            function isHidden(name) {
+                return state.complexityHides.indexOf(name) !== -1;
+            }
+
+            function removeFeature(name) {
+                state.features = state.features.filter(function (f) {
+                    return f.name !== name;
+                });
+            }
+
+            // ---- Reflète verrous & masquages sur les cartes de l'étape 3 ----
+            function applyLocks() {
+                grid3.querySelectorAll(".est-card").forEach(function (card) {
+                    var name =
+                        card.querySelector(".est-card-name").textContent;
+                    var add = parseFloat(card.getAttribute("data-add"));
+                    var box = card.querySelector(".est-box");
+                    box.textContent = "✓";
+
+                    // Masquage (prioritaire sur le verrou) : option retirée.
+                    var hidden = isHidden(name);
+                    var wasHidden = card.classList.contains("is-hidden");
+                    card.classList.toggle("is-hidden", hidden);
+                    if (hidden) {
+                        card.classList.remove("is-selected");
+                        removeFeature(name);
+                        return;
+                    }
+                    // Réapparition : on rétablit l'état par défaut (preselected).
+                    if (wasHidden) {
+                        var preD =
+                            card.getAttribute("data-preselected") === "true";
+                        card.classList.toggle("is-selected", preD);
+                        removeFeature(name);
+                        if (preD) state.features.push({ add: add, name: name });
+                    }
+
+                    var locked = isLocked(name);
+                    card.classList.toggle("is-locked", locked);
+                    if (locked) {
+                        // Verrouillée → forcément incluse, grisée, « Inclus »
+                        card.classList.add("is-selected");
+                        if (
+                            !state.features.some(function (f) {
+                                return f.name === name;
+                            })
+                        ) {
+                            state.features.push({ add: add, name: name });
+                        }
+                        card.querySelector(".est-card-meta").textContent =
+                            "Inclus";
+                    } else {
+                        card.querySelector(".est-card-meta").textContent =
+                            featureLabel(card);
+                    }
+                });
+                nextBtn.disabled = !stepValid(state.current);
+                refreshRunning();
+            }
+
+            // ---- Calcul du total ----
+            // Le prix de base = projet avec toutes les options PRÉ-COCHÉES.
+            //   • option VERROUILLÉE (« Inclus »)  → ne compte pas (0)
+            //   • option pré-cochée décochée       → on retire son montant (−)
+            //   • option NON pré-cochée cochée     → on ajoute son montant (+)
+            function total() {
+                if (state.base == null) return 0;
+                var m = state.mult == null ? 1 : state.mult;
+                var delta = state.featuresAll.reduce(function (s, f) {
+                    // Masquée par l'étape 2 : n'existe pas → sans effet.
+                    if (isHidden(f.name)) return s;
+                    // « Inclus » (verrouillée) : sans effet sur le total.
+                    if (isLocked(f.name)) return s;
+                    var sel = state.features.some(function (x) {
+                        return x.name === f.name;
+                    });
+                    if (f.preselected) {
+                        // incluse dans le prix de base : décochée → remise
+                        return s - (sel ? 0 : f.add);
+                    }
+                    // optionnelle : cochée → supplément
+                    return s + (sel ? f.add : 0);
+                }, 0);
+                return Math.max(0, state.base * m + delta);
+            }
+
+            function refreshRunning() {
+                runningVal.textContent =
+                    state.base == null ? "—" : euro.format(Math.round(total()));
+            }
+
+            // L'étape courante a-t-elle un choix valide pour pouvoir continuer ?
+            function stepValid(i) {
+                if (i === 0) return state.base != null;
+                if (i === 1) return state.mult != null;
+                return true; // étape 3 : les fonctionnalités sont optionnelles
+            }
+
+            // ---- Affichage d'une étape ----
+            function show(i) {
+                state.current = i;
+                steps.forEach(function (s, idx) {
+                    s.classList.toggle("is-current", idx === i);
+                });
+                stepNums.forEach(function (n, idx) {
+                    n.classList.toggle("is-active", idx === i);
+                    n.classList.toggle("is-done", idx < i);
+                });
+                prevBtn.disabled = i === 0;
+                nextBtn.textContent =
+                    i === steps.length - 1 ? "Voir l'estimation" : "Continuer";
+                nextBtn.disabled = !stepValid(i);
+                refreshRunning();
+            }
+
+            // ---- Sélection dans une grille ----
+            steps.forEach(function (step, stepIndex) {
+                var grid = step.querySelector(".est-grid");
+                var single = grid.hasAttribute("data-single");
+                grid.addEventListener("click", function (e) {
+                    // Clic sur l'icône « i » : on laisse l'infobulle, sans sélectionner.
+                    if (e.target.closest(".est-info")) return;
+                    var card = e.target.closest(".est-card");
+                    if (!card) return;
+
+                    if (single) {
+                        grid.querySelectorAll(".est-card").forEach(
+                            function (c) {
+                                c.classList.remove("is-selected");
+                            },
+                        );
+                        card.classList.add("is-selected");
+
+                        if (stepIndex === 0) {
+                            // Étape 1 : type de projet → on construit les
+                            // étapes 2 & 3 dédiées à ce projet. L'utilisateur
+                            // passe ensuite à l'étape suivante via « Continuer ».
+                            state.base = parseFloat(
+                                card.getAttribute("data-base"),
+                            );
+                            state.project = card.getAttribute("data-project");
+                            buildProjectSteps(state.project);
+                        }
+                        // Étape 2 : complexité
+                        if (stepIndex === 1 && card.hasAttribute("data-mult")) {
+                            state.mult = parseFloat(
+                                card.getAttribute("data-mult"),
+                            );
+                            // Verrous liés à ce niveau de complexité
+                            var cname =
+                                card.querySelector(
+                                    ".est-card-name",
+                                ).textContent;
+                            var citems = (CONFIG[state.project] || {})
+                                .complexity || [];
+                            var citem = citems.filter(function (c) {
+                                return c.name === cname;
+                            })[0];
+                            state.complexityLocks =
+                                citem && citem.locks ? citem.locks.slice() : [];
+                            // Options masquées par ce niveau de complexité
+                            state.complexityHides =
+                                citem && citem.hides ? citem.hides.slice() : [];
+                            applyLocks();
+                        }
+                    } else {
+                        // Étape 3 : fonctionnalités.
+                        var add = parseFloat(card.getAttribute("data-add"));
+                        var name =
+                            card.querySelector(".est-card-name").textContent;
+                        // Option verrouillée ou masquée : on ignore le clic.
+                        if (isLocked(name) || isHidden(name)) return;
+
+                        card.classList.toggle("is-selected");
+                        if (card.classList.contains("is-selected")) {
+                            state.features.push({ add: add, name: name });
+                        } else {
+                            state.features = state.features.filter(
+                                function (f) {
+                                    return f.name !== name;
+                                },
+                            );
+                        }
+                        // Libellé : 0 € / −X € (pré-cochée) ou +X € (optionnelle)
+                        card.querySelector(".est-card-meta").textContent =
+                            featureLabel(card);
+                    }
+                    nextBtn.disabled = !stepValid(state.current);
+                    refreshRunning();
+                });
+            });
+
+            // ---- Navigation ----
+            prevBtn.addEventListener("click", function () {
+                if (state.current > 0) show(state.current - 1);
+            });
+            nextBtn.addEventListener("click", function () {
+                if (!stepValid(state.current)) return;
+                if (state.current < steps.length - 1) {
+                    show(state.current + 1);
+                } else {
+                    finish();
+                }
+            });
+
+            // ---- Écran de résultat ----
+            function selectedText(grid) {
+                var card = grid.querySelector(
+                    ".est-card.is-selected .est-card-name",
+                );
+                return card ? card.textContent : "—";
+            }
+
+            function finish() {
+                var mid = total();
+                var r = rangeFor(mid);
+                var low = Math.round((mid * (1 - r)) / 500) * 500;
+                var high = Math.round((mid * (1 + r)) / 500) * 500;
+
+                root.querySelector(".est-range").textContent =
+                    euro.format(low) + " – " + euro.format(high);
+                root.querySelector(".est-recap-project").textContent =
+                    selectedText(steps[0].querySelector(".est-grid"));
+                root.querySelector(".est-recap-complexity").textContent =
+                    selectedText(steps[1].querySelector(".est-grid"));
+                var featNames = state.features.length
+                    ? state.features
+                          .map(function (f) {
+                              return f.name;
+                          })
+                          .join(", ")
+                    : "Aucune option incluse";
+                root.querySelector(".est-recap-features").textContent =
+                    featNames;
+
+                var rangeText = euro.format(low) + " – " + euro.format(high);
+
+                // Champs envoyés au worker (via le script global d'index.html) :
+                //   • "Nom / Rôle" → la valeur totale estimée
+                //   • "email"      → l'email saisi par l'utilisateur
+                //   • "message"    → les options choisies + la fourchette
+                var nameField = root.querySelector(".est-name");
+                if (nameField) nameField.value = euro.format(Math.round(mid));
+
+                var msg = root.querySelector(".est-msg");
+                if (msg) {
+                    msg.value =
+                        "Options : " +
+                        featNames +
+                        "\nEstimation : " +
+                        rangeText;
+                }
+
+                steps.forEach(function (s) {
+                    s.classList.remove("is-current");
+                });
+                foot.style.display = "none";
+                result.classList.add("is-current");
+                stepNums.forEach(function (n) {
+                    n.classList.add("is-done");
+                    n.classList.remove("is-active");
+                });
+            }
+
+            // ---- Réinitialisation ----
+            root.querySelector(".est-restart").addEventListener(
+                "click",
+                function () {
+                    state = {
+                        current: 0,
+                        project: null,
+                        base: null,
+                        mult: null,
+                        features: [],
+                        featuresAll: [],
+                        complexityLocks: [],
+                        complexityHides: [],
+                    };
+                    root.querySelectorAll(".est-card.is-selected").forEach(
+                        function (c) {
+                            c.classList.remove("is-selected");
+                        },
+                    );
+                    // Les étapes 2 & 3 seront reconstruites au prochain choix
+                    grid2.innerHTML = "";
+                    grid3.innerHTML = "";
+                    // Réaffiche le formulaire (masqué après envoi) et cache
+                    // le message de confirmation.
+                    var formEl = root.querySelector(".est-form");
+                    if (formEl) {
+                        formEl.style.display = "";
+                        formEl.reset();
+                    }
+                    var okEl = root.querySelector(".est-ok");
+                    if (okEl) okEl.style.display = "";
+                    result.classList.remove("is-current");
+                    foot.style.display = "";
+                    show(0);
+                },
+            );
+
+            show(0);
+        })();
+    </script>
+</div>

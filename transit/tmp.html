@@ -1,0 +1,306 @@
+<div class="est-root"> <style>.est-root,.est-root *,.est-root *::before,.est-root *::after{box-sizing:border-box}.est-root{font-family:Nunito,sans-serif;color:var(--foreground-primary,#000);max-width:760px;margin:0 auto}.est-card-wrap{background:var(--background-primary,#fff);border-radius:var(--radius-4,2rem);box-shadow:var(--shadow-2,0 7px 14px rgba(0,0,0,0.1));padding:var(--size-px-6,28px)}.est-steps{display:flex;align-items:center;gap:var(--size-px-2,8px);margin-bottom:var(--size-px-6,28px)}.est-stepnum{display:flex;align-items:center;gap:var(--size-px-2,8px);flex:0 0 auto}.est-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:var(--font-size-1,1rem);background:var(--background-primary,#fff);color:var(--foreground-secondary,#191a23);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 3px #000;transition:background 0.2s ease,color 0.2s ease,border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease}.est-steplabel{font-size:var(--font-size-1,0.95rem);font-weight:700;color:var(--foreground-muted,#898989);white-space:nowrap}.est-line{flex:1 1 auto;height:2px;background:var(--gray-6,#e5e5e5);margin:0 var(--size-px-1,4px)}.est-stepnum.is-active .est-dot,.est-stepnum.is-done .est-dot{background:var(--foreground-accent,#f9a040);color:#fff}.est-stepnum.is-active .est-dot{transform:translateY(-2px);box-shadow:0 5px #000}.est-stepnum.is-active .est-steplabel,.est-stepnum.is-done .est-steplabel{color:var(--foreground-secondary,#191a23)}.est-title{margin:0 0 var(--size-px-1,4px);font-size:var(--font-size-4,1.5rem);font-weight:800;color:var(--foreground-secondary,#191a23)}.est-sub{margin:0 0 var(--size-px-5,24px);color:var(--foreground-muted,#898989);font-size:var(--font-size-1,1rem)}.est-step{display:none}.est-step.is-current{display:block}.est-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--size-px-3,16px)}.est-card{text-align:left;cursor:pointer;background:var(--background-primary,#fff);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:16px;padding:var(--size-px-4,20px);font-family:inherit;color:inherit;box-shadow:0 4px #000;transition:border-color 0.15s ease,transform 0.15s ease,box-shadow 0.15s ease;display:flex;flex-direction:column;gap:var(--size-px-1,4px)}.est-card:hover{border-color:var(--foreground-accent,#f9a040);transform:translateY(-4px);box-shadow:0 8px #000}.est-card.is-selected{border-color:var(--foreground-accent,#f9a040);box-shadow:0 4px #000,inset 0 0 0 1px var(--foreground-accent,#f9a040)}.est-card.is-selected:hover{box-shadow:0 8px #000,inset 0 0 0 1px var(--foreground-accent,#f9a040)}.est-card.is-locked{cursor:default}.est-card.is-locked:hover{transform:none;box-shadow:0 4px #000,inset 0 0 0 1px var(--foreground-accent,#f9a040)}.est-card-name{font-weight:800;font-size:var(--font-size-2,1.1rem);color:var(--foreground-secondary,#191a23)}.est-card-desc{font-size:var(--font-size-0,0.85rem);color:var(--foreground-muted,#898989);line-height:1.35}.est-card-meta{margin-top:auto;padding-top:var(--size-px-2,8px);font-size:var(--font-size-0,0.85rem);font-weight:800;color:var(--foreground-accent,#f9a040)}.est-card.est-check{flex-direction:row;align-items:center;gap:var(--size-px-3,16px)}.est-box{width:22px;height:22px;flex:0 0 auto;border-radius:var(--radius-1,6px);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900;transition:background 0.15s ease,border-color 0.15s ease}.est-card.is-selected .est-box{background:var(--foreground-accent,#f9a040);border-color:var(--foreground-accent,#f9a040)}.est-check .est-card-body{flex:1 1 auto}.est-check .est-card-meta{margin:0;padding:0}.est-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--size-px-3,16px);margin-top:var(--size-px-6,28px);padding-top:var(--size-px-4,20px);border-top:var(--border-size-1,1px) solid var(--gray-6,#e5e5e5)}.est-running{font-size:var(--font-size-1,1rem);color:var(--foreground-muted,#898989)}.est-running b{color:var(--foreground-secondary,#191a23);font-weight:800}.est-nav{display:flex;gap:var(--size-px-2,8px)}.est-btn{font-family:inherit;font-weight:800;font-size:var(--font-size-1,1rem);border-radius:12px;padding:12px 22px;cursor:pointer;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 4px #000;transition:transform 0.12s ease,box-shadow 0.12s ease,background 0.15s ease}.est-btn:not([disabled]):hover{transform:translateY(-2px);box-shadow:0 6px #000}.est-btn:not([disabled]):active{transform:translateY(4px);box-shadow:0 0 #000}.est-btn-primary{background:var(--foreground-secondary,#191a23);color:#fff}.est-btn-ghost{background:var(--background-primary,#fff);color:var(--foreground-secondary,#191a23)}.est-btn[disabled]{opacity:0.4;cursor:not-allowed;box-shadow:0 4px rgba(0,0,0,0.35)}.est-result{display:none;text-align:center}.est-result.is-current{display:block}.est-result-eyebrow{font-size:var(--font-size-0,0.85rem);font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--foreground-accent,#f9a040);margin:0 0 var(--size-px-2,8px)}.est-price{font-size:2.6rem;font-weight:900;color:var(--foreground-secondary,#191a23);line-height:1.1;margin:0 0 var(--size-px-2,8px)}.est-price small{font-size:var(--font-size-1,1rem);font-weight:700;color:var(--foreground-muted,#898989);display:block;margin-top:var(--size-px-2,8px)}.est-recap{text-align:left;background:var(--background-secondary,#f3f3f3);border-radius:var(--radius-3,12px);padding:var(--size-px-4,20px);margin:var(--size-px-5,24px) 0}.est-recap-row{display:flex;justify-content:space-between;gap:var(--size-px-3,16px);padding:6px 0;font-size:var(--font-size-1,1rem)}.est-recap-row span:first-child{color:var(--foreground-muted,#898989)}.est-recap-row span:last-child{font-weight:700;color:var(--foreground-secondary,#191a23);text-align:right}.est-cta{display:inline-block;text-decoration:none;background:var(--foreground-accent,#f9a040);color:#fff;font-weight:800;font-size:var(--font-size-2,1.1rem);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:14px;padding:14px 32px;box-shadow:0 4px #000;transition:transform 0.12s ease,box-shadow 0.12s ease}.est-cta:hover{transform:translateY(-2px);box-shadow:0 8px #000}.est-cta:active{transform:translateY(4px);box-shadow:0 0 #000}.est-restart{display:block;margin:var(--size-px-4,20px) auto 0;background:none;border:none;font-family:inherit;font-size:var(--font-size-1,0.95rem);font-weight:700;color:var(--foreground-muted,#898989);cursor:pointer;text-decoration:underline}.est-disclaimer{font-size:var(--font-size-0,0.8rem);color:var(--foreground-muted,#898989);margin-top:var(--size-px-4,20px)}@media (max-width:600px){.est-grid{grid-template-columns:1fr}.est-steplabel{display:none}.est-foot{flex-direction:column;align-items:stretch}.est-nav{justify-content:space-between}.est-price{font-size:2.1rem}}</style> <div class="est-card-wrap"><div class="est-steps"><div class="est-stepnum is-active" data-stepnum="1"><span class="est-dot">1</span><span class="est-steplabel">Type de projet</span></div><span class="est-line"></span><div class="est-stepnum" data-stepnum="2"><span class="est-dot">2</span><span class="est-steplabel">Complexité</span></div><span class="est-line"></span><div class="est-stepnum" data-stepnum="3"><span class="est-dot">3</span><span class="est-steplabel">Fonctionnalités</span></div></div><div class="est-step is-current" data-step="1"><p class="est-title"> Quel type de projet souhaitez-vous lancer&nbsp;? </p><p class="est-sub"> Sélectionnez la catégorie la plus proche de votre besoin. </p><div class="est-grid" data-single=""><button type="button" class="est-card" data-base="5000" data-project="mvp"><span class="est-card-name">MVP Startup / Mini ERP</span><span class="est-card-desc">Validez votre idée ou transformez vos tableaux Excel en petit progiciel tout en un. Livré en 2 à 4 semaines.</span><span class="est-card-meta">À partir de 5 000 €</span></button><button type="button" class="est-card" data-base="4000" data-project="automatisation"><span class="est-card-name">Automatisation métier</span><span class="est-card-desc">Automatiser vos tâches et processus répétitifs grâce à de l'algorithmique ou de l'IA.</span><span class="est-card-meta">À partir de 4 000 €</span></button><button type="button" class="est-card" data-base="10000" data-project="erp"><span class="est-card-name">Progiciel ERP Odoo sur mesure</span><span class="est-card-desc">Une application web tout en un pensée pour votre activité. Portail client, admin, RH, CRM, etc.</span><span class="est-card-meta">À partir de 10 000 €</span></button><button type="button" class="est-card" data-base="30000" data-project="saas"><span class="est-card-name">Plateforme SaaS</span><span class="est-card-desc">Un produit en ligne avec abonnements et comptes clients, incluant les avantages d'un ERP Odoo.</span><span class="est-card-meta">À partir de 30 000 €</span></button><button type="button" class="est-card" data-base="6000" data-project="chatbot"><span class="est-card-name">Chatbot / RAG intégré à votre logique métier</span><span class="est-card-desc">Un assistant intelligent connecté à vos données.</span><span class="est-card-meta">À partir de 6 000 €</span></button><button type="button" class="est-card" data-base="2000" data-project="audit"><span class="est-card-name">Audit technique</span><span class="est-card-desc">Analyser et améliorer un produit existant.</span><span class="est-card-meta">À partir de 2 000 €</span></button><button type="button" class="est-card" data-base="8000" data-project="litige"><span class="est-card-name">Résolution de litige</span><span class="est-card-desc">Comprendre votre problématique avec votre prestataire et réaliser un audit détaillé.</span><span class="est-card-meta">À partir de 8 000 €</span></button></div></div><div class="est-step" data-step="2"><p class="est-title">Quel est le niveau de complexité&nbsp;?</p><p class="est-sub"> Plus le périmètre est riche, plus l'effort de conception augmente. </p><div class="est-grid" data-single=""></div></div><div class="est-step" data-step="3"><p class="est-title">Quelles fonctionnalités prévoir&nbsp;?</p><p class="est-sub"> Ces options sont incluses par défaut — décochez celles dont vous n'avez pas besoin pour réduire l'estimation. </p><div class="est-grid" data-multi=""></div></div><div class="est-foot" data-foot=""><div class="est-running"> Estimation en cours&nbsp;: <b class="est-running-val">—</b></div><div class="est-nav"><button type="button" class="est-btn est-btn-ghost est-prev" disabled=""> Retour </button><button type="button" class="est-btn est-btn-primary est-next" disabled=""> Continuer </button></div></div><div class="est-result" data-result=""><p class="est-result-eyebrow">Votre estimation</p><p class="est-price"><span class="est-range">—</span><small>Budget indicatif, hors taxes</small></p><div class="est-recap"><div class="est-recap-row"><span>Type de projet</span><span class="est-recap-project">—</span></div><div class="est-recap-row"><span>Complexité</span><span class="est-recap-complexity">—</span></div><div class="est-recap-row"><span>Fonctionnalités</span><span class="est-recap-features">—</span></div></div><a class="est-cta" href="/#contact">Discuter de mon projet</a><button type="button" class="est-restart"> Recommencer l'estimation </button><p class="est-disclaimer"> Cette estimation est purement indicative et ne constitue pas un devis. Le prix final dépend du périmètre précis défini ensemble. </p></div></div> <script>(function () {
+var RANGE = 0.12;
+var root =
+document.currentScript && document.currentScript.closest
+? document.currentScript.closest(".est-root")
+: document.querySelector(".est-root");
+if (!root) return;
+var steps = Array.prototype.slice.call(
+root.querySelectorAll(".est-step"),
+);
+var stepNums = Array.prototype.slice.call(
+root.querySelectorAll(".est-stepnum"),
+);
+var foot = root.querySelector("[data-foot]");
+var result = root.querySelector("[data-result]");
+var prevBtn = root.querySelector(".est-prev");
+var nextBtn = root.querySelector(".est-next");
+var runningVal = root.querySelector(".est-running-val");
+var euro = new Intl.NumberFormat("fr-FR", {
+style: "currency",
+currency: "EUR",
+maximumFractionDigits: 0,
+});
+var CONFIG = {"mvp":{"complexity":[{"name":"Simple","desc":"1 à 2 modules, peu d'écrans, design standard.","mult":0.85,"locks":[]},{"name":"Standard","desc":"Plusieurs modules, logique métier modérée.","mult":1,"locks":[]},{"name":"Avancé","desc":"Nombreux modules, règles métier poussées.","mult":1.45,"locks":["Immersion dans votre entreprise pour intégrer la logique métier"]}],"features":[{"name":"Immersion dans votre entreprise pour intégrer la logique métier","add":2000,"preselected":false,"locked":false},{"name":"Authentification & comptes","add":3000,"preselected":false,"locked":false},{"name":"Import / export Excel","add":1000,"preselected":false,"locked":false},{"name":"Tableau de bord & reporting","add":0,"preselected":true,"locked":true},{"name":"Notifications email","add":800,"preselected":false,"locked":false}]},"automatisation":{"complexity":[{"name":"Simple","desc":"Un seul flux, règles claires.","mult":0.85,"locks":[]},{"name":"Standard","desc":"Plusieurs flux, quelques conditions.","mult":1,"locks":[]},{"name":"Avancé","desc":"Orchestration complexe, IA / LLM.","mult":1.4,"locks":[]}],"features":[{"name":"Connexion à un outil existant (API)","add":1500,"preselected":true,"locked":false},{"name":"Traitement par IA / LLM","add":3000,"preselected":true,"locked":false},{"name":"Planification automatique","add":800,"preselected":true,"locked":false},{"name":"Rapports automatiques","add":1200,"preselected":true,"locked":false}]},"erp":{"complexity":[{"name":"Standard","desc":"Modules Odoo standards, peu de personnalisation.","mult":1,"locks":[]},{"name":"Avancé","desc":"Personnalisations et automatisations métier.","mult":2,"locks":[]},{"name":"Sur-mesure complet","desc":"Développements spécifiques importants.","mult":3.5,"locks":["Comptabilité & facturation","Module CRM"]}],"features":[{"name":"Module CRM","add":3000,"preselected":true,"locked":false},{"name":"Module RH / paie","add":4000,"preselected":true,"locked":false},{"name":"Portail client","add":3500,"preselected":true,"locked":false},{"name":"Comptabilité & facturation","add":3000,"preselected":true,"locked":false},{"name":"Migration de données","add":2500,"preselected":true,"locked":false}]},"saas":{"complexity":[{"name":"MVP SaaS","desc":"Périmètre resserré pour valider le marché.","mult":0.9,"locks":[]},{"name":"Standard","desc":"Produit complet mono-organisation.","mult":1,"locks":[]},{"name":"Multi-tenant avancé","desc":"Multi-clients, rôles, fortes exigences.","mult":1.5,"locks":[]}],"features":[{"name":"Abonnements & paiement (Stripe)","add":4000,"preselected":true,"locked":false},{"name":"Espace d'administration","add":3500,"preselected":true,"locked":false},{"name":"API publique","add":3000,"preselected":true,"locked":false},{"name":"Multilingue","add":2000,"preselected":true,"locked":false},{"name":"Tableau de bord analytics","add":3000,"preselected":true,"locked":false}]},"chatbot":{"complexity":[{"name":"Simple","desc":"FAQ / réponses sur une base limitée.","mult":0.85,"locks":[]},{"name":"Standard","desc":"RAG sur vos documents, une source.","mult":1,"locks":[]},{"name":"Avancé","desc":"Multi-sources, actions et outils métier.","mult":1.5,"locks":[]}],"features":[{"name":"Connexion à vos documents (RAG)","add":2500,"preselected":true,"locked":false},{"name":"Widget site web","add":1200,"preselected":true,"locked":false},{"name":"Connexion CRM / outils métier","add":2000,"preselected":true,"locked":false},{"name":"Historique & analytics","add":1500,"preselected":true,"locked":false}]},"audit":{"complexity":[{"name":"Audit express","desc":"Tour d'horizon et points bloquants.","mult":1,"locks":[]},{"name":"Audit approfondi","desc":"Analyse détaillée du code et de l'infra.","mult":1.8,"locks":[]},{"name":"Audit + plan d'action","desc":"Audit complet avec feuille de route.","mult":2.5,"locks":[]}],"features":[{"name":"Audit de sécurité","add":1500,"preselected":true,"locked":false},{"name":"Audit de performance","add":1200,"preselected":true,"locked":false},{"name":"Revue de code détaillée","add":1500,"preselected":true,"locked":false},{"name":"Restitution & atelier","add":1000,"preselected":true,"locked":false}]},"litige":{"complexity":[{"name":"Analyse simple","desc":"Première lecture de la situation.","mult":1,"locks":[]},{"name":"Analyse approfondie","desc":"Investigation technique détaillée.","mult":1.6,"locks":[]},{"name":"Accompagnement complet","desc":"Expertise et suivi jusqu'à résolution.","mult":2.2,"locks":[]}],"features":[{"name":"Récupération du code / des accès","add":1500,"preselected":false,"locked":false},{"name":"Audit technique détaillé","add":3000,"preselected":true,"locked":false},{"name":"Rapport d'expertise","add":2000,"preselected":true,"locked":false},{"name":"Coordination juridique","add":2500,"preselected":false,"locked":false}]}};
+var state = {
+current: 0,
+project: null,
+base: null,
+mult: null,
+features: [],
+featuresAll: [],
+complexityLocks: [],
+};
+var grid2 = steps[1].querySelector(".est-grid");
+var grid3 = steps[2].querySelector(".est-grid");
+function buildProjectSteps(projectId) {
+var cfg = CONFIG[projectId] || { complexity: [], features: [] };
+state.mult = null;
+state.complexityLocks = [];
+state.featuresAll = cfg.features.map(function (f) {
+return {
+add: f.add,
+name: f.name,
+preselected: f.preselected !== false,
+locked: f.locked === true,
+};
+});
+state.features = state.featuresAll.filter(function (f) {
+return f.preselected;
+});
+grid2.innerHTML = cfg.complexity
+.map(function (c) {
+var label = "× " + String(c.mult).replace(".", ",");
+return (
+'<button type="button" class="est-card" data-mult="' +
+c.mult +
+'">' +
+'<span class="est-card-name">' +
+c.name +
+"</span>" +
+'<span class="est-card-desc">' +
+c.desc +
+"</span>" +
+'<span class="est-card-meta">' +
+label +
+"</span>" +
+"</button>"
+);
+})
+.join("");
+grid3.innerHTML = cfg.features
+.map(function (f) {
+var pre = f.preselected !== false;
+var label = pre ? "0 €" : "+" + euro.format(f.add);
+var cls =
+"est-card est-check" + (pre ? " is-selected" : "");
+return (
+'<button type="button" class="' +
+cls +
+'" data-add="' +
+f.add +
+'" data-preselected="' +
+pre +
+'">' +
+'<span class="est-box">✓</span>' +
+'<span class="est-card-body"><span class="est-card-name">' +
+f.name +
+"</span></span>" +
+'<span class="est-card-meta">' +
+label +
+"</span>" +
+"</button>"
+);
+})
+.join("");
+applyLocks();
+}
+function featureLabel(card) {
+var add = parseFloat(card.getAttribute("data-add"));
+var pre = card.getAttribute("data-preselected") === "true";
+var sel = card.classList.contains("is-selected");
+if (sel) return pre ? "0 €" : "+" + euro.format(add);
+return pre ? "−" + euro.format(add) : "+" + euro.format(add);
+}
+function isLocked(name) {
+var f = state.featuresAll.filter(function (x) {
+return x.name === name;
+})[0];
+if (f && f.locked) return true;
+return state.complexityLocks.indexOf(name) !== -1;
+}
+function applyLocks() {
+grid3.querySelectorAll(".est-card").forEach(function (card) {
+var name =
+card.querySelector(".est-card-name").textContent;
+var add = parseFloat(card.getAttribute("data-add"));
+var locked = isLocked(name);
+card.classList.toggle("is-locked", locked);
+var box = card.querySelector(".est-box");
+if (locked) {
+card.classList.add("is-selected");
+if (
+!state.features.some(function (f) {
+return f.name === name;
+})
+) {
+state.features.push({ add: add, name: name });
+}
+box.textContent = "🔒";
+} else {
+box.textContent = "✓";
+}
+card.querySelector(".est-card-meta").textContent =
+featureLabel(card);
+});
+nextBtn.disabled = !stepValid(state.current);
+refreshRunning();
+}
+function total() {
+if (state.base == null) return 0;
+var m = state.mult == null ? 1 : state.mult;
+var delta = state.featuresAll.reduce(function (s, f) {
+var sel = state.features.some(function (x) {
+return x.name === f.name;
+});
+if (f.preselected) {
+return s - (sel ? 0 : f.add);
+}
+return s + (sel ? f.add : 0);
+}, 0);
+return Math.max(0, state.base * m + delta);
+}
+function refreshRunning() {
+runningVal.textContent =
+state.base == null ? "—" : euro.format(Math.round(total()));
+}
+function stepValid(i) {
+if (i === 0) return state.base != null;
+if (i === 1) return state.mult != null;
+return true;
+}
+function show(i) {
+state.current = i;
+steps.forEach(function (s, idx) {
+s.classList.toggle("is-current", idx === i);
+});
+stepNums.forEach(function (n, idx) {
+n.classList.toggle("is-active", idx === i);
+n.classList.toggle("is-done", idx < i);
+});
+prevBtn.disabled = i === 0;
+nextBtn.textContent =
+i === steps.length - 1 ? "Voir l'estimation" : "Continuer";
+nextBtn.disabled = !stepValid(i);
+refreshRunning();
+}
+steps.forEach(function (step, stepIndex) {
+var grid = step.querySelector(".est-grid");
+var single = grid.hasAttribute("data-single");
+grid.addEventListener("click", function (e) {
+var card = e.target.closest(".est-card");
+if (!card) return;
+if (single) {
+grid.querySelectorAll(".est-card").forEach(
+function (c) {
+c.classList.remove("is-selected");
+},
+);
+card.classList.add("is-selected");
+if (stepIndex === 0) {
+state.base = parseFloat(
+card.getAttribute("data-base"),
+);
+state.project = card.getAttribute("data-project");
+buildProjectSteps(state.project);
+}
+if (stepIndex === 1 && card.hasAttribute("data-mult")) {
+state.mult = parseFloat(
+card.getAttribute("data-mult"),
+);
+var cname =
+card.querySelector(
+".est-card-name",
+).textContent;
+var citems = (CONFIG[state.project] || {})
+.complexity || [];
+var citem = citems.filter(function (c) {
+return c.name === cname;
+})[0];
+state.complexityLocks =
+citem && citem.locks ? citem.locks.slice() : [];
+applyLocks();
+}
+} else {
+var add = parseFloat(card.getAttribute("data-add"));
+var name =
+card.querySelector(".est-card-name").textContent;
+if (isLocked(name)) return;
+card.classList.toggle("is-selected");
+if (card.classList.contains("is-selected")) {
+state.features.push({ add: add, name: name });
+} else {
+state.features = state.features.filter(
+function (f) {
+return f.name !== name;
+},
+);
+}
+card.querySelector(".est-card-meta").textContent =
+featureLabel(card);
+}
+nextBtn.disabled = !stepValid(state.current);
+refreshRunning();
+});
+});
+prevBtn.addEventListener("click", function () {
+if (state.current > 0) show(state.current - 1);
+});
+nextBtn.addEventListener("click", function () {
+if (!stepValid(state.current)) return;
+if (state.current < steps.length - 1) {
+show(state.current + 1);
+} else {
+finish();
+}
+});
+function selectedText(grid) {
+var card = grid.querySelector(
+".est-card.is-selected .est-card-name",
+);
+return card ? card.textContent : "—";
+}
+function finish() {
+var mid = total();
+var low = Math.round((mid * (1 - RANGE)) / 500) * 500;
+var high = Math.round((mid * (1 + RANGE)) / 500) * 500;
+root.querySelector(".est-range").textContent =
+euro.format(low) + " – " + euro.format(high);
+root.querySelector(".est-recap-project").textContent =
+selectedText(steps[0].querySelector(".est-grid"));
+root.querySelector(".est-recap-complexity").textContent =
+selectedText(steps[1].querySelector(".est-grid"));
+root.querySelector(".est-recap-features").textContent = state
+.features.length
+? state.features
+.map(function (f) {
+return f.name;
+})
+.join(", ")
+: "Aucune option incluse";
+steps.forEach(function (s) {
+s.classList.remove("is-current");
+});
+foot.style.display = "none";
+result.classList.add("is-current");
+stepNums.forEach(function (n) {
+n.classList.add("is-done");
+n.classList.remove("is-active");
+});
+}
+root.querySelector(".est-restart").addEventListener(
+"click",
+function () {
+state = {
+current: 0,
+project: null,
+base: null,
+mult: null,
+features: [],
+featuresAll: [],
+complexityLocks: [],
+};
+root.querySelectorAll(".est-card.is-selected").forEach(
+function (c) {
+c.classList.remove("is-selected");
+},
+);
+grid2.innerHTML = "";
+grid3.innerHTML = "";
+result.classList.remove("is-current");
+foot.style.display = "";
+show(0);
+},
+);
+show(0);
+})();</script> </div>
