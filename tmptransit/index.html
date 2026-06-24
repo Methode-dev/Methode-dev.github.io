@@ -2,22 +2,16 @@
 <html
   lang="en"
   data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-06-09T12:59:12.140Z"
+  data-ws-last-published="2026-06-24T11:25:21.298Z"
 >
   <head>
     <link
       rel="stylesheet"
       type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.Bsndwtkz.css"
+      href="/assets/static/app_generated_index-6937cd5a.BGpDaPSg.css"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link
-      rel="preload"
-      as="image"
-      imagesrcset="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 16w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 32w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 48w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 64w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 96w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w"
-      imagesizes="100vw"
-    />
     <link rel="icon" href="/assets/favicon_MxJdcsW9bJsq-zd8osHjF.ico" />
     <link
       rel="preload"
@@ -97,1333 +91,1820 @@
     </script>
   </head>
   <body class="w-element">
-    <div class="w-element">
-      <div style="display: contents">
-        <div style="display: contents">
-          <div class="w-html-embed">
-            <style>
-              /* Remove preset margins on paragraphs. Margins on other elements, such as headings, are moved via Tokens. */
-              p {
-                margin: 0;
-              }
-              /* Make links scroll to their sections smoothly. */
-              * {
-                scroll-behavior: smooth;
-              }
-            </style>
-          </div>
-          <nav
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c13rtvuj c1uup4ib c1x05l0l cv236i0 c18yo5kt cm1pj c1djcjaj cqjnlda c1x7t933 c7qy5pm c1buloke cmfd5ud"
-          >
-            <a href="https://methode.dev/" class="w-element"
-              ><img
-                alt=""
-                width="100"
-                height="200"
-                src="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg"
-                class="w-image c1je04uq"
-                sizes="100vw"
-                srcset="
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  16w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  32w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  48w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  64w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  96w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w
-                "
-                decoding="async"
-                loading="eager"
-            /></a>
-            <div
-              aria-label="Main navigation"
-              class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cveejg9 czlac5t cw1hgdq c19x3wtq c1j8oni9 c1u1y1hi ccf6y70 cy84l6z cd9nun1"
+    <div class="w-html-embed">
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>
+        The Legible City — A Usability Audit of Twelve Metro Networks
+      </title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet"
+      />
+      <style>
+        :root {
+          --paper: #fbfbf9;
+          --ink: #15181f;
+          --ink-soft: #4c5160;
+          --rule: #e3e2dc;
+          --card: #ffffff;
+          --halo: #f1f0ea;
+          --tooltip-bg: #15181f;
+          --max: 1080px;
+          --line-w: 6px;
+        }
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+          *,
+          *::before,
+          *::after {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+        body {
+          background: var(--paper);
+          color: var(--ink);
+          font-family: "Newsreader", Georgia, serif;
+          font-size: 19px;
+          line-height: 1.65;
+          -webkit-font-smoothing: antialiased;
+        }
+        ::selection {
+          background: #f2c500;
+          color: #15181f;
+        }
+        a {
+          color: inherit;
+        }
+        .wrap {
+          max-width: var(--max);
+          margin: 0 auto;
+          padding: 0 28px;
+        }
+        .mono {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        .disp {
+          font-family: "Archivo", sans-serif;
+        }
+
+        /* ---------- Masthead ---------- */
+        .masthead {
+          padding: 64px 0 0;
+        }
+        .eyebrow {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12px;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .eyebrow .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          border: 3px solid var(--ink);
+          background: #fff;
+          flex: none;
+        }
+        .badge-mock {
+          border: 1px solid var(--rule);
+          border-radius: 999px;
+          padding: 3px 12px;
+          background: #fff;
+          font-size: 11px;
+          color: var(--ink-soft);
+        }
+        h1.title {
+          font-family: "Archivo", sans-serif;
+          font-variation-settings: "wdth" 118;
+          font-weight: 800;
+          font-size: clamp(40px, 6.4vw, 76px);
+          line-height: 1;
+          letter-spacing: -0.015em;
+          margin: 26px 0 8px;
+          text-wrap: balance;
+        }
+        h1.title .accentline {
+          box-shadow: inset 0 -0.16em 0 #f2c500;
+        }
+        .subtitle {
+          font-size: clamp(20px, 2.4vw, 26px);
+          font-weight: 400;
+          font-style: italic;
+          color: var(--ink-soft);
+          max-width: 760px;
+          margin-top: 10px;
+        }
+        .byline {
+          margin-top: 26px;
+          display: flex;
+          gap: 28px;
+          flex-wrap: wrap;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12.5px;
+          color: var(--ink-soft);
+        }
+        .byline b {
+          color: var(--ink);
+          font-weight: 600;
+        }
+
+        /* multicolor strip under masthead */
+        .colorstrip {
+          display: flex;
+          height: 8px;
+          margin-top: 42px;
+          border-radius: 4px;
+          overflow: hidden;
+        }
+        .colorstrip span {
+          flex: 1;
+        }
+
+        /* ---------- Route map (TOC) ---------- */
+        .routemap {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background: rgba(251, 251, 249, 0.92);
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid var(--rule);
+          margin-top: 34px;
+        }
+        .routemap-inner {
+          max-width: var(--max);
+          margin: 0 auto;
+          padding: 14px 28px 18px;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .routemap-inner::-webkit-scrollbar {
+          display: none;
+        }
+        .route {
+          display: flex;
+          align-items: flex-start;
+          min-width: 860px;
+          position: relative;
+        }
+        .route::before {
+          content: "";
+          position: absolute;
+          left: 10px;
+          right: 10px;
+          top: 9px;
+          height: 4px;
+          background: var(--ink);
+          border-radius: 2px;
+        }
+        .stop {
+          flex: 1;
+          min-width: 0;
+          position: relative;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+          padding-top: 1px;
+          outline-offset: 4px;
+        }
+        .stop .tick {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #fff;
+          border: 4px solid var(--ink);
+          transition:
+            transform 0.2s ease,
+            background 0.2s ease;
+          position: relative;
+          z-index: 1;
+        }
+        .stop .lbl {
+          font-family: "Archivo", sans-serif;
+          font-weight: 600;
+          font-size: 11.5px;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+          max-width: 110px;
+          line-height: 1.25;
+        }
+        .stop:hover .tick {
+          transform: scale(1.2);
+        }
+        .stop.active .tick {
+          background: var(--ink);
+        }
+        .stop.active .lbl {
+          color: var(--ink);
+        }
+
+        /* ---------- Explorer ---------- */
+        .explorer {
+          padding: 72px 0 28px;
+        }
+        .sec-head {
+          display: flex;
+          align-items: baseline;
+          gap: 18px;
+          flex-wrap: wrap;
+          margin-bottom: 8px;
+        }
+        .sec-kicker {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12px;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        h2.sec-title {
+          font-family: "Archivo", sans-serif;
+          font-variation-settings: "wdth" 112;
+          font-weight: 800;
+          font-size: clamp(28px, 3.6vw, 42px);
+          letter-spacing: -0.01em;
+          line-height: 1.05;
+        }
+        .sec-lede {
+          max-width: 680px;
+          color: var(--ink-soft);
+          font-size: 20px;
+          margin-top: 10px;
+        }
+
+        .explorer-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+          gap: 40px;
+          align-items: start;
+          margin-top: 34px;
+        }
+        @media (max-width: 880px) {
+          .explorer-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .figtabs {
+          display: flex;
+          gap: 8px;
+          margin-bottom: 14px;
+          flex-wrap: wrap;
+        }
+        .figtab {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 11px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          border: 1.5px solid var(--rule);
+          background: #fff;
+          color: var(--ink-soft);
+          border-radius: 999px;
+          padding: 7px 15px;
+          cursor: pointer;
+          transition:
+            background 0.15s ease,
+            color 0.15s ease,
+            border-color 0.15s ease;
+        }
+        .figtab:hover {
+          border-color: var(--ink);
+        }
+        .figtab[aria-selected="true"] {
+          background: var(--ink);
+          border-color: var(--ink);
+          color: #fff;
+        }
+        .figtab:focus-visible {
+          outline: 2px solid var(--ink);
+          outline-offset: 3px;
+        }
+        .fig-hidden {
+          display: none;
+        }
+
+        .radar-card {
+          background: var(--card);
+          border: 1px solid var(--rule);
+          border-radius: 18px;
+          padding: 22px 18px 10px;
+          position: relative;
+        }
+        .radar-card svg {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        .radar-foot {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 8px 12px;
+          border-top: 1px dashed var(--rule);
+          margin-top: 6px;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 11.5px;
+          color: var(--ink-soft);
+        }
+
+        .chips-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          gap: 12px;
+          margin-bottom: 14px;
+        }
+        .chips-head .h {
+          font-family: "Archivo", sans-serif;
+          font-weight: 700;
+          font-size: 15px;
+          letter-spacing: 0.02em;
+        }
+        .chips-head .hint {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 11px;
+          color: var(--ink-soft);
+        }
+        .chips {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 10px;
+        }
+        .chip {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: 1.5px solid var(--rule);
+          border-radius: 999px;
+          background: #fff;
+          padding: 8px 14px 8px 10px;
+          cursor: pointer;
+          font-family: "Archivo", sans-serif;
+          font-size: 13.5px;
+          font-weight: 600;
+          color: var(--ink-soft);
+          text-align: left;
+          transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease,
+            color 0.15s ease;
+        }
+        .chip .roundel {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          flex: none;
+          background: #fff;
+          border: 4.5px solid var(--c);
+          transition: background 0.15s ease;
+        }
+        .chip .score {
+          margin-left: auto;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 11.5px;
+          font-weight: 500;
+        }
+        .chip:hover {
+          border-color: var(--c);
+        }
+        .chip[aria-pressed="true"] {
+          border-color: var(--c);
+          color: var(--ink);
+          box-shadow: 0 0 0 1px var(--c) inset;
+        }
+        .chip[aria-pressed="true"] .roundel {
+          background: var(--c);
+        }
+        .chip:focus-visible,
+        .stop:focus-visible,
+        .idx-node:focus-visible {
+          outline: 2px solid var(--ink);
+          outline-offset: 3px;
+        }
+
+        .selected-legend {
+          margin-top: 22px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .leg-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          background: var(--halo);
+          border-radius: 12px;
+          padding: 10px 14px;
+        }
+        .leg-row .bar {
+          height: 12px;
+          width: 34px;
+          border-radius: 6px;
+          flex: none;
+        }
+        .leg-row .nm {
+          font-family: "Archivo", sans-serif;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        .leg-row .ov {
+          margin-left: auto;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12.5px;
+          color: var(--ink-soft);
+        }
+        .leg-row .ov b {
+          color: var(--ink);
+          font-weight: 600;
+          font-size: 15px;
+        }
+
+        /* ---------- Index line strip ---------- */
+        .indexline {
+          margin: 64px 0 20px;
+        }
+        .indexline .frame {
+          background: var(--card);
+          border: 1px solid var(--rule);
+          border-radius: 18px;
+          padding: 26px 18px 8px;
+          overflow-x: auto;
+        }
+        .indexline svg {
+          display: block;
+          min-width: 760px;
+          width: 100%;
+          height: auto;
+        }
+        .idx-node {
+          cursor: pointer;
+        }
+        .idx-node circle {
+          transition: r 0.15s ease;
+        }
+        .idx-node:hover circle.outer {
+          r: 11;
+        }
+
+        /* ---------- Argument map ---------- */
+        .argmap-frame {
+          background: var(--card);
+          border: 1px solid var(--rule);
+          border-radius: 18px;
+          padding: 14px 8px 6px;
+          overflow-x: auto;
+          margin-top: 22px;
+        }
+        .argmap-frame svg {
+          min-width: 900px;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        .am-station {
+          cursor: pointer;
+        }
+        .am-station circle {
+          transition: transform 0.18s ease;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+        .am-station:hover circle {
+          transform: scale(1.35);
+        }
+        .argmap-legend {
+          display: flex;
+          gap: 6px 22px;
+          flex-wrap: wrap;
+          margin-top: 16px;
+        }
+        .argmap-legend button {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-family: "Archivo", sans-serif;
+          font-weight: 700;
+          font-size: 12.5px;
+          color: var(--ink-soft);
+          padding: 4px 2px;
+        }
+        .argmap-legend .sw {
+          width: 24px;
+          height: 6px;
+          border-radius: 3px;
+          flex: none;
+        }
+        .argmap-legend button:hover {
+          color: var(--ink);
+        }
+        .argmap-legend button:focus-visible {
+          outline: 2px solid var(--ink);
+          outline-offset: 3px;
+        }
+
+        /* ---------- Departures board ---------- */
+        #fig-board {
+          background: #0e1013;
+          border: 1px solid #23262c;
+          border-radius: 18px;
+          padding: 18px 16px 14px;
+          color: #ffb23e;
+        }
+        .board-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12px;
+          letter-spacing: 0.18em;
+          padding: 2px 6px 13px;
+          border-bottom: 1px solid #23262c;
+          color: #d89a3f;
+        }
+        .board-head .blink {
+          animation: blink 1.2s steps(1) infinite;
+        }
+        @keyframes blink {
+          50% {
+            opacity: 0.25;
+          }
+        }
+        .board-rows {
+          display: flex;
+          flex-direction: column;
+        }
+        .brow {
+          display: grid;
+          grid-template-columns: 34px 14px 1fr 132px 58px 100px;
+          gap: 10px;
+          align-items: center;
+          padding: 9px 6px;
+          border-bottom: 1px dashed #1c1f25;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 13px;
+          cursor: pointer;
+          animation: flick 0.45s both;
+        }
+        .brow:hover {
+          background: #15181e;
+        }
+        .brow.sel {
+          background: #1a1407;
+          box-shadow: inset 0 0 0 1px #6b4e12;
+        }
+        .brow .r {
+          color: #8c6b2a;
+        }
+        .brow .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+        .brow .dest {
+          color: #ffc861;
+          font-weight: 600;
+          letter-spacing: 0.07em;
+          text-transform: uppercase;
+          text-shadow: 0 0 9px rgba(255, 178, 62, 0.35);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .brow .pl {
+          color: #b98e3d;
+          font-size: 10.5px;
+          letter-spacing: 0.07em;
+          white-space: nowrap;
+        }
+        .brow .sc {
+          font-weight: 600;
+          color: #ffc861;
+          text-align: right;
+        }
+        .brow .st {
+          font-size: 10.5px;
+          letter-spacing: 0.1em;
+          text-align: right;
+        }
+        .st.ok {
+          color: #6bd96b;
+        }
+        .st.mid {
+          color: #ffb23e;
+        }
+        .st.bad {
+          color: #ff6b5e;
+        }
+        .board-foot {
+          padding-top: 11px;
+          font-size: 10.5px;
+          color: #5c616b;
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          flex-wrap: wrap;
+          font-family: "IBM Plex Mono", monospace;
+          letter-spacing: 0.1em;
+        }
+        @keyframes flick {
+          0% {
+            opacity: 0;
+          }
+          45% {
+            opacity: 0.65;
+          }
+          60% {
+            opacity: 0.15;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        @media (max-width: 600px) {
+          .brow {
+            grid-template-columns: 28px 12px 1fr 52px;
+          }
+          .brow .pl,
+          .brow .st {
+            display: none;
+          }
+        }
+
+        /* ---------- Tooltip ---------- */
+        .tip {
+          position: fixed;
+          z-index: 200;
+          pointer-events: none;
+          opacity: 0;
+          background: var(--tooltip-bg);
+          color: #fff;
+          border-radius: 8px;
+          padding: 7px 11px;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12px;
+          transform: translate(-50%, calc(-100% - 12px));
+          white-space: nowrap;
+          transition: opacity 0.12s ease;
+        }
+        .tip b {
+          font-weight: 600;
+        }
+        .tip.on {
+          opacity: 1;
+        }
+
+        /* ---------- Article / the gradient track ---------- */
+        .article {
+          padding: 60px 0 0;
+          position: relative;
+        }
+        #lineCanvas {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+        }
+        .station-sec {
+          position: relative;
+          z-index: 1;
+          padding: 74px 0 80px 96px;
+        }
+        .station-node {
+          position: absolute;
+          left: 31px;
+          top: 30px;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: #fff;
+          border: 7px solid var(--lc);
+          z-index: 2;
+          transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .station-sec.reached .station-node {
+          transform: scale(1.15);
+        }
+        .station-sec.reached .station-node::after {
+          content: "";
+          position: absolute;
+          inset: -10px;
+          border-radius: 50%;
+          border: 3px solid var(--lc);
+          opacity: 0;
+        }
+        .station-head {
+          margin-bottom: 22px;
+        }
+        .station-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 11.5px;
+          font-weight: 500;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: #fff;
+          background: var(--lc);
+          padding: 5px 13px;
+          border-radius: 6px;
+        }
+        h3.station-title {
+          font-family: "Archivo", sans-serif;
+          font-variation-settings: "wdth" 112;
+          font-weight: 800;
+          font-size: clamp(27px, 3.4vw, 40px);
+          letter-spacing: -0.012em;
+          line-height: 1.06;
+          margin-top: 14px;
+          text-wrap: balance;
+        }
+        .station-sec p {
+          max-width: 680px;
+          margin-top: 18px;
+          color: #262a35;
+        }
+        .station-sec > p:first-of-type::first-letter {
+          font-family: "Archivo", sans-serif;
+          font-weight: 800;
+          float: left;
+          font-size: 3.1em;
+          line-height: 0.86;
+          padding: 0.04em 0.12em 0 0;
+          color: var(--lc);
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .station-sec.reached .station-node::after {
+            animation: ding 0.8s ease-out;
+          }
+          .station-head {
+            opacity: 0;
+            transform: translateY(16px);
+            transition:
+              opacity 0.55s ease,
+              transform 0.55s ease;
+          }
+          .station-sec.reached .station-head {
+            opacity: 1;
+            transform: none;
+          }
+        }
+        @keyframes ding {
+          0% {
+            transform: scale(0.55);
+            opacity: 0.9;
+          }
+          100% {
+            transform: scale(1.85);
+            opacity: 0;
+          }
+        }
+
+        /* metric roundel cards */
+        .metric-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 14px;
+          margin: 30px 0 6px;
+          max-width: 760px;
+        }
+        .metric-card {
+          background: #fff;
+          border: 1px solid var(--rule);
+          border-radius: 14px;
+          padding: 16px 16px 14px;
+        }
+        .metric-card .mr {
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: #fff;
+          border: 8px solid var(--mc);
+          margin-bottom: 12px;
+        }
+        .metric-card h4 {
+          font-family: "Archivo", sans-serif;
+          font-weight: 700;
+          font-size: 15px;
+          letter-spacing: 0.01em;
+        }
+        .metric-card p {
+          font-size: 14.5px;
+          line-height: 1.5;
+          color: var(--ink-soft);
+          margin-top: 6px !important;
+          max-width: none;
+        }
+
+        /* stat callout — platform sign */
+        .callout {
+          margin: 34px 0 8px;
+          max-width: 680px;
+          background: var(--ink);
+          color: #fff;
+          border-radius: 14px;
+          padding: 24px 26px 22px;
+          position: relative;
+          overflow: hidden;
+        }
+        .callout::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 8px;
+          background: var(--lc);
+        }
+        .callout .big {
+          font-family: "Archivo", sans-serif;
+          font-variation-settings: "wdth" 120;
+          font-weight: 800;
+          font-size: clamp(38px, 5vw, 58px);
+          line-height: 1;
+          letter-spacing: -0.01em;
+        }
+        .callout .cap {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12.5px;
+          color: #c8cbd4;
+          margin-top: 10px;
+          letter-spacing: 0.04em;
+          max-width: 520px;
+          line-height: 1.5;
+        }
+
+        /* pull quote — next train board */
+        .pull {
+          margin: 36px 0 6px;
+          max-width: 640px;
+          border-left: 5px solid var(--lc);
+          padding: 6px 0 6px 24px;
+          font-size: clamp(22px, 2.6vw, 27px);
+          font-style: italic;
+          font-weight: 400;
+          line-height: 1.45;
+        }
+        .pull footer {
+          font-family: "IBM Plex Mono", monospace;
+          font-style: normal;
+          font-size: 12px;
+          color: var(--ink-soft);
+          margin-top: 12px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        /* mini ranked list inside equity section */
+        .gap-list {
+          margin: 28px 0 4px;
+          max-width: 560px;
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+        }
+        .gap-row {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-family: "Archivo", sans-serif;
+          font-size: 13.5px;
+          font-weight: 600;
+        }
+        .gap-row .nm {
+          width: 104px;
+          flex: none;
+          color: var(--ink-soft);
+        }
+        .gap-row .track {
+          flex: 1;
+          height: 12px;
+          background: var(--halo);
+          border-radius: 6px;
+          overflow: hidden;
+        }
+        .gap-row .fill {
+          height: 100%;
+          border-radius: 6px;
+          width: 0;
+          transition: width 0.9s cubic-bezier(0.25, 0.8, 0.3, 1);
+        }
+        .gap-row .val {
+          width: 34px;
+          text-align: right;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--ink-soft);
+        }
+
+        /* terminus */
+        .terminus-box {
+          margin-top: 30px;
+          max-width: 680px;
+          border: 1.5px solid var(--ink);
+          border-radius: 14px;
+          padding: 22px 24px;
+          background: #fff;
+        }
+        .terminus-box h5 {
+          font-family: "Archivo", sans-serif;
+          font-size: 13px;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+        }
+        .terminus-box ol {
+          margin-left: 20px;
+          font-size: 17.5px;
+          color: #262a35;
+        }
+        .terminus-box li {
+          margin-bottom: 8px;
+        }
+        .terminus-box li::marker {
+          font-family: "IBM Plex Mono", monospace;
+          font-weight: 600;
+          color: var(--ink-soft);
+        }
+
+        /* footer */
+        .site-foot {
+          margin-top: 90px;
+          border-top: 1px solid var(--rule);
+          padding: 34px 0 56px;
+        }
+        .site-foot .wrap {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .site-foot .l {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 12px;
+          color: var(--ink-soft);
+        }
+        .site-foot .l .dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: var(--ink);
+        }
+
+        @media (max-width: 880px) {
+          .station-sec {
+            padding: 54px 0 58px 58px;
+          }
+          .station-node {
+            left: 9px;
+            top: 26px;
+            width: 26px;
+            height: 26px;
+            border-width: 6px;
+          }
+        }
+        @media (max-width: 680px) {
+          body {
+            font-size: 17.5px;
+          }
+          .masthead {
+            padding-top: 44px;
+          }
+        }
+      </style>
+
+      <header class="masthead">
+        <div class="wrap">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            <span>Paper breakdown · Transit Quarterly · Vol. 14</span>
+            <span class="badge-mock"
+              >⚠ All data mocked — placeholder for the published study</span
             >
-              <div style="display: contents">
-                <div style="display: contents">
-                  <a
-                    href="/estimation"
-                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                    >Estimez votre projet</a
-                  ><a
-                    href="/#services"
-                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                    >Services</a
-                  ><a
-                    href="/#team"
-                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                    >L&#x27;équipe</a
-                  >
+          </div>
+          <h1 class="title">
+            The <span class="accentline">Legible</span> City
+          </h1>
+          <p class="subtitle">
+            A usability audit of twelve metro networks — what makes a transit
+            system easy to ride, not just fast to build.
+          </p>
+          <div class="byline">
+            <span><b>A. Okafor</b> · Urban Systems Lab</span>
+            <span><b>M. Lindqvist</b> · KTH Mobility</span>
+            <span><b>R. Tanaka</b> · Tokyo Inst. of Transit</span>
+            <span>DOI 10.0000/mock.2026.114</span>
+          </div>
+          <div class="colorstrip" id="colorstrip" aria-hidden="true"></div>
+        </div>
+      </header>
+
+      <nav class="routemap" aria-label="Sections of this breakdown">
+        <div class="routemap-inner">
+          <div class="route" id="route"></div>
+        </div>
+      </nav>
+
+      <!-- ============ EXPLORER ============ -->
+      <section class="explorer" id="explorer">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="sec-kicker">Interactive · Fig. 1</span>
+            <h2 class="sec-title">Twelve networks, six measures</h2>
+          </div>
+          <p class="sec-lede">
+            Each city is scored 0–100 on the six usability dimensions of the
+            index. Select up to three cities to overlay their profiles — then
+            switch views: the radar shows shape, the line map shows rank
+            trajectories, the score board shows everything at once.
+          </p>
+
+          <div class="explorer-grid">
+            <div id="figs">
+              <div class="figtabs" role="tablist" aria-label="Chart type">
+                <button
+                  class="figtab"
+                  data-fig="radar"
+                  role="tab"
+                  aria-selected="true"
+                >
+                  Radar
+                </button>
+                <button
+                  class="figtab"
+                  data-fig="bump"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Metric line map
+                </button>
+                <button
+                  class="figtab"
+                  data-fig="heat"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Score board
+                </button>
+                <button
+                  class="figtab"
+                  data-fig="board"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Departures
+                </button>
+              </div>
+              <div class="radar-card" id="fig-radar">
+                <svg
+                  id="radar"
+                  viewBox="0 0 560 520"
+                  role="img"
+                  aria-label="Radar chart of usability scores by dimension for the selected cities"
+                ></svg>
+                <div class="radar-foot">
+                  <span>SCALE 0–100 · OUTER RING = 100</span>
+                  <span>HOVER A VERTEX FOR VALUES</span>
                 </div>
               </div>
-              <a
-                href="/#contact"
-                class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
-                >Demander un appel</a
-              >
-            </div>
-          </nav>
-        </div>
-      </div>
-      <div class="w-element">
-        <div class="w-element c1hzitv3 c1n0kw9d c1xmq0ic">
-          <div
-            class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"
-          >
-            <div class="w-element">
-              <h1 class="w-element cmjvuci c10mfbj2 cx6x4m7">
-                Usability of Public Transit Networks
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div class="w-element c1hzitv3 c1lb8i4l">
-          <div
-            class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1uup4ib c1x05l0l cv236i0 c18yo5kt cm1pj c6hxj15 c1buloke cmfd5ud ct10b74 cy84l6z"
-          >
-            <div class="w-html-embed">
-              <!--
-  ==================================================================
-  MODULE GRAPHIQUE — Indice d'utilisabilité des transports en commun
-  ==================================================================
-  Fragment 100 % HTML + CSS (AUCUN JavaScript) à coller dans un bloc
-  "Embed / HTML" de Webstudio. Pas de <html>/<head>/<body> : le code
-  s'insère dans la page et hérite de la police (Nunito) et des couleurs
-  du thème déjà chargées sur le site. Comme il n'y a pas de script, le
-  graphique s'affiche aussi bien dans le Canvas que dans l'aperçu et sur
-  le site publié.
-
-  Tout est préfixé par « tci- » pour éviter les conflits de styles.
-
-  ------------------------------------------------------------------
-  POUR MODIFIER LES DONNÉES (exemple → valeurs réelles) :
-  pour chaque ville, dans .tci-barcol :
-    • style="--h:88%"          → hauteur de la barre = score sur 100
-    • style="--c:..."          → couleur de la barre (token de thème)
-    • <b class="tci-score">88</b> → le nombre affiché au-dessus
-    • le contenu de .tci-tooltip (nom, score, lignes de métriques)
-  Et la vignette correspondante dans .tci-thumbs (texte + image).
-  ------------------------------------------------------------------
--->
-              <div class="tci-root">
-                <style>
-                      .tci-root,
-                      .tci-root *,
-                      .tci-root *::before,
-                      .tci-root *::after {
-                        box-sizing: border-box;
-                      }
-
-                      .tci-root {
-                        font-family: Nunito, sans-serif;
-                        color: var(--foreground-primary, #000);
-                      }
-
-                      /* ---- Vignettes des villes (petites images) ---- */
-                      .tci-thumbs {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: var(--size-px-3, 16px);
-                        margin: 0 0 var(--size-px-4, 20px);
-                      }
-
-                      .tci-thumb {
-                        width: 88px;
-                        text-align: center;
-                      }
-
-                      .tci-thumb .tci-img {
-                        width: 88px;
-                        height: 64px;
-                        border-radius: var(--radius-3, 12px);
-                        background: var(--background-primary, #fff);
-                        background-size: cover;
-                        background-position: center;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: var(--font-size-0, 12px);
-                        font-weight: 700;
-                        color: var(--foreground-muted, #898989);
-                        border: var(--border-size-2, 2px) solid transparent;
-                        box-shadow: var(--shadow-1, 0 1px 2px rgba(0, 0, 0, 0.1));
-                        transition: border-color 0.15s ease, transform 0.15s ease;
-                      }
-
-                      .tci-thumb:hover .tci-img {
-                        border-color: var(--foreground-accent, #f9a040);
-                        transform: translateY(-2px);
-                      }
-                  @
-                      .tci-thumb .tci-label {
-                        display: block;
-                        margin-top: var(--size-px-1, 4px);
-                        font-size: var(--font-size-0, 12px);
-                        font-weight: 700;
-                        color: var(--foreground-primary, #000);
-                      }
-
-                      /* ---- Carte du graphique ---- */
-                      .tci-card {
-                        background: var(--background-primary, #fff);
-                        border-radius: var(--radius-4, 2rem);
-                        box-shadow: var(--shadow-2, 0 7px 14px rgba(0, 0, 0, 0.1));
-                        padding: var(--size-px-6, 28px);
-                      }
-
-                      .tci-title {
-                        margin: 0 0 var(--size-px-1, 4px);
-                        font-size: var(--font-size-4, 1.5rem);
-                        font-weight: 800;
-                        color: var(--foreground-secondary, #191a23);
-                      }
-
-                      .tci-sub {
-                        margin: 0 0 var(--size-px-5, 24px);
-                        color: var(--foreground-muted, #898989);
-                        font-size: var(--font-size-1, 1rem);
-                      }
-
-                      /* ---- Zone de tracé ---- */
-                      .tci-plotwrap {
-                        display: flex;
-                        gap: 8px;
-                      }
-
-                      .tci-yaxis {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        height: 320px;
-                        padding-bottom: 26px; /* aligne le 0 sur la ligne de base */
-                        font-size: 11px;
-                        color: var(--foreground-muted, #898989);
-                        text-align: right;
-                        flex: 0 0 auto;
-                      }
-
-                      .tci-plot {
-                        position: relative;
-                        flex: 1 1 auto;
-                        height: 320px;
-                        display: flex;
-                        align-items: flex-end;
-                        gap: 2%;
-                        padding-bottom: 26px; /* place pour les noms de villes */
-                        /* lignes de repère horizontales tous les 25 % */
-                        background-image: repeating-linear-gradient(
-                          to top,
-                          var(--gray-6, #e5e5e5) 0,
-                          var(--gray-6, #e5e5e5) 1px,
-                          transparent 1px,
-                          transparent 25%
-                        );
-                        background-position: bottom 26px left 0;
-                        background-size: 100% calc(100% - 26px);
-                        background-repeat: no-repeat;
-                      }
-
-                      .tci-barcol {
-                        position: relative;
-                        flex: 1 1 0;
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-end;
-                        align-items: center;
-                      }
-
-                      .tci-score {
-                        font-size: 12px;
-                        font-weight: 800;
-                        color: var(--c, var(--foreground-secondary, #191a23));
-                        margin-bottom: 6px;
-                      }
-
-                      .tci-bar {
-                        width: 60%;
-                        max-width: 46px;
-                        height: var(--h, 50%);
-                        background: var(--c, #4263eb);
-                        border-radius: 6px 6px 0 0;
-                        transition: opacity 0.15s ease;
-                      }
-
-                      .tci-cityname {
-                        position: absolute;
-                        bottom: -22px;
-                        left: 0;
-                        right: 0;
-                        text-align: center;
-                        font-size: 12px;
-                        font-weight: 700;
-                        color: var(--foreground-primary, #000);
-                      }
-
-                      /* Survol : on atténue les autres barres (100 % CSS, sans JS) */
-                      .tci-plot:hover .tci-bar {
-                        opacity: 0.35;
-                      }
-                      .tci-barcol:hover .tci-bar {
-                        opacity: 1;
-                      }
-
-                      /* ---- Infobulle (affichée au survol de la colonne) ---- */
-                      .tci-tooltip {
-                        position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%) translateY(6px);
-                        top: calc(100% - var(--h, 50%));
-                        margin-top: -10px;
-                        width: 220px;
-                        max-width: 220px;
-                        background: var(--background-primary, #fff);
-                        border-radius: var(--radius-3, 12px);
-                        box-shadow: var(--shadow-4, 0 16px 32px rgba(0, 0, 0, 0.18));
-                        border: var(--border-size-1, 1px) solid var(--gray-6, #e5e5e5);
-                        padding: var(--size-px-3, 16px);
-                        opacity: 0;
-                        visibility: hidden;
-                        pointer-events: none;
-                        transition: opacity 0.15s ease, transform 0.15s ease;
-                        z-index: 5;
-                      }
-
-                      .tci-barcol:hover .tci-tooltip {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateX(-50%) translateY(0);
-                      }
-
-                      .tci-tt-head {
-                        display: flex;
-                        align-items: center;
-                        gap: var(--size-px-2, 8px);
-                        margin-bottom: var(--size-px-2, 8px);
-                      }
-
-                      .tci-tt-img {
-                        width: 52px;
-                        height: 40px;
-                        border-radius: var(--radius-1, 8px);
-                        background: var(--background-secondary, #f3f3f3);
-                        background-size: cover;
-                        background-position: center;
-                        flex: 0 0 auto;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 9px;
-                        font-weight: 700;
-                        color: var(--foreground-muted, #898989);
-                      }
-
-                      .tci-tt-name {
-                        font-weight: 800;
-                        font-size: var(--font-size-2, 1.1rem);
-                        color: var(--foreground-secondary, #191a23);
-                        line-height: 1.1;
-                      }
-
-                      .tci-tt-score {
-                        font-size: var(--font-size-0, 12px);
-                        font-weight: 700;
-                        color: var(--foreground-accent, #f9a040);
-                      }
-
-                      .tci-tt-row {
-                        display: flex;
-                        justify-content: space-between;
-                        font-size: var(--font-size-1, 1rem);
-                        padding: 3px 0;
-                      }
-                      .tci-tt-row span:first-child {
-                        color: var(--foreground-muted, #898989);
-                      }
-                      .tci-tt-row span:last-child {
-                        font-weight: 700;
-                      }
-
-                      @media (max-width: 560px) {
-                        .tci-cityname {
-                          font-size: 10px;
-                        }
-                        .tci-tooltip {
-                          width: 180px;
-                        }
-                      }
-                </style>
-
-                <!-- ====================== VIGNETTES (petites images) ============
-
-  <!-- ====================== GRAPHIQUE ====================== -->
-                <div class="tci-card">
-                  <p class="tci-title">Classement par ville</p>
-                  <p class="tci-sub">
-                    Score d'utilisabilité sur 100 — données d'exemple, à
-                    remplacer par les valeurs réelles.
-                  </p>
-
-                  <div class="tci-plotwrap">
-                    <!-- Graduations de l'axe Y -->
-                    <div class="tci-yaxis">
-                      <span>100</span><span>75</span><span>50</span
-                      ><span>25</span><span>0</span>
-                    </div>
-
-                    <!-- Barres (triées par score décroissant) -->
-                    <div class="tci-plot">
-                      <!-- Paris -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 88%; --c: var(--indigo-7, #4263eb)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Paris</div>
-                              <div class="tci-tt-score">Score : 88/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>9.2</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>9.0</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>7.8</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>8.4</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">88</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Paris</span>
-                      </div>
-
-                      <!-- Lyon -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 81%; --c: var(--orange-6, #fd7e14)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Lyon</div>
-                              <div class="tci-tt-score">Score : 81/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>8.4</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>8.1</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>8.0</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>8.0</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">81</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Lyon</span>
-                      </div>
-
-                      <!-- Strasbourg -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 79%; --c: var(--teal-6, #12b886)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Strasbourg</div>
-                              <div class="tci-tt-score">Score : 79/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>8.0</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>7.6</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>8.5</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>8.2</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">79</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Strasbourg</span>
-                      </div>
-
-                      <!-- Grenoble -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 74%; --c: var(--pink-6, #e64980)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Grenoble</div>
-                              <div class="tci-tt-score">Score : 74/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>7.5</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>7.2</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>7.9</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>7.8</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">74</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Grenoble</span>
-                      </div>
-
-                      <!-- Nantes -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 72%; --c: var(--violet-6, #7950f2)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Nantes</div>
-                              <div class="tci-tt-score">Score : 72/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>7.3</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>7.0</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>7.6</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>7.5</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">72</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Nantes</span>
-                      </div>
-
-                      <!-- Bordeaux -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 68%; --c: var(--yellow-6, #fab005)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Bordeaux</div>
-                              <div class="tci-tt-score">Score : 68/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>6.9</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>6.6</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>7.0</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>7.2</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">68</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Bordeaux</span>
-                      </div>
-
-                      <!-- Lille -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 66%; --c: var(--indigo-7, #4263eb)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Lille</div>
-                              <div class="tci-tt-score">Score : 66/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>6.7</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>6.8</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>6.4</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>6.9</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">66</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Lille</span>
-                      </div>
-
-                      <!-- Toulouse -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 63%; --c: var(--orange-6, #fd7e14)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Toulouse</div>
-                              <div class="tci-tt-score">Score : 63/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>6.4</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>6.0</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>6.6</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>6.5</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">63</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Toulouse</span>
-                      </div>
-
-                      <!-- Marseille -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 57%; --c: var(--teal-6, #12b886)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Marseille</div>
-                              <div class="tci-tt-score">Score : 57/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>5.8</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>5.5</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>5.4</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>6.2</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">57</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Marseille</span>
-                      </div>
-
-                      <!-- Nice -->
-                      <div
-                        class="tci-barcol"
-                        style="--h: 54%; --c: var(--pink-6, #e64980)"
-                      >
-                        <div class="tci-tooltip">
-                          <div class="tci-tt-head">
-                            <div class="tci-tt-img">IMG</div>
-                            <div>
-                              <div class="tci-tt-name">Nice</div>
-                              <div class="tci-tt-score">Score : 54/100</div>
-                            </div>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Fréquence</span><span>5.5</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Couverture</span><span>5.2</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Ponctualité</span><span>5.6</span>
-                          </div>
-                          <div class="tci-tt-row">
-                            <span>Accessibilité</span><span>5.5</span>
-                          </div>
-                        </div>
-                        <b class="tci-score">54</b>
-                        <div class="tci-bar"></div>
-                        <span class="tci-cityname">Nice</span>
-                      </div>
-                    </div>
-                  </div>
+              <div class="radar-card fig-hidden" id="fig-bump">
+                <svg
+                  id="bump"
+                  viewBox="0 0 560 560"
+                  role="img"
+                  aria-label="Bump chart showing each city's rank across the overall index and the six dimensions, routed like metro lines"
+                ></svg>
+                <div class="radar-foot">
+                  <span>RANK 1 = BEST · ROUTED LIKE A METRO MAP</span>
+                  <span>HOVER TO ISOLATE · CLICK TO SELECT</span>
                 </div>
               </div>
-            </div>
-            <div
-              class="w-element c1t9vn71 c1anycjf c18yo5kt cm1pj c1ve8utp c1uheoy7"
-            >
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
+              <div class="radar-card fig-hidden" id="fig-heat">
+                <svg
+                  id="heat"
+                  viewBox="0 0 580 500"
+                  role="img"
+                  aria-label="Heat map of all scores for all cities, sortable by column"
+                ></svg>
+                <div class="radar-foot">
+                  <span>DARKER CELL = HIGHER SCORE</span>
+                  <span>CLICK A COLUMN TO SORT · CLICK A CITY TO SELECT</span>
+                </div>
               </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-              <div class="w-element">
-                <img
-                  alt=""
-                  src="https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg"
-                  class="w-image"
-                  sizes="(min-width: 1280px) 50vw, 100vw"
-                  srcset="
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  384w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  640w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  750w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg  828w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1080w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1200w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 1920w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 2048w,
-                    https://bonjourlafrance.com/wp-content/uploads/2018/04/map-paris-rer.jpg 3840w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-                <h1 class="w-element c1gzpyyh cingnp7">Paris</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div style="display: contents">
-        <div style="display: contents">
-          <footer
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c9tqjor c1ukvq2x c1buloke cmfd5ud c76w5dv cjj8lsn"
-          >
-            <div
-              class="w-box c1mg0fms cnopd54 c6rsq3t c1czifmt c1vxw0rd ccdo1v8 c1o768ho c1p1oiur crsj5vb cef5mjv"
-            >
               <div
-                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c18yo5kt c6hxj15 c1wm1hiu ct10b74 cy84l6z"
+                class="fig-hidden"
+                id="fig-board"
+                role="region"
+                aria-label="Departure-board style ranking of the twelve cities"
               >
-                <a
-                  href="/"
-                  class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                  ><img
-                    alt=""
-                    width="200"
-                    height="342"
-                    src="/assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg"
-                    class="w-image ccdo1v8"
-                    sizes="100vw"
-                    srcset="
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  16w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  32w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  48w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  64w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  96w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 128w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 256w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 384w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 640w
-                    "
-                    decoding="async"
-                    loading="lazy"
-                /></a>
-                <div
-                  aria-label="footer navigation"
-                  class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cnt8zja czlac5t cw1hgdq c19x3wtq c1j8oni9 ccf6y70 c7tfixs c1keu5a5 c1k3wwe7"
-                >
-                  <div style="display: contents">
-                    <div style="display: contents">
-                      <a
-                        href="/estimation"
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        >Estimez votre projet</a
-                      ><a
-                        href="/#services"
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        >Services</a
-                      ><a
-                        href="/#team"
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        >L&#x27;équipe</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div style="display: contents">
-                  <div style="display: contents">
-                    <div
-                      class="w-box ccdo1v8 c7qy5pm ce9lonv cjrw7s3 c1b9b2da c1keu5a5 c1k3wwe7"
-                    >
-                      <a
-                        aria-label="LinkedIn"
-                        href="https://www.linkedin.com/company/120884002"
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c9tqjor c3s7c98 c6od58n cgeq41r cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        ><div
-                          class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
-                        >
-                          <div style="display: contents">
-                            <div style="display: contents">
-                              <div class="w-html-embed">
-                                <svg
-                                  width="100%"
-                                  height="100%"
-                                  viewBox="0 0 17 17"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M0.317757 17H3.81308V5.68438H0.317757V17Z"
-                                    fill="currentColor"
-                                  ></path>
-                                  <path
-                                    d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z"
-                                    fill="currentColor"
-                                  ></path>
-                                  <path
-                                    d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z"
-                                    fill="currentColor"
-                                  ></path>
-                                </svg>
-                              </div>
-                            </div>
-                          </div></div
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="w-box ccdo1v8 c1p1oiur crsj5vb c1djcjaj cy84l6z">
-                <div
-                  class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq czfl3ei cveejg9"
-                >
-                  <div class="w-text">
-                    Méthode SAS au capital social de 1050€
-                  </div>
-                  <div class="w-text">contact@methode.dev</div>
-                  <span class="w-text c1ab7tt c1ujynhk"
-                    >132 rue Bossuet, 69006, Lyon, France</span
+                <div class="board-head">
+                  <span>DEPARTURES · USABILITY RANKING</span>
+                  <span id="boardClock"
+                    >--<span class="blink">:</span>--<span class="blink">:</span
+                    >--</span
                   >
                 </div>
-              </div>
-              <hr class="w-separator cv8vzg6 c1e5o7b8 c10mfbj2 cx6x4m7" />
-              <div class="w-box ccdo1v8 czlac5t cw1hgdq cg9rdh0">
-                <div class="w-text">
-                  © 2026 Méthode. All Rights Reserved.<br />Made with
-                  Webstudio.is
+                <div class="board-rows" id="boardRows"></div>
+                <div class="board-foot">
+                  <span>TAP A SERVICE TO LOAD IT INTO THE CHARTS</span>
+                  <span>MOCK SERVICE INFORMATION</span>
                 </div>
               </div>
             </div>
-          </footer>
-          <div style="display: contents">
-            <div style="display: contents">
-              <div class="w-html-embed">
-                <style>
-                  :root {
-                    --ani-duration: var(--duration-default, 0.2s);
-                    --ani-delay: 0s;
-                    --ani-slide-offset: 20%;
-                    --ani-zoom-in-scale: 1;
-                    --ani-zoom-out-scale: 0.85;
-                    --ani-flip-rotate: 30deg;
-                    --ani-easing: var(--easing-default, ease);
-                    --ani-fill-mode: forwards;
-                  }
-                  [data-ani]:not([data-ani-children]),
-                  [data-ani-children]:not([data-ani-progress]) > * {
-                    animation-duration: var(--ani-duration);
-                    animation-delay: var(--ani-delay);
-                    animation-timing-function: var(--ani-easing);
-                    animation-fill-mode: var(--ani-fill-mode);
-                    opacity: 0;
-                  }
-                  [data-ani-progress]:not([data-ani-children]),
-                  [data-ani-children]:not([data-ani]) > * {
-                    transition-property: opacity, transform;
-                    transition-duration: var(--ani-duration);
-                    transition-timing-function: var(--ani-easing);
-                    opacity: 0;
-                  }
-                  @keyframes fadeIn {
-                    from {
-                      opacity: 0;
-                    }
-                    to {
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes fadeOut {
-                    from {
-                      opacity: 1;
-                    }
-                    to {
-                      opacity: 0;
-                    }
-                  }
-                  [data-ani-children][data-ani="fade"] > .in,
-                  [data-ani="fade"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: fadeIn;
-                  }
-                  [data-ani-children][data-ani="fade"] > .out,
-                  [data-ani="fade"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: fadeOut;
-                  }
-                  @keyframes slideIn {
-                    from {
-                      opacity: 0;
-                      translate: var(--ani-slide-transform);
-                    }
-                    to {
-                      opacity: 1;
-                      translate: none;
-                    }
-                  }
-                  @keyframes slideOut {
-                    from {
-                      opacity: 1;
-                      translate: none;
-                    }
-                    to {
-                      opacity: 0;
-                      translate: var(--ani-slide-transform);
-                    }
-                  }
-                  [data-ani-children][data-ani|="slide"] > .in,
-                  [data-ani|="slide"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: slideIn;
-                  }
-                  [data-ani-children][data-ani|="slide"] > .out,
-                  [data-ani|="slide"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: slideOut;
-                  }
-                  [data-ani="slide-up"] {
-                    --ani-slide-transform: 0 var(--ani-slide-offset);
-                  }
-                  [data-ani="slide-down"] {
-                    --ani-slide-transform: 0 calc(-1 * var(--ani-slide-offset));
-                  }
-                  [data-ani="slide-left"] {
-                    --ani-slide-transform: var(--ani-slide-offset);
-                  }
-                  [data-ani="slide-right"] {
-                    --ani-slide-transform: calc(-1 * var(--ani-slide-offset));
-                  }
-                  @keyframes zoomIn {
-                    from {
-                      opacity: 0;
-                      scale: var(--ani-zoom-out-scale);
-                    }
-                    to {
-                      opacity: 1;
-                      scale: 1;
-                    }
-                  }
-                  @keyframes zoomOut {
-                    from {
-                      opacity: 1;
-                      scale: 1;
-                    }
-                    to {
-                      opacity: 0;
-                      scale: var(--ani-zoom-in-scale);
-                    }
-                  }
-                  [data-ani-children][data-ani="zoom"] > .in,
-                  [data-ani|="zoom"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: zoomIn;
-                  }
-                  [data-ani-children][data-ani="zoom"] > .out,
-                  [data-ani|="zoom"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: zoomOut;
-                  }
-                  [data-ani-children][data-ani-progress="zoom"] > *,
-                  [data-ani-progress="zoom"]:not([data-ani-children]) {
-                    transform: scale(var(--ani-zoom-out-scale));
-                  }
-                  @keyframes flipInY {
-                    from {
-                      rotate: y var(--ani-flip-rotate);
-                      perspective: 2000px;
-                      opacity: 0;
-                    }
-                    to {
-                      rotate: y 0;
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes flipOutY {
-                    from {
-                      rotate: y 0;
-                      opacity: 1;
-                    }
-                    to {
-                      perspective: 2000px;
-                      rotate: y var(--ani-flip-rotate);
-                      opacity: 0;
-                    }
-                  }
-                  @keyframes flipInX {
-                    from {
-                      perspective: 2000px;
-                      rotate: x var(--ani-flip-rotate);
-                      opacity: 0;
-                    }
-                    to {
-                      rotate: x 0;
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes flipOutX {
-                    from {
-                      rotate: x 0;
-                      opacity: 1;
-                    }
-                    to {
-                      perspective: 2000px;
-                      rotate: x var(--ani-flip-rotate);
-                      opacity: 0;
-                    }
-                  }
-                  [data-ani-children][data-ani="flip-y"] > .in,
-                  [data-ani="flip-y"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: flipInY;
-                  }
-                  [data-ani-children][data-ani="flip-x"] > .in,
-                  [data-ani="flip-x"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: flipInX;
-                  }
-                  [data-ani-children][data-ani="flip-y"] > .out,
-                  [data-ani="flip-y"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: flipOutY;
-                  }
-                  [data-ani-children][data-ani="flip-x"] > .out,
-                  [data-ani="flip-x"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: flipOutX;
-                  }
-                  @keyframes expandDown {
-                    from {
-                      height: 0;
-                    }
-                    to {
-                      height: var(--newHeight);
-                    }
-                  }
-                  @keyframes expandUp {
-                    from {
-                      height: var(--newHeight);
-                    }
-                    to {
-                      height: 0;
-                    }
-                  }
-                  [data-ani="expand"],
-                  [data-ani="expand"][data-state="open"],
-                  [data-ani="expand"].in {
-                    --newHeight: var(
-                      --custom-height,
-                      var(
-                        --radix-accordion-content-height,
-                        var(--radix-collapsible-content-height, 100%)
-                      )
-                    );
-                    overflow: hidden;
-                    opacity: 1;
-                  }
-                  [data-ani-children][data-ani="expand"] > .in,
-                  [data-ani="expand"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation: expandDown var(--ani-duration) var(--ani-easing);
-                  }
-                  [data-ani-children][data-ani="expand"] > .out,
-                  [data-ani="expand"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation: expandUp var(--ani-duration) var(--ani-easing);
-                  }
-                  @media (prefers-reduced-motion: reduce) {
-                    [data-ani]:not([data-ani-children]),
-                    [data-ani-progress]:not([data-ani-children]),
-                    [data-ani-children] > * {
-                      opacity: 1;
-                      transform: none;
-                      animation: none;
-                      rotate: none;
-                      scale: none;
-                      translate: none;
-                    }
-                  }
-                </style>
+
+            <div>
+              <div class="chips-head">
+                <span class="h">Pick your lines</span>
+                <span class="hint">UP TO 3 · CLICK TO TOGGLE</span>
               </div>
+              <div
+                class="chips"
+                id="chips"
+                role="group"
+                aria-label="City selection"
+              ></div>
+              <div class="selected-legend" id="legend"></div>
+            </div>
+          </div>
+
+          <div class="indexline">
+            <div class="sec-head">
+              <span class="sec-kicker">Fig. 2</span>
+              <h2 class="sec-title" style="font-size: clamp(22px, 2.6vw, 30px)">
+                The Index Line — overall scores
+              </h2>
+            </div>
+            <p class="sec-lede" style="font-size: 17px">
+              Every city placed on one line by its composite score. Click a
+              station to load it into the radar above.
+            </p>
+            <div class="frame" style="margin-top: 18px">
+              <svg
+                id="idxline"
+                viewBox="0 0 1000 150"
+                role="img"
+                aria-label="All twelve cities positioned along a horizontal line by overall usability score"
+              ></svg>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- ============ ARGUMENT MAP ============ -->
+      <section class="explorer" id="argmap-sec" style="padding-top: 16px">
+        <div class="wrap">
+          <div class="sec-head">
+            <span class="sec-kicker">Fig. 3</span>
+            <h2 class="sec-title" style="font-size: clamp(24px, 3vw, 34px)">
+              Map of the argument
+            </h2>
+          </div>
+          <p class="sec-lede" style="font-size: 17px">
+            The paper itself, drawn as a network. The spine carries you from the
+            research question to the conclusions; each finding is its own line,
+            branching at The Index and reconverging at Terminus. Click any
+            station to travel there.
+          </p>
+          <div class="argmap-frame">
+            <svg
+              id="argmap"
+              viewBox="0 118 1000 326"
+              role="img"
+              aria-label="Schematic metro-style map of the paper's structure, with one line per finding and clickable stations"
+            ></svg>
+          </div>
+          <div
+            class="argmap-legend"
+            id="argLegend"
+            aria-label="Lines on the argument map"
+          ></div>
+        </div>
+      </section>
+
+      <!-- ============ ARTICLE ============ -->
+      <main class="article wrap" id="article">
+        <svg id="lineCanvas" aria-hidden="true"></svg>
+
+        <section class="station-sec" id="s-origin" style="--lc: #dc241f">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 1 · Origin</span>
+            <h3 class="station-title">Why usability, not speed?</h3>
+          </div>
+          <p>
+            For half a century, transit benchmarking has fixated on engineering
+            quantities: kilometres of track, commercial speed, peak throughput.
+            Yet riders abandon systems that score brilliantly on all three. The
+            paper opens with a simple provocation — a metro is an interface, and
+            like any interface it can be powerful and unusable at the same time.
+          </p>
+          <p>
+            The authors frame the rider's journey as a chain of micro-decisions:
+            which entrance, which line, which direction, which exit. Every
+            ambiguous sign, missed connection, or surprise closure adds
+            cognitive load. The study's central claim is that this load is
+            measurable, comparable across cities, and — crucially — cheaper to
+            fix than building new tunnels.
+          </p>
+          <blockquote class="pull">
+            “We do not ride networks. We ride our mental model of them — and
+            some cities hand you a far better model than others.”
+            <footer>— Section 1.2, framing statement</footer>
+          </blockquote>
+        </section>
+
+        <section class="station-sec" id="s-index" style="--lc: #f39700">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 2 · The Index</span>
+            <h3 class="station-title">Six measures of a rideable network</h3>
+          </div>
+          <p>
+            The Transit Network Usability Index (TNUI) aggregates six
+            dimensions, each scored 0–100 from a mix of field audits, GTFS
+            feeds, and a 4,800-rider survey panel. The dimensions were chosen so
+            that no single one can be maxed out by spending alone — design
+            discipline matters as much as budget.
+          </p>
+          <div class="metric-grid" id="metricGrid"></div>
+          <p>
+            Scores are normalised within the sample, so an 80 means “among the
+            best of these twelve,” not an absolute grade. The composite is an
+            unweighted mean — the authors tested weighted variants and report
+            that rankings barely moved.
+          </p>
+        </section>
+
+        <section class="station-sec" id="s-f1" style="--lc: #f2c500">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 3 · Finding 01</span>
+            <h3 class="station-title">Legibility beats speed</h3>
+          </div>
+          <p>
+            The headline result: across the panel, perceived journey quality
+            correlates more strongly with legibility (r = .71) than with
+            commercial speed (r = .34). Riders in highly legible systems —
+            London, Singapore, Seoul — consistently underestimated their travel
+            time; riders in confusing ones overestimated it by up to a fifth.
+          </p>
+          <div class="callout">
+            <div class="big">−38%</div>
+            <div class="cap">
+              FEWER WAYFINDING ERRORS PER JOURNEY in the top-quartile legibility
+              cities, after controlling for network size and rider familiarity.
+              (Mock figure.)
+            </div>
+          </div>
+          <p>
+            The mechanism is mundane and powerful: consistent line identities,
+            decision-point signage, and a map that survives being redrawn from
+            memory. New York's score suffers not from complexity itself but from
+            inconsistency — express patterns that change by time of day are, in
+            usability terms, an interface that rearranges its own buttons.
+          </p>
+        </section>
+
+        <section class="station-sec" id="s-f2" style="--lc: #00a84d">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 4 · Finding 02</span>
+            <h3 class="station-title">Frequency is freedom</h3>
+          </div>
+          <p>
+            The second finding concerns the timetable — or rather, its
+            disappearance. Below a six-minute headway, riders stop consulting
+            schedules entirely and treat the network as “always there.” The
+            paper calls this the show-up threshold, and it behaves like a phase
+            change: satisfaction climbs gently as frequency improves, then jumps
+            once the threshold is crossed.
+          </p>
+          <div class="callout">
+            <div class="big">&lt; 6 min</div>
+            <div class="cap">
+              THE SHOW-UP THRESHOLD — the headway below which surveyed riders no
+              longer plan around departures. Tokyo, Paris and Seoul run most of
+              their cores beneath it all day. (Mock figure.)
+            </div>
+          </div>
+          <p>
+            Frequency also compounds with the other dimensions: a missed
+            transfer costs little when the next train is three minutes away, so
+            high-frequency systems get a hidden discount on their transfer
+            penalty. This interaction is why Paris ranks above London overall
+            despite a lower legibility score.
+          </p>
+        </section>
+
+        <section class="station-sec" id="s-f3" style="--lc: #0091d2">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 5 · Finding 03</span>
+            <h3 class="station-title">The transfer tax</h3>
+          </div>
+          <p>
+            Transfers are where networks quietly leak users. Using
+            stated-preference experiments, the study prices the perceived cost
+            of a single interchange — the walking, the waiting, and above all
+            the uncertainty.
+          </p>
+          <div class="callout">
+            <div class="big">+9 min</div>
+            <div class="cap">
+              PERCEIVED TIME COST OF ONE TRANSFER, averaged across cities — even
+              when the actual interchange takes under four minutes.
+              Cross-platform transfers cut the penalty by more than half. (Mock
+              figure.)
+            </div>
+          </div>
+          <p>
+            The design implication is blunt: a cross-platform interchange is
+            worth several minutes of pure speed elsewhere on the line. Madrid
+            and Singapore, both built late enough to learn this, engineer
+            same-platform transfers aggressively and it shows directly in their
+            scores.
+          </p>
+          <blockquote class="pull">
+            “Riders forgive a slow train. They do not forgive a connection they
+            cannot trust.”
+            <footer>— Section 5.4, discussion</footer>
+          </blockquote>
+        </section>
+
+        <section class="station-sec" id="s-equity" style="--lc: #6e51c8">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 6 · Equity</span>
+            <h3 class="station-title">Who is the network for?</h3>
+          </div>
+          <p>
+            The accessibility dimension exposes the widest gap in the whole
+            index — wider than coverage, wider than affordability. Step-free
+            access ranges from near-universal in Singapore and Stockholm's newer
+            sections to under half of stations in the oldest legacy systems.
+          </p>
+          <div
+            class="gap-list"
+            id="gapList"
+            aria-label="Accessibility scores for selected cities"
+          ></div>
+          <p>
+            The authors argue accessibility is the truest usability test: a
+            network that works for a wheelchair user, a parent with a stroller,
+            and a first-time visitor reading a foreign alphabet is simply a
+            network that works. Affordability tells the complementary story —
+            Mexico City posts the sample's best fare-to-wage ratio, a reminder
+            that usability is also about who can afford to show up at the gate.
+          </p>
+        </section>
+
+        <section class="station-sec" id="s-terminus" style="--lc: #15181f">
+          <span class="station-node" aria-hidden="true"></span>
+          <div class="station-head">
+            <span class="station-tag">Station 7 · Terminus</span>
+            <h3 class="station-title">What cities should do on Monday</h3>
+          </div>
+          <p>
+            The paper closes with a deliberately unglamorous agenda. None of the
+            top interventions involve tunnelling; all of them involve treating
+            the rider's attention as the scarcest resource in the system.
+          </p>
+          <div class="terminus-box">
+            <h5>The authors' four-point platform</h5>
+            <ol>
+              <li>
+                <b>Audit signage at decision points,</b> not station-wide — fix
+                the 40 worst junctions first.
+              </li>
+              <li>
+                <b>Buy frequency before coverage</b> until the core network
+                crosses the show-up threshold.
+              </li>
+              <li>
+                <b>Price transfers honestly</b> in planning models — at their
+                perceived cost, not their clock cost.
+              </li>
+              <li>
+                <b>Publish an accessibility ledger</b> per station, updated
+                quarterly, so the gap is visible.
+              </li>
+            </ol>
+          </div>
+          <p>
+            Seoul's first-place finish, the authors note, is not a story of
+            wealth — several richer systems trail it — but of relentless
+            interface discipline applied over twenty years. Usability, the paper
+            concludes, is a policy choice, made one sign, one timetable, and one
+            platform at a time.
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-foot">
+        <div class="wrap">
+          <div class="l">
+            <span class="dot"></span><span>END OF LINE · ALIGHT HERE</span>
+          </div>
+          <div class="l">MOCK DATA — FOR LAYOUT REVIEW ONLY · 2026</div>
+        </div>
+      </footer>
+
+      <div class="tip" id="tip" role="status" aria-hidden="true"></div>
+
+      <script>
+        /* ================= DATA (mocked) ================= */
+        const METRICS = [
+          {key:'legibility',   label:'Legibility',   blurb:'How easily the network can be read: maps, signage, line identity, decision-point clarity.', c:'#DC241F'},
+          {key:'frequency',    label:'Frequency',    blurb:'Headways across the day — how close the system comes to “show up and go.”', c:'#F39700'},
+          {key:'coverage',     label:'Coverage',     blurb:'Share of residents and jobs within a short walk of a station.', c:'#F2C500'},
+          {key:'transfers',    label:'Transfers',    blurb:'Ease and reliability of interchanges: distance, signage, timed connections.', c:'#00A84D'},
+          {key:'accessibility',label:'Accessibility',label2:'Accessibility', blurb:'Step-free access, tactile guidance, audio information, multilingual support.', c:'#0091D2'},
+          {key:'affordability',label:'Affordability',blurb:'Fare burden relative to local wages, including transfer and daily caps.', c:'#6E51C8'},
+        ];
+
+        const CITIES = [
+          {name:'Seoul',       code:'SEL', c:'#00A84D', s:{legibility:88,frequency:89,coverage:90,transfers:81,accessibility:86,affordability:84}},
+          {name:'Singapore',   code:'SIN', c:'#6E51C8', s:{legibility:90,frequency:85,coverage:76,transfers:85,accessibility:93,affordability:82}},
+          {name:'Tokyo',       code:'TYO', c:'#F39700', s:{legibility:78,frequency:95,coverage:92,transfers:74,accessibility:88,affordability:70}},
+          {name:'Madrid',      code:'MAD', c:'#C3007A', s:{legibility:80,frequency:78,coverage:86,transfers:77,accessibility:83,affordability:81}},
+          {name:'Berlin',      code:'BER', c:'#8CB63C', s:{legibility:84,frequency:72,coverage:78,transfers:83,accessibility:79,affordability:74}},
+          {name:'Paris',       code:'PAR', c:'#F2C500', s:{legibility:72,frequency:90,coverage:88,transfers:68,accessibility:52,affordability:76}},
+          {name:'Stockholm',   code:'STO', c:'#0091D2', s:{legibility:86,frequency:68,coverage:64,transfers:76,accessibility:90,affordability:58}},
+          {name:'London',      code:'LDN', c:'#DC241F', s:{legibility:91,frequency:84,coverage:80,transfers:79,accessibility:64,affordability:38}},
+          {name:'Mexico City', code:'MEX', c:'#F25CA2', s:{legibility:76,frequency:70,coverage:72,transfers:66,accessibility:49,affordability:95}},
+          {name:'São Paulo',   code:'SAO', c:'#996633', s:{legibility:70,frequency:74,coverage:66,transfers:64,accessibility:58,affordability:88}},
+          {name:'Toronto',     code:'TOR', c:'#009E9B', s:{legibility:74,frequency:64,coverage:58,transfers:70,accessibility:72,affordability:66}},
+          {name:'New York',    code:'NYC', c:'#0039A6', s:{legibility:58,frequency:76,coverage:84,transfers:62,accessibility:47,affordability:65}},
+        ];
+        CITIES.forEach(c=>{
+          const v=Object.values(c.s);
+          c.overall=Math.round(v.reduce((a,b)=>a+b,0)/v.length*10)/10;
+        });
+
+        const SVGNS='http://www.w3.org/2000/svg';
+        const tip=document.getElementById('tip');
+        function showTip(html,x,y){tip.innerHTML=html;tip.style.left=x+'px';tip.style.top=y+'px';tip.classList.add('on');}
+        function hideTip(){tip.classList.remove('on');}
+        function el(tag,attrs,parent){const n=document.createElementNS(SVGNS,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n;}
+
+        /* ================= Color strip ================= */
+        const strip=document.getElementById('colorstrip');
+        [...CITIES].sort((a,b)=>a.name.localeCompare(b.name)).forEach(c=>{
+          const s=document.createElement('span');s.style.background=c.c;strip.appendChild(s);
+        });
+
+        /* ================= Route map (TOC) ================= */
+        const SECTIONS=[
+          {id:'explorer',  lbl:'Explore the scores'},
+          {id:'argmap-sec',lbl:'The map'},
+          {id:'s-origin',  lbl:'Why usability'},
+          {id:'s-index',   lbl:'The index'},
+          {id:'s-f1',      lbl:'Legibility'},
+          {id:'s-f2',      lbl:'Frequency'},
+          {id:'s-f3',      lbl:'Transfers'},
+          {id:'s-equity',  lbl:'Equity'},
+          {id:'s-terminus',lbl:'Terminus'},
+        ];
+        const route=document.getElementById('route');
+        SECTIONS.forEach(s=>{
+          const a=document.createElement('a');
+          a.className='stop';a.href='#'+s.id;a.dataset.target=s.id;
+          a.innerHTML='<span class="tick"></span><span class="lbl">'+s.lbl+'</span>';
+          route.appendChild(a);
+        });
+
+        /* ================= Radar ================= */
+        let selected=['Seoul','Paris','New York'];
+        const radar=document.getElementById('radar');
+        const CX=280, CY=252, R=176, N=METRICS.length;
+        function pt(i,val){ // val 0..100
+          const ang=-Math.PI/2 + i*2*Math.PI/N;
+          const r=R*val/100;
+          return [CX+r*Math.cos(ang), CY+r*Math.sin(ang)];
+        }
+        function drawRadar(){
+          radar.innerHTML='';
+          // rings
+          for(let ring=20;ring<=100;ring+=20){
+            const pts=[];for(let i=0;i<N;i++)pts.push(pt(i,ring).join(','));
+            el('polygon',{points:pts.join(' '),fill:ring===100?'#FAFAF6':'none',stroke:'#E3E2DC','stroke-width':ring===100?1.5:1,'stroke-dasharray':ring===100?'none':'3 4'},radar);
+          }
+          // re-draw outer fill behind: move filled outer first
+          // axes
+          for(let i=0;i<N;i++){
+            const [x,y]=pt(i,100);
+            el('line',{x1:CX,y1:CY,x2:x,y2:y,stroke:'#E3E2DC','stroke-width':1},radar);
+          }
+          // axis labels
+          METRICS.forEach((m,i)=>{
+            const [x,y]=pt(i,118);
+            const t=el('text',{x,y,'text-anchor':'middle','dominant-baseline':'middle',fill:'#4C5160',
+              style:'font-family:Archivo,sans-serif;font-weight:700;font-size:13px;letter-spacing:.04em'},radar);
+            t.textContent=m.label.toUpperCase();
+            const dot=el('circle',{cx:x,cy:y+16,r:4,fill:m.c},radar);
+            if(i===0)dot.setAttribute('cy',y-16);
+          });
+          // ring scale numbers
+          [20,40,60,80,100].forEach(v=>{
+            const t=el('text',{x:CX+6,y:CY-R*v/100-4,fill:'#B6B4AC',style:'font-family:"IBM Plex Mono",monospace;font-size:10px'},radar);
+            t.textContent=v;
+          });
+          // city polygons
+          selected.forEach(name=>{
+            const c=CITIES.find(x=>x.name===name);
+            const pts=METRICS.map((m,i)=>pt(i,c.s[m.key]));
+            el('polygon',{points:pts.map(p=>p.join(',')).join(' '),fill:c.c,'fill-opacity':.13,stroke:c.c,'stroke-width':2.5,'stroke-linejoin':'round'},radar);
+            pts.forEach((p,i)=>{
+              const v=el('circle',{cx:p[0],cy:p[1],r:5,fill:'#fff',stroke:c.c,'stroke-width':3,style:'cursor:pointer'},radar);
+              const hit=el('circle',{cx:p[0],cy:p[1],r:13,fill:'transparent',style:'cursor:pointer'},radar);
+              const handler=e=>{showTip('<b>'+c.name+'</b> · '+METRICS[i].label+': <b>'+c.s[METRICS[i].key]+'</b>',e.clientX,e.clientY);v.setAttribute('r',7);};
+              hit.addEventListener('mousemove',handler);
+              hit.addEventListener('mouseleave',()=>{hideTip();v.setAttribute('r',5);});
+            });
+          });
+        }
+
+        /* ================= Chips & legend ================= */
+        const chips=document.getElementById('chips');
+        const legend=document.getElementById('legend');
+        function drawChips(){
+          chips.innerHTML='';
+          CITIES.forEach(c=>{
+            const b=document.createElement('button');
+            b.className='chip';b.type='button';
+            b.style.setProperty('--c',c.c);
+            b.setAttribute('aria-pressed',selected.includes(c.name));
+            b.innerHTML='<span class="roundel"></span><span>'+c.name+'</span><span class="score">'+c.overall.toFixed(1)+'</span>';
+            b.addEventListener('click',()=>toggleCity(c.name));
+            chips.appendChild(b);
+          });
+          legend.innerHTML='';
+          selected.forEach(name=>{
+            const c=CITIES.find(x=>x.name===name);
+            const r=document.createElement('div');r.className='leg-row';
+            r.innerHTML='<span class="bar" style="background:'+c.c+'"></span><span class="nm">'+c.name+'</span><span class="ov">TNUI <b>'+c.overall.toFixed(1)+'</b> / 100</span>';
+            legend.appendChild(r);
+          });
+        }
+        function toggleCity(name){
+          if(selected.includes(name)){
+            if(selected.length>1)selected=selected.filter(n=>n!==name);
+          }else{
+            selected.push(name);
+            if(selected.length>3)selected.shift();
+          }
+          drawRadar();drawChips();drawGaps();drawBump();drawHeat();drawBoard();
+        }
+
+        /* ================= Index line ================= */
+        const idx=document.getElementById('idxline');
+        function drawIndexLine(){
+          idx.innerHTML='';
+          const X0=60,X1=940,Y=58,MIN=60,MAX=90;
+          const x=v=>X0+(v-MIN)/(MAX-MIN)*(X1-X0);
+          // ticks
+          for(let v=MIN;v<=MAX;v+=10){
+            el('line',{x1:x(v),y1:Y-20,x2:x(v),y2:Y+16,stroke:'#E3E2DC','stroke-width':1},idx);
+            const t=el('text',{x:x(v),y:Y-28,'text-anchor':'middle',fill:'#B6B4AC',style:'font-family:"IBM Plex Mono",monospace;font-size:11px'},idx);
+            t.textContent=v;
+          }
+          // main line
+          el('line',{x1:X0-18,y1:Y,x2:X1+18,y2:Y,stroke:'#15181F','stroke-width':6,'stroke-linecap':'round'},idx);
+          // arrow label
+          const dir=el('text',{x:X1+18,y:Y+36,'text-anchor':'end',fill:'#4C5160',style:'font-family:Archivo,sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em'},idx);
+          dir.textContent='MORE USABLE →';
+          // nodes sorted to alternate label rows on crowding
+          const sorted=[...CITIES].sort((a,b)=>a.overall-b.overall);
+          sorted.forEach((c,i)=>{
+            const cx=x(c.overall);
+            const g=el('g',{class:'idx-node',tabindex:0,role:'button','aria-label':c.name+', overall score '+c.overall.toFixed(1)},idx);
+            el('circle',{class:'outer',cx,cy:Y,r:9,fill:'#fff',stroke:c.c,'stroke-width':5},g);
+            const above=i%2===0;
+            const ly=above?Y+34:Y-44; // label start (rotated)
+            const t=el('text',{x:cx,y:above?Y+30:Y-26,fill:'#15181F','text-anchor':above?'end':'start',
+              transform:'rotate('+(above?-42:-42)+' '+cx+' '+(above?Y+30:Y-26)+')',
+              style:'font-family:Archivo,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.06em'},g);
+            t.textContent=c.code;
+            const move=e=>showTip('<b>'+c.name+'</b> · TNUI <b>'+c.overall.toFixed(1)+'</b>',e.clientX,e.clientY);
+            g.addEventListener('mousemove',move);
+            g.addEventListener('mouseleave',hideTip);
+            const act=()=>{ if(!selected.includes(c.name))toggleCity(c.name);
+              document.getElementById('figs').scrollIntoView({behavior:'smooth',block:'center'}); };
+            g.addEventListener('click',act);
+            g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act();}});
+          });
+        }
+
+        /* ================= Figure tabs ================= */
+        const FIGS=['radar','bump','heat','board'];
+        function switchFig(name){
+          FIGS.forEach(f=>{
+            document.getElementById('fig-'+f).classList.toggle('fig-hidden',f!==name);
+            document.querySelector('.figtab[data-fig="'+f+'"]').setAttribute('aria-selected',String(f===name));
+          });
+        }
+        document.querySelectorAll('.figtab').forEach(b=>b.addEventListener('click',()=>switchFig(b.dataset.fig)));
+
+        /* ================= Bump chart — the metric line map ================= */
+        const bump=document.getElementById('bump');
+        const BCOLS=[{key:'overall',label:'TNUI · Overall',c:'#15181F'},...METRICS.map(m=>({key:m.key,label:m.label,c:m.c}))];
+        function cityVal(c,key){return key==='overall'?c.overall:c.s[key];}
+        function rankTable(){
+          const t={};
+          BCOLS.forEach(col=>{
+            [...CITIES].sort((a,b)=>cityVal(b,col.key)-cityVal(a,col.key))
+              .forEach((c,i)=>{(t[c.name]=t[c.name]||{})[col.key]=i+1;});
+          });
+          return t;
+        }
+        function elbowSeg(x1,y1,x2,y2){
+          if(y1===y2)return' L'+x2+' '+y2;
+          const mx=(x1+x2)/2,s=y2>y1?1:-1;
+          const r=Math.min(9,Math.abs(y2-y1)/2,(x2-x1)/2);
+          return' L'+(mx-r)+' '+y1+' Q'+mx+' '+y1+' '+mx+' '+(y1+s*r)
+                +' L'+mx+' '+(y2-s*r)+' Q'+mx+' '+y2+' '+(mx+r)+' '+y2+' L'+x2+' '+y2;
+        }
+        let bumpFocus=null;
+        function drawBump(){
+          bump.innerHTML='';
+          const X0=92,X1=474,TOP=112,BOT=520;
+          const xs=BCOLS.map((_,i)=>X0+i*(X1-X0)/(BCOLS.length-1));
+          const ys=r=>TOP+(r-1)*(BOT-TOP)/11;
+          const ranks=rankTable();
+          BCOLS.forEach((col,i)=>{
+            el('line',{x1:xs[i],y1:TOP-12,x2:xs[i],y2:BOT+12,stroke:'#EEEDE7','stroke-width':1.5},bump);
+            el('circle',{cx:xs[i],cy:TOP-22,r:4,fill:col.c},bump);
+            const t=el('text',{x:xs[i]+2,y:TOP-36,'text-anchor':'start',fill:'#4C5160',
+              transform:'rotate(-34 '+(xs[i]+2)+' '+(TOP-36)+')',
+              style:'font-family:Archivo,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.05em'},bump);
+            t.textContent=col.label.toUpperCase();
+          });
+          for(let r=1;r<=12;r++){
+            const t=el('text',{x:30,y:ys(r)+3,'text-anchor':'middle',fill:'#B6B4AC',
+              style:'font-family:"IBM Plex Mono",monospace;font-size:10px'},bump);
+            t.textContent=r;
+          }
+          const order=[...CITIES].sort((a,b)=>{
+            const w=c=>(bumpFocus===c.name?2:selected.includes(c.name)?1:0);
+            return w(a)-w(b);
+          });
+          order.forEach(c=>{
+            const pts=BCOLS.map((col,i)=>[xs[i],ys(ranks[c.name][col.key])]);
+            const focusOn=bumpFocus===c.name, sel=selected.includes(c.name);
+            const op=bumpFocus?(focusOn?1:0.1):(sel?1:0.3);
+            const w=(focusOn||sel)?4.5:2.5;
+            const g=el('g',{opacity:op,'pointer-events':'none'},bump);
+            let d='M'+pts[0][0]+' '+pts[0][1];
+            for(let i=1;i<pts.length;i++)d+=elbowSeg(pts[i-1][0],pts[i-1][1],pts[i][0],pts[i][1]);
+            el('path',{d,fill:'none',stroke:c.c,'stroke-width':w,'stroke-linecap':'round','stroke-linejoin':'round'},g);
+            pts.forEach(p=>el('circle',{cx:p[0],cy:p[1],r:(focusOn||sel)?4:2.6,fill:'#fff',stroke:c.c,'stroke-width':(focusOn||sel)?2.5:1.6},g));
+            const lt=el('text',{x:X0-14,y:pts[0][1]+4,'text-anchor':'end',fill:c.c,
+              style:'font-family:Archivo,sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.04em'},g);
+            lt.textContent=c.code;
+            const rt=el('text',{x:X1+14,y:pts[pts.length-1][1]+4,'text-anchor':'start',fill:c.c,
+              style:'font-family:Archivo,sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.04em'},g);
+            rt.textContent=c.code;
+            let hd='M'+pts[0][0]+' '+pts[0][1];
+            for(let i=1;i<pts.length;i++)hd+=' L'+pts[i][0]+' '+pts[i][1];
+            const hit=el('path',{d:hd,fill:'none',stroke:'transparent','stroke-width':16,style:'cursor:pointer'},bump);
+            hit.addEventListener('mousemove',e=>{
+              if(bumpFocus!==c.name){bumpFocus=c.name;drawBump();}
+              showTip('<b>'+c.name+'</b> · overall rank <b>#'+ranks[c.name].overall+'</b> · TNUI '+c.overall.toFixed(1),e.clientX,e.clientY);
+            });
+            hit.addEventListener('mouseleave',()=>{bumpFocus=null;hideTip();drawBump();});
+            hit.addEventListener('click',()=>toggleCity(c.name));
+          });
+        }
+
+        /* ================= Heatmap — the score board ================= */
+        const heat=document.getElementById('heat');
+        let heatSort='overall';
+        const HCOLS=[
+          {key:'overall',ab:'TNUI',c:'#15181F'},
+          {key:'legibility',ab:'LEG',c:'#DC241F'},
+          {key:'frequency',ab:'FRQ',c:'#F39700'},
+          {key:'coverage',ab:'COV',c:'#F2C500'},
+          {key:'transfers',ab:'TRF',c:'#00A84D'},
+          {key:'accessibility',ab:'ACC',c:'#0091D2'},
+          {key:'affordability',ab:'AFF',c:'#6E51C8'},
+        ];
+        function drawHeat(){
+          heat.innerHTML='';
+          const LX=148,TOP=72,CW=56,GP=5,CH=30,RG=5;
+          const rows=[...CITIES].sort((a,b)=>cityVal(b,heatSort)-cityVal(a,heatSort));
+          HCOLS.forEach((h,i)=>{
+            const x=LX+i*(CW+GP)+CW/2;
+            const g=el('g',{style:'cursor:pointer',role:'button','aria-label':'Sort by '+h.ab},heat);
+            el('rect',{x:x-CW/2,y:TOP-58,width:CW,height:52,fill:'transparent'},g);
+            el('circle',{cx:x,cy:TOP-46,r:4.5,fill:h.c},g);
+            const t=el('text',{x,y:TOP-24,'text-anchor':'middle',fill:heatSort===h.key?'#15181F':'#8A8E9B',
+              style:'font-family:Archivo,sans-serif;font-weight:800;font-size:11px;letter-spacing:.08em'},g);
+            t.textContent=h.ab;
+            if(heatSort===h.key){
+              const a=el('text',{x,y:TOP-10,'text-anchor':'middle',fill:'#15181F',style:'font-size:9px'},g);
+              a.textContent='▼';
+            }
+            g.addEventListener('click',()=>{heatSort=h.key;drawHeat();});
+          });
+          rows.forEach((c,ri)=>{
+            const y=TOP+ri*(CH+RG);
+            const sel=selected.includes(c.name);
+            el('circle',{cx:18,cy:y+CH/2,r:5.5,fill:sel?c.c:'#fff',stroke:c.c,'stroke-width':3},heat);
+            const nm=el('text',{x:32,y:y+CH/2+4,fill:sel?'#15181F':'#4C5160',
+              style:'font-family:Archivo,sans-serif;font-weight:'+(sel?800:600)+';font-size:12px;cursor:pointer'},heat);
+            nm.textContent=c.name;
+            nm.addEventListener('click',()=>toggleCity(c.name));
+            HCOLS.forEach((h,i)=>{
+              const v=cityVal(c,h.key);
+              const x=LX+i*(CW+GP);
+              const o=Math.max(.07,Math.min(1,(v-35)/58));
+              el('rect',{x,y,width:CW,height:CH,rx:7,fill:h.c,'fill-opacity':o},heat);
+              const light=(h.key==='coverage');
+              const tx=el('text',{x:x+CW/2,y:y+CH/2+4,'text-anchor':'middle',
+                fill:(!light&&o>.55)?'#fff':'#15181F',
+                style:'font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600'},heat);
+              tx.textContent=h.key==='overall'?Math.round(v):v;
+            });
+          });
+        }
+
+
+        /* ================= Departures board ================= */
+        const boardRows=document.getElementById('boardRows');
+        function bestMetric(c){let bk=METRICS[0];METRICS.forEach(m=>{if(c.s[m.key]>c.s[bk.key])bk=m;});return bk;}
+        function drawBoard(){
+          boardRows.innerHTML='';
+          [...CITIES].sort((a,b)=>b.overall-a.overall).forEach((c,i)=>{
+            const row=document.createElement('div');
+            row.className='brow'+(selected.includes(c.name)?' sel':'');
+            row.style.animationDelay=(i*70)+'ms';
+            const bm=bestMetric(c);
+            const st=c.overall>=80?['GOOD SERVICE','ok']:c.overall>=70?['MINOR DELAYS','mid']:['DISRUPTED','bad'];
+            row.innerHTML='<span class="r">'+String(i+1).padStart(2,'0')+'</span>'
+              +'<span class="dot" style="background:'+c.c+'"></span>'
+              +'<span class="dest">'+c.name+'</span>'
+              +'<span class="pl">BEST: '+bm.label.toUpperCase()+'</span>'
+              +'<span class="sc">'+c.overall.toFixed(1)+'</span>'
+              +'<span class="st '+st[1]+'">'+st[0]+'</span>';
+            row.addEventListener('click',()=>toggleCity(c.name));
+            boardRows.appendChild(row);
+          });
+        }
+        const boardClock=document.getElementById('boardClock');
+        function tickClock(){
+          const d=new Date(),p=n=>String(n).padStart(2,'0');
+          boardClock.innerHTML=p(d.getHours())+'<span class="blink">:</span>'+p(d.getMinutes())+'<span class="blink">:</span>'+p(d.getSeconds());
+        }
+        setInterval(tickClock,1000);
+
+        /* ================= Argument map ================= */
+        const argsvg=document.getElementById('argmap');
+        const AM_LINES=[
+          {name:'Index Line — the spine',c:'#15181F',w:9,target:'s-origin',pts:[[80,280],[920,280]]},
+          {name:'Legibility Line — Finding 01',c:'#F2C500',w:6,target:'s-f1',pts:[[260,280],[300,280],[420,160],[800,160],[920,280]]},
+          {name:'Frequency Line — Finding 02',c:'#00A84D',w:6,target:'s-f2',pts:[[260,280],[320,280],[380,220],[840,220],[900,280],[920,280]]},
+          {name:'Transfer Line — Finding 03',c:'#0091D2',w:6,target:'s-f3',pts:[[260,280],[320,280],[380,340],[840,340],[900,280],[920,280]]},
+          {name:'Equity Line — Section 6',c:'#6E51C8',w:6,target:'s-equity',pts:[[260,280],[300,280],[420,400],[800,400],[920,280]]},
+        ];
+        const AM_STATIONS=[
+          {x:80,y:280,c:'#DC241F',big:1,lbl:'ORIGIN',sub:'why usability',ly:312,target:'s-origin'},
+          {x:260,y:280,c:'#F39700',big:1,lbl:'THE INDEX',sub:'six measures',ly:252,target:'s-index'},
+          {x:920,y:280,c:'#15181F',big:1,lbl:'TERMINUS',sub:'what to do monday',ly:312,target:'s-terminus'},
+          {x:480,y:160,c:'#F2C500',lbl:'Decision-point signage',ly:142,target:'s-f1'},
+          {x:622,y:160,c:'#F2C500',lbl:'Maps you can redraw',ly:142,target:'s-f1'},
+          {x:762,y:160,c:'#F2C500',lbl:'−38% wayfinding errors',ly:142,target:'s-f1'},
+          {x:470,y:220,c:'#00A84D',lbl:'Show-up threshold',ly:204... (7 Ko restants)
+      </script>
     </div>
     <script id="vike_pageContext" type="application/json">
       {
@@ -1458,18 +1939,19 @@
       {}
     </script>
     <script
-      src="/assets/entries/entry-server-routing.CbwL8gsF.js"
+      src="/assets/entries/entry-server-routing.Bsmem0cl.js"
       type="module"
       async
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_tmptransit.C2x6kZ_I.js"
+      href="/assets/entries/pages_tmptransit.CTak8CDo.js"
       as="script"
       type="text/javascript"
-    /><link
+    />
+    <link
       rel="modulepreload"
-      href="/assets/chunks/chunk-BrP49awo.js"
+      href="/assets/chunks/chunk-ByhLs_aB.js"
       as="script"
       type="text/javascript"
     />
