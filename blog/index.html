@@ -1,936 +1,1013 @@
 <!doctype html>
 <html
-  lang="fr-FR"
-  data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
-  data-ws-last-published="2026-06-24T11:25:21.298Z"
+    lang="fr-FR"
+    data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df"
+    data-ws-last-published="2026-06-24T11:25:21.298Z"
 >
-  <head>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/static/app_generated_index-6937cd5a.BGpDaPSg.css"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link
-      rel="preload"
-      as="image"
-      imagesrcset="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 16w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 32w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 48w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 64w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 96w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w"
-      imagesizes="100vw"
-    />
-    <link rel="icon" href="/assets/favicon_MxJdcsW9bJsq-zd8osHjF.ico" />
-    <link
-      rel="preload"
-      href="/assets/Nunito-VariableFont_wght_ewyymLm-PSZppKInuSfzo.ttf"
-      as="font"
-      crossorigin="anonymous"
-    />
-    <meta property="og:url" content="https://url/blog" />
-    <meta property="og:title" content="Blog de Méthode" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Méthode" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta
-      name="description"
-      content="Le blog de Méthode - Progiciels sur mesure"
-    />
-    <meta
-      property="og:description"
-      content="Le blog de Méthode - Progiciels sur mesure"
-    />
-    <meta property="twitter:card" content="summary_large_image" />
-    <title>Blog de Méthode</title>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Méthode"
-      }
-    </script>
-    <script>
-      (function () {
-        document.addEventListener(
-          "submit",
-          function (e) {
-            // 1. Target the specific form
-            const form = e.target.closest(
-              'form[action*="jcalenge.workers.dev"]',
-            );
-            if (!form) return;
-
-            // 2. Kill all default behavior
-            e.preventDefault();
-            e.stopImmediatePropagation();
-
-            // 3. Fire the request in the background
-            fetch(form.action, {
-              method: "POST",
-              body: new FormData(form),
-              mode: "no-cors",
-            });
-
-            // 4. MANUAL UI OVERRIDE
-            // Hide the entire form
-            form.style.display = "none";
-
-            // Look for the success message.
-            // In Webstudio, success containers usually have a state="success" attribute.
-            const successBox =
-              form.parentElement.querySelector('[state="success"]');
-
-            if (successBox) {
-              // Force the success box to show
-              successBox.style.display = "block";
-              // Some builders use flex, so if block looks weird, use 'flex'
-              // successBox.style.setProperty('display', 'flex', 'important');
-            } else {
-              // If we can't find the box, we'll create a simple success message
-              const thanks = document.createElement("div");
-              thanks.innerHTML = "<h3>Merci ! Votre message a été envoyé.</h3>";
-              thanks.style.padding = "20px";
-              thanks.style.textAlign = "center";
-              form.parentElement.appendChild(thanks);
+    <head>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/assets/static/app_generated_index-6937cd5a.BGpDaPSg.css"
+        />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link
+            rel="preload"
+            as="image"
+            imagesrcset="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 16w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 32w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 48w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 64w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 96w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w"
+            imagesizes="100vw"
+        />
+        <link rel="icon" href="/assets/favicon_MxJdcsW9bJsq-zd8osHjF.ico" />
+        <link
+            rel="preload"
+            href="/assets/Nunito-VariableFont_wght_ewyymLm-PSZppKInuSfzo.ttf"
+            as="font"
+            crossorigin="anonymous"
+        />
+        <meta property="og:url" content="https://url/blog" />
+        <meta property="og:title" content="Blog de Méthode" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Méthode" />
+        <meta
+            name="description"
+            content="Le blog de Méthode - Progiciels sur mesure"
+        />
+        <meta
+            property="og:description"
+            content="Le blog de Méthode - Progiciels sur mesure"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <title>Blog de Méthode</title>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Méthode"
             }
-          },
-          true,
-        );
-      })();
-    </script>
-  </head>
-  <body class="w-element">
-    <div class="w-element">
-      <div style="display: contents">
-        <div style="display: contents">
-          <div class="w-html-embed">
-            <style>
-              /* Remove preset margins on paragraphs. Margins on other elements, such as headings, are moved via Tokens. */
-              p {
-                margin: 0;
-              }
-              /* Make links scroll to their sections smoothly. */
-              * {
-                scroll-behavior: smooth;
-              }
-            </style>
-          </div>
-          <nav
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c13rtvuj c1uup4ib c1x05l0l cv236i0 c18yo5kt cm1pj c1djcjaj cqjnlda c1x7t933 c7qy5pm c1buloke cmfd5ud"
-          >
-            <a class="w-element" href="/"
-              ><img
-                alt=""
-                width="100"
-                height="200"
-                src="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg"
-                class="w-image c1je04uq"
-                sizes="100vw"
-                srcset="
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  16w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  32w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  48w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  64w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  96w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w,
-                  /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w
-                "
-                decoding="async"
-                loading="eager"
-            /></a>
-            <div
-              aria-label="Main navigation"
-              class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cveejg9 czlac5t cw1hgdq c19x3wtq c1j8oni9 c1u1y1hi ccf6y70 cy84l6z cd9nun1"
-            >
-              <div style="display: contents">
-                <div style="display: contents">
-                  <a
-                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                    href="/estimation"
-                    >Estimez votre projet</a
-                  ><a
-                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                    href="/#services"
-                    >Services</a
-                  ><a
-                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                    href="/#team"
-                    >L&#x27;équipe</a
-                  >
-                </div>
-              </div>
-              <a
-                class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
-                href="/#contact"
-                >Demander un appel</a
-              >
-            </div>
-          </nav>
-        </div>
-      </div>
-      <div class="w-element">
-        <div class="w-element c1hzitv3 c1n0kw9d c1xmq0ic">
-          <div
-            class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"
-          >
-            <div class="w-element">
-              <h1 class="w-element cmjvuci c10mfbj2 cx6x4m7">
-                Blog de Méthode
-              </h1>
-              <h1
-                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
-              >
-                Retrouvez nos publications ci-dessous
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div class="w-element c1hzitv3 c1lb8i4l">
-          <div
-            class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"
-          >
-            <div
-              class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
-            >
-              <h1
-                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
-              >
-                RAPTOR - Le celèbre algorithme expliqué
-              </h1>
-              <div class="w-element c7n7a5g ct4kqfb">
-                Round bAsed Public Transit Optimized Router, ou RAPTOR pour
-                faire court, est un algorithme conçu au centre de recherche
-                Microsoft Research par Daniel Delling, Thomas Pajor et Renato F.
-                Werneck en 2012. Il a défini une approche révolutionnaire de la
-                planification d&#x27;itinéraires et de l&#x27;optimisation du
-                routage dans les graphes de transport en commun.
-              </div>
-              <div class="w-element ctejk12 c1drc5qp c1b5iwru">
-                <img
-                  alt=""
-                  width="320"
-                  height="214"
-                  src="https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4"
-                  class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw chpcul c187gidv c13y6tzf cvxukp4 cajklg4"
-                  sizes="100vw"
-                  srcset="
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  16w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  32w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  48w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  64w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  96w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 128w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 256w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 384w,
-                    https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 640w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-              </div>
-              <a
-                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                href="/blog/raptor"
-                ><div
-                  class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
-                >
-                  <div style="display: contents">
-                    <div style="display: contents">
-                      <div
-                        class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
-                      >
-                        <svg
-                          width="100%"
-                          height="100%"
-                          viewBox="0 0 21 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="w-text">Lisez la suite</span></a
-              >
-            </div>
-            <div
-              class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
-            >
-              <h1
-                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
-              >
-                Competitive Programming - Par où commencer
-              </h1>
-              <div class="w-element c7n7a5g ct4kqfb">
-                Que vous débutiez votre premier cours d&#x27;algorithmique ou
-                que vous soyez un vétéran du métier, il est toujours bon
-                d&#x27;accueillir de nouvelles personnes dans ce loisir ! Cet
-                article vous présentera les ressources clés dont vous aurez
-                besoin pour plonger dans la programmation compétitive.
-              </div>
-              <div class="w-element ctejk12 c1drc5qp c1b5iwru">
-                <img
-                  alt=""
-                  width="320"
-                  height="214"
-                  src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg"
-                  class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw chpcul c187gidv c13y6tzf cvxukp4 cajklg4"
-                  sizes="100vw"
-                  srcset="
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  16w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  32w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  48w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  64w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  96w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 128w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 256w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 384w,
-                    https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 640w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-              </div>
-              <a
-                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                href="/blog/competitiveprogramming"
-                ><div
-                  class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
-                >
-                  <div style="display: contents">
-                    <div style="display: contents">
-                      <div
-                        class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
-                      >
-                        <svg
-                          width="100%"
-                          height="100%"
-                          viewBox="0 0 21 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="w-text">Lisez la suite</span></a
-              >
-            </div>
-            <div
-              class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
-            >
-              <h1
-                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
-              >
-                Le parsing d&#x27;e-mail sans LLM
-              </h1>
-              <div class="w-element c7n7a5g ct4kqfb">
-                <b class="w-element"
-                  >1 500 e-mails par jour, 11 000 par semaine, plus de 500 000
-                  par an.</b
-                ><br /><br />C&#x27;est la charge de données que l&#x27;on doit
-                gérer pour un seul client. Quand on a commencé à faire du NLP,
-                des statistiques et de lourds calculs orientés données sur
-                autant d&#x27;e-mails, on a rencontré un problème majeur : tout
-                est orienté LLM, alors même que ces modèles ne sont pas adaptés
-                à une tâche aussi répétitive.
-              </div>
-              <div class="w-element ctejk12 c1drc5qp c1b5iwru c15zvxf2">
-                <img
-                  alt=""
-                  width="320"
-                  height="214"
-                  src="https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ"
-                  class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw c187gidv c13y6tzf cvxukp4 cajklg4"
-                  sizes="100vw"
-                  srcset="
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  16w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  32w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  48w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  64w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  96w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 128w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 256w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 384w,
-                    https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 640w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-              </div>
-              <a
-                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                href="/blog/fastemailparser"
-                ><div
-                  class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
-                >
-                  <div style="display: contents">
-                    <div style="display: contents">
-                      <div
-                        class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
-                      >
-                        <svg
-                          width="100%"
-                          height="100%"
-                          viewBox="0 0 21 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="w-text">Lisez la suite</span></a
-              >
-            </div>
-            <div
-              class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
-            >
-              <h1
-                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
-              >
-                Chiffrements non sécurisés d&#x27;OpenSSL : pourquoi est-ce si
-                difficile de les activer, et comment y parvenir
-              </h1>
-              <div class="w-element c7n7a5g ct4kqfb">
-                Saviez-vous qu&#x27;il est presque impossible de régresser la
-                sécurité TLS en activant des chiffrements dépréciés sur les
-                versions récentes d&#x27;OpenSSL ?<br /><br />Bien sûr,
-                c&#x27;est une bonne chose : ainsi, les développeurs ne le
-                feront pas par accident.
-              </div>
-              <div class="w-element ctejk12 c1drc5qp c1b5iwru">
-                <img
-                  alt=""
-                  width="320"
-                  height="214"
-                  src="/assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png"
-                  class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw c187gidv c13y6tzf cvxukp4 cajklg4"
-                  sizes="100vw"
-                  srcset="
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  16w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  32w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  48w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  64w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  96w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 128w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 256w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 384w,
-                    /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 640w
-                  "
-                  decoding="async"
-                  loading="lazy"
-                />
-              </div>
-              <a
-                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                href="/blog/openssl"
-                ><div
-                  class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
-                >
-                  <div style="display: contents">
-                    <div style="display: contents">
-                      <div
-                        class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
-                      >
-                        <svg
-                          width="100%"
-                          height="100%"
-                          viewBox="0 0 21 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span class="w-text">Lisez la suite</span></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div style="display: contents">
-        <div style="display: contents">
-          <footer
-            class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c9tqjor c1ukvq2x c1buloke cmfd5ud c76w5dv cjj8lsn"
-          >
-            <div
-              class="w-box c1mg0fms cnopd54 c6rsq3t c1czifmt c1vxw0rd ccdo1v8 c1o768ho c1p1oiur crsj5vb cef5mjv"
-            >
-              <div
-                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c18yo5kt c6hxj15 cr0yq4r c1wm1hiu ct10b74 cy84l6z"
-              >
-                <a
-                  class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                  href="/"
-                  ><img
-                    alt=""
-                    width="200"
-                    height="342"
-                    src="/assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg"
-                    class="w-image ccdo1v8"
-                    sizes="100vw"
-                    srcset="
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  16w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  32w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  48w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  64w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  96w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 128w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 256w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 384w,
-                      /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 640w
-                    "
-                    decoding="async"
-                    loading="lazy"
-                /></a>
-                <div
-                  aria-label="footer navigation"
-                  class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cnt8zja czlac5t cw1hgdq c19x3wtq c1j8oni9 ccf6y70 c7tfixs c1keu5a5 c1k3wwe7"
-                >
-                  <div style="display: contents">
-                    <div style="display: contents">
-                      <a
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        href="/estimation"
-                        >Estimez votre projet</a
-                      ><a
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        href="/#services"
-                        >Services</a
-                      ><a
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        href="/#team"
-                        >L&#x27;équipe</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div style="display: contents">
-                  <div style="display: contents">
-                    <div
-                      class="w-box ccdo1v8 c7qy5pm ce9lonv cjrw7s3 c1b9b2da c1keu5a5 c1k3wwe7"
-                    >
-                      <a
-                        aria-label="LinkedIn"
-                        href="https://www.linkedin.com/company/120884002"
-                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c9tqjor c3s7c98 c6od58n cgeq41r cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
-                        ><div
-                          class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
-                        >
-                          <div style="display: contents">
-                            <div style="display: contents">
-                              <div class="w-html-embed">
-                                <svg
-                                  width="100%"
-                                  height="100%"
-                                  viewBox="0 0 17 17"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M0.317757 17H3.81308V5.68438H0.317757V17Z"
-                                    fill="currentColor"
-                                  ></path>
-                                  <path
-                                    d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z"
-                                    fill="currentColor"
-                                  ></path>
-                                  <path
-                                    d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z"
-                                    fill="currentColor"
-                                  ></path>
-                                </svg>
-                              </div>
-                            </div>
-                          </div></div
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="w-box ccdo1v8 c1p1oiur crsj5vb c1djcjaj cy84l6z">
-                <div
-                  class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq czfl3ei cveejg9"
-                >
-                  <div class="w-text">
-                    Méthode SAS au capital social de 1050€
-                  </div>
-                  <div class="w-text">contact@methode.dev</div>
-                  <span class="w-text c1ab7tt c1ujynhk"
-                    >132 rue Bossuet, 69006, Lyon, France</span
-                  >
-                </div>
-              </div>
-              <hr class="w-separator cv8vzg6 c1e5o7b8 c10mfbj2 cx6x4m7" />
-              <div class="w-box ccdo1v8 czlac5t cw1hgdq cg9rdh0">
-                <div class="w-text">
-                  © 2026 Méthode. All Rights Reserved.<br />Made with
-                  Webstudio.is
-                </div>
-              </div>
-            </div>
-          </footer>
-          <div style="display: contents">
+        </script>
+        <script>
+            (function () {
+                document.addEventListener(
+                    "submit",
+                    function (e) {
+                        // 1. Target the specific form
+                        const form = e.target.closest(
+                            'form[action*="jcalenge.workers.dev"]',
+                        );
+                        if (!form) return;
+
+                        // 2. Kill all default behavior
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+
+                        // 3. Fire the request in the background
+                        fetch(form.action, {
+                            method: "POST",
+                            body: new FormData(form),
+                            mode: "no-cors",
+                        });
+
+                        // 4. MANUAL UI OVERRIDE
+                        // Hide the entire form
+                        form.style.display = "none";
+
+                        // Look for the success message.
+                        // In Webstudio, success containers usually have a state="success" attribute.
+                        const successBox =
+                            form.parentElement.querySelector(
+                                '[state="success"]',
+                            );
+
+                        if (successBox) {
+                            // Force the success box to show
+                            successBox.style.display = "block";
+                            // Some builders use flex, so if block looks weird, use 'flex'
+                            // successBox.style.setProperty('display', 'flex', 'important');
+                        } else {
+                            // If we can't find the box, we'll create a simple success message
+                            const thanks = document.createElement("div");
+                            thanks.innerHTML =
+                                "<h3>Merci ! Votre message a été envoyé.</h3>";
+                            thanks.style.padding = "20px";
+                            thanks.style.textAlign = "center";
+                            form.parentElement.appendChild(thanks);
+                        }
+                    },
+                    true,
+                );
+            })();
+        </script>
+    </head>
+    <body class="w-element">
+        <div class="w-element">
             <div style="display: contents">
-              <div class="w-html-embed">
-                <style>
-                  :root {
-                    --ani-duration: var(--duration-default, 0.2s);
-                    --ani-delay: 0s;
-                    --ani-slide-offset: 20%;
-                    --ani-zoom-in-scale: 1;
-                    --ani-zoom-out-scale: 0.85;
-                    --ani-flip-rotate: 30deg;
-                    --ani-easing: var(--easing-default, ease);
-                    --ani-fill-mode: forwards;
-                  }
-                  [data-ani]:not([data-ani-children]),
-                  [data-ani-children]:not([data-ani-progress]) > * {
-                    animation-duration: var(--ani-duration);
-                    animation-delay: var(--ani-delay);
-                    animation-timing-function: var(--ani-easing);
-                    animation-fill-mode: var(--ani-fill-mode);
-                    opacity: 0;
-                  }
-                  [data-ani-progress]:not([data-ani-children]),
-                  [data-ani-children]:not([data-ani]) > * {
-                    transition-property: opacity, transform;
-                    transition-duration: var(--ani-duration);
-                    transition-timing-function: var(--ani-easing);
-                    opacity: 0;
-                  }
-                  @keyframes fadeIn {
-                    from {
-                      opacity: 0;
-                    }
-                    to {
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes fadeOut {
-                    from {
-                      opacity: 1;
-                    }
-                    to {
-                      opacity: 0;
-                    }
-                  }
-                  [data-ani-children][data-ani="fade"] > .in,
-                  [data-ani="fade"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: fadeIn;
-                  }
-                  [data-ani-children][data-ani="fade"] > .out,
-                  [data-ani="fade"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: fadeOut;
-                  }
-                  @keyframes slideIn {
-                    from {
-                      opacity: 0;
-                      translate: var(--ani-slide-transform);
-                    }
-                    to {
-                      opacity: 1;
-                      translate: none;
-                    }
-                  }
-                  @keyframes slideOut {
-                    from {
-                      opacity: 1;
-                      translate: none;
-                    }
-                    to {
-                      opacity: 0;
-                      translate: var(--ani-slide-transform);
-                    }
-                  }
-                  [data-ani-children][data-ani|="slide"] > .in,
-                  [data-ani|="slide"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: slideIn;
-                  }
-                  [data-ani-children][data-ani|="slide"] > .out,
-                  [data-ani|="slide"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: slideOut;
-                  }
-                  [data-ani="slide-up"] {
-                    --ani-slide-transform: 0 var(--ani-slide-offset);
-                  }
-                  [data-ani="slide-down"] {
-                    --ani-slide-transform: 0 calc(-1 * var(--ani-slide-offset));
-                  }
-                  [data-ani="slide-left"] {
-                    --ani-slide-transform: var(--ani-slide-offset);
-                  }
-                  [data-ani="slide-right"] {
-                    --ani-slide-transform: calc(-1 * var(--ani-slide-offset));
-                  }
-                  @keyframes zoomIn {
-                    from {
-                      opacity: 0;
-                      scale: var(--ani-zoom-out-scale);
-                    }
-                    to {
-                      opacity: 1;
-                      scale: 1;
-                    }
-                  }
-                  @keyframes zoomOut {
-                    from {
-                      opacity: 1;
-                      scale: 1;
-                    }
-                    to {
-                      opacity: 0;
-                      scale: var(--ani-zoom-in-scale);
-                    }
-                  }
-                  [data-ani-children][data-ani="zoom"] > .in,
-                  [data-ani|="zoom"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: zoomIn;
-                  }
-                  [data-ani-children][data-ani="zoom"] > .out,
-                  [data-ani|="zoom"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: zoomOut;
-                  }
-                  [data-ani-children][data-ani-progress="zoom"] > *,
-                  [data-ani-progress="zoom"]:not([data-ani-children]) {
-                    transform: scale(var(--ani-zoom-out-scale));
-                  }
-                  @keyframes flipInY {
-                    from {
-                      rotate: y var(--ani-flip-rotate);
-                      perspective: 2000px;
-                      opacity: 0;
-                    }
-                    to {
-                      rotate: y 0;
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes flipOutY {
-                    from {
-                      rotate: y 0;
-                      opacity: 1;
-                    }
-                    to {
-                      perspective: 2000px;
-                      rotate: y var(--ani-flip-rotate);
-                      opacity: 0;
-                    }
-                  }
-                  @keyframes flipInX {
-                    from {
-                      perspective: 2000px;
-                      rotate: x var(--ani-flip-rotate);
-                      opacity: 0;
-                    }
-                    to {
-                      rotate: x 0;
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes flipOutX {
-                    from {
-                      rotate: x 0;
-                      opacity: 1;
-                    }
-                    to {
-                      perspective: 2000px;
-                      rotate: x var(--ani-flip-rotate);
-                      opacity: 0;
-                    }
-                  }
-                  [data-ani-children][data-ani="flip-y"] > .in,
-                  [data-ani="flip-y"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: flipInY;
-                  }
-                  [data-ani-children][data-ani="flip-x"] > .in,
-                  [data-ani="flip-x"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation-name: flipInX;
-                  }
-                  [data-ani-children][data-ani="flip-y"] > .out,
-                  [data-ani="flip-y"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: flipOutY;
-                  }
-                  [data-ani-children][data-ani="flip-x"] > .out,
-                  [data-ani="flip-x"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation-name: flipOutX;
-                  }
-                  @keyframes expandDown {
-                    from {
-                      height: 0;
-                    }
-                    to {
-                      height: var(--newHeight);
-                    }
-                  }
-                  @keyframes expandUp {
-                    from {
-                      height: var(--newHeight);
-                    }
-                    to {
-                      height: 0;
-                    }
-                  }
-                  [data-ani="expand"],
-                  [data-ani="expand"][data-state="open"],
-                  [data-ani="expand"].in {
-                    --newHeight: var(
-                      --custom-height,
-                      var(
-                        --radix-accordion-content-height,
-                        var(--radix-collapsible-content-height, 100%)
-                      )
-                    );
-                    overflow: hidden;
-                    opacity: 1;
-                  }
-                  [data-ani-children][data-ani="expand"] > .in,
-                  [data-ani="expand"]:where(
-                      .in:not([data-state]),
-                      [data-state$="open"],
-                      [data-state="active"]
-                    ) {
-                    animation: expandDown var(--ani-duration) var(--ani-easing);
-                  }
-                  [data-ani-children][data-ani="expand"] > .out,
-                  [data-ani="expand"]:where(
-                      .out:not([data-state]),
-                      [data-state="closed"],
-                      [data-state="inactive"]
-                    ) {
-                    animation: expandUp var(--ani-duration) var(--ani-easing);
-                  }
-                  @media (prefers-reduced-motion: reduce) {
-                    [data-ani]:not([data-ani-children]),
-                    [data-ani-progress]:not([data-ani-children]),
-                    [data-ani-children] > * {
-                      opacity: 1;
-                      transform: none;
-                      animation: none;
-                      rotate: none;
-                      scale: none;
-                      translate: none;
-                    }
-                  }
-                </style>
-              </div>
+                <div style="display: contents">
+                    <div class="w-html-embed">
+                        <style>
+                            /* Remove preset margins on paragraphs. Margins on other elements, such as headings, are moved via Tokens. */
+                            p {
+                                margin: 0;
+                            }
+                            /* Make links scroll to their sections smoothly. */
+                            * {
+                                scroll-behavior: smooth;
+                            }
+                        </style>
+                    </div>
+                    <nav
+                        class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c13rtvuj c1uup4ib c1x05l0l cv236i0 c18yo5kt cm1pj c1djcjaj cqjnlda c1x7t933 c7qy5pm c1buloke cmfd5ud"
+                    >
+                        <a class="w-element" href="/"
+                            ><img
+                                alt=""
+                                width="100"
+                                height="200"
+                                src="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg"
+                                class="w-image c1je04uq"
+                                sizes="100vw"
+                                srcset="
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  16w,
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  32w,
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  48w,
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  64w,
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg  96w,
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w,
+                                    /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w
+                                "
+                                decoding="async"
+                                loading="eager"
+                        /></a>
+                        <div
+                            aria-label="Main navigation"
+                            class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cveejg9 czlac5t cw1hgdq c19x3wtq c1j8oni9 c1u1y1hi ccf6y70 cy84l6z cd9nun1"
+                        >
+                            <div style="display: contents">
+                                <div style="display: contents">
+                                    <a
+                                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                        href="/estimation"
+                                        >Estimez votre projet</a
+                                    ><a
+                                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                        href="/#services"
+                                        >Services</a
+                                    ><a
+                                        class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                        href="/#team"
+                                        >L&#x27;équipe</a
+                                    >
+                                </div>
+                            </div>
+                            <a
+                                class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p"
+                                href="/#contact"
+                                >Demander un appel</a
+                            >
+                        </div>
+                    </nav>
+                </div>
             </div>
-          </div>
+            <div class="w-element">
+                <div class="w-element c1hzitv3 c1n0kw9d c1xmq0ic">
+                    <div
+                        class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"
+                    >
+                        <div class="w-element">
+                            <h1 class="w-element cmjvuci c10mfbj2 cx6x4m7">
+                                Blog de Méthode
+                            </h1>
+                            <h1
+                                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
+                            >
+                                Retrouvez nos publications ci-dessous
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-element c1hzitv3 c1lb8i4l">
+                    <div
+                        class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"
+                    >
+                        <div
+                            class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
+                        >
+                            <h1
+                                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
+                            >
+                                RAPTOR - Le celèbre algorithme expliqué
+                            </h1>
+                            <div class="w-element c7n7a5g ct4kqfb">
+                                Round bAsed Public Transit Optimized Router, ou
+                                RAPTOR pour faire court, est un algorithme conçu
+                                au centre de recherche Microsoft Research par
+                                Daniel Delling, Thomas Pajor et Renato F.
+                                Werneck en 2012. Il a défini une approche
+                                révolutionnaire de la planification
+                                d&#x27;itinéraires et de l&#x27;optimisation du
+                                routage dans les graphes de transport en commun.
+                            </div>
+                            <div class="w-element ctejk12 c1drc5qp c1b5iwru">
+                                <img
+                                    alt=""
+                                    width="320"
+                                    height="214"
+                                    src="https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4"
+                                    class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw chpcul c187gidv c13y6tzf cvxukp4 cajklg4"
+                                    sizes="100vw"
+                                    srcset="
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  16w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  32w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  48w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  64w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4  96w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 128w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 256w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 384w,
+                                        https://miro.medium.com/v2/resize:fit:2000/format:webp/0*BL63ljQ8BQCN28Q4 640w
+                                    "
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <a
+                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                href="/blog/raptor"
+                                ><div
+                                    class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
+                                >
+                                    <div style="display: contents">
+                                        <div style="display: contents">
+                                            <div
+                                                class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
+                                            >
+                                                <svg
+                                                    width="100%"
+                                                    height="100%"
+                                                    viewBox="0 0 21 20"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="w-text">Lisez la suite</span></a
+                            >
+                        </div>
+                        <div
+                            class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
+                        >
+                            <h1
+                                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
+                            >
+                                Competitive Programming - Par où commencer
+                            </h1>
+                            <div class="w-element c7n7a5g ct4kqfb">
+                                Que vous débutiez votre premier cours
+                                d&#x27;algorithmique ou que vous soyez un
+                                vétéran du métier, il est toujours bon
+                                d&#x27;accueillir de nouvelles personnes dans ce
+                                loisir ! Cet article vous présentera les
+                                ressources clés dont vous aurez besoin pour
+                                plonger dans la programmation compétitive.
+                            </div>
+                            <div class="w-element ctejk12 c1drc5qp c1b5iwru">
+                                <img
+                                    alt=""
+                                    width="320"
+                                    height="214"
+                                    src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg"
+                                    class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw chpcul c187gidv c13y6tzf cvxukp4 cajklg4"
+                                    sizes="100vw"
+                                    srcset="
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  16w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  32w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  48w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  64w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg  96w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 128w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 256w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 384w,
+                                        https://miro.medium.com/v2/resize:fit:1400/format:webp/1*OW6mOHtmAdezAtRXm6QCxQ.jpeg 640w
+                                    "
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <a
+                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                href="/blog/competitiveprogramming"
+                                ><div
+                                    class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
+                                >
+                                    <div style="display: contents">
+                                        <div style="display: contents">
+                                            <div
+                                                class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
+                                            >
+                                                <svg
+                                                    width="100%"
+                                                    height="100%"
+                                                    viewBox="0 0 21 20"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="w-text">Lisez la suite</span></a
+                            >
+                        </div>
+                        <div
+                            class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
+                        >
+                            <h1
+                                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
+                            >
+                                Le parsing d&#x27;e-mail sans LLM
+                            </h1>
+                            <div class="w-element c7n7a5g ct4kqfb">
+                                <b class="w-element"
+                                    >1 500 e-mails par jour, 11 000 par semaine,
+                                    plus de 500 000 par an.</b
+                                ><br /><br />C&#x27;est la charge de données que
+                                l&#x27;on doit gérer pour un seul client. Quand
+                                on a commencé à faire du NLP, des statistiques
+                                et de lourds calculs orientés données sur autant
+                                d&#x27;e-mails, on a rencontré un problème
+                                majeur : tout est orienté LLM, alors même que
+                                ces modèles ne sont pas adaptés à une tâche
+                                aussi répétitive.
+                            </div>
+                            <div
+                                class="w-element ctejk12 c1drc5qp c1b5iwru c15zvxf2"
+                            >
+                                <img
+                                    alt=""
+                                    width="320"
+                                    height="214"
+                                    src="https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ"
+                                    class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw c187gidv c13y6tzf cvxukp4 cajklg4"
+                                    sizes="100vw"
+                                    srcset="
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  16w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  32w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  48w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  64w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ  96w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 128w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 256w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 384w,
+                                        https://media.licdn.com/dms/image/v2/D4D12AQEqzAU55i3GfQ/article-cover_image-shrink_720_1280/B4DZ6ODFxjHYAQ-/0/1780499636688?e=1782345600&amp;v=beta&amp;t=mi3NW4Um2q4VcaIDdnOy1LXng25q6dlt47fBRoGKfzQ 640w
+                                    "
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <a
+                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                href="/blog/fastemailparser"
+                                ><div
+                                    class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
+                                >
+                                    <div style="display: contents">
+                                        <div style="display: contents">
+                                            <div
+                                                class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
+                                            >
+                                                <svg
+                                                    width="100%"
+                                                    height="100%"
+                                                    viewBox="0 0 21 20"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="w-text">Lisez la suite</span></a
+                            >
+                        </div>
+                        <div
+                            class="w-element cqa2d8i c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"
+                        >
+                            <h1
+                                class="w-element c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9"
+                            >
+                                Chiffrements non sécurisés d&#x27;OpenSSL :
+                                pourquoi est-ce si difficile de les activer, et
+                                comment y parvenir
+                            </h1>
+                            <div class="w-element c7n7a5g ct4kqfb">
+                                Saviez-vous qu&#x27;il est presque impossible de
+                                régresser la sécurité TLS en activant des
+                                chiffrements dépréciés sur les versions récentes
+                                d&#x27;OpenSSL ?<br /><br />Bien sûr, c&#x27;est
+                                une bonne chose : ainsi, les développeurs ne le
+                                feront pas par accident.
+                            </div>
+                            <div class="w-element ctejk12 c1drc5qp c1b5iwru">
+                                <img
+                                    alt=""
+                                    width="320"
+                                    height="214"
+                                    src="/assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png"
+                                    class="w-image cre14m6 cl1vffb c15hy0z cjsk6lw c187gidv c13y6tzf cvxukp4 cajklg4"
+                                    sizes="100vw"
+                                    srcset="
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  16w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  32w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  48w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  64w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png  96w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 128w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 256w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 384w,
+                                        /assets/ssladina_82LNTQWvgvYIk2qwjnT8x.png 640w
+                                    "
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <a
+                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                href="/blog/openssl"
+                                ><div
+                                    class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
+                                >
+                                    <div style="display: contents">
+                                        <div style="display: contents">
+                                            <div
+                                                class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"
+                                            >
+                                                <svg
+                                                    width="100%"
+                                                    height="100%"
+                                                    viewBox="0 0 21 20"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="w-text">Lisez la suite</span></a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: contents">
+                <div style="display: contents">
+                    <footer
+                        class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c9tqjor c1ukvq2x c1buloke cmfd5ud c76w5dv cjj8lsn"
+                    >
+                        <div
+                            class="w-box c1mg0fms cnopd54 c6rsq3t c1czifmt c1vxw0rd ccdo1v8 c1o768ho c1p1oiur crsj5vb cef5mjv"
+                        >
+                            <div
+                                class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c18yo5kt c6hxj15 cr0yq4r c1wm1hiu ct10b74 cy84l6z"
+                            >
+                                <a
+                                    class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                    href="/"
+                                    ><img
+                                        alt=""
+                                        width="200"
+                                        height="342"
+                                        src="/assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg"
+                                        class="w-image ccdo1v8"
+                                        sizes="100vw"
+                                        srcset="
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  16w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  32w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  48w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  64w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg  96w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 128w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 256w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 384w,
+                                            /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 640w
+                                        "
+                                        decoding="async"
+                                        loading="lazy"
+                                /></a>
+                                <div
+                                    aria-label="footer navigation"
+                                    class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cnt8zja czlac5t cw1hgdq c19x3wtq c1j8oni9 ccf6y70 c7tfixs c1keu5a5 c1k3wwe7"
+                                >
+                                    <div style="display: contents">
+                                        <div style="display: contents">
+                                            <a
+                                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                                href="/estimation"
+                                                >Estimez votre projet</a
+                                            ><a
+                                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                                href="/#services"
+                                                >Services</a
+                                            ><a
+                                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                                href="/#team"
+                                                >L&#x27;équipe</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: contents">
+                                    <div style="display: contents">
+                                        <div
+                                            class="w-box ccdo1v8 c7qy5pm ce9lonv cjrw7s3 c1b9b2da c1keu5a5 c1k3wwe7"
+                                        >
+                                            <a
+                                                aria-label="LinkedIn"
+                                                href="https://www.linkedin.com/company/120884002"
+                                                class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c9tqjor c3s7c98 c6od58n cgeq41r cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"
+                                                ><div
+                                                    class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"
+                                                >
+                                                    <div
+                                                        style="
+                                                            display: contents;
+                                                        "
+                                                    >
+                                                        <div
+                                                            style="
+                                                                display: contents;
+                                                            "
+                                                        >
+                                                            <div
+                                                                class="w-html-embed"
+                                                            >
+                                                                <svg
+                                                                    width="100%"
+                                                                    height="100%"
+                                                                    viewBox="0 0 17 17"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <path
+                                                                        d="M0.317757 17H3.81308V5.68438H0.317757V17Z"
+                                                                        fill="currentColor"
+                                                                    ></path>
+                                                                    <path
+                                                                        d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z"
+                                                                        fill="currentColor"
+                                                                    ></path>
+                                                                    <path
+                                                                        d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z"
+                                                                        fill="currentColor"
+                                                                    ></path>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div></div
+                                            ></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="w-box ccdo1v8 c1p1oiur crsj5vb c1djcjaj cy84l6z"
+                            >
+                                <div
+                                    class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq czfl3ei cveejg9"
+                                >
+                                    <div class="w-text">
+                                        Méthode SAS au capital social de 1050€
+                                    </div>
+                                    <div class="w-text">
+                                        contact@methode.dev
+                                    </div>
+                                    <span class="w-text c1ab7tt c1ujynhk"
+                                        >132 rue Bossuet, 69006, Lyon,
+                                        France</span
+                                    >
+                                </div>
+                            </div>
+                            <hr
+                                class="w-separator cv8vzg6 c1e5o7b8 c10mfbj2 cx6x4m7"
+                            />
+                            <div class="w-box ccdo1v8 czlac5t cw1hgdq cg9rdh0">
+                                <div class="w-text">
+                                    © 2026 Méthode. All Rights Reserved.<br />Made
+                                    with Webstudio.is
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <div style="display: contents">
+                        <div style="display: contents">
+                            <div class="w-html-embed">
+                                <style>
+                                    :root {
+                                        --ani-duration: var(
+                                            --duration-default,
+                                            0.2s
+                                        );
+                                        --ani-delay: 0s;
+                                        --ani-slide-offset: 20%;
+                                        --ani-zoom-in-scale: 1;
+                                        --ani-zoom-out-scale: 0.85;
+                                        --ani-flip-rotate: 30deg;
+                                        --ani-easing: var(
+                                            --easing-default,
+                                            ease
+                                        );
+                                        --ani-fill-mode: forwards;
+                                    }
+                                    [data-ani]:not([data-ani-children]),
+                                    [data-ani-children]:not([data-ani-progress])
+                                        > * {
+                                        animation-duration: var(--ani-duration);
+                                        animation-delay: var(--ani-delay);
+                                        animation-timing-function: var(
+                                            --ani-easing
+                                        );
+                                        animation-fill-mode: var(
+                                            --ani-fill-mode
+                                        );
+                                        opacity: 0;
+                                    }
+                                    [data-ani-progress]:not(
+                                        [data-ani-children]
+                                    ),
+                                    [data-ani-children]:not([data-ani]) > * {
+                                        transition-property: opacity, transform;
+                                        transition-duration: var(
+                                            --ani-duration
+                                        );
+                                        transition-timing-function: var(
+                                            --ani-easing
+                                        );
+                                        opacity: 0;
+                                    }
+                                    @keyframes fadeIn {
+                                        from {
+                                            opacity: 0;
+                                        }
+                                        to {
+                                            opacity: 1;
+                                        }
+                                    }
+                                    @keyframes fadeOut {
+                                        from {
+                                            opacity: 1;
+                                        }
+                                        to {
+                                            opacity: 0;
+                                        }
+                                    }
+                                    [data-ani-children][data-ani="fade"] > .in,
+                                    [data-ani="fade"]:where(
+                                        .in:not([data-state]),
+                                        [data-state$="open"],
+                                        [data-state="active"]
+                                    ) {
+                                        animation-name: fadeIn;
+                                    }
+                                    [data-ani-children][data-ani="fade"] > .out,
+                                    [data-ani="fade"]:where(
+                                        .out:not([data-state]),
+                                        [data-state="closed"],
+                                        [data-state="inactive"]
+                                    ) {
+                                        animation-name: fadeOut;
+                                    }
+                                    @keyframes slideIn {
+                                        from {
+                                            opacity: 0;
+                                            translate: var(
+                                                --ani-slide-transform
+                                            );
+                                        }
+                                        to {
+                                            opacity: 1;
+                                            translate: none;
+                                        }
+                                    }
+                                    @keyframes slideOut {
+                                        from {
+                                            opacity: 1;
+                                            translate: none;
+                                        }
+                                        to {
+                                            opacity: 0;
+                                            translate: var(
+                                                --ani-slide-transform
+                                            );
+                                        }
+                                    }
+                                    [data-ani-children][data-ani|="slide"]
+                                        > .in,
+                                    [data-ani|="slide"]:where(
+                                        .in:not([data-state]),
+                                        [data-state$="open"],
+                                        [data-state="active"]
+                                    ) {
+                                        animation-name: slideIn;
+                                    }
+                                    [data-ani-children][data-ani|="slide"]
+                                        > .out,
+                                    [data-ani|="slide"]:where(
+                                        .out:not([data-state]),
+                                        [data-state="closed"],
+                                        [data-state="inactive"]
+                                    ) {
+                                        animation-name: slideOut;
+                                    }
+                                    [data-ani="slide-up"] {
+                                        --ani-slide-transform: 0
+                                            var(--ani-slide-offset);
+                                    }
+                                    [data-ani="slide-down"] {
+                                        --ani-slide-transform: 0
+                                            calc(-1 * var(--ani-slide-offset));
+                                    }
+                                    [data-ani="slide-left"] {
+                                        --ani-slide-transform: var(
+                                            --ani-slide-offset
+                                        );
+                                    }
+                                    [data-ani="slide-right"] {
+                                        --ani-slide-transform: calc(
+                                            -1 * var(--ani-slide-offset)
+                                        );
+                                    }
+                                    @keyframes zoomIn {
+                                        from {
+                                            opacity: 0;
+                                            scale: var(--ani-zoom-out-scale);
+                                        }
+                                        to {
+                                            opacity: 1;
+                                            scale: 1;
+                                        }
+                                    }
+                                    @keyframes zoomOut {
+                                        from {
+                                            opacity: 1;
+                                            scale: 1;
+                                        }
+                                        to {
+                                            opacity: 0;
+                                            scale: var(--ani-zoom-in-scale);
+                                        }
+                                    }
+                                    [data-ani-children][data-ani="zoom"] > .in,
+                                    [data-ani|="zoom"]:where(
+                                        .in:not([data-state]),
+                                        [data-state$="open"],
+                                        [data-state="active"]
+                                    ) {
+                                        animation-name: zoomIn;
+                                    }
+                                    [data-ani-children][data-ani="zoom"] > .out,
+                                    [data-ani|="zoom"]:where(
+                                        .out:not([data-state]),
+                                        [data-state="closed"],
+                                        [data-state="inactive"]
+                                    ) {
+                                        animation-name: zoomOut;
+                                    }
+                                    [data-ani-children][data-ani-progress="zoom"]
+                                        > *,
+                                    [data-ani-progress="zoom"]:not(
+                                        [data-ani-children]
+                                    ) {
+                                        transform: scale(
+                                            var(--ani-zoom-out-scale)
+                                        );
+                                    }
+                                    @keyframes flipInY {
+                                        from {
+                                            rotate: y var(--ani-flip-rotate);
+                                            perspective: 2000px;
+                                            opacity: 0;
+                                        }
+                                        to {
+                                            rotate: y 0;
+                                            opacity: 1;
+                                        }
+                                    }
+                                    @keyframes flipOutY {
+                                        from {
+                                            rotate: y 0;
+                                            opacity: 1;
+                                        }
+                                        to {
+                                            perspective: 2000px;
+                                            rotate: y var(--ani-flip-rotate);
+                                            opacity: 0;
+                                        }
+                                    }
+                                    @keyframes flipInX {
+                                        from {
+                                            perspective: 2000px;
+                                            rotate: x var(--ani-flip-rotate);
+                                            opacity: 0;
+                                        }
+                                        to {
+                                            rotate: x 0;
+                                            opacity: 1;
+                                        }
+                                    }
+                                    @keyframes flipOutX {
+                                        from {
+                                            rotate: x 0;
+                                            opacity: 1;
+                                        }
+                                        to {
+                                            perspective: 2000px;
+                                            rotate: x var(--ani-flip-rotate);
+                                            opacity: 0;
+                                        }
+                                    }
+                                    [data-ani-children][data-ani="flip-y"]
+                                        > .in,
+                                    [data-ani="flip-y"]:where(
+                                        .in:not([data-state]),
+                                        [data-state$="open"],
+                                        [data-state="active"]
+                                    ) {
+                                        animation-name: flipInY;
+                                    }
+                                    [data-ani-children][data-ani="flip-x"]
+                                        > .in,
+                                    [data-ani="flip-x"]:where(
+                                        .in:not([data-state]),
+                                        [data-state$="open"],
+                                        [data-state="active"]
+                                    ) {
+                                        animation-name: flipInX;
+                                    }
+                                    [data-ani-children][data-ani="flip-y"]
+                                        > .out,
+                                    [data-ani="flip-y"]:where(
+                                        .out:not([data-state]),
+                                        [data-state="closed"],
+                                        [data-state="inactive"]
+                                    ) {
+                                        animation-name: flipOutY;
+                                    }
+                                    [data-ani-children][data-ani="flip-x"]
+                                        > .out,
+                                    [data-ani="flip-x"]:where(
+                                        .out:not([data-state]),
+                                        [data-state="closed"],
+                                        [data-state="inactive"]
+                                    ) {
+                                        animation-name: flipOutX;
+                                    }
+                                    @keyframes expandDown {
+                                        from {
+                                            height: 0;
+                                        }
+                                        to {
+                                            height: var(--newHeight);
+                                        }
+                                    }
+                                    @keyframes expandUp {
+                                        from {
+                                            height: var(--newHeight);
+                                        }
+                                        to {
+                                            height: 0;
+                                        }
+                                    }
+                                    [data-ani="expand"],
+                                    [data-ani="expand"][data-state="open"],
+                                    [data-ani="expand"].in {
+                                        --newHeight: var(
+                                            --custom-height,
+                                            var(
+                                                --radix-accordion-content-height,
+                                                var(
+                                                    --radix-collapsible-content-height,
+                                                    100%
+                                                )
+                                            )
+                                        );
+                                        overflow: hidden;
+                                        opacity: 1;
+                                    }
+                                    [data-ani-children][data-ani="expand"]
+                                        > .in,
+                                    [data-ani="expand"]:where(
+                                        .in:not([data-state]),
+                                        [data-state$="open"],
+                                        [data-state="active"]
+                                    ) {
+                                        animation: expandDown
+                                            var(--ani-duration)
+                                            var(--ani-easing);
+                                    }
+                                    [data-ani-children][data-ani="expand"]
+                                        > .out,
+                                    [data-ani="expand"]:where(
+                                        .out:not([data-state]),
+                                        [data-state="closed"],
+                                        [data-state="inactive"]
+                                    ) {
+                                        animation: expandUp var(--ani-duration)
+                                            var(--ani-easing);
+                                    }
+                                    @media (prefers-reduced-motion: reduce) {
+                                        [data-ani]:not([data-ani-children]),
+                                        [data-ani-progress]:not(
+                                            [data-ani-children]
+                                        ),
+                                        [data-ani-children] > * {
+                                            opacity: 1;
+                                            transform: none;
+                                            animation: none;
+                                            rotate: none;
+                                            scale: none;
+                                            translate: none;
+                                        }
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <script id="vike_pageContext" type="application/json">
-      {
-        "_urlRewrite": null,
-        "pageId": "/pages/blog",
-        "routeParams": {},
-        "data": {
-          "url": "https://url/blog",
-          "system": {
-            "params": {},
-            "search": {},
-            "origin": "https://url",
-            "pathname": "/blog"
-          },
-          "resources": {},
-          "pageMeta": {
-            "title": "Blog de Méthode",
-            "description": "Le blog de Méthode - Progiciels sur mesure",
-            "excludePageFromSearch": true,
-            "language": "fr-FR",
-            "socialImageAssetName": "!undefined",
-            "socialImageUrl": "",
-            "status": "!undefined",
-            "redirect": "",
-            "content": "!undefined",
-            "custom": []
-          }
-        }
-      }
-    </script>
-    <script id="vike_globalContext" type="application/json">
-      {}
-    </script>
-    <script
-      src="/assets/entries/entry-server-routing.Bsmem0cl.js"
-      type="module"
-      async
-    ></script>
-    <link
-      rel="modulepreload"
-      href="/assets/entries/pages_blog.BS_kHpnq.js"
-      as="script"
-      type="text/javascript"
-    /><link
-      rel="modulepreload"
-      href="/assets/chunks/chunk-ByhLs_aB.js"
-      as="script"
-      type="text/javascript"
-    /><link
-      rel="modulepreload"
-      href="/assets/chunks/chunk-DWRP5VdU.js"
-      as="script"
-      type="text/javascript"
-    />
-  </body>
+        <script id="vike_pageContext" type="application/json">
+            {
+                "_urlRewrite": null,
+                "pageId": "/pages/blog",
+                "routeParams": {},
+                "data": {
+                    "url": "https://url/blog",
+                    "system": {
+                        "params": {},
+                        "search": {},
+                        "origin": "https://url",
+                        "pathname": "/blog"
+                    },
+                    "resources": {},
+                    "pageMeta": {
+                        "title": "Blog de Méthode",
+                        "description": "Le blog de Méthode - Progiciels sur mesure",
+                        "excludePageFromSearch": true,
+                        "language": "fr-FR",
+                        "socialImageAssetName": "!undefined",
+                        "socialImageUrl": "",
+                        "status": "!undefined",
+                        "redirect": "",
+                        "content": "!undefined",
+                        "custom": []
+                    }
+                }
+            }
+        </script>
+        <script id="vike_globalContext" type="application/json">
+            {}
+        </script>
+        <script
+            src="/assets/entries/entry-server-routing.Bsmem0cl.js"
+            type="module"
+            async
+        ></script>
+        <link
+            rel="modulepreload"
+            href="/assets/entries/pages_blog.BS_kHpnq.js"
+            as="script"
+            type="text/javascript"
+        /><link
+            rel="modulepreload"
+            href="/assets/chunks/chunk-ByhLs_aB.js"
+            as="script"
+            type="text/javascript"
+        /><link
+            rel="modulepreload"
+            href="/assets/chunks/chunk-DWRP5VdU.js"
+            as="script"
+            type="text/javascript"
+        />
+    </body>
 </html>
