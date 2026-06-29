@@ -25,20 +25,30 @@
       as="font"
       crossorigin="anonymous"
     />
-    <meta property="og:url" content="https://url/realisations/erp" />
-    <meta property="og:title" content="Méthode - ERP maritime sur mesure" />
+    <meta property="og:url" content="https://url/blog/outlook-addin" />
+    <meta
+      property="og:title"
+      content="Méthode - Les coulisses d&#x27;un plugin d&#x27;annotation Outlook - Pourquoi c&#x27;est essentiel"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Méthode" />
     <meta
       name="description"
-      content="Chez notre client, la gestion des relèves d&#x27;équipage est un métier d&#x27;orfèvre. Chaque jour, des dizaines de marins doivent être acheminés aux quatre coins du globe pour rejoindre ou quitter leurs navires : un capitaine à Marseille, un équipage entier au Havre, un officier mécanicien en urgence en Méditerranée... Derrière chaque mission se cache un véritable jeu d&#x27;échecs logistique."
+      content="Sur le papier, le projet avait l&#x27;air sage : un petit volet dans Outlook pour étiqueter des e-mails avec des catégories métier, et un tableau de bord pour les administrateurs. Des cases à cocher, une table en base, quelques graphiques. Rien d&#x27;effrayant.
+
+Sauf que le vrai risque n&#x27;était pas là."
     />
     <meta
       property="og:description"
-      content="Chez notre client, la gestion des relèves d&#x27;équipage est un métier d&#x27;orfèvre. Chaque jour, des dizaines de marins doivent être acheminés aux quatre coins du globe pour rejoindre ou quitter leurs navires : un capitaine à Marseille, un équipage entier au Havre, un officier mécanicien en urgence en Méditerranée... Derrière chaque mission se cache un véritable jeu d&#x27;échecs logistique."
+      content="Sur le papier, le projet avait l&#x27;air sage : un petit volet dans Outlook pour étiqueter des e-mails avec des catégories métier, et un tableau de bord pour les administrateurs. Des cases à cocher, une table en base, quelques graphiques. Rien d&#x27;effrayant.
+
+Sauf que le vrai risque n&#x27;était pas là."
     />
     <meta property="twitter:card" content="summary_large_image" />
-    <title>Méthode - ERP maritime sur mesure</title>
+    <title>
+      Méthode - Les coulisses d&#x27;un plugin d&#x27;annotation Outlook -
+      Pourquoi c&#x27;est essentiel
+    </title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -167,21 +177,21 @@
             class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c6hxj15 cr0yq4r c1buloke cmfd5ud ct10b74 cy84l6z"
           >
             <div class="w-html-embed">
-              <div class="cas-root">
+              <div class="mpa-root">
                 <style>
-                  .cas-root,
-                  .cas-root *,
-                  .cas-root *::before,
-                  .cas-root *::after {
+                  .mpa-root,
+                  .mpa-root *,
+                  .mpa-root *::before,
+                  .mpa-root *::after {
                     box-sizing: border-box;
                   }
-                  .cas-root {
+                  .mpa-root {
                     font-family: Nunito, sans-serif;
                     color: var(--foreground-secondary, #191a23);
-                    max-width: 860px;
+                    max-width: 760px;
                     margin: 0 auto;
                   }
-                  .cas-back {
+                  .mpa-back {
                     display: inline-block;
                     margin-bottom: 16px;
                     font-weight: 700;
@@ -189,14 +199,14 @@
                     color: var(--foreground-muted, #5f6068);
                     text-decoration: none;
                   }
-                  .cas-back:hover {
+                  .mpa-back:hover {
                     color: var(--foreground-accent, #f9a040);
                   }
-                  .cas-hero {
+                  .mpa-hero {
                     position: relative;
                     display: flex;
                     align-items: flex-end;
-                    min-height: 360px;
+                    min-height: 320px;
                     border: var(--border-size-1, 1px) solid
                       var(--foreground-border, #191a23);
                     border-radius: 20px;
@@ -206,75 +216,55 @@
                     background-size: cover;
                     background-position: center;
                   }
-                  .cas-hero::before {
+                  .mpa-hero::before {
                     content: "";
                     position: absolute;
                     inset: 0;
                     background: linear-gradient(
                       to top,
-                      rgba(0, 0, 0, 0.78),
-                      rgba(0, 0, 0, 0.2) 55%,
+                      rgba(0, 0, 0, 0.8),
+                      rgba(0, 0, 0, 0.25) 55%,
                       rgba(0, 0, 0, 0.05)
                     );
                   }
-                  .cas-hero-inner {
+                  .mpa-hero-inner {
                     position: relative;
                     z-index: 1;
                     width: 100%;
                     padding: var(--size-px-6, 28px);
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: 8px;
                   }
-                  .cas-hero-head {
-                    display: flex;
-                    align-items: center;
-                    gap: 14px;
-                  }
-                  .cas-logo {
-                    width: 52px;
-                    height: 52px;
-                    flex: 0 0 auto;
-                    border-radius: 12px;
-                    border: var(--border-size-1, 1px) solid
-                      var(--foreground-border, #191a23);
-                    background: #fff;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-weight: 900;
-                    font-size: 1.1rem;
-                    color: var(--foreground-secondary, #191a23);
-                    box-shadow: 0 3px #000;
-                    overflow: hidden;
-                  }
-                  .cas-logo img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                  }
-                  .cas-title {
+                  .mpa-title {
                     margin: 0;
                     font-size: 2rem;
                     font-weight: 900;
                     line-height: 1.1;
                     color: #fff;
                   }
-                  .cas-tagline {
+                  .mpa-excerpt {
                     margin: 0;
                     font-size: 1.05rem;
                     font-weight: 700;
                     color: #fff;
                     opacity: 0.95;
                   }
-                  .cas-tags {
+                  .mpa-meta {
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    color: #fff;
+                    opacity: 0.85;
+                  }
+                  .mpa-tags {
                     display: flex;
                     flex-wrap: wrap;
                     gap: 8px;
                     margin: 20px 0 8px;
                   }
-                  .cas-tag {
+                  .mpa-tag {
                     font-size: 0.78rem;
                     font-weight: 700;
                     padding: 6px 12px;
@@ -284,65 +274,178 @@
                       var(--foreground-border, #191a23);
                     color: var(--foreground-secondary, #191a23);
                   }
-                  .cas-section {
-                    margin-top: 36px;
+                  .mpa-body {
+                    margin-top: 28px;
+                    font-size: 1.05rem;
+                    line-height: 1.7;
+                    color: var(--foreground-secondary, #191a23);
                   }
-                  .cas-h2 {
-                    display: flex;
-                    align-items: baseline;
-                    gap: 12px;
-                    margin: 0 0 14px;
+                  .mpa-body h2 {
+                    margin: 36px 0 12px;
                     font-size: 1.5rem;
                     font-weight: 800;
-                    color: var(--foreground-secondary, #191a23);
+                    line-height: 1.2;
                   }
-                  .cas-num {
-                    flex: 0 0 auto;
-                    font-size: 1rem;
-                    font-weight: 900;
-                    color: #fff;
-                    background: var(--foreground-accent, #f9a040);
-                    border: var(--border-size-1, 1px) solid
-                      var(--foreground-border, #191a23);
-                    border-radius: 10px;
-                    padding: 2px 10px;
-                    box-shadow: 0 3px #000;
+                  .mpa-body h3 {
+                    margin: 28px 0 10px;
+                    font-size: 1.2rem;
+                    font-weight: 800;
                   }
-                  .cas-p {
-                    margin: 0 0 14px;
-                    font-size: 1.02rem;
-                    line-height: 1.65;
-                    color: var(--foreground-secondary, #191a23);
+                  .mpa-body p {
+                    margin: 0 0 16px;
                   }
-                  .cas-ul {
-                    margin: 0 0 14px;
-                    padding: 0;
+                  .mpa-body ul,
+                  .mpa-body ol {
+                    margin: 0 0 16px;
+                    padding-left: 22px;
+                  }
+                  .mpa-body li {
+                    margin: 6px 0;
+                  }
+                  .mpa-body ul {
                     list-style: none;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
+                    padding-left: 0;
                   }
-                  .cas-li {
+                  .mpa-body ul > li {
                     position: relative;
-                    padding-left: 26px;
-                    font-size: 1.02rem;
-                    line-height: 1.55;
-                    color: var(--foreground-secondary, #191a23);
+                    padding-left: 24px;
                   }
-                  .cas-li::before {
+                  .mpa-body ul > li::before {
                     content: "";
                     position: absolute;
                     left: 0;
-                    top: 0.5em;
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 4px;
+                    top: 0.62em;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 3px;
                     background: var(--foreground-accent, #f9a040);
                     border: var(--border-size-1, 1px) solid
                       var(--foreground-border, #191a23);
                   }
-                  .cas-end {
-                    margin-top: 44px;
+                  .mpa-body a {
+                    color: var(--foreground-accent, #f9a040);
+                    font-weight: 700;
+                    text-decoration: underline;
+                  }
+                  .mpa-body strong {
+                    font-weight: 800;
+                  }
+                  .mpa-body blockquote {
+                    margin: 0 0 16px;
+                    padding: 4px 0 4px 18px;
+                    border-left: 4px solid var(--foreground-accent, #f9a040);
+                    color: var(--foreground-muted, #5f6068);
+                    font-style: italic;
+                  }
+                  .mpa-body img {
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 0;
+                    border: var(--border-size-1, 1px) solid
+                      var(--foreground-border, #191a23);
+                    border-radius: 12px;
+                    box-shadow: 0 4px #000;
+                  }
+                  .mpa-body hr {
+                    border: none;
+                    border-top: var(--border-size-1, 1px) solid
+                      var(--gray-6, #e5e5e5);
+                    margin: 28px 0;
+                  }
+                  .mpa-icode {
+                    font-family:
+                      ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+                    font-size: 0.88em;
+                    background: var(--background-secondary, #f3f3f3);
+                    border: var(--border-size-1, 1px) solid
+                      var(--gray-6, #e5e5e5);
+                    border-radius: 6px;
+                    padding: 1px 6px;
+                  }
+                  .mpa-pre {
+                    margin: 0 0 20px;
+                    padding: 18px;
+                    background: #191a23;
+                    color: #f3f3f3;
+                    border: var(--border-size-1, 1px) solid
+                      var(--foreground-border, #191a23);
+                    border-radius: 12px;
+                    box-shadow: 0 4px #000;
+                    overflow-x: auto;
+                  }
+                  .mpa-pre code {
+                    font-family:
+                      ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+                    font-size: 0.85rem;
+                    line-height: 1.55;
+                    white-space: pre;
+                    color: inherit;
+                  }
+                  .mpa-pre .tok-kw {
+                    color: #f9a040;
+                    font-weight: 700;
+                  }
+                  .mpa-pre .tok-str {
+                    color: #9ece6a;
+                  }
+                  .mpa-pre .tok-num {
+                    color: #ff9e64;
+                  }
+                  .mpa-pre .tok-com {
+                    color: #7f8499;
+                    font-style: italic;
+                  }
+                  .mpa-pre .tok-fn {
+                    color: #7aa2f7;
+                  }
+                  .mpa-pre .tok-bn {
+                    color: #bb9af7;
+                  }
+                  .mpa-fig {
+                    margin: 8px 0 24px;
+                  }
+                  .mpa-fig figcaption {
+                    margin-top: 8px;
+                    font-size: 0.85rem;
+                    font-style: italic;
+                    text-align: center;
+                    color: var(--foreground-muted, #5f6068);
+                  }
+                  .mpa-ph-box {
+                    aspect-ratio: 16 / 9;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--background-secondary, #f3f3f3);
+                    border: 2px dashed var(--foreground-border, #191a23);
+                    border-radius: 12px;
+                  }
+                  .mpa-ph-tag {
+                    font-size: 0.8rem;
+                    font-weight: 800;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: var(--foreground-muted, #898989);
+                  }
+                  .mpa-embed {
+                    margin: 8px 0 24px;
+                    border: var(--border-size-1, 1px) solid
+                      var(--foreground-border, #191a23);
+                    border-radius: 12px;
+                    box-shadow: 0 4px #000;
+                    overflow: hidden;
+                    background: var(--background-primary, #fff);
+                  }
+                  .mpa-embed iframe {
+                    width: 100% !important;
+                    min-width: 100% !important;
+                    border: none;
+                    display: block;
+                  }
+                  .mpa-end {
+                    margin-top: 40px;
                     text-align: center;
                     background: var(--background-secondary, #f3f3f3);
                     border: var(--border-size-1, 1px) solid
@@ -351,13 +454,12 @@
                     box-shadow: 0 6px #000;
                     padding: 32px var(--size-px-6, 28px);
                   }
-                  .cas-end-title {
+                  .mpa-end-title {
                     margin: 0 0 18px;
-                    font-size: 1.4rem;
+                    font-size: 1.3rem;
                     font-weight: 800;
-                    color: var(--foreground-secondary, #191a23);
                   }
-                  .cas-cta {
+                  .mpa-cta {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
@@ -375,15 +477,15 @@
                       transform 0.12s ease,
                       box-shadow 0.12s ease;
                   }
-                  .cas-cta:hover {
+                  .mpa-cta:hover {
                     transform: translateY(-2px);
                     box-shadow: 0 7px #000;
                   }
-                  .cas-cta:active {
+                  .mpa-cta:active {
                     transform: translateY(4px);
                     box-shadow: 0 0 #000;
                   }
-                  .cas-end-back {
+                  .mpa-end-back {
                     display: block;
                     margin-top: 16px;
                     font-weight: 700;
@@ -391,187 +493,212 @@
                     color: var(--foreground-muted, #5f6068);
                     text-decoration: none;
                   }
-                  .cas-end-back:hover {
+                  .mpa-end-back:hover {
                     color: var(--foreground-accent, #f9a040);
                   }
                   @media (max-width: 600px) {
-                    .cas-hero {
-                      min-height: 280px;
+                    .mpa-hero {
+                      min-height: 240px;
                     }
-                    .cas-title {
+                    .mpa-title {
                       font-size: 1.6rem;
                     }
                   }
                 </style>
-                <a class="cas-back" href="/realisations"
-                  >← Toutes les réalisations</a
-                >
+                <a class="mpa-back" href="/blog">← Tous les articles</a>
                 <div
-                  class="cas-hero"
+                  class="mpa-hero"
                   style="
-                    background-image: url(&quot;https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);
+                    background-image: url(&quot;https://images.unsplash.com/photo-1649433391719-2e784576d044?w=900&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b3V0bG9va3xlbnwwfHwwfHx8MA%3D%3D&quot;);
                   "
                 >
-                  <div class="cas-hero-inner">
-                    <div class="cas-hero-head">
-                      <span class="cas-logo">EM</span>
-                      <h1 class="cas-title">ERP maritime sur mesure</h1>
-                    </div>
-                    <p class="cas-tagline">
-                      Progiciel d'orchestration maritime
+                  <div class="mpa-hero-inner">
+                    <p class="mpa-meta">Juin 2026 · 7 min de lecture</p>
+                    <h1 class="mpa-title">
+                      Les coulisses d'un plugin d'annotation Outlook - Pourquoi
+                      c'est essentiel
+                    </h1>
+                    <p class="mpa-excerpt">
+                      Comment livrer un logiciel où tout le risque est dans la
+                      plomberie, SSO Microsoft, add-in Outlook, et en sortir des
+                      données d'annotation dignes de confiance.
                     </p>
                   </div>
                 </div>
-                <div class="cas-tags">
-                  <span class="cas-tag">ERP</span
-                  ><span class="cas-tag">Progiciel</span
-                  ><span class="cas-tag">B2B</span
-                  ><span class="cas-tag">Transport</span
-                  ><span class="cas-tag">Maritime</span>
+                <div class="mpa-tags">
+                  <span class="mpa-tag">Office Add-in</span
+                  ><span class="mpa-tag">SSO Microsoft</span
+                  ><span class="mpa-tag">Architecture logicielle</span>
                 </div>
-                <section class="cas-section">
-                  <h2 class="cas-h2">
-                    <span class="cas-num">01</span>Contexte
-                  </h2>
-                  <p class="cas-p">
-                    Chez notre client, la gestion des relèves d'équipage est un
-                    métier d'orfèvre. Chaque jour, des dizaines de marins
-                    doivent être acheminés aux quatre coins du globe pour
-                    rejoindre ou quitter leurs navires : un capitaine à
-                    Marseille, un équipage entier au Havre, un officier
-                    mécanicien en urgence en Méditerranée... Derrière chaque
-                    mission se cache un véritable jeu d'échecs logistique.
+                <div class="mpa-body">
+                  <p>
+                    Sur le papier, le projet avait l'air sage : un petit volet
+                    dans Outlook pour étiqueter des e-mails avec des catégories
+                    métier, et un tableau de bord pour les administrateurs. Des
+                    cases à cocher, une table en base, quelques graphiques. Rien
+                    d'effrayant.
                   </p>
-                  <p class="cas-p">
-                    L'entreprise s'appuyait sur des outils disparates : des
-                    signatures par mail, un tableur Excel pour les devis, un
-                    autre pour la planification des transports, un logiciel de
-                    facturation séparé. Les équipes passaient leur temps à
-                    ressaisir les mêmes informations d'un outil à l'autre, avec
-                    le risque permanent d'erreurs et de doublons. Leur objectif
-                    : unifier et automatiser l'ensemble du cycle de vie d'une
-                    mission, de la demande initiale à la facture finale, sans
-                    rien perdre en réactivité tout en gagnant en productivité.
+                  <p>Sauf que le vrai risque n'était pas là.</p>
+                  <h2>Le risque n'était pas là où on l'attendait</h2>
+                  <p>
+                    Les formulaires et les tables, on sait les écrire. Ce qu'on
+                    ne peut pas vérifier tant que tout ne tourne pas ensemble,
+                    c'est la <strong>plomberie d'intégration</strong> : un jeton
+                    SSO obtenu silencieusement par un add-in Office, transmis à
+                    un backend qui doit le valider cryptographiquement, le tout
+                    dans une vraie boîte Outlook : sur le web comme sur le
+                    bureau. Tant que ces pièces ne dialoguent pas pour de vrai,
+                    on ne sait pas si le projet est faisable. On l'espère.
                   </p>
-                </section>
-                <section class="cas-section">
-                  <h2 class="cas-h2">
-                    <span class="cas-num">02</span>Problème à résoudre
-                  </h2>
-                  <p class="cas-p">
-                    La gestion des transports de marins est un casse-tête à
-                    multiples variables. Chaque mission est unique, et pourtant
-                    les process sont répétitifs. Les opérateurs passaient des
-                    heures à :
+                  <p>
+                    La tentation, dans ces cas-là, c'est de repousser
+                    l'intégration : « on branchera l'authentification à la fin,
+                    quand le reste sera prêt ». C'est exactement l'inverse qu'il
+                    faut faire.
                   </p>
-                  <ul class="cas-ul">
-                    <li class="cas-li">
-                      Établir des devis en consultant des grilles tarifaires
-                      complexes (vols, hôtels, transferts, formalités).
-                    </li>
-                    <li class="cas-li">
-                      Orchestrer le transport des marins avec les chauffeurs.
-                    </li>
-                    <li class="cas-li">
-                      Planifier les itinéraires en jonglant avec les
-                      disponibilités des vols, les temps de correspondance et
-                      les contraintes de visa.
-                    </li>
-                    <li class="cas-li">
-                      Faire des demandes de visa auprès des autorités.
-                    </li>
-                    <li class="cas-li">
-                      Discuter avec les armateurs, négocier.
-                    </li>
-                    <li class="cas-li">
-                      Générer des factures en rapprochant manuellement les
-                      prestations réalisées des devis acceptés.
-                    </li>
-                  </ul>
-                  <p class="cas-p">
-                    Un vrai travail de fourmi, chronophage et source d'erreurs.
-                    Une omission dans un devis et c'est la marge qui fond. Une
-                    erreur de saisie dans une facture, et c'est le client qui
-                    conteste. Sans parler des doubles saisies infernales entre
-                    les outils. Résultat : les équipes passaient plus de temps à
-                    administrer qu'à apporter de la valeur à leurs clients.
+                  <h2>Un squelette qui marche, d'abord</h2>
+                  <p>
+                    Nous avons construit un
+                    <strong>squelette qui marche</strong> (« walking skeleton »)
+                    avant toute fonctionnalité : le plus petit chemin de bout en
+                    bout qui prouve que la chaîne tient. L'add-in se charge dans
+                    Outlook, obtient un jeton, appelle le backend, le backend le
+                    valide, répond. Rien d'utile pour l'utilisateur à ce stade,
+                    mais la partie risquée est démontrée vivante.
                   </p>
-                </section>
-                <section class="cas-section">
-                  <h2 class="cas-h2">
-                    <span class="cas-num">03</span>La solution apportée
-                  </h2>
-                  <p class="cas-p">
-                    Nous avons équipé notre client d'un progiciel
-                    d'orchestration maritime construit autour d'Odoo, qui
-                    automatise de bout en bout les trois piliers de leur
-                    activité :
+                  <p>
+                    Une fois ce fil prouvé, tout le reste s'y accroche par
+                    petites touches : les catégories, l'enregistrement,
+                    l'épinglage du volet, les statistiques. Chaque ajout est
+                    incrémental, posé sur une base déjà vérifiée. Aucune
+                    mauvaise surprise gardée pour la fin.
                   </p>
-                  <p class="cas-p">
-                    1. La création de devis : fini les grilles Excel.
-                    L'opérateur saisit la demande (ports, dates, nombre de
-                    marins, niveau d'urgence). En un clic, l'ERP applique les
-                    règles tarifaires personnalisées (remises fidélité,
-                    majorations urgence, frais de visa) et génère un devis
-                    complet en quelques secondes.
+                  <p>
+                    La leçon n'est pas nouvelle, mais elle se mérite à chaque
+                    projet :
+                    <strong>livrez d'abord ce qui fait peur.</strong> Le morceau
+                    incertain doit être le premier à toucher la réalité, pas le
+                    dernier.
                   </p>
-                  <p class="cas-p">
-                    2. La planification des transports : l'ERP intègre un module
-                    de planification qui visualise d'un coup d'œil tous les
-                    déplacements en cours, les disponibilités des prestataires,
-                    et les contraintes de timing. Fini les conflits d'emploi du
-                    temps : le système propose automatiquement les meilleures
-                    options d'acheminement.
+                  <h2>Le contrat qui refuse de mentir</h2>
+                  <p>
+                    Le backend est en Python, les deux interfaces (le plugin et
+                    le tableau de bord) sont en TypeScript. À cette frontière
+                    entre deux langages, les types ont une fâcheuse tendance à
+                    diverger en silence : le serveur renomme un champ, les
+                    interfaces ne le savent pas, et le bug n'apparaît qu'à
+                    l'exécution, chez l'utilisateur.
                   </p>
-                  <p class="cas-p">
-                    3. La facturation automatisée : une fois la mission
-                    exécutée, l'ERP génère automatiquement la facture en
-                    reprenant les éléments du devis et en y ajoutant les
-                    éventuels frais complémentaires. Plus de ressaisie, plus
-                    d'erreurs.
+                  <p>
+                    Nous avons supprimé ce risque en faisant du schéma
+                    <strong>OpenAPI</strong> du backend la source de vérité
+                    unique : les types TypeScript des interfaces en sont
+                    <strong>générés</strong>. Si un contrat change côté serveur
+                    sans être répercuté, ce n'est plus un bug discret en
+                    production, c'est une
+                    <strong>erreur de compilation</strong>, tout de suite, sur
+                    le poste du développeur.
                   </p>
-                  <p class="cas-p">
-                    Et tout cela parfaitement intégré à leur ERP historique, qui
-                    continue de gérer la comptabilité et les données RH. Nous
-                    venons se greffer par-dessus, comme un cerveau intelligent
-                    qui orchestre toute la chaîne.
+                  <p>
+                    Faire d'une catégorie entière de bugs une impossibilité,
+                    plutôt qu'une vigilance, change la sérénité d'une équipe.
                   </p>
-                </section>
-                <section class="cas-section">
-                  <h2 class="cas-h2">
-                    <span class="cas-num">04</span>Résultats obtenus
-                  </h2>
-                  <p class="cas-p">
-                    Les bénéfices ont été immédiatement palpables :
+                  <h2>Annoter en aveugle, puis mesurer l'accord</h2>
+                  <p>
+                    L'objectif analytique du projet est subtil : faire annoter
+                    les <strong>mêmes</strong> e-mails par plusieurs personnes,
+                    puis mesurer à quel point elles sont
+                    <strong>d'accord</strong>. C'est ce qui permet de savoir si
+                    une taxonomie est claire et si les données qu'on en tire
+                    sont dignes de confiance.
                   </p>
-                  <ul class="cas-ul">
-                    <li class="cas-li">
-                      Une fidélisation accrue pour les clients
-                    </li>
-                    <li class="cas-li">
-                      Un meilleur suivi du travail effectué pour les dirigants
-                    </li>
-                    <li class="cas-li">Une fluidification des tâches</li>
-                    <li class="cas-li">
-                      Une facilisation des changements de process ou de
-                      tarification
-                    </li>
-                  </ul>
-                  <p class="cas-p">
-                    Notre client est passé d'une gestion artisanale à une
-                    machine de guerre logistique. Les devis sont plus précis,
-                    les factures plus fiables, et les équipes plus sereines. Un
-                    véritable changement de dimension, qui leur permet
-                    aujourd'hui de conquérir de nouveaux marchés avec une
-                    agilité redoutable.
+                  <p>
+                    Mais cette mesure n'a de sens qu'à une condition : que
+                    personne ne voie le travail des autres pendant qu'il annote.
+                    Sinon, on copie son voisin sans même s'en rendre compte, et
+                    l'accord obtenu ne mesure plus rien.
                   </p>
-                </section>
-                <div class="cas-end">
-                  <p class="cas-end-title">Un projet similaire&nbsp;?</p>
-                  <a class="cas-cta" href="/#contact">Discuter de mon projet</a
-                  ><a class="cas-end-back" href="/realisations"
-                    >← Voir toutes les réalisations</a
-                  >
+                  <p>
+                    La garantie est devenue une
+                    <strong>propriété d'architecture</strong>, pas une promesse
+                    : le plugin n'émet jamais la moindre requête capable de
+                    renvoyer l'annotation d'un autre. Il écrit, il ne lit pas le
+                    travail d'autrui. L'accord (calculé par recouvrement des
+                    catégories, e-mail par e-mail) est donc honnête par
+                    construction, et il révèle, au passage, les catégories
+                    ambiguës qui méritent d'être reformulées.
+                  </p>
+                  <h2>Changer d'avis, mais proprement</h2>
+                  <p>
+                    En cours de route, une décision importante s'est inversée.
+                    Le système avait été pensé comme
+                    <strong>pseudonyme</strong> : stocker des identifiants
+                    opaques, jamais les personnes. Le besoin réel s'est révélé
+                    différent : il fallait savoir <strong>qui</strong> avait
+                    annoté quoi. Nous sommes passés à un stockage
+                    <strong>identifié</strong>, assumant que cela manipule des
+                    données personnelles, avec les obligations qui vont avec.
+                  </p>
+                  <p>
+                    Ce qui compte ici n'est pas le revirement, c'est la
+                    <strong>manière</strong>. Le changement a été écrit noir sur
+                    blanc dans les spécifications, avec sa justification et ses
+                    conséquences (« reversed from pseudonymity »). Une décision
+                    qu'on documente, y compris quand elle contredit la
+                    précédente, reste discutable et réversible. Une décision qui
+                    glisse en silence dans le code devient une dette que plus
+                    personne ne comprend six mois plus tard.
+                  </p>
+                  <h2>La sécurité comme valeur par défaut</h2>
+                  <p>
+                    Deux détails, invisibles pour l'utilisateur, disent l'état
+                    d'esprit du projet.
+                  </p>
+                  <p>
+                    Le code d'un add-in Office est <strong>public</strong> :
+                    impossible d'y cacher un secret. La sécurité ne repose donc
+                    sur aucune clé enfouie, mais sur un point d'ancrage de
+                    confiance : des jetons Microsoft validés à chaque écriture
+                    (signature, émetteur, audience, expiration).
+                  </p>
+                  <p>
+                    Et pour travailler confortablement en local, un mode « dev »
+                    court-circuite l'authentification. Le piège classique serait
+                    qu'il atteigne la production. Le programme
+                    <strong>refuse tout simplement de démarrer</strong> s'il
+                    détecte ce mode en environnement de production. Le défaut
+                    sûr n'est pas un rappel dans une documentation : c'est un
+                    garde-fou dans le code.
+                  </p>
+                  <h2>Ce que ce projet nous rappelle</h2>
+                  <p>
+                    Aucune de ces idées n'est spectaculaire. Commencer par le
+                    morceau risqué. Rendre les contrats impossibles à enfreindre
+                    en silence. Faire des garanties des propriétés
+                    d'architecture plutôt que des promesses. Documenter les
+                    décisions, surtout quand on en change. Choisir le défaut
+                    sûr.
+                  </p>
+                  <p>
+                    Mises bout à bout, ce sont elles qui font la différence
+                    entre un logiciel qu'on espère voir marcher et un logiciel
+                    dont on sait pourquoi il marche.
+                  </p>
+                  <p>
+                    Et accessoirement, c'est aussi ce qui transforme une pile
+                    d'e-mails en données sur lesquelles on peut, ensuite,
+                    construire en confiance.
+                  </p>
+                </div>
+                <div class="mpa-end">
+                  <p class="mpa-end-title">Cet article vous a plu&nbsp;?</p>
+                  <a
+                    class="mpa-cta"
+                    href="https://methode.dev/#contact"
+                    target="_blank"
+                    rel="noopener"
+                    >Discutons de votre projet →</a
+                  ><a class="mpa-end-back" href="/blog">← Tous les articles</a>
                 </div>
               </div>
             </div>
@@ -992,20 +1119,20 @@
     <script id="vike_pageContext" type="application/json">
       {
         "_urlRewrite": null,
-        "pageId": "/pages/realisations/erp",
+        "pageId": "/pages/blog/outlook-addin",
         "routeParams": {},
         "data": {
-          "url": "https://url/realisations/erp",
+          "url": "https://url/blog/outlook-addin",
           "system": {
             "params": {},
             "search": {},
             "origin": "https://url",
-            "pathname": "/realisations/erp"
+            "pathname": "/blog/outlook-addin"
           },
           "resources": {},
           "pageMeta": {
-            "title": "Méthode - ERP maritime sur mesure",
-            "description": "Chez notre client, la gestion des relèves d'équipage est un métier d'orfèvre. Chaque jour, des dizaines de marins doivent être acheminés aux quatre coins du globe pour rejoindre ou quitter leurs navires : un capitaine à Marseille, un équipage entier au Havre, un officier mécanicien en urgence en Méditerranée... Derrière chaque mission se cache un véritable jeu d'échecs logistique.",
+            "title": "Méthode - Les coulisses d'un plugin d'annotation Outlook - Pourquoi c'est essentiel",
+            "description": "Sur le papier, le projet avait l'air sage : un petit volet dans Outlook pour étiqueter des e-mails avec des catégories métier, et un tableau de bord pour les administrateurs. Des cases à cocher, une table en base, quelques graphiques. Rien d'effrayant.\n\nSauf que le vrai risque n'était pas là.",
             "excludePageFromSearch": false,
             "language": "fr-FR",
             "socialImageAssetName": "!undefined",
@@ -1028,7 +1155,7 @@
     ></script>
     <link
       rel="modulepreload"
-      href="/assets/entries/pages_realisations_erp.CLsB4SVF.js"
+      href="/assets/entries/pages_blog_outlook-addin.u06zHVe6.js"
       as="script"
       type="text/javascript"
     /><link
