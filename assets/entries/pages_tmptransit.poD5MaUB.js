@@ -1,50 +1,4 @@
-<!DOCTYPE html><html lang="en" data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df" data-ws-version="2683" data-ws-last-published="2026-08-21T16:08:53.984Z"><head><link rel="stylesheet" type="text/css" href="/assets/static/app_generated_index-6937cd5a.DGpQlnl1.css"><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="icon" href="/assets/favicon_MxJdcsW9bJsq-zd8osHjF.ico"/><link rel="preload" href="/assets/Nunito-VariableFont_wght_ewyymLm-PSZppKInuSfzo.ttf" as="font" crossorigin="anonymous"/><meta property="og:url" content="https://url/tmptransit"/><meta property="og:title" content="Méthode - Public Transport Usability"/><meta property="og:type" content="website"/><meta property="og:site_name" content="Méthode"/><meta name="description" content="Find out about your cities&#x27; public network usability."/><meta property="og:description" content="Find out about your cities&#x27; public network usability."/><meta property="twitter:card" content="summary_large_image"/><title>Méthode - Public Transport Usability</title><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Méthode"
-}</script><script>
-(function() {
-  document.addEventListener("submit", function(e) {
-    // 1. Target the specific form
-    const form = e.target.closest('form[action*="jcalenge.workers.dev"]');
-    if (!form) return;
-
-    // 2. Kill all default behavior
-    e.preventDefault();
-    e.stopImmediatePropagation();
-
-    // 3. Fire the request in the background
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      mode: 'no-cors' 
-    });
-
-    // 4. MANUAL UI OVERRIDE
-    // Hide the entire form
-    form.style.display = 'none';
-
-    // Look for the success message. 
-    // In Webstudio, success containers usually have a state="success" attribute.
-    const successBox = form.parentElement.querySelector('[state="success"]');
-
-    if (successBox) {
-        // Force the success box to show
-        successBox.style.display = 'block';
-        // Some builders use flex, so if block looks weird, use 'flex'
-        // successBox.style.setProperty('display', 'flex', 'important');
-    } else {
-        // If we can't find the box, we'll create a simple success message
-        const thanks = document.createElement('div');
-        thanks.innerHTML = "<h3>Merci ! Votre message a été envoyé.</h3>";
-        thanks.style.padding = "20px";
-        thanks.style.textAlign = "center";
-        form.parentElement.appendChild(thanks);
-    }
-
-  }, true);
-})();
-</script></head><body class="w-element"><div class="w-html-embed">
+import{j as e,U as f,r as l,a as s,i as n,R as h,b as m,P as g,c as x,d as b}from"../chunks/chunk-DGzDowxD.js";/* empty css                      */const c="Méthode",u=[{id:"4Hsx0_Mm_MIFuMtFU47JV"},{id:"NlPJ4Un6gSyrD1Vhuz5Ek",maxWidth:991},{id:"w3XH2WA5mGOWpDo-2UkzX",maxWidth:767},{id:"0Nqot1uwpMuCdvF_LtCKT",maxWidth:479}],y="favicon_MxJdcsW9bJsq-zd8osHjF.ico",v=["Nunito-VariableFont_wght_ewyymLm-PSZppKInuSfzo.ttf"],w=[],k=i=>e.jsx("body",{className:"w-element",children:e.jsx(f,{code:`
 
 
 <meta charset="UTF-8">
@@ -1037,10 +991,4 @@ const AM_STATIONS=[
   {x:480,y:160,c:'#F2C500',lbl:'Decision-point signage',ly:142,target:'s-f1'},
   {x:622,y:160,c:'#F2C500',lbl:'Maps you can redraw',ly:142,target:'s-f1'},
   {x:762,y:160,c:'#F2C500',lbl:'−38% wayfinding errors',ly:142,target:'s-f1'},
-  {x:470,y:220,c:'#00A84D',lbl:'Show-up threshold',ly:204... (7 Ko restants)</script></div>
-    <script id="vike_pageContext" type="application/json">{"_urlRewrite":null,"pageId":"/pages/tmptransit","routeParams":{},"data":{"url":"https://url/tmptransit","system":{"params":{},"search":{},"origin":"https://url","pathname":"/tmptransit"},"resources":{},"pageMeta":{"title":"Méthode - Public Transport Usability","description":"Find out about your cities' public network usability.","excludePageFromSearch":false,"language":"","socialImageAssetName":"!undefined","socialImageUrl":"","status":"!undefined","redirect":"","content":"","custom":[]}}}</script>
-    <script id="vike_globalContext" type="application/json">{}</script>
-    <script src="/assets/entries/entry-server-routing.DMj1d5HC.js" type="module" async></script>
-    <link rel="modulepreload" href="/assets/entries/pages_tmptransit.poD5MaUB.js" as="script" type="text/javascript">
-    <link rel="modulepreload" href="/assets/chunks/chunk-DGzDowxD.js" as="script" type="text/javascript">
-  </body></html>
+  {x:470,y:220,c:'#00A84D',lbl:'Show-up threshold',ly:204... (7 Ko restants)<\/script>`,className:"w-html-embed"})}),E=i=>{const{origin:t,pathname:o,search:a}=new URL(i);return`${t}${o}${a}`},C=l.memo(({pageKey:i,system:t})=>e.jsx(k,{system:t},i),(i,t)=>i.pageKey===t.pageKey),T=({data:i})=>{const{system:t,resources:o,url:a,pageMeta:r}=i,d=E(a),p=l.useMemo(()=>({imageLoader:n,assetBaseUrl:s,resources:o,breakpoints:u,onError:console.error}),[o]);return e.jsxs(h.Provider,{value:p,children:[e.jsx(m.Provider,{value:a,children:e.jsx(C,{pageKey:d,system:t})}),e.jsx(g,{url:a,pageMeta:r,siteName:c,imageLoader:n,assetBaseUrl:s}),e.jsx(x,{children:r.title})]})},S=Object.freeze(Object.defineProperty({__proto__:null,default:T},Symbol.toStringTag,{value:"Module"})),I=({})=>{const i={"@context":"https://schema.org","@type":"WebSite",name:c};return e.jsxs(e.Fragment,{children:[e.jsx("script",{type:"application/ld+json",dangerouslySetInnerHTML:{__html:JSON.stringify(i,null,2)}}),e.jsx("link",{rel:"icon",href:n({src:`${s}${y}`})}),v.map(t=>e.jsx("link",{rel:"preload",href:`${s}${t}`,as:"font",crossOrigin:"anonymous"},t)),w.map(t=>e.jsx("link",{rel:"preload",href:`${s}${t}`,as:"image"},t))]})},M=Object.freeze(Object.defineProperty({__proto__:null,Head:I},Symbol.toStringTag,{value:"Module"})),L={isClientRuntimeLoaded:{type:"computed",definedAtData:null,valueSerialized:{type:"js-serialized",value:!0}},onBeforeRenderEnv:{type:"computed",definedAtData:null,valueSerialized:{type:"js-serialized",value:null}},dataEnv:{type:"computed",definedAtData:null,valueSerialized:{type:"js-serialized",value:{server:!0}}},onRenderClient:{type:"standard",definedAtData:{filePathToShowToUser:"/renderer/+onRenderClient.tsx",fileExportPathToShowToUser:[]},valueSerialized:{type:"plus-file",exportValues:b}},Page:{type:"standard",definedAtData:{filePathToShowToUser:"/pages/tmptransit/+Page.tsx",fileExportPathToShowToUser:[]},valueSerialized:{type:"plus-file",exportValues:S}},Head:{type:"standard",definedAtData:{filePathToShowToUser:"/pages/tmptransit/+Head.tsx",fileExportPathToShowToUser:[]},valueSerialized:{type:"plus-file",exportValues:M}}};export{L as configValuesSerialized};
