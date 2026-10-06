@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://methode.dev/</loc>
-<lastmod>2026-05-19T11:57:43+00:00</lastmod>
+<lastmod>2026-10-06T00:00:00+00:00</lastmod>
 <priority>1.00</priority>
 </url>
 <url>
@@ -89,5 +89,15 @@
 <loc>https://methode.dev/blog/outlook-addin</loc>
 <lastmod>2026-06-19T11:57:43+00:00</lastmod>
 <priority>0.80</priority>
+</url>
+<url>
+<loc>https://methode.dev/mentions-legales/</loc>
+<lastmod>2026-10-06T00:00:00+00:00</lastmod>
+<priority>0.30</priority>
+</url>
+<url>
+<loc>https://methode.dev/accessibilite/</loc>
+<lastmod>2026-10-06T00:00:00+00:00</lastmod>
+<priority>0.30</priority>
 </url>
 </urlset>
