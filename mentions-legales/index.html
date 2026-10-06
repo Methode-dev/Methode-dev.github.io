@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mentions légales et confidentialité | Méthode</title>
+<meta name="description" content="Mentions légales et politique de confidentialité du site methode.dev.">
+<link rel="canonical" href="https://methode.dev/mentions-legales/">
+<meta name="theme-color" content="#161514">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --logo-src:url("/assets/logo_methode.svg");
+  --bg:#FDFAF6;--creme:#F3ECE2;--nuit:#161514;--ink:#1E1C1B;--ink-2:#55504A;
+  --trait:rgba(30,28,27,.16);--acc:#C0711B;--acc-txt:#8A5112;--acc-clair:#E0A05A;--lait:#F3ECE2;
+  --lis:clamp(20px,5vw,80px);
+  --display:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:24px;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.65}
+a{color:var(--acc-txt);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.025em;line-height:1.1;margin:0}
+p,ul,dl{margin:0}
+.evite{position:absolute;left:-9999px;background:var(--ink);color:#fff;padding:12px 18px;z-index:10}
+.evite:focus{left:12px;top:12px}
+
+.tete{background:var(--nuit);color:var(--lait);padding:calc(env(safe-area-inset-top,0px) + 20px) var(--lis) 20px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.logo{display:block;width:clamp(130px,12vw,176px);aspect-ratio:3.2;background:var(--logo-src) left center/contain no-repeat}
+.tete a.retour{color:var(--lait);font-family:var(--display);font-size:16px}
+
+main{max-width:760px;margin:0 auto;padding:clamp(56px,8vw,112px) var(--lis) clamp(64px,8vw,120px)}
+h1,.grand{font-size:clamp(36px,5vw,60px)}
+.sommaire{display:flex;gap:12px 28px;flex-wrap:wrap;margin-top:24px;font-family:var(--display);font-size:17px}
+.partie{margin-top:clamp(72px,9vw,120px);padding-top:clamp(40px,5vw,64px);border-top:2px solid var(--ink)}
+section{padding-top:clamp(32px,4vw,44px);margin-top:clamp(32px,4vw,44px);border-top:1px solid var(--trait)}
+.partie>section:first-of-type,main>section:first-of-type{border-top:0;margin-top:clamp(36px,4vw,52px);padding-top:0}
+h2{font-size:clamp(22px,2.4vw,28px);margin-bottom:14px}
+.partie>h2.grand{margin-bottom:0}
+section p+p,section p+ul,section ul+p,section dl+p{margin-top:14px}
+ul{padding-left:1.2em}
+li+li{margin-top:6px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 24px}
+dt{color:var(--ink-2)}
+dd{margin:0}
+@media (max-width:520px){dl{grid-template-columns:1fr;gap:0}dd{margin-bottom:10px}}
+.traitement{background:var(--creme);border-radius:4px;padding:18px 20px}
+.traitement+.traitement{margin-top:12px}
+.traitement h3{font-size:19px;margin-bottom:8px}
+.traitement dl{font-size:16.5px}
+address{font-style:normal}
+
+.pied{background:var(--nuit);color:rgba(243,236,226,.7);padding:28px var(--lis) calc(env(safe-area-inset-bottom,0px) + 28px);font-size:15px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pied nav{display:flex;gap:24px;flex-wrap:wrap}
+.pied a{color:var(--lait)}
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<header class="tete">
+  <a class="logo" href="/" aria-label="Méthode, page d'accueil"></a>
+  <a class="retour" href="/">Retour au site</a>
+</header>
+
+<main id="contenu">
+  <h1>Mentions légales</h1>
+  <nav class="sommaire" aria-label="Sur cette page">
+    <a href="#editeur">Éditeur</a>
+    <a href="#hebergeur">Hébergeur</a>
+    <a href="#propriete">Propriété intellectuelle</a>
+    <a href="#confidentialite">Confidentialité</a>
+    <a href="#cookies">Cookies</a>
+  </nav>
+
+  <section id="editeur" aria-labelledby="t-editeur">
+    <h2 id="t-editeur">Éditeur du site</h2>
+    <dl>
+      <dt>Raison sociale</dt><dd>Méthode SAS</dd>
+      <dt>Capital social</dt><dd>1 050 €</dd>
+      <dt>Siège social</dt><dd><address>132 rue Bossuet, 69006 Lyon</address></dd>
+      <dt>SIRET</dt><dd>105 813 067 00011</dd>
+      <!-- À COMPLÉTER : mention RCS (ex. « RCS Lyon 105 813 067 ») et, si assujetti, numéro de TVA intracommunautaire -->
+      <dt>Directeur de la publication</dt><dd>Julien Calenge</dd>
+      <dt>E-mail</dt><dd><a href="mailto:contact@methode.dev">contact@methode.dev</a></dd>
+      <dt>Téléphone</dt><dd><a href="tel:+33482533259">04 82 53 32 59</a></dd>
+    </dl>
+  </section>
+
+  <section id="hebergeur" aria-labelledby="t-hebergeur">
+    <h2 id="t-hebergeur">Hébergeur</h2>
+    <dl>
+      <dt>Service</dt><dd>GitHub Pages, GitHub, Inc.</dd>
+      <dt>Adresse</dt><dd><address>88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis</address></dd>
+      <!-- À COMPLÉTER : téléphone de l'hébergeur (exigé par l'article 6 de la LCEN) -->
+    </dl>
+  </section>
+
+  <section id="propriete" aria-labelledby="t-propriete">
+    <h2 id="t-propriete">Propriété intellectuelle</h2>
+    <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+    <p>La reproduction de tout ou partie de ce site sur quelque support que ce soit est formellement interdite sauf autorisation expresse du directeur de la publication.</p>
+  </section>
+
+  <div class="partie" id="confidentialite">
+    <h2 class="grand">Politique de confidentialité</h2>
+
+    <section aria-labelledby="t-responsable">
+      <h2 id="t-responsable">Responsable du traitement</h2>
+      <p>Le responsable du traitement des données collectées sur ce site est Méthode SAS, joignable à <a href="mailto:contact@methode.dev">contact@methode.dev</a>.</p>
+    </section>
+
+    <section aria-labelledby="t-finalites">
+      <h2 id="t-finalites">Finalités et bases légales</h2>
+      <p>Conformément aux articles 6 et 13 du RGPD, les données sont traitées pour les finalités suivantes :</p>
+      <div class="traitement" style="margin-top:18px">
+        <h3>Réponse à vos demandes de contact</h3>
+        <dl><dt>Base légale</dt><dd>Intérêt légitime (art. 6.1.f RGPD)</dd><dt>Durée</dt><dd>3 ans après le dernier contact</dd></dl>
+      </div>
+      <!-- À VÉRIFIER : le site n'intègre aujourd'hui ni outil d'audience ni bandeau cookies.
+           Supprimez ce bloc, ou ajoutez l'outil et le bandeau avant publication. -->
+      <div class="traitement">
+        <h3>Mesure d'audience et statistiques de fréquentation</h3>
+        <dl><dt>Base légale</dt><dd>Consentement via le bandeau cookies (art. 6.1.a RGPD)</dd><dt>Durée</dt><dd>13 mois maximum, selon la recommandation de la CNIL</dd></dl>
+      </div>
+      <p>Aucune donnée ne sera cédée à des tiers sans votre consentement préalable, sauf obligation légale.</p>
+    </section>
+
+    <section aria-labelledby="t-droits">
+      <h2 id="t-droits">Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul>
+        <li>droit d'accès : obtenir une copie de vos données ;</li>
+        <li>droit de rectification : corriger des données inexactes ;</li>
+        <li>droit à l'effacement : demander la suppression ;</li>
+        <li>droit à la limitation : suspendre le traitement ;</li>
+        <li>droit à la portabilité : récupérer vos données ;</li>
+        <li>droit d'opposition : vous opposer au traitement.</li>
+      </ul>
+      <p>Pour exercer ces droits, écrivez à <a href="mailto:contact@methode.dev">contact@methode.dev</a>. Vous pouvez également adresser une réclamation à la <a href="https://www.cnil.fr">CNIL</a>.</p>
+    </section>
+
+    <section id="cookies" aria-labelledby="t-cookies">
+      <h2 id="t-cookies">Cookies</h2>
+      <p>Ce site utilise des cookies. Conformément aux lignes directrices de la CNIL de 2020 :</p>
+      <ul>
+        <li>un bandeau vous informe de la présence de cookies ;</li>
+        <li>vous pouvez accepter ou refuser les cookies non essentiels ;</li>
+        <li>aucun cookie non essentiel n'est déposé sans votre choix ;</li>
+        <li>vous pouvez modifier vos préférences à tout moment.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="pied">
+  <span>© <span id="an">2026</span> Méthode SAS, Lyon</span>
+  <nav aria-label="Informations légales">
+    <a href="/accessibilite/">Accessibilité : non conforme</a>
+    <a href="/#contact">Nous contacter</a>
+  </nav>
+</footer>
+<script>document.getElementById('an').textContent=new Date().getFullYear();</script>
+</body>
+</html>

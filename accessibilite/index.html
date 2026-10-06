@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Déclaration d'accessibilité | Méthode</title>
+<meta name="description" content="Déclaration d'accessibilité du site methode.dev : état de conformité au RGAA, contact et voies de recours.">
+<link rel="canonical" href="https://methode.dev/accessibilite/">
+<meta name="theme-color" content="#161514">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --logo-src:url("/assets/logo_methode.svg");
+  --bg:#FDFAF6;--creme:#F3ECE2;--nuit:#161514;--ink:#1E1C1B;--ink-2:#55504A;
+  --trait:rgba(30,28,27,.16);--acc:#C0711B;--acc-txt:#8A5112;--lait:#F3ECE2;
+  --lis:clamp(20px,5vw,80px);
+  --display:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.65}
+a{color:var(--acc-txt);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+h1,h2{font-family:var(--display);font-weight:500;letter-spacing:-.025em;line-height:1.1;margin:0}
+p,ul{margin:0}
+.evite{position:absolute;left:-9999px;background:var(--ink);color:#fff;padding:12px 18px;z-index:10}
+.evite:focus{left:12px;top:12px}
+
+.tete{background:var(--nuit);color:var(--lait);padding:calc(env(safe-area-inset-top,0px) + 20px) var(--lis) 20px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.logo{display:block;width:clamp(130px,12vw,176px);aspect-ratio:3.2;background:var(--logo-src) left center/contain no-repeat}
+.tete a.retour{color:var(--lait);font-family:var(--display);font-size:16px}
+
+main{max-width:760px;margin:0 auto;padding:clamp(56px,8vw,112px) var(--lis) clamp(64px,8vw,120px)}
+h1{font-size:clamp(36px,5vw,60px);margin-bottom:28px}
+.statut{display:inline-block;font-family:var(--display);font-weight:500;font-size:17px;padding:8px 14px;border:1px solid var(--ink);border-radius:4px;margin-bottom:28px}
+section{padding-top:clamp(36px,4vw,52px);margin-top:clamp(36px,4vw,52px);border-top:1px solid var(--trait)}
+h2{font-size:clamp(24px,2.6vw,32px);margin-bottom:16px}
+section p+p,section p+ul,section ul+p{margin-top:14px}
+ul{padding-left:1.2em}
+li+li{margin-top:6px}
+.note{background:var(--creme);padding:18px 20px;border-radius:4px;color:var(--ink-2);font-size:16.5px;margin-top:20px}
+address{font-style:normal}
+
+.pied{background:var(--nuit);color:rgba(243,236,226,.7);padding:28px var(--lis) calc(env(safe-area-inset-bottom,0px) + 28px);font-size:15px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pied a{color:var(--lait)}
+</style>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<header class="tete">
+  <a class="logo" href="/" aria-label="Méthode, page d'accueil"></a>
+  <a class="retour" href="/">Retour au site</a>
+</header>
+
+<main id="contenu">
+  <h1>Déclaration d'accessibilité</h1>
+  <p class="statut">État de conformité : non conforme</p>
+
+  <p>Méthode s'engage à rendre son site internet accessible conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
+  <p>Cette déclaration d'accessibilité s'applique au site <a href="https://methode.dev/">methode.dev</a>.</p>
+
+  <section aria-labelledby="t-etat">
+    <h2 id="t-etat">État de conformité</h2>
+    <p>Le site methode.dev est <strong>non conforme</strong> avec le RGAA 4.1.2 (référentiel général d'amélioration de l'accessibilité). Le site n'a encore pas été audité.</p>
+    <p class="note">Le RGAA 5 est attendu fin 2026. Un audit sera mené sur la version du référentiel en vigueur au moment de sa réalisation, et cette déclaration sera mise à jour en conséquence.</p>
+  </section>
+
+  <section aria-labelledby="t-mesures">
+    <h2 id="t-mesures">Mesures déjà prises</h2>
+    <p>En l'absence d'audit, ces mesures ne valent pas conformité. Elles sont mentionnées à titre d'information :</p>
+    <ul>
+      <li>les animations sont désactivées lorsque le réglage « réduire les animations » est actif sur l'appareil ;</li>
+      <li>les éléments purement décoratifs, dont l'animation du réseau en page d'accueil, sont masqués aux technologies d'assistance ;</li>
+      <li>un lien d'évitement permet d'accéder directement au contenu ;</li>
+      <li>tous les éléments interactifs disposent d'un indicateur de focus visible.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-etablissement">
+    <h2 id="t-etablissement">Établissement de cette déclaration</h2>
+    <p>Cette déclaration a été établie le <time datetime="2026-10-05">5 octobre 2026</time>.</p>
+  </section>
+
+  <section aria-labelledby="t-contact">
+    <h2 id="t-contact">Amélioration et contact</h2>
+    <p>Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez nous contacter pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme :</p>
+    <!-- À CRÉER : adresse dédiée aux signalements d'accessibilité -->
+    <ul>
+      <li>E-mail : <a href="mailto:accessibilite@methode.dev">accessibilite@methode.dev</a></li>
+      <li>Téléphone : <a href="tel:+33482533259">04 82 53 32 59</a></li>
+    </ul>
+    <p>Nous nous efforçons de répondre dans un délai de 7 jours ouvrés.</p><!-- À VALIDER : délai de réponse -->
+  </section>
+
+  <section aria-labelledby="t-recours">
+    <h2 id="t-recours">Voie de recours</h2>
+    <p>Cette procédure est à utiliser dans le cas suivant : vous avez signalé au responsable du site un défaut d'accessibilité qui vous empêche d'accéder à un contenu ou à l'un des services du site, et vous n'avez pas obtenu de réponse satisfaisante.</p>
+    <p>Vous pouvez :</p>
+    <ul>
+      <li>écrire un message au Défenseur des droits via le <a href="https://formulaire.defenseurdesdroits.fr/">formulaire en ligne</a> ;</li>
+      <li>contacter <a href="https://www.defenseurdesdroits.fr/carte-des-delegues">le délégué du Défenseur des droits dans votre région</a> ;</li>
+      <li>envoyer un courrier par la poste, gratuit, sans mettre de timbre :
+        <address>Défenseur des droits<br>Libre réponse 71120<br>75342 Paris CEDEX 07</address>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="pied">
+  <span>© <span id="an">2026</span> Méthode, Lyon</span>
+  <nav aria-label="Informations légales" style="display:flex;gap:24px;flex-wrap:wrap"><a href="/mentions-legales/">Mentions légales</a><a href="/#contact">Nous contacter</a></nav>
+</footer>
+<script>document.getElementById('an').textContent=new Date().getFullYear();</script>
+</body>
+</html>

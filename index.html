@@ -1,110 +1,1058 @@
-<!DOCTYPE html><html lang="fr-FR" data-ws-project="c9ee1d40-bb90-45ec-8ffe-deada10629df" data-ws-version="2783" data-ws-last-published="2026-08-23T12:32:05.455Z"><head><link rel="stylesheet" type="text/css" href="/assets/static/app_generated_index-6937cd5a.DdaUlTnW.css"><meta charSet="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="icon" href="/assets/favicon_MxJdcsW9bJsq-zd8osHjF.ico"/><link rel="preload" href="/assets/Nunito-VariableFont_wght_ewyymLm-PSZppKInuSfzo.ttf" as="font" crossorigin="anonymous"/><link rel="preload" href="/assets/undraw_hot-air-balloon_6knx_EdFXxGB_F1SZ9tCu7TeQ2.svg" as="image"/><meta property="og:url" content="https://url/"/><meta property="og:title" content="Méthode — Progiciels &amp; ERP Odoo sur mesure | Développement logiciel."/><meta property="og:type" content="website"/><meta property="og:site_name" content="Méthode"/><meta name="description" content="Abandonnez les tableurs excels et la duplication de donnée, Méthode développe des logiciels profondément ancrés dans votre logique métier et prend en compte l&#x27;ensemble des problématiques qui vous sont propres"/><meta property="og:description" content="Abandonnez les tableurs excels et la duplication de donnée, Méthode développe des logiciels profondément ancrés dans votre logique métier et prend en compte l&#x27;ensemble des problématiques qui vous sont propres"/><meta property="og:image" content="/assets/IMG_4154_1_(2)_i1M3ngM1bvJAhPKhqK5_i.jpg"/><meta property="twitter:card" content="summary_large_image"/><title>Méthode — Progiciels &amp; ERP Odoo sur mesure | Développement logiciel.</title><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Méthode"
-}</script><script>
-(function() {
-  document.addEventListener("submit", function(e) {
-    // 1. Target the specific form
-    const form = e.target.closest('form[action*="jcalenge.workers.dev"]');
-    if (!form) return;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Conseil data, plugins logiciels et Power BI à Lyon | Méthode</title>
+<meta name="description" content="Méthode est le partenaire data des PME avec beaucoup d'opérations. Conseil data, plugins pour logiciels propriétaires, passerelles ETL, tableaux de bord Power BI et formation. Nous branchons vos outils qui ne se parlent pas.">
+<link rel="canonical" href="https://methode.dev/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#161514">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Méthode">
+<meta property="og:title" content="Conseil data, ETL et Power BI | Méthode">
+<meta property="og:description" content="Vos données ne se parlent pas. Nous construisons leur carrefour.">
+<meta property="og:url" content="https://methode.dev/">
+<meta property="og:image" content="https://methode.dev/assets/HERO_2.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
-    // 2. Kill all default behavior
-    e.preventDefault();
-    e.stopImmediatePropagation();
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-    // 3. Fire the request in the background
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      mode: 'no-cors' 
-    });
+<style>
+:root{
+  --logo-src:url("/assets/logo_methode.svg");
+  --logo-w:clamp(130px,12vw,176px);
+  --logo-ratio:3.2;
 
-    // 4. MANUAL UI OVERRIDE
-    // Hide the entire form
-    form.style.display = 'none';
+  --bg:#FDFAF6;
+  --creme:#F3ECE2;
+  --nuit:#161514;
+  --nuit-2:#1F1D1C;
+  --ink:#1E1C1B;
+  --ink-2:#5A544E;
+  --trait:rgba(30,28,27,.14);
+  --acc:#C0711B;
+  --acc-txt:#8A5112;
+  --acc-clair:#E0A05A;
+  --lait:#F3ECE2;
 
-    // Look for the success message. 
-    // In Webstudio, success containers usually have a state="success" attribute.
-    const successBox = form.parentElement.querySelector('[state="success"]');
+  --lis:clamp(20px,5vw,80px);
+  --max:1320px;
+  --display:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc-clair);outline-offset:4px}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-.03em;line-height:1.02}
+p,ul,ol{margin:0}
+.wrap{max-width:var(--max);margin:0 auto}
+.evite{position:absolute;left:-9999px;background:var(--ink);color:#fff;padding:12px 18px;z-index:300}
+.evite:focus{left:12px;top:12px}
 
-    if (successBox) {
-        // Force the success box to show
-        successBox.style.display = 'block';
-        // Some builders use flex, so if block looks weird, use 'flex'
-        // successBox.style.setProperty('display', 'flex', 'important');
-    } else {
-        // If we can't find the box, we'll create a simple success message
-        const thanks = document.createElement('div');
-        thanks.innerHTML = "<h3>Merci ! Votre message a été envoyé.</h3>";
-        thanks.style.padding = "20px";
-        thanks.style.textAlign = "center";
-        form.parentElement.appendChild(thanks);
+/* Lien souligné animé : seul « bouton » du site, en dehors de l'envoi du formulaire */
+.lien{position:relative;text-decoration:none;display:inline-block;padding-bottom:3px}
+.lien::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform-origin:right;transform:scaleX(.35);transition:transform .6s var(--ease)}
+.lien:hover::after,.lien:focus-visible::after{transform-origin:left;transform:scaleX(1)}
+
+/* ================= EN-TÊTE ================= */
+.tete{position:fixed;inset:0 0 auto 0;z-index:100;color:var(--lait);
+  padding:calc(env(safe-area-inset-top,0px) + 20px) var(--lis) 18px;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  transition:transform .6s var(--ease),background .4s,padding .4s}
+.tete.fond{background:rgba(22,21,20,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:14px}
+.tete.cache{transform:translateY(-110%)}
+.logo{display:block;width:var(--logo-w);aspect-ratio:var(--logo-ratio);background:var(--logo-src) left center/contain no-repeat}
+.tete nav{display:flex;align-items:center;gap:clamp(18px,3vw,40px);font-family:var(--display);font-size:16px;font-weight:500}
+.tete .tel{font-variant-numeric:tabular-nums;letter-spacing:.01em}
+@media (max-width:560px){.tete .ecrire{display:none}}
+
+/* ================= HÉROS : le carrefour ================= */
+.heros{position:relative;height:100svh;min-height:560px;background:var(--nuit);color:var(--lait);overflow:hidden}
+.heros canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.heros::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 20% 100%,rgba(22,21,20,.9) 0%,rgba(22,21,20,0) 55%)}
+.heros-txt{position:absolute;z-index:2;left:var(--lis);right:var(--lis);bottom:clamp(84px,12vh,140px);pointer-events:none}
+.heros h1{font-size:clamp(40px,6.4vw,104px);max-width:13ch;font-weight:500}
+.heros h1 .l1,.heros h1 .l2{display:block}
+.heros h1 .l2{color:var(--acc-clair)}
+/* masqué jusqu'au découpage SplitText, sinon la 2e phrase s'affiche avant l'animation */
+.js .heros h1{visibility:hidden}
+.heros-pied{position:absolute;z-index:2;left:var(--lis);right:var(--lis);bottom:calc(env(safe-area-inset-bottom,0px) + 28px);
+  display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:15px;color:rgba(243,236,226,.62)}
+.jauge{display:flex;align-items:center;gap:14px;white-space:nowrap}
+.jauge i{position:relative;display:block;width:clamp(80px,12vw,160px);height:1px;background:rgba(243,236,226,.2);overflow:hidden}
+.jauge i b{position:absolute;inset:0;background:var(--acc-clair);transform-origin:left;transform:scaleX(0)}
+
+/* ================= MANIFESTE ================= */
+.manif{padding:clamp(110px,16vw,220px) var(--lis) clamp(80px,10vw,140px)}
+.manif p{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.9vw,60px);line-height:1.12;letter-spacing:-.025em;max-width:22ch}
+.manif .mot{opacity:1}
+.js .manif .mot{opacity:.14}
+
+/* ================= PHOTO RÉVÉLÉE ================= */
+.masque{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.revele{padding:0 var(--lis)}
+.revele-cadre{position:relative;max-width:var(--max);margin:0 auto}
+.vue{position:relative;margin:0;height:min(clamp(320px,62vw,820px),82svh);overflow:hidden;border-radius:4px;background:var(--creme)}
+.vue+.vue{margin-top:16px}
+.vue img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,center 45%)}
+.vue::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(22,21,20,.8) 0%,rgba(22,21,20,.28) 36%,rgba(22,21,20,0) 62%)}
+.legende{position:absolute;z-index:2;left:clamp(20px,3.4vw,48px);right:clamp(20px,3.4vw,48px);bottom:clamp(20px,3.4vw,44px);color:var(--lait);display:flex;justify-content:space-between;align-items:flex-end;gap:14px 48px;flex-wrap:wrap}
+.legende .qui{display:block;font-family:var(--display);font-weight:500;font-size:clamp(28px,3.6vw,56px);letter-spacing:-.03em;line-height:1}
+.legende .role{display:block;font-family:var(--display);font-weight:500;font-size:clamp(16px,1.3vw,19px);letter-spacing:0;color:var(--acc-clair);margin-top:12px}
+.legende p{font-size:clamp(15px,1.15vw,17px);max-width:36ch;color:rgba(243,236,226,.86)}
+.legende .chiffre{display:block;font-size:clamp(60px,8.4vw,136px);letter-spacing:-.05em;line-height:.88;font-variant-numeric:tabular-nums}
+.js .revele-cadre{height:min(clamp(320px,62vw,820px),82svh);overflow:hidden;border-radius:4px;clip-path:inset(14% 22% 14% 22% round 4px)}
+.js .vue{position:absolute;inset:0;height:auto;margin:0}
+.js .vue.suite{clip-path:inset(100% 0 0 0)}
+
+/* ================= PUBLICATIONS : rail glissant ================= */
+.pubs{background:var(--nuit);color:var(--lait);padding:clamp(100px,12vw,170px) 0 clamp(90px,10vw,140px);overflow:hidden}
+.pubs .tete-sec{padding:0 var(--lis);max-width:calc(var(--max) + 2*var(--lis));margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap}
+.pubs .surtitre{color:var(--acc-clair)}
+.pubs .titre{max-width:14ch}
+.pubs .chapo{color:rgba(243,236,226,.66);max-width:38ch;font-size:17px}
+.rail{display:flex;gap:clamp(18px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--lis);padding:clamp(48px,6vw,80px) var(--lis) 8px;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.rail::after{content:"";flex:0 0 calc(var(--lis) - clamp(18px,2vw,28px))}
+@media (hover:hover) and (pointer:fine){.rail{cursor:grab}}
+.rail.tire{cursor:grabbing;scroll-snap-type:none}
+.rail.tire .pub{pointer-events:none}
+.pub{flex:0 0 clamp(290px,34vw,500px);scroll-snap-align:start;color:var(--lait);text-decoration:none;display:block}
+.pub img{-webkit-user-drag:none;user-select:none}
+.pub-media{position:relative;aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--lait);isolation:isolate}
+.pub-media .par{position:absolute;inset:0 -8%;will-change:transform}
+.pub-meta{display:flex;gap:18px;margin-top:22px;font-family:var(--display);font-size:15px;color:rgba(243,236,226,.58)}
+.pub-meta b{font-weight:500;color:var(--acc-clair)}
+.pub h3{font-size:clamp(22px,2vw,30px);margin-top:10px;letter-spacing:-.02em;line-height:1.12;transition:color .4s}
+.pub p{margin-top:10px;font-size:16px;color:rgba(243,236,226,.7);max-width:40ch}
+.pub:hover h3,.pub:focus-visible h3{color:var(--acc-clair)}
+.pub:focus-visible{outline:none}
+.pub:focus-visible .pub-media{outline:2px solid var(--acc-clair);outline-offset:4px}
+
+/* Affiches : éventail qui s'ouvre */
+.fan{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(80% 80% at 50% 60%,#fff 0%,var(--lait) 70%)}
+.fan img{position:absolute;width:33%;aspect-ratio:480/680;object-fit:cover;border-radius:2px;box-shadow:0 14px 30px rgba(22,21,20,.22);transform:translateX(calc(var(--i)*7%)) rotate(calc(var(--i)*2.4deg));transition:transform 1s var(--ease)}
+.pub:hover .fan img,.pub:focus-visible .fan img,.pub.vu .fan img{transform:translateX(calc(var(--i)*46%)) translateY(calc(var(--a)*1%)) rotate(calc(var(--i)*4.5deg))}
+@media (hover:hover){.pub.vu .fan img{transform:translateX(calc(var(--i)*7%)) rotate(calc(var(--i)*2.4deg))}.pub.vu:hover .fan img{transform:translateX(calc(var(--i)*46%)) translateY(calc(var(--a)*1%)) rotate(calc(var(--i)*4.5deg))}}
+
+/* RAPTOR : la carte, puis l'animation de l'algorithme au survol */
+.raptor{background:#fefefe}
+.raptor img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6% 4%;transition:opacity .6s,transform 1.2s var(--ease)}
+.raptor .anim{opacity:0}
+.pub.joue .raptor .anim{opacity:1}
+.pub.joue .raptor .fixe{opacity:0}
+.pub:hover .raptor img{transform:scale(1.03)}
+
+/* FastEmailParser : une chaîne d'e-mails qui se découpe */
+.parse{background:var(--nuit-2);color:var(--lait);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,2.4vw,32px) calc(7% + clamp(20px,2.4vw,32px));background-image:linear-gradient(rgba(243,236,226,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(243,236,226,.05) 1px,transparent 1px);background-size:28px 28px}
+.parse code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(13px,1.1vw,15px);color:rgba(243,236,226,.85)}
+.parse code b{color:var(--acc-clair);font-weight:400}
+.parse code i{display:inline-block;width:.55em;height:1.05em;vertical-align:-2px;background:var(--acc-clair);margin-left:4px;animation:clign 1.1s steps(1) infinite}
+@keyframes clign{50%{opacity:0}}
+.chaine{display:flex;flex-direction:column;gap:6px;transition:gap .8s var(--ease)}
+.chaine span{display:flex;gap:6px;height:clamp(18px,2vw,26px)}
+.chaine span::before,.chaine span::after{content:"";border-radius:2px;background:rgba(243,236,226,.16);transition:background .6s,flex .8s var(--ease)}
+.chaine span::before{flex:0 0 22%}
+.chaine span::after{flex:1}
+.chaine span:last-child::after{flex:0 0 38%}
+.pub:hover .chaine,.pub.vu .chaine{gap:16px}
+.pub:hover .chaine span::before,.pub.vu .chaine span::before{background:var(--acc-clair)}
+.pub:hover .chaine span:last-child::after,.pub.vu .chaine span:last-child::after{background:rgba(224,160,90,.45)}
+@media (hover:hover){.pub.vu:not(:hover) .chaine{gap:6px}.pub.vu:not(:hover) .chaine span::before{background:rgba(243,236,226,.16)}.pub.vu:not(:hover) .chaine span:last-child::after{background:rgba(243,236,226,.16)}}
+.parse .stat{font-family:var(--display);font-size:clamp(17px,1.5vw,21px);letter-spacing:-.01em}
+.parse .stat b{color:var(--acc-clair);font-weight:500}
+
+/* Plugin Outlook : des e-mails qu'on étiquette */
+.annot{background:var(--lait);padding:clamp(18px,2.2vw,30px) calc(7% + clamp(18px,2.2vw,30px));display:flex;flex-direction:column;justify-content:center;gap:10px}
+.mail{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:12px;background:#fff;border-radius:4px;padding:12px 14px;box-shadow:0 6px 18px rgba(22,21,20,.06);transition:transform .8s var(--ease)}
+.mail::before{content:"";width:28px;height:28px;border-radius:50%;background:var(--creme)}
+.mail em{display:flex;flex-direction:column;gap:6px;font-style:normal}
+.mail em::before,.mail em::after{content:"";height:7px;border-radius:4px;background:rgba(30,28,27,.16)}
+.mail em::before{width:42%;background:rgba(30,28,27,.32)}
+.mail b{font-family:var(--display);font-weight:500;font-size:13px;color:var(--ink-2);border:1px solid var(--trait);border-radius:20px;padding:3px 10px;transition:background .5s,color .5s,border-color .5s}
+.pub:hover .mail b,.pub.vu .mail b{background:var(--acc-clair);border-color:var(--acc-clair);color:var(--nuit)}
+.pub:hover .mail:nth-child(2) b,.pub.vu .mail:nth-child(2) b{transition-delay:.15s}
+.pub:hover .mail:nth-child(3) b,.pub.vu .mail:nth-child(3) b{transition-delay:.3s}
+.pub:hover .mail:nth-child(2){transform:translateX(10px)}
+@media (hover:hover){.pub.vu:not(:hover) .mail b{background:none;border-color:var(--trait);color:var(--ink-2)}}
+
+.rail-pied{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:36px var(--lis) 0;max-width:calc(var(--max) + 2*var(--lis));margin:0 auto}
+.rail-jauge{position:relative;flex:1;max-width:420px;height:1px;background:rgba(243,236,226,.18)}
+.rail-jauge b{position:absolute;inset:0;background:var(--acc-clair);transform-origin:left;transform:scaleX(.25)}
+.rail-nav{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:15px;color:rgba(243,236,226,.6);font-variant-numeric:tabular-nums}
+.rail-nav span{min-width:62px;text-align:center}
+.rail-nav button{width:44px;height:44px;border:0;background:none;color:var(--lait);cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:color .3s,background .3s}
+.rail-nav button:hover{color:var(--nuit);background:var(--acc-clair)}
+.rail-nav button:disabled{opacity:.3;pointer-events:none}
+.rail-nav svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+
+/* ================= EXPERTISES : index éditorial ================= */
+.sec{padding:clamp(100px,12vw,180px) var(--lis)}
+.surtitre{display:block;font-family:var(--display);font-size:16px;font-weight:500;color:var(--acc-txt);margin-bottom:22px}
+.titre{font-size:clamp(36px,5vw,76px);max-width:16ch}
+.index{list-style:none;padding:0;margin-top:clamp(48px,6vw,88px);border-top:1px solid var(--trait)}
+.index li{position:relative;border-bottom:1px solid var(--trait)}
+.index a{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px 48px;align-items:baseline;padding:clamp(22px,2.6vw,34px) 0;text-decoration:none;color:var(--ink)}
+.index .nom{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.2vw,48px);letter-spacing:-.03em;line-height:1.05;transition:transform .7s var(--ease),color .4s}
+.index .desc{font-size:17px;color:var(--ink-2);max-width:38ch;transition:color .4s}
+.index a:hover .nom,.index a:focus-visible .nom{transform:translateX(18px);color:var(--acc-txt)}
+.index a:hover .desc{color:var(--ink)}
+@media (hover:hover) and (pointer:fine){.index:hover a:not(:hover) .nom{color:rgba(30,28,27,.28)}}
+@media (max-width:760px){.index a{grid-template-columns:1fr;gap:8px}}
+
+/* Aperçu flottant qui suit le curseur */
+.apercu{position:fixed;left:0;top:0;z-index:90;width:132px;height:132px;margin:-66px 0 0 -66px;border-radius:50%;
+  background:var(--acc-clair);color:var(--nuit);pointer-events:none;display:none;transform:scale(0)}
+@media (hover:hover) and (pointer:fine){.apercu{display:block}}
+.apercu svg{position:absolute;inset:34px;width:64px;height:64px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.apercu svg path,.apercu svg circle,.apercu svg rect{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s var(--ease)}
+.apercu svg.on{opacity:1}
+.apercu svg.on path,.apercu svg.on circle,.apercu svg.on rect{stroke-dashoffset:0}
+
+/* ================= DÉMARCHE : défilement horizontal ================= */
+.demarche{background:var(--creme);overflow:hidden}
+.demarche .tete-sec{padding:clamp(100px,12vw,160px) var(--lis) 0}
+.piste-zone{position:relative}
+.piste{display:flex;gap:0;padding:clamp(56px,7vw,96px) var(--lis) clamp(100px,12vw,160px);width:max-content}
+.etape{position:relative;width:clamp(300px,34vw,500px);padding-right:clamp(32px,5vw,80px)}
+.etape .n{display:block;font-family:var(--display);font-weight:400;font-size:clamp(88px,11vw,170px);line-height:.85;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px rgba(30,28,27,.35);margin-bottom:clamp(36px,4vw,56px)}
+.etape h3{font-size:clamp(24px,2.2vw,32px);margin-bottom:12px;letter-spacing:-.02em}
+.etape p{color:var(--ink-2);max-width:32ch;font-size:17px}
+.fil{position:absolute;left:var(--lis);right:0;height:1px;background:var(--trait);top:calc(clamp(56px,7vw,96px) + clamp(88px,11vw,170px)*.85 + clamp(18px,2vw,28px))}
+.fil b{position:absolute;inset:0;background:var(--acc);transform-origin:left;transform:scaleX(0)}
+.fil b::after{content:"";position:absolute;right:-4px;top:-4px;width:9px;height:9px;border-radius:50%;background:var(--acc)}
+@media (max-width:900px){
+  .piste{flex-direction:column;width:auto;gap:56px;padding-left:calc(var(--lis) + 28px)}
+  .etape{width:auto;padding-right:0}
+  .etape .n{font-size:72px;margin-bottom:18px}
+  .fil{left:var(--lis);right:auto;width:1px;height:auto;top:clamp(56px,7vw,96px);bottom:clamp(100px,12vw,160px)}
+  .fil b{transform-origin:top;transform:scaleY(0)}
+  .fil b::after{right:-4px;top:auto;bottom:-4px}
+}
+
+/* ================= VALEURS : mots qui se remplissent ================= */
+.valeurs .liste{margin-top:clamp(48px,6vw,88px)}
+.valeur{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 48px;align-items:end;padding:clamp(18px,2.4vw,30px) 0;border-bottom:1px solid var(--trait)}
+.valeur:first-child{border-top:1px solid var(--trait)}
+.valeur h3{font-size:clamp(46px,8.4vw,136px);letter-spacing:-.045em;line-height:.92;color:var(--ink)}
+.js .valeur h3{color:transparent;background:linear-gradient(90deg,var(--ink) 0 50%,rgba(30,28,27,.13) 50% 100%);background-size:200% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text}
+.valeur p{color:var(--ink-2);font-size:17px;max-width:34ch;padding-bottom:.6em}
+@media (max-width:760px){.valeur{grid-template-columns:1fr}.valeur p{padding-bottom:0}}
+
+/* ================= RÉFÉRENCES ================= */
+.refs{padding:0 var(--lis) clamp(100px,12vw,160px)}
+.refs .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:32px;align-items:center;border-top:1px solid var(--trait);padding-top:clamp(36px,4vw,56px)}
+.refs span{font-family:var(--display);font-size:16px;font-weight:500;color:var(--ink-2)}
+.rangee{display:flex;align-items:center;justify-content:space-between;gap:clamp(28px,5vw,64px);flex-wrap:wrap}
+.rangee img{height:clamp(28px,3vw,40px);width:auto;object-fit:contain;filter:grayscale(1) contrast(1.1);mix-blend-mode:multiply;opacity:.62;transition:opacity .4s,filter .4s}
+.rangee img.inv{filter:invert(1) grayscale(1)}
+.rangee img:hover{opacity:1;filter:none}
+.rangee img.inv:hover{filter:invert(1)}
+@media (max-width:760px){.refs .wrap{grid-template-columns:1fr}.rangee{justify-content:flex-start}}
+
+/* ================= FAQ ================= */
+.faq{padding-top:0}
+.faq .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px}
+@media (max-width:900px){.faq .wrap{grid-template-columns:1fr}}
+.faq h2{font-size:clamp(32px,3.6vw,54px)}
+.faq details{border-bottom:1px solid var(--trait)}
+.faq details:first-of-type{border-top:1px solid var(--trait)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font-family:var(--display);font-size:clamp(19px,1.6vw,23px);font-weight:500;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{position:relative;width:16px;height:16px;flex-shrink:0}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--acc-txt);transition:transform .5s var(--ease)}
+.faq summary i::after{transform:rotate(90deg)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq .rep{overflow:hidden}
+.faq .rep p{padding-bottom:26px;color:var(--ink-2);max-width:62ch}
+
+/* ================= CONTACT ================= */
+.contact{background:var(--nuit);color:var(--lait);padding:clamp(110px,14vw,200px) var(--lis) clamp(70px,8vw,110px)}
+.contact .surtitre{color:var(--acc-clair)}
+.grand-tel{display:inline-block;font-family:var(--display);font-weight:500;font-size:clamp(46px,9.6vw,156px);letter-spacing:-.045em;line-height:.95;text-decoration:none;color:var(--lait);font-variant-numeric:tabular-nums;white-space:nowrap}
+.grand-tel .char{display:inline-block}
+.contact .sous{margin-top:clamp(22px,2.4vw,32px);display:flex;flex-wrap:wrap;gap:12px 40px;font-size:17px;color:rgba(243,236,226,.7)}
+.contact .sous a{color:var(--lait)}
+.contact-grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:48px;margin-top:clamp(80px,10vw,140px);padding-top:clamp(40px,5vw,64px);border-top:1px solid rgba(243,236,226,.16)}
+@media (max-width:900px){.contact-grille{grid-template-columns:1fr}}
+.contact-grille h2{font-size:clamp(28px,2.8vw,40px);max-width:14ch}
+.contact-grille .note{margin-top:16px;color:rgba(243,236,226,.62);font-size:16px;max-width:34ch}
+.nform{display:grid;grid-template-columns:1fr 1fr;gap:8px 40px}
+@media (max-width:620px){.nform{grid-template-columns:1fr}}
+.nform .large{grid-column:1/-1}
+.champ{position:relative;display:block;padding-top:22px}
+.champ input,.champ textarea{width:100%;font-family:var(--sans);font-size:18px;color:var(--lait);background:none;border:0;border-bottom:1px solid rgba(243,236,226,.28);padding:10px 0 12px;border-radius:0;outline:none;transition:border-color .4s}
+.champ textarea{min-height:44px;resize:none;line-height:1.5}
+.champ span{position:absolute;left:0;top:32px;font-size:18px;color:rgba(243,236,226,.55);pointer-events:none;transform-origin:left top;transition:transform .5s var(--ease),color .4s}
+.champ input:focus,.champ textarea:focus{border-color:var(--acc-clair)}
+.champ input:focus+span,.champ input:not(:placeholder-shown)+span,
+.champ textarea:focus+span,.champ textarea:not(:placeholder-shown)+span{transform:translateY(-26px) scale(.78);color:var(--acc-clair)}
+.accord{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(243,236,226,.62);margin-top:20px}
+.accord input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--acc-clair);flex-shrink:0}
+.accord a{color:var(--lait)}
+.err{grid-column:1/-1;color:#F2A49C;font-size:15px}
+.envoi-zone{grid-column:1/-1;display:flex;justify-content:flex-end;margin-top:28px}
+.envoi{width:144px;height:144px;border-radius:50%;border:0;background:var(--acc-clair);color:var(--nuit);font-family:var(--display);font-size:17px;font-weight:500;cursor:pointer;transition:background .4s}
+.envoi:hover{background:var(--lait)}
+.envoi span{display:inline-block}
+.ok{font-family:var(--display);font-size:clamp(22px,2vw,28px);line-height:1.3;max-width:28ch}
+.ok a{color:var(--acc-clair)}
+
+/* ================= PIED ================= */
+.pied{background:var(--nuit);color:rgba(243,236,226,.55);padding:0 var(--lis) calc(env(safe-area-inset-bottom,0px) + 32px);font-size:15px}
+.pied .wrap{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;border-top:1px solid rgba(243,236,226,.16);padding-top:28px}
+.pied nav{display:flex;gap:24px;flex-wrap:wrap}
+.pied a{text-decoration:none}
+.pied a:hover{color:var(--lait)}
+
+@media (prefers-reduced-motion:reduce){
+  .js .heros h1{visibility:visible}
+  .js .manif .mot{opacity:1}
+  .js .revele-cadre{height:auto;clip-path:none;overflow:visible}
+  .js .vue{position:relative;inset:auto;height:min(clamp(320px,62vw,820px),82svh)}
+  .js .vue+.vue{margin-top:16px}
+  .js .vue.suite{clip-path:none}
+  .fan img,.chaine,.mail,.mail b,.raptor img{transition:none}
+  .js .valeur h3{background:none;color:var(--ink)}
+  .lien::after{transition:none}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://methode.dev/#organization","name":"Méthode","url":"https://methode.dev/","logo":"https://methode.dev/images/icons/Logo.png","email":"halil.bagdadi@methode.dev","sameAs":["https://www.linkedin.com/company/methode-dev"],"description":"Méthode est le partenaire data de l'entreprise. Conseil data, plugins de logiciels propriétaires, passerelles ETL et tableaux de bord Power BI."},
+{"@type":"ProfessionalService","@id":"https://methode.dev/#localbusiness","name":"Méthode","url":"https://methode.dev/","email":"halil.bagdadi@methode.dev","telephone":"+33482533259","address":{"@type":"PostalAddress","addressLocality":"Lyon","addressCountry":"FR"},"areaServed":"FR","priceRange":"€€€","description":"Conseil data, plugins logiciels propriétaires, passerelles ETL et tableaux de bord Power BI à Lyon.","parentOrganization":{"@id":"https://methode.dev/#organization"},
+"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conseil data"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plugins de logiciels propriétaires"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Passerelles ETL"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Power BI"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Intégration Odoo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Analyse Python"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Formation"}}]},
+{"@type":"WebSite","@id":"https://methode.dev/#website","url":"https://methode.dev/","name":"Méthode","inLanguage":"fr-FR","publisher":{"@id":"https://methode.dev/#organization"}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quels logiciels propriétaires peuvent être complétés par vos plugins ?","acceptedAnswer":{"@type":"Answer","text":"Nous développons des plugins pour tout logiciel métier fermé : ERP, CRM, logiciels de gestion, outils anciens. Le but est d'ajouter la fonctionnalité manquante sans remplacer l'outil existant."}},
+{"@type":"Question","name":"Combien de temps prend une mission type ?","acceptedAnswer":{"@type":"Answer","text":"Une passerelle ETL simple se met en place en 2 à 4 semaines. Un tableau de bord Power BI avec données fiabilisées prend généralement 4 à 6 semaines. Un plugin pour logiciel propriétaire dépend de l'API disponible, comptez 3 à 8 semaines."}},
+{"@type":"Question","name":"Travaillez-vous uniquement à Lyon ?","acceptedAnswer":{"@type":"Answer","text":"Nous sommes basés à Lyon mais intervenons dans toute la France. Les missions peuvent être menées à distance ou en présentiel selon vos besoins."}}]}
+</script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="evite" href="#principal">Aller au contenu</a>
+
+<header class="tete" id="tete">
+  <a class="logo" href="#haut" aria-label="Méthode, retour en haut"></a>
+  <nav aria-label="Contact rapide">
+    <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
+    <a class="lien ecrire" href="#contact">Écrire</a>
+  </nav>
+</header>
+
+<main id="principal">
+
+<!-- ============ HÉROS ============ -->
+<section class="heros" id="haut">
+  <canvas id="reseau" aria-hidden="true"></canvas>
+  <div class="heros-txt">
+    <h1><span class="l1">Vos données ne se parlent pas.</span> <span class="l2">Nous construisons leur carrefour.</span></h1>
+  </div>
+  <div class="heros-pied">
+    <span>Conseil data & plugin logiciel</span>
+    <span class="jauge" aria-hidden="true"><span id="jauge-txt">Faites défiler</span><i><b id="jauge"></b></i></span>
+  </div>
+</section>
+
+<!-- ============ MANIFESTE ============ -->
+<section class="manif">
+  <div class="wrap">
+    <p id="manif">Un ERP, un CRM, trois fichiers Excel et un logiciel métier que plus personne n'ose toucher. Nous les faisons travailler ensemble, sans vous faire changer d'outils.</p>
+  </div>
+</section>
+
+<!-- ============ PHOTO ============ -->
+<!-- Les trois photos se succèdent au défilement. Ajustez --pos pour le cadrage de chacune.
+     Une photo introuvable est retirée automatiquement ; sans aucune photo, la section disparaît. -->
+<section class="revele" id="photos" aria-labelledby="t-equipe">
+  <h2 id="t-equipe" class="masque">L'équipe</h2>
+  <div class="revele-cadre" id="revele">
+    <figure class="vue">
+      <img src="/assets/HERO_3.png" alt="Julien Calenge" decoding="async" style="--pos:center 45%">
+      <figcaption class="legende"><span class="qui">J. Calenge<span class="role">Président</span></span><p>Ex-directeur pédagogique d'Epitech Lyon.</p></figcaption>
+    </figure>
+    <figure class="vue suite">
+      <img src="/assets/HERO_2.jpg" alt="Halil Bagdadi et A. Cazalens" decoding="async" style="--pos:center 45%">
+      <figcaption class="legende"><span class="qui">H. Bagdadi &amp; A. Cazalens<span class="role">DGD &amp; DG</span></span><p>Experts en data.</p></figcaption>
+    </figure>
+    <figure class="vue suite">
+      <img src="/assets/HERO_1.jpg" alt="Les couloirs des bureaux de Méthode" decoding="async" style="--pos:center 45%">
+      <figcaption class="legende"><span class="qui"><span class="chiffre"><span id="compteur">350</span>+</span><span class="role"> informaticiens dans notre réseau</span></span><p>Grâce à Epitech, nous disposons d'un réseau de plus de 350 alumnis aux expertises variées : aucune technologie ne nous fait peur.</p></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ EXPERTISES ============ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <span class="surtitre">Expertises</span>
+    <h2 class="titre fendre">Toute la chaîne de vos données, du conseil au plugin.</h2>
+    <ul class="index" id="index">
+      <li><a href="#contact" data-ico="0"><span class="nom">Conseil data</span><span class="desc">Faire le point sur vos données et décider quoi construire en premier.</span></a></li>
+      <li><a href="#contact" data-ico="1"><span class="nom">Plugin de logiciel propriétaire</span><span class="desc">Ajouter la fonction qui manque à un logiciel fermé, sans le remplacer.</span></a></li>
+      <li><a href="#contact" data-ico="2"><span class="nom">Power BI</span><span class="desc">Des tableaux de bord fiables, lisibles en un regard.</span></a></li>
+      <li><a href="#contact" data-ico="3"><span class="nom">Passerelles ETL</span><span class="desc">Faire circuler automatiquement les données d'un logiciel à l'autre.</span></a></li>
+      <li><a href="#contact" data-ico="4"><span class="nom">Intégration Odoo</span><span class="desc">Brancher Odoo sur le reste de vos outils.</span></a></li>
+      <li><a href="#contact" data-ico="5"><span class="nom">Analyse Python</span><span class="desc">Des analyses sur mesure quand les outils standards ne suffisent plus.</span></a></li>
+      <li><a href="#contact" data-ico="6"><span class="nom">Sauvetage de logiciel ancien</span><span class="desc">Remettre en état un outil dont personne n'a plus la clé.</span></a></li>
+      <li><a href="#contact" data-ico="7"><span class="nom">Modèles prédictifs</span><span class="desc">Anticiper ventes, stocks ou charge à partir de votre historique.</span></a></li>
+      <li><a href="#contact" data-ico="8"><span class="nom">Formation</span><span class="desc">Anciens enseignants, nous rendons vos équipes autonomes.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Aperçu flottant (desktop) -->
+<div class="apercu" id="apercu" aria-hidden="true">
+  <svg viewBox="0 0 40 40"><circle pathLength="1" cx="20" cy="20" r="15"/><path pathLength="1" d="M20 20l8-8"/></svg>
+  <svg viewBox="0 0 40 40"><path pathLength="1" d="M6 8h13v7a3 3 0 006 0V8h9v24H6z"/><path pathLength="1" d="M27 20h5M29.5 17.5v5"/></svg>
+  <svg viewBox="0 0 40 40"><path pathLength="1" d="M6 33h28"/><rect pathLength="1" x="9" y="20" width="6" height="13"/><rect pathLength="1" x="18" y="14" width="6" height="19"/><rect pathLength="1" x="27" y="8" width="6" height="25"/></svg>
+  <svg viewBox="0 0 40 40"><rect pathLength="1" x="4" y="6" width="11" height="10"/><rect pathLength="1" x="25" y="24" width="11" height="10"/><path pathLength="1" d="M15 11h9a5 5 0 015 5v8"/></svg>
+  <svg viewBox="0 0 40 40"><path pathLength="1" d="M20 5l14 7-14 7-14-7z"/><path pathLength="1" d="M6 20l14 7 14-7"/><path pathLength="1" d="M6 27l14 7 14-7"/></svg>
+  <svg viewBox="0 0 40 40"><circle pathLength="1" cx="17" cy="17" r="11"/><path pathLength="1" d="M25 25l9 9"/><path pathLength="1" d="M12 19l4-5 3 3 4-6"/></svg>
+  <svg viewBox="0 0 40 40"><path pathLength="1" d="M20 4l13 5v11c0 8-6 14-13 16-7-2-13-8-13-16V9z"/><path pathLength="1" d="M14 20l4 4 8-9"/></svg>
+  <svg viewBox="0 0 40 40"><path pathLength="1" d="M5 31h30"/><path pathLength="1" d="M8 26l7-7 6 4 10-12"/><path pathLength="1" d="M27 11h6v6"/></svg>
+  <svg viewBox="0 0 40 40"><path pathLength="1" d="M4 15L20 8l16 7-16 7z"/><path pathLength="1" d="M11 19v7c0 3 4 5 9 5s9-2 9-5v-7"/><path pathLength="1" d="M33 17v9"/></svg>
+</div>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section class="pubs" id="publications" aria-labelledby="t-pubs">
+  <div class="tete-sec">
+    <div>
+      <span class="surtitre">Publications</span>
+      <h2 class="titre fendre" id="t-pubs">Nous écrivons ce que nous apprenons.</h2>
+    </div>
+  </div>
+
+  <div class="rail" id="rail" tabindex="-1">
+    <a class="pub" href="https://methode.dev/affiches/">
+      <div class="pub-media"><div class="par fan" aria-hidden="true">
+  <img src="/assets/affiche-algo-dijkstra.png" alt="Affiche sur l'algorithme de Dijkstra" style="--i:-2.5;--a:6">
+  <img src="/assets/affiche-hopper.png" alt="Affiche Biographique sur Mrs. Hopper" style="--i:-1.5;--a:2">
+  <img src="/assets/affiche-solid.png" alt="Affiche sur SOLID" style="--i:-.5;--a:0">
+  <img src="/assets/affiche-dijkstra.png" alt="Affiche biographique sur Dijkstra" style="--i:.5;--a:0">
+  <img src="/assets/affiche-greedy.png" alt="Affiche sur l'algorithme Greedy" style="--i:1.5;--a:2">
+  <img src="/assets/affiche-von-neumann.png" alt="Affiche sur Von Neumann" style="--i:2.5;--a:6">
+      </div></div>
+      <div class="pub-meta"><b>Affiches</b><span>Licence CC BY-NC</span></div>
+      <h3>Affiches de vulgarisation</h3>
+      <p>Dijkstra, Grace Hopper, SOLID, Von Neumann : six affiches à imprimer pour vos salles et vos équipes.</p>
+    </a>
+
+    <a class="pub" href="https://methode.dev/blog/raptor/" data-anim="/assets/raptor-anim.webp">
+      <div class="pub-media"><div class="par raptor" aria-hidden="true">
+        <img class="fix" src="/assets/raptor-reseau.png" />
+        <img class="anim" alt="">
+      </div></div>
+      <div class="pub-meta"><b>Article</b><span>13 min de lecture</span></div>
+      <h3>L'algorithme RAPTOR expliqué</h3>
+      <p>Le plus court chemin dans les transports en commun, démontré pas à pas sur le métro lyonnais.</p>
+    </a>
+
+    <a class="pub" href="https://methode.dev/blog/fastemailparser/">
+      <div class="pub-media"><div class="par parse" aria-hidden="true">
+        <code><b>$</b> pip install fastemailparser<i></i></code>
+        <div class="chaine"><span></span><span></span><span></span></div>
+        <span class="stat"><b>1 500</b> e-mails par jour, pour un seul client</span>
+      </div></div>
+      <div class="pub-meta"><b>Open source</b><span>2 min de lecture</span></div>
+      <h3>Parsing d'e-mails sans LLM, mais en mieux</h3>
+      <p>FastEmailParser, notre bibliothèque en C pour découper et analyser des chaînes d'e-mails à grand volume.</p>
+    </a>
+
+    <a class="pub" href="https://methode.dev/blog/outlook-addin/">
+      <div class="pub-media"><div class="par annot" aria-hidden="true">
+        <div class="mail"><em></em><b>Devis</b></div>
+        <div class="mail"><em></em><b>Réclamation</b></div>
+        <div class="mail"><em></em><b>Facture</b></div>
+      </div></div>
+      <div class="pub-meta"><b>Retour d'expérience</b><span>7 min de lecture</span></div>
+      <h3>Les coulisses d'un plugin d'annotation Outlook</h3>
+      <p>SSO Microsoft, contrats OpenAPI et annotation en aveugle : livrer d'abord ce qui fait peur.</p>
+    </a>
+  </div>
+
+  <div class="rail-pied">
+    <div class="rail-jauge" aria-hidden="true"><b id="rail-jauge"></b></div>
+    <div class="rail-nav">
+      <button type="button" id="rail-prec" aria-label="Publication précédente"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span id="rail-num" aria-live="polite">01 / 04</span>
+      <button type="button" id="rail-suiv" aria-label="Publication suivante"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DÉMARCHE ============ -->
+<section class="demarche" id="demarche">
+  <div class="tete-sec wrap">
+    <span class="surtitre">Démarche</span>
+    <h2 class="titre fendre">Quatre étapes. Vous savez toujours où nous en sommes.</h2>
+  </div>
+  <div class="piste-zone" id="piste-zone">
+    <div class="piste" id="piste">
+      <div class="fil" aria-hidden="true"><b id="fil"></b></div>
+      <article class="etape"><span class="n">01</span><h3>On en parle</h3><p>Un appel pour comprendre vos outils et ce qui vous bloque.</p></article>
+      <article class="etape"><span class="n">02</span><h3>Diagnostic et devis</h3><p>Nous examinons vos logiciels, puis vous remettons un devis ferme avec un délai.</p></article>
+      <article class="etape"><span class="n">03</span><h3>Réalisation</h3><p>Nous construisons dans vos outils existants, avec un point régulier.</p></article>
+      <article class="etape"><span class="n">04</span><h3>Passation</h3><p>Nous formons vos équipes et vous remettons tout : code, documentation et accès.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALEURS ============ -->
+<section class="sec valeurs" id="valeurs">
+  <div class="wrap">
+    <span class="surtitre">Valeurs</span>
+    <div class="liste">
+      <div class="valeur"><h3>Transmission</h3><p>Anciens enseignants, nous formons vos équipes pour votre autonomie.</p></div>
+      <div class="valeur"><h3>Franchise</h3><p>Nous disons quand un modèle n'a pas de sens. Un mauvais chiffre coûte plus qu'aucun.</p></div>
+      <div class="valeur"><h3>Propriété</h3><p>Code, modèles et tableaux de bord vous appartiennent. Réutilisables sans nous.</p></div>
+      <div class="valeur"><h3>Continuité</h3><p>Pas d'outil à adopter. Nous travaillons dans vos logiciels, pas à côté.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RÉFÉRENCES ============ -->
+<section class="refs" id="references">
+  <div class="wrap">
+    <span>Ils nous font confiance</span>
+    <div class="rangee">
+      <img src="https://interport.fr/wp-content/uploads/2022/10/Interport-Crew-Services-Leader-company-in-France-specialized-with-organization-of-crew-change-arrangements-on-board-merchant-chips-1.svg" alt="Interport Crew Services" loading="lazy">
+      <img src="https://yt3.googleusercontent.com/TY0bj9gn_NiYmLJkrwMEKfwpEidQcQvDfGhfCAuJR_pdQ1SxzIODN0oMfu_YaW1KogDATLw=s900-c-k-c0x00ffffff-no-rj" alt="SUPINFO International University" loading="lazy">
+      <img src="https://schengen-marine.com/wp-content/uploads/2024/03/SCHENGEN-LOGO-1536x640.png" alt="Schengen Marine Services" loading="lazy">
+      <img class="inv" src="https://www.epitech.eu/wp-content/uploads/logo-epitech-blanc.svg" alt="Epitech" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <h2 class="fendre">Questions fréquentes</h2>
+    <div>
+      <details><summary>Quels logiciels propriétaires pouvez-vous compléter ?<i></i></summary><div class="rep"><p>Nous développons des plugins pour tout logiciel métier fermé : ERP, CRM, logiciels de gestion, outils anciens. Le but est d'ajouter la fonctionnalité manquante sans remplacer l'outil existant.</p></div></details>
+      <details><summary>Combien de temps prend une mission type ?<i></i></summary><div class="rep"><p>Une passerelle ETL simple se met en place en 2 à 4 semaines. Un tableau de bord Power BI avec données fiabilisées prend généralement 4 à 6 semaines. Un plugin pour logiciel propriétaire dépend de l'API disponible, comptez 3 à 8 semaines.</p></div></details>
+      <details><summary>Travaillez-vous uniquement à Lyon ?<i></i></summary><div class="rep"><p>Nous sommes basés à Lyon mais intervenons dans toute la France. Les missions peuvent être menées à distance ou en présentiel selon vos besoins.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="surtitre">Parlons-en</span>
+    <a class="grand-tel" id="grand-tel" href="tel:+33482533259" aria-label="Appeler le 04 82 53 32 59">04 82 53 32 59</a>
+    <div class="sous">
+      <a class="lien" href="mailto:contact@methode.dev">contact@methode.dev</a>
+    </div>
+
+    <div class="contact-grille">
+      <div>
+        <h2>Ou décrivez votre situation.</h2>
+        <p class="note">Deux lignes suffisent. Nous revenons vers vous rapidement.</p>
+      </div>
+      <div>
+        <div id="okbox" hidden></div>
+        <form class="nform" id="form" action="https://redirect-methode.jcalenge.workers.dev/" method="post" enctype="multipart/form-data" novalidate>
+          <label class="champ"><input type="text" id="f-p" autocomplete="given-name" placeholder=" " required><span>Prénom</span></label>
+          <label class="champ"><input type="text" id="f-n" autocomplete="family-name" placeholder=" " required><span>Nom</span></label>
+          <label class="champ"><input type="text" id="f-e" autocomplete="organization" placeholder=" " required><span>Entreprise</span></label>
+          <label class="champ"><input type="email" id="f-m" autocomplete="email" inputmode="email" placeholder=" " required><span>E-mail</span></label>
+          <label class="champ large"><textarea id="f-x" rows="1" placeholder=" "></textarea><span>Votre situation, en quelques mots</span></label>
+          <label class="accord"><input type="checkbox" id="f-a"><span>J'ai lu et j'accepte la <a href="/mentions-legales/#confidentialite">politique de confidentialité</a>.</span></label>
+          <p class="err" id="err" role="alert" hidden></p>
+          <div class="envoi-zone"><button class="envoi" id="envoi" type="submit"><span>Envoyer</span></button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <script>
+window.axeptioSettings = {
+  clientId: "6ac395fd46081e00d620b4b1",
+  cookiesVersion: "7ee846a8-0530-41d2-904a-be6936e37d6a",
+  googleConsentMode: {
+    default: {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500
+    }
+  }
+};
+ 
+(function(d, s) {
+  var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+  e.async = true; e.src = "//static.axept.io/sdk.js";
+  t.parentNode.insertBefore(e, t);
+})(document, "script");
+</script>
+  <div class="wrap">
+    <span>© <span id="an">2026</span> Méthode, Lyon</span>
+    <nav aria-label="Informations légales">
+      <a href="https://www.linkedin.com/company/methode-dev">LinkedIn</a>
+      <a href="mailto:julien.calenge@methode.dev">Formation</a>
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/mentions-legales/#confidentialite">Confidentialité</a>
+      <a href="/accessibilite/">Accessibilité</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s);},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
+$('#an').textContent=new Date().getFullYear();
+/* =================================================================
+   RÉGLAGES DU DÉFILEMENT
+   ================================================================= */
+var REGLAGES={
+  lissage:.11,      /* Inertie de la molette (Lenis lerp). 0.06 = très glissé, 0.2 = vif, 1 = défilement natif */
+  molette:.95,      /* Distance par cran de molette (Lenis wheelMultiplier). 0.7 = plus lent, 1.3 = plus rapide */
+  herosDuree:140,   /* Défilement nécessaire pour connecter le réseau, en % de hauteur d'écran */
+  photosDuree:160,  /* Défilement nécessaire pour faire passer les trois photos, en % de hauteur d'écran */
+  demarcheInertie:1,/* Rattrapage de la démarche horizontale, en secondes. true = collé au défilement */
+  aimant:true,      /* La page se cale d'elle-même sur les moments clés. false = défilement libre */
+  aimantZone:.4,    /* Distance d'attraction, en part de hauteur d'écran. .15 = discret, .5 = très présent */
+  aimantDelai:160,  /* Pause (ms) après le geste avant que l'aimant agisse. Sous 100, il tire pendant le geste */
+  aimantDuree:.9,   /* Durée du glissement vers le point d'arrêt, en secondes */
+  aimantSeuil:40    /* Photos : défilement (px) à partir duquel l'aimant mène à la photo suivante ou précédente */
+};
+var REDUIT=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FIN=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+var OK=!!(window.gsap&&window.ScrollTrigger);
+if(OK){gsap.registerPlugin(ScrollTrigger);if(window.SplitText)gsap.registerPlugin(SplitText);ScrollTrigger.config({ignoreMobileResize:true});}
+
+/* ---------- Défilement fluide ---------- */
+var lenis=null;
+if(OK&&!REDUIT&&window.Lenis){
+  lenis=new Lenis({lerp:REGLAGES.lissage,wheelMultiplier:REGLAGES.molette});
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(function(t){lenis.raf(t*1000);});
+  gsap.ticker.lagSmoothing(0);
+  $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){
+    var id=a.getAttribute('href');if(id.length<2)return;var c=document.querySelector(id);if(!c)return;
+    e.preventDefault();lenis.scrollTo(c,{offset:0,duration:1.4});});});
+}
+
+/* ---------- En-tête : fond après le héros, se cache en descendant ---------- */
+(function(){
+  var t=$('#tete'),last=0;
+  function maj(y){
+    var h=window.innerHeight*.9;
+    t.classList.toggle('fond',y>h);
+    if(y>h&&y>last+4)t.classList.add('cache');else if(y<last-4||y<=h)t.classList.remove('cache');
+    last=y;}
+  if(lenis)lenis.on('scroll',function(e){maj(e.scroll);});else window.addEventListener('scroll',function(){maj(window.scrollY);},{passive:true});
+})();
+
+/* =================================================================
+   HÉROS : réseau de logiciels qui converge vers le carrefour
+   ================================================================= */
+var P=REDUIT?1:0; /* progression 0 → 1 pilotée par le défilement */
+(function(){
+  var cv=$('#reseau'),ctx=cv.getContext('2d');
+  var W=0,H=0,DPR=1,souris={x:-9999,y:-9999},actif=true,t0=performance.now();
+  var noms=['ERP','CRM','Excel','Odoo','Comptabilité','Stocks','Logiciel métier','Power BI','Paie'];
+  /* positions éparses (normalisées) : desktop et mobile */
+  var epD=[[.56,.16],[.83,.22],[.66,.42],[.93,.47],[.48,.33],[.78,.66],[.61,.72],[.9,.83],[.36,.14]];
+  var epM=[[.12,.2],[.7,.17],[.4,.3],[.8,.36],[.1,.42],[.58,.47],[.28,.54],[.84,.56],[.46,.13]];
+  var N=noms.map(function(n,i){return{l:n,i:i,x:0,y:0,ph:Math.random()*6.28};});
+  var paires=[[0,4],[1,3],[2,6],[5,7],[8,0]];
+  function taille(){
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    W=cv.clientWidth;H=cv.clientHeight;
+    cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+    if(REDUIT)dessine(performance.now());}
+  function cl(v){return v<0?0:v>1?1:v;}
+  function eio(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+  function centre(){var m=W<760;return m?{x:W*.5,y:H*.36,r:Math.min(W*.27,H*.17)}:{x:W*.7,y:H*.46,r:Math.min(W*.2,H*.31,300)};}
+  function dessine(now){
+    var t=now-t0,m=W<760,c=centre(),e=eio(cl(P/.78)),eC=cl((P-.42)/.3),fl=cl((P-.62)/.3);
+    ctx.clearRect(0,0,W,H);
+    /* halo central */
+    if(e>0){var g=ctx.createRadialGradient(c.x,c.y,0,c.x,c.y,c.r*2.2);
+      g.addColorStop(0,'rgba(224,160,90,'+(.16*e)+')');g.addColorStop(1,'rgba(224,160,90,0)');
+      ctx.fillStyle=g;ctx.fillRect(0,0,W,H);}
+    var ep=m?epM:epD;
+    N.forEach(function(n,i){
+      var a=-Math.PI/2+i*2*Math.PI/N.length;
+      /* Sur grand écran, la zone éparse reste à l'échelle d'un écran de 1600×1000 autour du carrefour */
+      var bx=m?ep[i][0]*W:c.x+(ep[i][0]-.7)*Math.min(W,1600),by=m?ep[i][1]*H:c.y+(ep[i][1]-.46)*Math.min(H,1000);
+      var sx=bx+Math.sin(t*.00042+n.ph)*14,sy=by+Math.cos(t*.00051+n.ph*1.7)*11;
+      var dx=sx-souris.x,dy=sy-souris.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<160&&d>0){var f=(160-d)/160*34*(1-e);sx+=dx/d*f;sy+=dy/d*f;}
+      var tx=c.x+Math.cos(a)*c.r,ty=c.y+Math.sin(a)*c.r;
+      n.x=sx+(tx-sx)*e;n.y=sy+(ty-sy)*e;n.a=a;});
+    ctx.lineCap='round';
+    /* liaisons cassées entre outils qui ne se parlent pas */
+    if(e<1){ctx.setLineDash([2,6]);ctx.lineWidth=1;
+      paires.forEach(function(p){var A=N[p[0]],B=N[p[1]],k=.3;
+        ctx.strokeStyle='rgba(243,236,226,'+(.22*(1-e))+')';
+        ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.lineTo(A.x+(B.x-A.x)*k,A.y+(B.y-A.y)*k);
+        ctx.moveTo(B.x,B.y);ctx.lineTo(B.x+(A.x-B.x)*k,B.y+(A.y-B.y)*k);ctx.stroke();});
+      ctx.setLineDash([]);}
+    /* anneau entre voisins une fois connectés */
+    if(e>.5){ctx.strokeStyle='rgba(243,236,226,'+(.1*cl((e-.5)*2))+')';ctx.lineWidth=1;ctx.beginPath();
+      N.forEach(function(n,i){var b=N[(i+1)%N.length];ctx.moveTo(n.x,n.y);ctx.lineTo(b.x,b.y);});ctx.stroke();}
+    /* rayons vers le centre, tracés au fil du défilement */
+    var fr=cl((P-.18)/.5);
+    if(fr>0){ctx.lineWidth=1.2;
+      N.forEach(function(n){ctx.strokeStyle='rgba(224,160,90,'+(.18+.32*e)+')';
+        ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(n.x+(c.x-n.x)*fr,n.y+(c.y-n.y)*fr);ctx.stroke();});}
+    /* flux de données */
+    if(fl>0){ctx.fillStyle='rgba(240,190,130,'+fl+')';
+      N.forEach(function(n,i){var lg=Math.hypot(c.x-n.x,c.y-n.y),nb=Math.max(2,Math.round(lg/90));for(var k=0;k<nb;k++){
+        var q=((t*.00032*140/Math.max(lg,140))+i*.137+k/nb)%1;if(i%2)q=1-q;
+        var px=n.x+(c.x-n.x)*q,py=n.y+(c.y-n.y)*q;
+        ctx.beginPath();ctx.arc(px,py,1.8,0,6.283);ctx.fill();}});}
+    /* nœuds et libellés */
+    ctx.font='500 '+(m?13:15)+'px "Space Grotesk", system-ui, sans-serif';ctx.textBaseline='middle';
+    N.forEach(function(n){
+      ctx.fillStyle=e>.6?'#E0A05A':'rgba(243,236,226,.9)';
+      ctx.beginPath();ctx.arc(n.x,n.y,3.4,0,6.283);ctx.fill();
+      if(e>.6){ctx.strokeStyle='rgba(224,160,90,.35)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(n.x,n.y,8,0,6.283);ctx.stroke();}
+      var ca=Math.cos(n.a),ox=12,al='left';
+      if(e>.5){ox=ca<-.2?-14:ca>.2?14:0;al=ca<-.2?'right':ca>.2?'left':'center';}
+      var oy=(e>.5&&Math.abs(ca)<=.2)?(Math.sin(n.a)<0?-18:18):0;
+      ctx.textAlign=al;ctx.fillStyle='rgba(243,236,226,'+(.5+.3*e)+')';
+      ctx.fillText(m&&n.l==='Logiciel métier'?'Métier':n.l,n.x+ox,n.y+oy);});
+    /* le carrefour */
+    if(eC>0){var r=(m?26:36)*eio(eC);
+      var pul=((t*.0004)%1);
+      if(fl>0){ctx.strokeStyle='rgba(224,160,90,'+((1-pul)*.4*fl)+')';ctx.lineWidth=1;ctx.beginPath();ctx.arc(c.x,c.y,r+pul*r*1.6,0,6.283);ctx.stroke();}
+      ctx.fillStyle='#161514';ctx.beginPath();ctx.arc(c.x,c.y,r,0,6.283);ctx.fill();
+      ctx.strokeStyle='rgba(224,160,90,'+eC+')';ctx.lineWidth=1.4;ctx.stroke();
+      ctx.fillStyle='rgba(243,236,226,'+eC+')';ctx.textAlign='center';
+      ctx.font='600 '+(m?11:13)+'px "Space Grotesk", system-ui, sans-serif';ctx.fillText('méthode',c.x,c.y+.5);}
+  }
+  /* La taille réelle du canvas est vérifiée à chaque image : elle peut changer après un resize
+     (plein écran, ScrollTrigger qui recalcule l'épinglage) sans qu'aucun événement ne le signale. */
+  function verifTaille(){if(cv.clientWidth!==W||cv.clientHeight!==H||Math.min(window.devicePixelRatio||1,2)!==DPR)taille();}
+  function boucle(now){if(actif){verifTaille();dessine(now);}requestAnimationFrame(boucle);}
+  window.addEventListener('resize',taille);
+  if('ResizeObserver' in window)new ResizeObserver(function(){taille();}).observe(cv);
+  if(window.ScrollTrigger)ScrollTrigger.addEventListener('refresh',taille);
+  document.addEventListener('fullscreenchange',function(){setTimeout(taille,60);});
+  if(FIN)cv.parentNode.addEventListener('pointermove',function(e){var b=cv.getBoundingClientRect();souris.x=e.clientX-b.left;souris.y=e.clientY-b.top;});
+  cv.parentNode.addEventListener('pointerleave',function(){souris.x=souris.y=-9999;});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){actif=es[es.length-1].isIntersecting;}).observe(cv);
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){taille();if(!REDUIT)requestAnimationFrame(boucle);});
+})();
+
+if(!OK||REDUIT){$('.heros h1').style.visibility='visible';if(REDUIT){var j=$('#jauge');if(j)j.style.transform='scaleX(1)';}nettoiePhotos();rail(false);formulaire();faq(false);return;}
+
+document.fonts.ready.then(function(){
+
+  /* ---------- Héros : entrée + scénario au défilement ---------- */
+  var l1=$('.heros .l1'),l2=$('.heros .l2');
+  var s1=SplitText.create(l1,{type:'words',mask:'words'});
+  var s2=SplitText.create(l2,{type:'words',mask:'words'});
+  gsap.from(s1.words,{yPercent:110,duration:1.2,ease:'expo.out',stagger:.06,delay:.15});
+  gsap.set(s2.words,{yPercent:110});
+  gsap.set('.heros h1',{visibility:'visible'});
+  var jauge=$('#jauge'),jt=$('#jauge-txt');
+  var tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.heros',start:'top top',end:'+='+REGLAGES.herosDuree+'%',pin:true,scrub:true,
+    onUpdate:function(s){P=s.progress;jauge.style.transform='scaleX('+s.progress+')';jt.textContent=s.progress>.97?'Connecté':'Faites défiler';}}});
+  tl.to(l1,{opacity:.3,duration:.3},.38)
+    .to(s2.words,{yPercent:0,duration:.35,stagger:.05,ease:'power2.out'},.45)
+    .to({},{duration:.1},.9);
+
+  /* ---------- Titres : lignes qui montent ---------- */
+  $$('.fendre').forEach(function(el){
+    SplitText.create(el,{type:'lines',mask:'lines',autoSplit:true,onSplit:function(s){
+      return gsap.from(s.lines,{yPercent:105,duration:1.1,ease:'expo.out',stagger:.08,scrollTrigger:{trigger:el,start:'top 85%',once:true}});}});
+  });
+  gsap.utils.toArray('.surtitre').forEach(function(el){
+    gsap.from(el,{opacity:0,y:12,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}});});
+
+  /* ---------- Manifeste : mot à mot ---------- */
+  var sm=SplitText.create('#manif',{type:'words',wordsClass:'mot'});
+  gsap.to(sm.words,{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:'#manif',start:'top 78%',end:'bottom 42%',scrub:true}});
+
+  /* ---------- Photo qui s'ouvre ---------- */
+  photos();
+
+  /* ---------- Publications : entrée des cartes ---------- */
+  rail(true);
+  gsap.from('#rail .pub',{opacity:0,x:120,duration:1.3,ease:'expo.out',stagger:.09,scrollTrigger:{trigger:'#rail',start:'top 82%',once:true}});
+  gsap.from('.rail-pied',{opacity:0,y:20,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.rail-pied',start:'top 95%',once:true}});
+
+  /* ---------- Index des expertises ---------- */
+  gsap.from('#index li',{opacity:0,y:30,duration:1,ease:'expo.out',stagger:.06,scrollTrigger:{trigger:'#index',start:'top 82%',once:true}});
+  if(FIN){
+    var ap=$('#apercu'),icos=$$('#apercu svg');
+    var qx=gsap.quickTo(ap,'x',{duration:.55,ease:'power3'}),qy=gsap.quickTo(ap,'y',{duration:.55,ease:'power3'});
+    var px=-1,py=-1,cour=-1;
+    /* L'aperçu suit la ligne réellement sous le curseur, y compris quand la page défile sous une souris immobile */
+    function verifie(){
+      if(px<0)return;
+      var el=document.elementFromPoint(px,py),a=el&&el.closest?el.closest('#index a'):null,k=a?+a.dataset.ico:-1;
+      if(k===cour)return;cour=k;
+      if(k<0){gsap.to(ap,{scale:0,duration:.35,ease:'power2.in',overwrite:'auto'});return;}
+      icos.forEach(function(s,i){s.classList.toggle('on',i===k);});
+      gsap.to(ap,{scale:1,duration:.5,ease:'back.out(1.6)',overwrite:'auto'});}
+    window.addEventListener('pointermove',function(e){px=e.clientX;py=e.clientY;qx(px);qy(py);verifie();});
+    document.addEventListener('pointerleave',function(){px=-1;cour=-1;gsap.to(ap,{scale:0,duration:.3});});
+    if(lenis)lenis.on('scroll',verifie);else window.addEventListener('scroll',verifie,{passive:true});
+  }
+
+  /* ---------- Démarche : horizontale sur grand écran, verticale sinon ---------- */
+  var mm=gsap.matchMedia();
+  mm.add('(min-width: 901px)',function(){
+    var piste=$('#piste');
+    function dist(){return Math.max(0,piste.scrollWidth-window.innerWidth);}
+    var tw=gsap.to(piste,{x:function(){return -dist();},ease:'none',scrollTrigger:{trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
+    gsap.fromTo('#fil',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
+    gsap.utils.toArray('.etape').forEach(function(et){
+      gsap.from(et.children,{opacity:0,y:40,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:et,containerAnimation:tw,start:'left 88%',end:'left 55%',scrub:true}});});
+  });
+  mm.add('(max-width: 900px)',function(){
+    gsap.fromTo('#fil',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'#piste',start:'top 70%',end:'bottom 70%',scrub:true}});
+    gsap.utils.toArray('.etape').forEach(function(et){
+      gsap.from(et.children,{opacity:0,y:28,stagger:.08,duration:.9,ease:'power3.out',scrollTrigger:{trigger:et,start:'top 82%',once:true}});});
+  });
+
+  /* ---------- Valeurs : remplissage au passage ---------- */
+  gsap.utils.toArray('.valeur').forEach(function(v){
+    gsap.to(v.querySelector('h3'),{backgroundPosition:'0% 0',ease:'none',scrollTrigger:{trigger:v,start:'top 82%',end:'top 38%',scrub:true}});
+    gsap.from(v.querySelector('p'),{opacity:0,x:24,ease:'none',scrollTrigger:{trigger:v,start:'top 70%',end:'top 45%',scrub:true}});
+  });
+
+  /* ---------- Références ---------- */
+  gsap.from('.rangee img',{opacity:0,y:16,stagger:.08,duration:1,ease:'expo.out',scrollTrigger:{trigger:'.rangee',start:'top 90%',once:true}});
+
+  /* ---------- Grand numéro : vague au survol, entrée au défilement ---------- */
+  var st=SplitText.create('#grand-tel',{type:'chars',charsClass:'char',mask:'chars'});
+  gsap.from(st.chars,{yPercent:110,duration:1.2,ease:'expo.out',stagger:.025,scrollTrigger:{trigger:'#grand-tel',start:'top 88%',once:true}});
+  if(FIN){var gt=$('#grand-tel');
+    gt.addEventListener('pointerenter',function(){gsap.fromTo(st.chars,{yPercent:0},{keyframes:{yPercent:[0,-14,0]},duration:.7,ease:'power2.inOut',stagger:.025,overwrite:true});
+      gsap.to(gt,{color:'#E0A05A',duration:.4});});
+    gt.addEventListener('pointerleave',function(){gsap.to(gt,{color:'#F3ECE2',duration:.5});});}
+
+  /* ---------- Bouton d'envoi magnétique ---------- */
+  if(FIN){var b=$('#envoi'),bs=b.querySelector('span');
+    var bx=gsap.quickTo(b,'x',{duration:.6,ease:'elastic.out(1,.4)'}),by=gsap.quickTo(b,'y',{duration:.6,ease:'elastic.out(1,.4)'});
+    var sx=gsap.quickTo(bs,'x',{duration:.6,ease:'elastic.out(1,.4)'}),sy=gsap.quickTo(bs,'y',{duration:.6,ease:'elastic.out(1,.4)'});
+    b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);bx(dx*.3);by(dy*.3);sx(dx*.15);sy(dy*.15);});
+    b.addEventListener('pointerleave',function(){bx(0);by(0);sx(0);sy(0);});}
+
+  /* ---------- Aimantation : la page se cale sur les moments clés ---------- */
+  if(lenis&&REGLAGES.aimant){
+    var arrets=[],photosZone=null,aimantEnCours=false,attente,repos=lenis.scroll;
+    /* Repères du haut des sections, créés une seule fois : leur position tient compte des épinglages */
+    var reperes=['#services','#publications','#valeurs','#faq','#contact'].map(function(s){
+      var el=$(s);return el?ScrollTrigger.create({trigger:el,start:'top top'}):null;}).filter(Boolean);
+
+    function calculeArrets(){
+      arrets=[];photosZone=null;
+      /* Héros : début et réseau connecté */
+      var h=tl.scrollTrigger;if(h)arrets.push(h.start,h.end);
+      ScrollTrigger.getAll().forEach(function(t){
+        if(!t.pin||!t.trigger)return;
+        /* Démarche (grand écran) : une position par étape */
+        if(t.trigger.id==='piste-zone'){
+          var n=$$('.etape').length;
+          for(var i=0;i<n;i++)arrets.push(t.start+(t.end-t.start)*i/Math.max(1,n-1));}
+        /* Photos : une position par photo, repérée par les étiquettes de la timeline */
+        if(t.trigger.id==='photos'&&t.animation){
+          var lab=t.animation.labels,d=t.animation.duration()||1;
+          photosZone={start:t.start,end:t.end,arrets:[t.start]};
+          Object.keys(lab).forEach(function(k){photosZone.arrets.push(t.start+(t.end-t.start)*lab[k]/d);});
+          arrets=arrets.concat(photosZone.arrets);}
+      });
+      reperes.forEach(function(r){arrets.push(r.start);});
     }
 
-  }, true);
-})();
-</script></head><body class="w-body c1njz4ho"><div class="w-box"><main class="w-box"><section class="w-box c1hzitv3 c1lb8i4l c18kzad8 c1q1htwc c1s6klyf c18zx1rw"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1uup4ib c1x05l0l c1xucrmt c18yo5kt cm1pj c6hxj15 cr0yq4r c1buloke cmfd5ud ct10b74 cy84l6z"><div class="w-box ccdo1v8 c1o768ho czfl3ei cnt8zja czlac5t cw1hgdq c7zl7ld"><img class="w-image cuxe3eo" alt="" width="2000" height="387" sizes="100vw" srcSet="/assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 16w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 32w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 48w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 64w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 96w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 128w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 256w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 384w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 640w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 750w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 828w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 1080w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 1200w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 1920w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 2048w, /assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg 3840w" src="/assets/Headline_ix13SvAEMdsAW5n6hWsHG.svg" decoding="async" loading="lazy"/><h1 class="w-heading cmjvuci c10mfbj2 cx6x4m7"><span class="w-element chzf1zu cfvpqmt c13jxp83 c1tnox2n c1uwdq1j c116ca2 c7ocr49 cfxgjd cd20g8l czseknb">Progiciels sur mesure</span></h1><p class="w-paragraph c1r7vju cy8iwl8">Nous aidons des entreprises à intégrer leur logique métier dans un progiciel personnalisé.</p><a class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p" href="/estimation">Estimez votre projet</a></div><img class="w-image csbe8jh cd9nun1 categ08 csdn0eq c83u98k" alt="" width="761" height="472" sizes="100vw" srcSet="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 16w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 32w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 48w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 64w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 96w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 128w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 256w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 384w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 640w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 750w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 828w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 1080w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 1200w, /assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg 1920w" src="/assets/bitmap_Wzx3TbR9ZNVfj00oAym8w.svg" decoding="async" loading="lazy"/></div></section><section id="services" class="w-box c1hzitv3 c1lb8i4l c17fqoxd"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"><div class="w-html-embed ctdocrn"><div class="dg-root" id="dg" style="font-family:Nunito,sans-serif;color:var(--foreground-border,#191a23);display:flex;flex-direction:column;gap:clamp(40px,6vw,72px)" > <style>.dg-anim .dg-reveal{opacity:0;transform:translateY(22px);transition:opacity 0.55s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)),transform 0.55s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1))}.dg-anim .dg-reveal.dg-in{opacity:1;transform:none}.dg-sum::-webkit-details-marker{display:none}.dg-sum::marker{content:""}.dg-sum:focus-visible{outline:3px solid var(--foreground-accent,#f9a040);outline-offset:-3px}.dg-row:hover{border-left-color:var(--foreground-accent,#f9a040) !important;background:rgba(249,160,64,0.05) !important}.dg-row[open]{border-left-color:var(--foreground-accent,#f9a040) !important;background:rgba(249,160,64,0.07) !important}.dg-row:hover .dg-chev,.dg-row[open] .dg-chev{background:var(--foreground-accent,#f9a040) !important}.dg-row[open] .dg-chev{transform:rotate(45deg) !important}@keyframes dgOpen{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}.dg-row[open] .dg-panel{animation:dgOpen 0.24s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1))}.dg-proof:hover{transform:translateY(-2px) !important;box-shadow:0 7px #000 !important}.dg-proof:active{transform:translateY(4px) !important;box-shadow:0 0 #000 !important}.dg-cta:hover{transform:translateY(-2px) !important;box-shadow:0 7px #0b0c11 !important}.dg-cta:active{transform:translateY(4px) !important;box-shadow:0 0 #0b0c11 !important}.dg-q:first-of-type{border-top:none !important}.dg-opt:hover{border-color:var(--foreground-accent,#f9a040) !important;color:var(--foreground-accent,#f9a040) !important}.dg-opt[aria-pressed="true"]{background:var(--foreground-accent,#f9a040) !important;border-color:var(--foreground-accent,#f9a040) !important;color:#191a23 !important}.dg-rule b{color:var(--foreground-accent,#f9a040)}@media (max-width:860px){.dg-flag{grid-template-columns:1fr !important}}@media (max-width:760px){.dg-sum{grid-template-columns:2.4rem minmax(0,1fr) 2rem !important;align-items:start !important}.dg-chev{grid-column:3 !important;grid-row:1 !important}.dg-fix{grid-column:2 / 4 !important;grid-row:2 !important}.dg-panel{grid-template-columns:1fr !important}.dg-gutter{display:none !important}}@media (max-width:700px){.dg-pastille{left:50% !important}}@media (max-width:479px){.dg-pastille{font-size:0.8rem !important;padding:8px 15px !important}.dg-q{flex-direction:column !important;align-items:flex-start !important}}@media (prefers-reduced-motion:reduce){.dg-anim .dg-reveal{opacity:1 !important;transform:none !important;transition:none !important}.dg-row[open] .dg-panel{animation:none !important}}</style> <section class="dg-flag dg-reveal" style="position:relative;background:var(--foreground-border,#191a23);color:#fff;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:20px;box-shadow:0 6px #000;padding:clamp(24px,4vw,46px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);gap:clamp(24px,4vw,46px);align-items:start" ><span class="dg-pastille" style="position:absolute;top:0;left:74%;transform:translate(-50%,-50%);z-index:2;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;background:#fff;color:var(--foreground-border,#191a23);border:var(--border-size-2,2px) solid var(--foreground-border,#191a23);border-radius:999px;box-shadow:0 4px #000;padding:9px 18px 9px 12px;font-size:0.92rem;font-weight:900;text-transform:uppercase;letter-spacing:0.07em" ><span aria-hidden="true" style="flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:var(--foreground-accent,#f9a040);display:inline-flex;align-items:center;justify-content:center" ><svg width="13" height="13" viewBox="0 0 12 12" style="display:block"><path d="M1 6.4 4.4 9.8 11 2.2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" ></path></svg></span >Plateforme agréée</span ><div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px"><span style="display:inline-flex;align-items:center;gap:7px;background:var(--foreground-accent,#f9a040);color:#191a23;font-size:0.72rem;font-weight:900;text-transform:uppercase;letter-spacing:0.09em;padding:7px 14px;border-radius:999px" ><svg aria-hidden="true" width="11" height="14" viewBox="0 0 11 14" fill="none" style="flex:0 0 auto;display:block" ><path d="M6.4 0 0 8h3.6L3.2 14 10 5.6H6z" fill="currentColor"></path></svg>Échéance légale</span ><h2 style="margin:0;font-size:clamp(1.9rem,5vw,2.9rem);font-weight:900;line-height:1.03;letter-spacing:-0.025em;color:#fff" >Facturation électronique</h2><p class="dg-rule" id="dg-rule" style="margin:0;font-size:clamp(1rem,2vw,1.2rem);font-weight:700;line-height:1.4;color:rgba(255,255,255,0.94)" >Toutes les entreprises doivent pouvoir <b>recevoir</b> une facture électronique.</p><p style="margin:0;font-size:0.97rem;line-height:1.55;color:rgba(255,255,255,0.66);max-width:48ch" >La réforme ne demande pas un logiciel de plus. Elle demande que vos factures circulent dans un format structuré, par une plateforme agréée, à l&#x27;envoi comme à la réception. Nous branchons cette brique sur vos outils actuels.</p><a class="dg-cta" href="/realisations/facturation-electronique" style="margin-top:4px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:1rem;font-weight:900;background:var(--foreground-accent,#f9a040);color:#191a23;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;padding:13px 24px;box-shadow:0 4px #0b0c11;transition:transform 0.12s ease,box-shadow 0.12s ease" >Comment nous procédons<span aria-hidden="true">&#8594;</span></a ></div><div style="position:relative;display:flex;flex-direction:column;gap:16px"><div style="border:var(--border-size-1,1px) solid rgba(255,255,255,0.22);border-radius:16px;background:rgba(255,255,255,0.05);padding:18px 20px;display:flex;align-items:baseline;flex-wrap:wrap;gap:10px" ><span id="dg-days" style="font-size:clamp(2.6rem,8vw,3.8rem);font-weight:900;line-height:0.85;letter-spacing:-0.04em;color:var(--foreground-accent,#f9a040);font-variant-numeric:tabular-nums" >&#8212;</span ><span id="dg-unit" style="font-size:1rem;font-weight:800;color:#fff">jours</span><p id="dg-label" style="flex:1 0 100%;margin:6px 0 0;font-size:0.88rem;font-weight:700;color:rgba(255,255,255,0.62)" >avant le 1<sup>er</sup> septembre 2026</p></div><div class="dg-quiz" style="border:var(--border-size-1,1px) solid rgba(255,255,255,0.22);border-radius:16px;background:rgba(255,255,255,0.05);padding:18px 20px" ><p style="margin:0 0 12px;font-size:0.74rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55)" >Trois questions pour situer votre risque</p><div class="dg-q" data-q="1" data-risk="no" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:var(--border-size-1,1px) solid rgba(255,255,255,0.12)" ><span style="font-size:0.91rem;font-weight:600;line-height:1.35;color:rgba(255,255,255,0.9)" >Vos factures sortent déjà dans un format structuré, pas en PDF.</span ><span style="display:flex;gap:6px;flex:0 0 auto"><button type="button" class="dg-opt" data-a="yes" aria-pressed="false" style="background:none;border:var(--border-size-1,1px) solid rgba(255,255,255,0.35);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:0.8rem;font-weight:800;color:#fff;cursor:pointer;transition:background-color 0.14s ease,border-color 0.14s ease,color 0.14s ease" >Oui</button><button type="button" class="dg-opt" data-a="no" aria-pressed="false" style="background:none;border:var(--border-size-1,1px) solid rgba(255,255,255,0.35);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:0.8rem;font-weight:800;color:#fff;cursor:pointer;transition:background-color 0.14s ease,border-color 0.14s ease,color 0.14s ease" >Non</button></span></div><div class="dg-q" data-q="2" data-risk="no" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:var(--border-size-1,1px) solid rgba(255,255,255,0.12)" ><span style="font-size:0.91rem;font-weight:600;line-height:1.35;color:rgba(255,255,255,0.9)" >Votre plateforme agréée est déjà choisie.</span ><span style="display:flex;gap:6px;flex:0 0 auto"><button type="button" class="dg-opt" data-a="yes" aria-pressed="false" style="background:none;border:var(--border-size-1,1px) solid rgba(255,255,255,0.35);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:0.8rem;font-weight:800;color:#fff;cursor:pointer;transition:background-color 0.14s ease,border-color 0.14s ease,color 0.14s ease" >Oui</button><button type="button" class="dg-opt" data-a="no" aria-pressed="false" style="background:none;border:var(--border-size-1,1px) solid rgba(255,255,255,0.35);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:0.8rem;font-weight:800;color:#fff;cursor:pointer;transition:background-color 0.14s ease,border-color 0.14s ease,color 0.14s ease" >Non</button></span></div><div class="dg-q" data-q="3" data-risk="no" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:var(--border-size-1,1px) solid rgba(255,255,255,0.12)" ><span style="font-size:0.91rem;font-weight:600;line-height:1.35;color:rgba(255,255,255,0.9)" >Vos factures sortent d&#x27;un logiciel relié à votre comptabilité.</span ><span style="display:flex;gap:6px;flex:0 0 auto"><button type="button" class="dg-opt" data-a="yes" aria-pressed="false" style="background:none;border:var(--border-size-1,1px) solid rgba(255,255,255,0.35);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:0.8rem;font-weight:800;color:#fff;cursor:pointer;transition:background-color 0.14s ease,border-color 0.14s ease,color 0.14s ease" >Oui</button><button type="button" class="dg-opt" data-a="no" aria-pressed="false" style="background:none;border:var(--border-size-1,1px) solid rgba(255,255,255,0.35);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:0.8rem;font-weight:800;color:#fff;cursor:pointer;transition:background-color 0.14s ease,border-color 0.14s ease,color 0.14s ease" >Non</button></span></div><p id="dg-verdict" role="status" style="display:none;margin:14px 0 0;padding:12px 14px;border-left:4px solid var(--foreground-accent,#f9a040);background:rgba(249,160,64,0.12);border-radius:0 10px 10px 0;font-size:0.94rem;font-weight:700;line-height:1.45;color:#fff" ></p><button type="button" id="dg-reset" style="display:none;margin-top:12px;background:none;border:none;padding:0;font-family:inherit;font-size:0.82rem;font-weight:800;color:rgba(255,255,255,0.6);text-decoration:underline;cursor:pointer" >Refaire</button></div></div></section><div style="display:flex;flex-direction:column;gap:clamp(22px,3vw,34px)"><div class="dg-reveal" style="display:flex;flex-direction:column;gap:10px"><span style="display:inline-flex;align-items:center;gap:10px;font-size:0.76rem;font-weight:900;text-transform:uppercase;letter-spacing:0.11em;color:var(--foreground-accent,#f9a040)" ><span aria-hidden="true" style="width:28px;height:3px;background:var(--foreground-accent,#f9a040);border-radius:2px" ></span>Nos interventions</span ><h2 style="margin:0;font-size:clamp(1.7rem,5vw,2.6rem);font-weight:900;line-height:1.06;letter-spacing:-0.025em;color:var(--foreground-border,#191a23)" >Reconnaissez-vous votre quotidien ?</h2><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-muted,#5f6068);max-width:56ch" >Six situations que nous avons trouvées, telles quelles, chez des PME. Ouvrez la vôtre.</p></div><div class="dg-rows" style="border-top:var(--border-size-1,1px) solid rgba(25,26,35,0.16)" ><details class="dg-row dg-reveal" style="border-bottom:var(--border-size-1,1px) solid rgba(25,26,35,0.16);border-left:4px solid transparent;transition:border-color 0.18s ease,background-color 0.18s ease" ><summary class="dg-sum" style="list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1.35fr) minmax(0,1fr) 1.9rem;align-items:center;gap:clamp(10px,2vw,22px);padding:clamp(16px,2.4vw,26px) clamp(10px,2vw,20px)" ><span style="font-size:0.8rem;font-weight:900;letter-spacing:0.06em;color:var(--foreground-muted,#898989);font-variant-numeric:tabular-nums" >01</span ><span class="dg-pain" style="font-size:clamp(1.05rem,2.1vw,1.45rem);font-weight:800;line-height:1.25;letter-spacing:-0.015em;color:var(--foreground-border,#191a23)" >&#171;&#160;On a payé un an de développement. Rien ne fonctionne.&#160;&#187;</span ><span class="dg-fix" style="font-size:0.92rem;font-weight:700;line-height:1.4;color:var(--foreground-muted,#5f6068)" >Audit technique, rapport d&#x27;expertise, appui juridique</span ><span class="dg-chev" aria-hidden="true" style="justify-self:end;width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:50%;font-size:1.05rem;font-weight:900;line-height:1;color:var(--foreground-border,#191a23);transition:transform 0.2s ease,background-color 0.18s ease" >+</span ></summary><div class="dg-panel" style="display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:0 clamp(10px,2vw,20px) clamp(20px,2.4vw,30px)" ><span class="dg-gutter" aria-hidden="true"></span><div style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-secondary,#191a23);max-width:62ch" >Nous reprenons le dossier à froid : code, échanges, engagements contractuels. Vous obtenez un rapport opposable et un accompagnement dans vos démarches, plutôt qu&#x27;une deuxième facture de développement.</p><a class="dg-proof" href="/realisations/litige" style="align-self:flex-start;display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;box-shadow:0 4px #000;padding:12px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" ><span style="font-size:1rem;font-weight:800;color:var(--foreground-border,#191a23)" >Litige informatique&#160;<span aria-hidden="true">&#8599;</span></span ><span style="font-size:0.85rem;font-weight:600;color:var(--foreground-muted,#5f6068)" >Des centaines de milliers d&#x27;euros de développement évités</span ></a></div></div></details><details class="dg-row dg-reveal" style="border-bottom:var(--border-size-1,1px) solid rgba(25,26,35,0.16);border-left:4px solid transparent;transition:border-color 0.18s ease,background-color 0.18s ease" ><summary class="dg-sum" style="list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1.35fr) minmax(0,1fr) 1.9rem;align-items:center;gap:clamp(10px,2vw,22px);padding:clamp(16px,2.4vw,26px) clamp(10px,2vw,20px)" ><span style="font-size:0.8rem;font-weight:900;letter-spacing:0.06em;color:var(--foreground-muted,#898989);font-variant-numeric:tabular-nums" >02</span ><span class="dg-pain" style="font-size:clamp(1.05rem,2.1vw,1.45rem);font-weight:800;line-height:1.25;letter-spacing:-0.015em;color:var(--foreground-border,#191a23)" >&#171;&#160;Je ressaisis les mêmes informations dans trois outils différents.&#160;&#187;</span ><span class="dg-fix" style="font-size:0.92rem;font-weight:700;line-height:1.4;color:var(--foreground-muted,#5f6068)" >Un progiciel (ERP) sur mesure, sur base Odoo</span ><span class="dg-chev" aria-hidden="true" style="justify-self:end;width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:50%;font-size:1.05rem;font-weight:900;line-height:1;color:var(--foreground-border,#191a23);transition:transform 0.2s ease,background-color 0.18s ease" >+</span ></summary><div class="dg-panel" style="display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:0 clamp(10px,2vw,20px) clamp(20px,2.4vw,30px)" ><span class="dg-gutter" aria-hidden="true"></span><div style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-secondary,#191a23);max-width:62ch" >Devis, facturation, planning et suivi dans un seul système, calqué sur votre métier, pas sur le métier moyen d&#x27;un éditeur. Une saisie, une source de vérité.</p><a class="dg-proof" href="/realisations/erp" style="align-self:flex-start;display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;box-shadow:0 4px #000;padding:12px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" ><span style="font-size:1rem;font-weight:800;color:var(--foreground-border,#191a23)" >ERP maritime sur mesure&#160;<span aria-hidden="true">&#8599;</span></span ><span style="font-size:0.85rem;font-weight:600;color:var(--foreground-muted,#5f6068)" >Facturation, devis et planification des transports automatisés</span ></a></div></div></details><details class="dg-row dg-reveal" style="border-bottom:var(--border-size-1,1px) solid rgba(25,26,35,0.16);border-left:4px solid transparent;transition:border-color 0.18s ease,background-color 0.18s ease" ><summary class="dg-sum" style="list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1.35fr) minmax(0,1fr) 1.9rem;align-items:center;gap:clamp(10px,2vw,22px);padding:clamp(16px,2.4vw,26px) clamp(10px,2vw,20px)" ><span style="font-size:0.8rem;font-weight:900;letter-spacing:0.06em;color:var(--foreground-muted,#898989);font-variant-numeric:tabular-nums" >03</span ><span class="dg-pain" style="font-size:clamp(1.05rem,2.1vw,1.45rem);font-weight:800;line-height:1.25;letter-spacing:-0.015em;color:var(--foreground-border,#191a23)" >&#171;&#160;Je passe mes soirées à refaire des devis à la main.&#160;&#187;</span ><span class="dg-fix" style="font-size:0.92rem;font-weight:700;line-height:1.4;color:var(--foreground-muted,#5f6068)" >Grilles tarifaires automatisées</span ><span class="dg-chev" aria-hidden="true" style="justify-self:end;width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:50%;font-size:1.05rem;font-weight:900;line-height:1;color:var(--foreground-border,#191a23);transition:transform 0.2s ease,background-color 0.18s ease" >+</span ></summary><div class="dg-panel" style="display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:0 clamp(10px,2vw,20px) clamp(20px,2.4vw,30px)" ><span class="dg-gutter" aria-hidden="true"></span><div style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-secondary,#191a23);max-width:62ch" >Vos règles de prix (remises, paliers, cas particuliers) deviennent des règles que la machine applique. Le devis se génère ; vous ne faites plus que le relire.</p><a class="dg-proof" href="/realisations/automatisation-tarifaire" style="align-self:flex-start;display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;box-shadow:0 4px #000;padding:12px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" ><span style="font-size:1rem;font-weight:800;color:var(--foreground-border,#191a23)" >Automatisation des grilles tarifaires&#160;<span aria-hidden="true">&#8599;</span></span ><span style="font-size:0.85rem;font-weight:600;color:var(--foreground-muted,#5f6068)" >Sélection automatique de la grille à partir de règles personnalisables</span ></a></div></div></details><details class="dg-row dg-reveal" style="border-bottom:var(--border-size-1,1px) solid rgba(25,26,35,0.16);border-left:4px solid transparent;transition:border-color 0.18s ease,background-color 0.18s ease" ><summary class="dg-sum" style="list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1.35fr) minmax(0,1fr) 1.9rem;align-items:center;gap:clamp(10px,2vw,22px);padding:clamp(16px,2.4vw,26px) clamp(10px,2vw,20px)" ><span style="font-size:0.8rem;font-weight:900;letter-spacing:0.06em;color:var(--foreground-muted,#898989);font-variant-numeric:tabular-nums" >04</span ><span class="dg-pain" style="font-size:clamp(1.05rem,2.1vw,1.45rem);font-weight:800;line-height:1.25;letter-spacing:-0.015em;color:var(--foreground-border,#191a23)" >&#171;&#160;Mes équipes vivent dans Outlook. Pas dans un logiciel de plus.&#160;&#187;</span ><span class="dg-fix" style="font-size:0.92rem;font-weight:700;line-height:1.4;color:var(--foreground-muted,#5f6068)" >L&#x27;ERP là où vos équipes travaillent déjà</span ><span class="dg-chev" aria-hidden="true" style="justify-self:end;width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:50%;font-size:1.05rem;font-weight:900;line-height:1;color:var(--foreground-border,#191a23);transition:transform 0.2s ease,background-color 0.18s ease" >+</span ></summary><div class="dg-panel" style="display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:0 clamp(10px,2vw,20px) clamp(20px,2.4vw,30px)" ><span class="dg-gutter" aria-hidden="true"></span><div style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-secondary,#191a23);max-width:62ch" >Plutôt que d&#x27;imposer un nouvel outil, nous amenons le vôtre dans Outlook et Microsoft 365. L&#x27;adoption n&#x27;est plus un projet de formation : il n&#x27;y a rien de nouveau à apprendre.</p><a class="dg-proof" href="/realisations/outlook-addin" style="align-self:flex-start;display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;box-shadow:0 4px #000;padding:12px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" ><span style="font-size:1rem;font-weight:800;color:var(--foreground-border,#191a23)" >Annotation d&#x27;e-mails dans Outlook&#160;<span aria-hidden="true">&#8599;</span></span ><span style="font-size:0.85rem;font-weight:600;color:var(--foreground-muted,#5f6068)" >Catégoriser un e-mail en quelques clics, sans quitter sa boîte</span ></a></div></div></details><details class="dg-row dg-reveal" style="border-bottom:var(--border-size-1,1px) solid rgba(25,26,35,0.16);border-left:4px solid transparent;transition:border-color 0.18s ease,background-color 0.18s ease" ><summary class="dg-sum" style="list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1.35fr) minmax(0,1fr) 1.9rem;align-items:center;gap:clamp(10px,2vw,22px);padding:clamp(16px,2.4vw,26px) clamp(10px,2vw,20px)" ><span style="font-size:0.8rem;font-weight:900;letter-spacing:0.06em;color:var(--foreground-muted,#898989);font-variant-numeric:tabular-nums" >05</span ><span class="dg-pain" style="font-size:clamp(1.05rem,2.1vw,1.45rem);font-weight:800;line-height:1.25;letter-spacing:-0.015em;color:var(--foreground-border,#191a23)" >&#171;&#160;Des centaines d&#x27;e-mails à trier chaque semaine, à la main.&#160;&#187;</span ><span class="dg-fix" style="font-size:0.92rem;font-weight:700;line-height:1.4;color:var(--foreground-muted,#5f6068)" >Extraction et triage automatiques de vos données</span ><span class="dg-chev" aria-hidden="true" style="justify-self:end;width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:50%;font-size:1.05rem;font-weight:900;line-height:1;color:var(--foreground-border,#191a23);transition:transform 0.2s ease,background-color 0.18s ease" >+</span ></summary><div class="dg-panel" style="display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:0 clamp(10px,2vw,20px) clamp(20px,2.4vw,30px)" ><span class="dg-gutter" aria-hidden="true"></span><div style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-secondary,#191a23);max-width:62ch" >Nous transformons un flux d&#x27;e-mails en données exploitables : lecture, extraction, contrôle, injection dans vos outils. Sans LLM quand la précision compte, avec IA quand elle apporte quelque chose.</p><a class="dg-proof" href="/realisations/emailparsing" style="align-self:flex-start;display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;box-shadow:0 4px #000;padding:12px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" ><span style="font-size:1rem;font-weight:800;color:var(--foreground-border,#191a23)" >Fast Email Parsing&#160;<span aria-hidden="true">&#8599;</span></span ><span style="font-size:0.85rem;font-weight:600;color:var(--foreground-muted,#5f6068)" >Une librairie sur mesure, écrite pour ce seul usage</span ></a></div></div></details><details class="dg-row dg-reveal" style="border-bottom:var(--border-size-1,1px) solid rgba(25,26,35,0.16);border-left:4px solid transparent;transition:border-color 0.18s ease,background-color 0.18s ease" ><summary class="dg-sum" style="list-style:none;cursor:pointer;display:grid;grid-template-columns:3.2rem minmax(0,1.35fr) minmax(0,1fr) 1.9rem;align-items:center;gap:clamp(10px,2vw,22px);padding:clamp(16px,2.4vw,26px) clamp(10px,2vw,20px)" ><span style="font-size:0.8rem;font-weight:900;letter-spacing:0.06em;color:var(--foreground-muted,#898989);font-variant-numeric:tabular-nums" >06</span ><span class="dg-pain" style="font-size:clamp(1.05rem,2.1vw,1.45rem);font-weight:800;line-height:1.25;letter-spacing:-0.015em;color:var(--foreground-border,#191a23)" >&#171;&#160;Mes tournées et mes livraisons s&#x27;organisent au feeling.&#160;&#187;</span ><span class="dg-fix" style="font-size:0.92rem;font-weight:700;line-height:1.4;color:var(--foreground-muted,#5f6068)" >Orchestration algorithmique des livraisons</span ><span class="dg-chev" aria-hidden="true" style="justify-self:end;width:1.9rem;height:1.9rem;display:flex;align-items:center;justify-content:center;border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:50%;font-size:1.05rem;font-weight:900;line-height:1;color:var(--foreground-border,#191a23);transition:transform 0.2s ease,background-color 0.18s ease" >+</span ></summary><div class="dg-panel" style="display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:clamp(10px,2vw,22px);padding:0 clamp(10px,2vw,20px) clamp(20px,2.4vw,30px)" ><span class="dg-gutter" aria-hidden="true"></span><div style="display:flex;flex-direction:column;gap:16px"><p style="margin:0;font-size:1rem;line-height:1.55;color:var(--foreground-secondary,#191a23);max-width:62ch" >Contraintes, fenêtres horaires, capacités : le problème est algorithmique avant d&#x27;être logiciel. Nous le résolvons puis nous le branchons sur les systèmes que vous avez déjà.</p><a class="dg-proof" href="/realisations" style="align-self:flex-start;display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:12px;box-shadow:0 4px #000;padding:12px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" ><span style="font-size:1rem;font-weight:800;color:var(--foreground-border,#191a23)" >Voir toutes les réalisations&#160;<span aria-hidden="true">&#8599;</span></span ><span style="font-size:0.85rem;font-weight:600;color:var(--foreground-muted,#5f6068)" >Résolution algorithmique reliée à vos systèmes existants</span ></a></div></div></details></div></div> <script>(function () { function init() { var root = document.getElementById("dg"); if (!root || root.__dgReady) return; root.__dgReady = true; var DL = [{"d": "2026-09-01", "u": "jours", "l": "avant le 1<sup>er<\/sup> septembre 2026", "r": "Toutes les entreprises doivent pouvoir <b>recevoir<\/b> une facture électronique."}, {"d": "2027-09-01", "u": "jours", "l": "avant le 1<sup>er<\/sup> septembre 2027", "r": "La réception est déjà obligatoire. Les TPE et PME doivent maintenant <b>émettre<\/b> leurs factures au format électronique."}]; var PASSED = {"l": "Obligation en vigueur", "r": "Émission et réception électroniques sont obligatoires pour toutes les entreprises assujetties à la TVA."}; var elDays = document.getElementById("dg-days"); var elUnit = document.getElementById("dg-unit"); var elLabel = document.getElementById("dg-label"); var elRule = document.getElementById("dg-rule"); var now = new Date(); var picked = null; for (var i = 0; i !== DL.length; i++) { var ms = new Date(DL[i].d + "T00:00:00").getTime() - now.getTime(); if (ms > 0) { picked = { dl: DL[i], days: Math.ceil(ms / 86400000) }; break; } } if (picked) { elDays.textContent = String(picked.days); elUnit.textContent = picked.dl.u; elLabel.innerHTML = picked.dl.l; elRule.innerHTML = picked.dl.r; } else { elDays.style.display = "none"; elUnit.textContent = PASSED.l; elUnit.style.fontSize = "1.35rem"; elUnit.style.fontWeight = "900"; elUnit.style.color = "var(--foreground-accent,#f9a040)"; elLabel.style.display = "none"; elRule.innerHTML = PASSED.r; } var VERDICTS = ["Feu vert. La conformité est derrière vous. Reste la vraie question : et si tout remontait dans un seul progiciel, au lieu de trois outils qui se parlent mal ?", "Presque. Un seul grain de sable à retirer, et le sujet est clos.", "Ça coince. Deux chantiers à ouvrir, et septembre arrive vite.", "Tout est à faire. Comme chez la plupart des PME. C'est exactement notre métier."]; var qs = [].slice.call(root.querySelectorAll(".dg-q")); var elVerdict = document.getElementById("dg-verdict"); var elReset = document.getElementById("dg-reset"); var answers = {}; function score() { if (Object.keys(answers).length !== qs.length) return; var risk = 0; qs.forEach(function (q) { if (answers[q.getAttribute("data-q")] === q.getAttribute("data-risk")) risk++; }); elVerdict.textContent = VERDICTS[risk] || VERDICTS[VERDICTS.length - 1]; elVerdict.style.display = "block"; elReset.style.display = "block"; } [].slice.call(root.querySelectorAll(".dg-opt")).forEach(function (btn) { btn.addEventListener("click", function () { var q = btn.parentNode.parentNode; [].slice.call(q.querySelectorAll(".dg-opt")).forEach(function (o) { o.setAttribute("aria-pressed", String(o === btn)); }); answers[q.getAttribute("data-q")] = btn.getAttribute("data-a"); score(); }); }); elReset.addEventListener("click", function () { answers = {}; [].slice.call(root.querySelectorAll(".dg-opt")).forEach(function (o) { o.setAttribute("aria-pressed", "false"); }); elVerdict.style.display = "none"; elReset.style.display = "none"; }); var targets = [].slice.call(root.querySelectorAll(".dg-reveal")); if (!("IntersectionObserver" in window) || !targets.length) return; root.classList.add("dg-anim"); [].slice.call(root.querySelectorAll(".dg-row")).forEach(function (r, n) { r.style.transitionDelay = n * 60 + "ms"; }); var io = new IntersectionObserver( function (entries) { entries.forEach(function (e) { if (!e.isIntersecting) return; e.target.classList.add("dg-in"); io.unobserve(e.target); }); }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 } ); targets.forEach(function (t) { io.observe(t); }); window.setTimeout(function () { targets.forEach(function (t) { t.classList.add("dg-in"); }); }, 1600); } init(); if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } window.addEventListener("load", init); if (window.MutationObserver) { var pending = 0; new MutationObserver(function () { if (pending) return; pending = window.setTimeout(function () { pending = 0; init(); }, 50); }).observe(document.documentElement, { childList: true, subtree: true }); } })();</script> </div></div></div></section><section class="w-box c1laok5m c1lb8i4l"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv ccdo1v8 c1o768ho c1p1oiur crsj5vb c1buloke cmfd5ud"><div class="w-box ccdo1v8 c7qy5pm cnt8zja c1uup4ib c1x05l0l c4qhirx cqixtwi cbme890 cf18q3"><h2 class="w-heading c4qhirx cbme890">Ils nous ont fait confiance</h2></div><div class="w-box ccdo1v8 cnt8zja c1p1oiur c1x05l0l cg9rdh0 c160rviq"><a href="https://interport.fr/" class="w-element"><img class="w-image colqrp3 c6a621j c1b6y396 csdn0eq ccdo1v8 c1c8bhj5" alt="" width="225" height="84" sizes="100vw" srcSet="/assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 16w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 32w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 48w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 64w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 96w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 128w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 256w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 384w, /assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png 640w" src="/assets/interport_logo_transparent_veARkxWjCfXQ6W32iJU1c.png" decoding="async" loading="lazy"/></a><a href="https://supinfo.com/" class="w-element"><img class="w-image colqrp3 csdn0eq" alt="" width="225" sizes="100vw" srcSet="/assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 16w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 32w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 48w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 64w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 96w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 128w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 256w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 384w, /assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png 640w" src="/assets/logo-SupInfo_8PqOTNHQlq6dE7eKkWZgW.png" decoding="async" loading="lazy"/></a><a href="https://schengen-marine.com/" class="w-element"><img class="w-image colqrp3 csdn0eq" alt="" width="225" sizes="100vw" srcSet="/assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 16w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 32w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 48w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 64w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 96w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 128w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 256w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 384w, /assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png 640w" src="/assets/Schengen-Marine-Logo-1-e1710863907760_pX1jCwxM_K8rbtt5HBwvY.png" decoding="async" loading="lazy"/></a></div></div></section><section class="w-box c1hzitv3 c1lb8i4l"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"><div class="w-box c1t9vn71 czl5fkv cbdpizl c1xucrmt c18yo5kt c6hxj15 c1kdwscr c2eakag c5vt19m cy4x23 cora95j c1v3bltv c1lv3mnb c1wnvppo c1c2dbk7 ct10b74 cy84l6z c1wl0ip9 cc0e7gb"><div class="w-box ccdo1v8 c1o768ho czfl3ei cnt8zja czlac5t cw1hgdq"><h2 class="w-heading chzf1zu c10mfbj2 cx6x4m7">Faisons bouger les choses</h2><p class="w-paragraph"><span class="w-element">Contactez nous dès aujourd&#x27;hui afin d&#x27;apporter <i class="w-element">Méthode </i>à vos solutions logicielles.</span></p><a class="w-link c1hcsphh c1bsgfw5 c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p" href="/old-home#contact">Demander un appel</a></div><div class="w-box ccdo1v8 c7qy5pm cnt8zja"><img data-ani-progress="zoom" class="w-image c11lpsbg" alt="" width="882" height="800" sizes="100vw" srcSet="/assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 16w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 32w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 48w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 64w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 96w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 128w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 256w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 384w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 640w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 750w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 828w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 1080w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 1200w, /assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png 1920w" src="/assets/undraw_searching-everywhere_tffi_1_nT2G5B2fdFd_CjzKQ439b.png" decoding="async" loading="lazy"/></div></div></div></section><section id="process" class="w-box c1hzitv3 c1lb8i4l"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"><div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3"><h2 class="w-heading chzf1zu c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1cbo8tb ccnlhb2 chzipor c1p0gz20 c9vu7ie c5u7zze">Découvrez notre Méthode</h2></div><div class="w-box c18fdw1x"><div class="w-html-embed c18fdw1x cqa2d8i"><div class="mth-root" id="mth" style="--tile:clamp(48px,7vw,64px);--gap:clamp(30px,4.5vw,52px);font-family:Nunito,sans-serif;color:var(--foreground-border,#191a23);display:flex;flex-direction:column;gap:clamp(26px,4vw,42px);padding-top:clamp(14px,2vw,26px)" > <style>.mth-anim .mth-reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)),transform 0.55s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1))}.mth-anim .mth-reveal.mth-in{opacity:1;transform:none}@keyframes mthTile{from{transform:scale(0.7) rotate(-9deg)}60%{transform:scale(1.06) rotate(2deg)}to{transform:none}}.mth-anim .mth-reveal.mth-in .mth-tile{animation:mthTile 0.5s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)) 0.1s both}@keyframes mthDraw{to{stroke-dashoffset:0}}.mth-anim .mth-reveal .md-d,.mth-anim .mth-reveal .md-check path{stroke-dasharray:1;stroke-dashoffset:1}.mth-anim .mth-reveal.mth-in .md-d{animation:mthDraw 0.6s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)) 0.26s forwards}.mth-anim .mth-reveal.mth-in .md-check path{animation:mthDraw 0.3s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)) forwards;animation-delay:calc(var(--i,0) * 90ms + 380ms)}@keyframes mthPop{from{opacity:0;transform:scale(0.2)}to{opacity:1;transform:none}}.mth-anim .mth-reveal .md-p{opacity:0;transform-box:fill-box;transform-origin:center}.mth-anim .mth-reveal.mth-in .md-p{animation:mthPop 0.26s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)) forwards}.mth-step:last-child .mth-conn{display:none !important}@keyframes mthThread{from{height:0}to{height:100%}}.mth-anim .mth-reveal.mth-in .mth-conn-f{animation:mthThread 0.75s var(--ease-out-3,cubic-bezier(0.25,0,0.3,1)) 0.22s both}.mth-li:hover .mth-bullet{background:var(--foreground-accent,#f9a040) !important;border-color:var(--foreground-accent,#f9a040) !important}.mth-li:hover .mth-bullet .md-check{color:var(--foreground-border,#191a23) !important}.mth-link:hover{transform:translateY(-2px) !important;box-shadow:0 7px #000 !important}.mth-link:active{transform:translateY(4px) !important;box-shadow:0 0 #000 !important}@media (max-width:720px){.mth-dur{flex-basis:100% !important}}@media (max-width:520px){.mth-root{--tile:42px !important}.mth-step{gap:14px !important}}@media (prefers-reduced-motion:reduce){.mth-anim .mth-reveal{opacity:1 !important;transform:none !important;transition:none !important}.mth-anim .mth-reveal .md-d,.mth-anim .mth-reveal .md-check path{stroke-dashoffset:0 !important}.mth-anim .mth-reveal .md-p{opacity:1 !important}.mth-anim .mth-reveal.mth-in .mth-tile,.mth-anim .mth-reveal.mth-in .md-d,.mth-anim .mth-reveal.mth-in .md-check path,.mth-anim .mth-reveal.mth-in .md-p{animation:none !important}.mth-anim .mth-conn-f{height:100% !important;animation:none !important}}</style> <ol class="mth-list" style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--gap)" ><li class="mth-step mth-reveal" data-step="01" style="position:relative;display:grid;grid-template-columns:var(--tile) minmax(0,1fr);gap:clamp(16px,2.4vw,26px);align-items:start" ><span class="mth-tile" aria-hidden="true" style="position:relative;z-index:1;width:var(--tile);height:var(--tile);display:flex;align-items:center;justify-content:center;border-radius:17px;background:var(--foreground-accent,#f9a040);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 4px #000;color:var(--foreground-border,#191a23)" ><svg viewBox="0 0 24 24" width="54%" height="54%" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;overflow:visible"><path class="md-d" pathLength="1" d="M5.5 3.6h13A3 3 0 0 1 21.5 6.6v6.6a3 3 0 0 1-3 3H11.4l-4.3 4v-4H5.5a3 3 0 0 1-3-3V6.6a3 3 0 0 1 3-3Z"></path><circle class="md-p" cx="8" cy="9.9" r="1.15" fill="currentColor" stroke="none" style="animation-delay:0.62s"></circle><circle class="md-p" cx="12" cy="9.9" r="1.15" fill="currentColor" stroke="none" style="animation-delay:0.7s"></circle><circle class="md-p" cx="16" cy="9.9" r="1.15" fill="currentColor" stroke="none" style="animation-delay:0.78s"></circle></svg></span ><span class="mth-conn" aria-hidden="true" style="position:absolute;left:calc(var(--tile) / 2 - 1.5px);top:calc(var(--tile) + 9px);bottom:calc(9px - var(--gap));width:3px;border-radius:2px;background:rgba(25,26,35,0.12);overflow:hidden" ><span class="mth-conn-f" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:2px;background:var(--foreground-accent,#f9a040)" ></span ></span><div style="display:flex;flex-direction:column;gap:clamp(11px,1.6vw,15px);min-width:0;max-width:70ch" ><div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px"><h3 style="margin:0;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--foreground-border,#191a23)" >Consultation</h3><span class="mth-dur" style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:999px;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.16);font-size:0.78rem;font-weight:800;color:var(--foreground-secondary,#191a23)" ><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;display:block;color:var(--foreground-accent,#f9a040)" ><circle cx="12" cy="12" r="9.2"></circle><path d="M12 7.2V12l3.4 2.2"></path></svg>45 minutes, en visio ou chez vous</span ></div><p style="margin:0;font-size:clamp(0.97rem,1.8vw,1.06rem);line-height:1.6;font-weight:600;color:var(--foreground-secondary,#191a23)" >Un premier entretien pour cerner votre fonctionnement et vos besoins.</p><ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li class="mth-li" style="--i:0;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vous décrivez votre fonctionnement réel, pas votre organigramme.</span ></li><li class="mth-li" style="--i:1;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vous voyez où le temps se perd, et ce qu&#x27;il coûte.</span ></li><li class="mth-li" style="--i:2;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vous avez un avis franc, même si la réponse n&#x27;est pas nous.</span ></li></ul></div></li><li class="mth-step mth-reveal" data-step="02" style="position:relative;display:grid;grid-template-columns:var(--tile) minmax(0,1fr);gap:clamp(16px,2.4vw,26px);align-items:start" ><span class="mth-tile" aria-hidden="true" style="position:relative;z-index:1;width:var(--tile);height:var(--tile);display:flex;align-items:center;justify-content:center;border-radius:17px;background:var(--foreground-accent,#f9a040);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 4px #000;color:var(--foreground-border,#191a23)" ><svg viewBox="0 0 24 24" width="54%" height="54%" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;overflow:visible"><path class="md-d" pathLength="1" d="M10.6 3.6a7 7 0 1 1 0 14 7 7 0 0 1 0-14Z"></path><path class="md-d" pathLength="1" d="M15.7 15.7 21.4 21.4" style="animation-delay:0.5s"></path><path class="md-d" pathLength="1" d="M7.4 12.9v1.7" style="animation-delay:0.62s"></path><path class="md-d" pathLength="1" d="M10.6 9.7v4.9" style="animation-delay:0.7s"></path><path class="md-d" pathLength="1" d="M13.8 6.6v8" style="animation-delay:0.78s"></path></svg></span ><span class="mth-conn" aria-hidden="true" style="position:absolute;left:calc(var(--tile) / 2 - 1.5px);top:calc(var(--tile) + 9px);bottom:calc(9px - var(--gap));width:3px;border-radius:2px;background:rgba(25,26,35,0.12);overflow:hidden" ><span class="mth-conn-f" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:2px;background:var(--foreground-accent,#f9a040)" ></span ></span><div style="display:flex;flex-direction:column;gap:clamp(11px,1.6vw,15px);min-width:0;max-width:70ch" ><div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px"><h3 style="margin:0;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--foreground-border,#191a23)" >Étude des problématiques métier</h3><span class="mth-dur" style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:999px;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.16);font-size:0.78rem;font-weight:800;color:var(--foreground-secondary,#191a23)" ><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;display:block;color:var(--foreground-accent,#f9a040)" ><circle cx="12" cy="12" r="9.2"></circle><path d="M12 7.2V12l3.4 2.2"></path></svg>1 à 3 semaines</span ></div><p style="margin:0;font-size:clamp(0.97rem,1.8vw,1.06rem);line-height:1.6;font-weight:600;color:var(--foreground-secondary,#191a23)" >Vos processus décortiqués, pour démarrer sur des bases saines.</p><ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li class="mth-li" style="--i:0;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vos équipes nous montrent le travail réel, poste par poste.</span ></li><li class="mth-li" style="--i:1;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vos règles métier passent noir sur blanc : remises, paliers, cas particuliers.</span ></li><li class="mth-li" style="--i:2;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Ce qui compte vraiment est arbitré avant la première ligne de code.</span ></li></ul></div></li><li class="mth-step mth-reveal" data-step="03" style="position:relative;display:grid;grid-template-columns:var(--tile) minmax(0,1fr);gap:clamp(16px,2.4vw,26px);align-items:start" ><span class="mth-tile" aria-hidden="true" style="position:relative;z-index:1;width:var(--tile);height:var(--tile);display:flex;align-items:center;justify-content:center;border-radius:17px;background:var(--foreground-accent,#f9a040);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 4px #000;color:var(--foreground-border,#191a23)" ><svg viewBox="0 0 24 24" width="54%" height="54%" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;overflow:visible"><path class="md-d" pathLength="1" d="M8.6 6.2 3 12l5.6 5.8"></path><path class="md-d" pathLength="1" d="M15.4 6.2 21 12l-5.6 5.8" style="animation-delay:0.28s"></path><path class="md-d" pathLength="1" d="M13.7 4.2 10.3 19.8" style="animation-delay:0.5s"></path></svg></span ><span class="mth-conn" aria-hidden="true" style="position:absolute;left:calc(var(--tile) / 2 - 1.5px);top:calc(var(--tile) + 9px);bottom:calc(9px - var(--gap));width:3px;border-radius:2px;background:rgba(25,26,35,0.12);overflow:hidden" ><span class="mth-conn-f" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:2px;background:var(--foreground-accent,#f9a040)" ></span ></span><div style="display:flex;flex-direction:column;gap:clamp(11px,1.6vw,15px);min-width:0;max-width:70ch" ><div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px"><h3 style="margin:0;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--foreground-border,#191a23)" >Implémentation</h3><span class="mth-dur" style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:999px;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.16);font-size:0.78rem;font-weight:800;color:var(--foreground-secondary,#191a23)" ><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;display:block;color:var(--foreground-accent,#f9a040)" ><circle cx="12" cy="12" r="9.2"></circle><path d="M12 7.2V12l3.4 2.2"></path></svg>de quelques semaines à quelques mois</span ></div><p style="margin:0;font-size:clamp(0.97rem,1.8vw,1.06rem);line-height:1.6;font-weight:600;color:var(--foreground-secondary,#191a23)" >Notre coeur d&#x27;expertise : nous construisons le produit défini ensemble.</p><ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li class="mth-li" style="--i:0;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Développement par itérations, avec un point d&#x27;avancement à date fixe.</span ></li><li class="mth-li" style="--i:1;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vous voyez le produit tourner tôt, pas le jour de la livraison.</span ></li><li class="mth-li" style="--i:2;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Un écart de trajectoire se corrige à la semaine, pas au bilan.</span ></li></ul></div></li><li class="mth-step mth-reveal" data-step="04" style="position:relative;display:grid;grid-template-columns:var(--tile) minmax(0,1fr);gap:clamp(16px,2.4vw,26px);align-items:start" ><span class="mth-tile" aria-hidden="true" style="position:relative;z-index:1;width:var(--tile);height:var(--tile);display:flex;align-items:center;justify-content:center;border-radius:17px;background:var(--foreground-accent,#f9a040);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 4px #000;color:var(--foreground-border,#191a23)" ><svg viewBox="0 0 24 24" width="54%" height="54%" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;overflow:visible"><path class="md-d" pathLength="1" d="M4.6 3.6h14.8a2.1 2.1 0 0 1 2.1 2.1v8.6a2.1 2.1 0 0 1-2.1 2.1H4.6a2.1 2.1 0 0 1-2.1-2.1V5.7a2.1 2.1 0 0 1 2.1-2.1Z"></path><path class="md-d" pathLength="1" d="M12 16.4v4M8.2 20.4h7.6" style="animation-delay:0.46s"></path><path class="md-d" pathLength="1" d="M8.3 10.1 11 12.8l4.7-5.4" style="animation-delay:0.62s"></path></svg></span ><span class="mth-conn" aria-hidden="true" style="position:absolute;left:calc(var(--tile) / 2 - 1.5px);top:calc(var(--tile) + 9px);bottom:calc(9px - var(--gap));width:3px;border-radius:2px;background:rgba(25,26,35,0.12);overflow:hidden" ><span class="mth-conn-f" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:2px;background:var(--foreground-accent,#f9a040)" ></span ></span><div style="display:flex;flex-direction:column;gap:clamp(11px,1.6vw,15px);min-width:0;max-width:70ch" ><div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px"><h3 style="margin:0;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--foreground-border,#191a23)" >Observations &amp; formation</h3><span class="mth-dur" style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:999px;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.16);font-size:0.78rem;font-weight:800;color:var(--foreground-secondary,#191a23)" ><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;display:block;color:var(--foreground-accent,#f9a040)" ><circle cx="12" cy="12" r="9.2"></circle><path d="M12 7.2V12l3.4 2.2"></path></svg>2 à 4 semaines</span ></div><p style="margin:0;font-size:clamp(0.97rem,1.8vw,1.06rem);line-height:1.6;font-weight:600;color:var(--foreground-secondary,#191a23)" >Vos équipes prennent la main, nous ajustons ce qui doit l&#x27;être.</p><ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li class="mth-li" style="--i:0;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Formation de vos équipes sur leurs propres données, pas sur un jeu de démonstration.</span ></li><li class="mth-li" style="--i:1;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Phase de test grandeur réelle, sur votre activité en cours.</span ></li><li class="mth-li" style="--i:2;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Observation continue, puis les derniers ajustements.</span ></li></ul></div></li><li class="mth-step mth-reveal" data-step="05" style="position:relative;display:grid;grid-template-columns:var(--tile) minmax(0,1fr);gap:clamp(16px,2.4vw,26px);align-items:start" ><span class="mth-tile" aria-hidden="true" style="position:relative;z-index:1;width:var(--tile);height:var(--tile);display:flex;align-items:center;justify-content:center;border-radius:17px;background:var(--foreground-accent,#f9a040);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);box-shadow:0 4px #000;color:var(--foreground-border,#191a23)" ><svg viewBox="0 0 24 24" width="54%" height="54%" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;overflow:visible"><path class="md-d" pathLength="1" d="M20.5 12a8.5 8.5 0 0 1-14.6 5.9"></path><path class="md-d" pathLength="1" d="M3.5 12a8.5 8.5 0 0 1 14.6-5.9" style="animation-delay:0.28s"></path><path class="md-d" pathLength="1" d="M18.3 2.5v3.9h-3.9" style="animation-delay:0.56s"></path><path class="md-d" pathLength="1" d="M5.7 21.5v-3.9h3.9" style="animation-delay:0.68s"></path></svg></span ><span class="mth-conn" aria-hidden="true" style="position:absolute;left:calc(var(--tile) / 2 - 1.5px);top:calc(var(--tile) + 9px);bottom:calc(9px - var(--gap));width:3px;border-radius:2px;background:rgba(25,26,35,0.12);overflow:hidden" ><span class="mth-conn-f" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:2px;background:var(--foreground-accent,#f9a040)" ></span ></span><div style="display:flex;flex-direction:column;gap:clamp(11px,1.6vw,15px);min-width:0;max-width:70ch" ><div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px"><h3 style="margin:0;font-size:clamp(1.15rem,2.6vw,1.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--foreground-border,#191a23)" >Amélioration continue</h3><span class="mth-dur" style="display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:999px;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.16);font-size:0.78rem;font-weight:800;color:var(--foreground-secondary,#191a23)" ><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;display:block;color:var(--foreground-accent,#f9a040)" ><circle cx="12" cy="12" r="9.2"></circle><path d="M12 7.2V12l3.4 2.2"></path></svg>aussi longtemps que vous en avez besoin</span ></div><p style="margin:0;font-size:clamp(0.97rem,1.8vw,1.06rem);line-height:1.6;font-weight:600;color:var(--foreground-secondary,#191a23)" >Après le déploiement, nous restons votre équipe technique.</p><ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li class="mth-li" style="--i:0;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Un support assuré par les gens qui ont écrit le code.</span ></li><li class="mth-li" style="--i:1;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Le logiciel suit votre activité quand elle change.</span ></li><li class="mth-li" style="--i:2;display:flex;align-items:flex-start;gap:11px" ><span class="mth-bullet" aria-hidden="true" style="flex:0 0 auto;margin-top:2px;width:19px;height:19px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--background-secondary,#f3f3f3);border:var(--border-size-1,1px) solid rgba(25,26,35,0.2);transition:background-color 0.16s ease,border-color 0.16s ease" ><svg class="md-check" width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:var(--foreground-accent,#f9a040);transition:color 0.16s ease" ><path pathLength="1" d="M1.6 6.4 4.5 9.3 10.4 2.9"></path></svg></span ><span style="font-size:0.95rem;font-weight:600;line-height:1.5;color:var(--foreground-secondary,#191a23)" >Vos nouveaux points de douleur deviennent les évolutions suivantes.</span ></li></ul><a class="mth-link" href="/realisations" style="align-self:flex-start;margin-top:4px;display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:0.88rem;font-weight:900;background:var(--background-primary,#fff);color:var(--foreground-border,#191a23);border:var(--border-size-1,1px) solid var(--foreground-border,#191a23);border-radius:11px;box-shadow:0 4px #000;padding:10px 18px;transition:transform 0.12s ease,box-shadow 0.12s ease" >Voir nos réalisations<span aria-hidden="true">&#8594;</span></a ></div></li></ol> <script>(function () { function init() { var root = document.getElementById("mth"); if (!root || root.__mthReady) return; root.__mthReady = true; var steps = [].slice.call(root.querySelectorAll(".mth-reveal")); if (!("IntersectionObserver" in window) || !steps.length) return; root.classList.add("mth-anim"); var io = new IntersectionObserver( function (entries) { entries.forEach(function (e) { if (!e.isIntersecting) return; e.target.classList.add("mth-in"); io.unobserve(e.target); }); }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 } ); steps.forEach(function (s) { io.observe(s); }); window.setTimeout(function () { steps.forEach(function (s) { s.classList.add("mth-in"); }); }, 1600); } init(); if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", init); } window.addEventListener("load", init); if (window.MutationObserver) { var waiting = 0; new MutationObserver(function () { if (waiting) return; waiting = window.setTimeout(function () { waiting = 0; init(); }, 50); }).observe(document.documentElement, { childList: true, subtree: true }); } })();</script> </div></div></div></div></section><section id="team" class="w-box c1hzitv3 c1lb8i4l"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"><div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3"><h2 class="w-heading chzf1zu c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1cbo8tb ccnlhb2 chzipor c1p0gz20 c9vu7ie c5u7zze">L&#x27;équipe</h2></div><div data-ani-children="true" data-ani="slide-up" class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c5c3pib c6hxj15 cr0yq4r ct10b74 cy84l6z c1c09bfw"><div class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1rmy1ym c1t9vn71 c1o768ho czlac5t cw1hgdq c2eoxx3 czfl3ei c1yil8bl c1evkju2 c10a7pw9 c4vau4b cqinskv"><div class="w-box ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj csdn0eq ccxws9u c15p36hi"><img class="w-image c1002nz7 c1tnxhny c3jwhzn" alt="Picture of Halil" width="1396" sizes="100vw" srcSet="/assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 16w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 32w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 48w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 64w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 96w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 128w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 256w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 384w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 640w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 750w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 828w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 1080w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 1200w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 1920w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 2048w, /assets/Mask_group_wSxUi7M81NngrTDikXKQO.png 3840w" src="/assets/Mask_group_wSxUi7M81NngrTDikXKQO.png" decoding="async" loading="lazy"/><div class="w-box ccdo1v8 c1o768ho c1djcjaj ccxws9u czlac5t cw1hgdq cv8vzg6"><div class="w-box c1tnxhny c1je04uq ce9lonv cjrw7s3 c7qy5pm cnt8zja"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/halil-bagdadi/" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"><div href="https://www.linkedin.com/in/halil-bagdadi/" class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"><div href="https://www.linkedin.com/in/halil-bagdadi/" style="display:contents"><div style="display:contents"><div class="w-html-embed"><svg width="100%" height="100%" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.317757 17H3.81308V5.68438H0.317757V17Z" fill="currentColor"></path>
-<path d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z" fill="currentColor"></path>
-<path d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z" fill="currentColor"></path>
-</svg>
-</div></div></div></div></a></div><div class="w-box"><div class="w-text c44tjbl">Halil Bagdadi</div><div class="w-text">Spécialiste de l&#x27;intégration Odoo &amp; IA/Data</div></div></div></div><hr class="w-separator cv8vzg6 c1pyzt8a c10mfbj2 cx6x4m7"/><p class="w-paragraph c1bysqny">Développeur et intégrateur Odoo et expert en Data &amp; IA.<br/>Fort d&#x27;un grand panel d&#x27;expériences et d&#x27;un passif d&#x27;enseignant, Halil saura transformer vos besoins en solution.<br/><br/><br/>halil.bagdadi@methode.dev</p></div><div class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1rmy1ym c1t9vn71 c1o768ho czlac5t cw1hgdq c2eoxx3 czfl3ei c1yil8bl c1evkju2 c7n7a5g ct4kqfb csfzgl4 catjmko c10a7pw9 c4vau4b cqinskv"><div class="w-box ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj csdn0eq ccxws9u"><img class="w-image c1002nz7 c1tnxhny c3jwhzn" alt="" width="1396" height="1403" sizes="100vw" srcSet="/assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 16w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 32w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 48w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 64w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 96w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 128w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 256w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 384w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 640w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 750w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 828w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 1080w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 1200w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 1920w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 2048w, /assets/image_1_2_0IlLLgVNUZzblG2sb_I.png 3840w" src="/assets/image_1_2_0IlLLgVNUZzblG2sb_I.png" decoding="async" loading="lazy"/><div class="w-box ccdo1v8 c1o768ho c1djcjaj ccxws9u czlac5t cw1hgdq cv8vzg6"><div class="w-box c1tnxhny c1je04uq ce9lonv cjrw7s3 c7qy5pm cnt8zja"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/adina-cazalens/" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"><div class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"><div style="display:contents"><div style="display:contents"><div class="w-html-embed"><svg width="100%" height="100%" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.317757 17H3.81308V5.68438H0.317757V17Z" fill="currentColor"></path>
-<path d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z" fill="currentColor"></path>
-<path d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z" fill="currentColor"></path>
-</svg>
-</div></div></div></div></a></div><div class="w-box"><div class="w-text c44tjbl">Adina Cazalens</div><div class="w-text">Couteau suisse des systèmes d&#x27;information</div></div></div></div><hr class="w-separator cv8vzg6 c1pyzt8a c10mfbj2 cx6x4m7"/><p class="w-paragraph c1bysqny">Forte d&#x27;expériences très diverse, Adina saura se servir de son expertise en de nombreux domaines : data scraping, intégration, sécurité, web, mobile, bas niveau, réseau, bas niveau et même web3.<br/><br/>adina.cazalens@methode.dev</p></div><div class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1rmy1ym c1t9vn71 c1o768ho czlac5t cw1hgdq c2eoxx3 czfl3ei c1yil8bl c1evkju2 c10a7pw9 c4vau4b cqinskv"><div class="w-box ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj csdn0eq ccxws9u"><img class="w-image c1002nz7 c1tnxhny c3jwhzn" alt="" width="1396" height="1403" sizes="100vw" srcSet="/assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 16w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 32w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 48w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 64w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 96w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 128w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 256w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 384w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 640w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 750w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 828w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 1080w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 1200w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 1920w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 2048w, /assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png 3840w" src="/assets/Mask_group_(2)_bxNAso-Yh_aZcCAEqn41y.png" decoding="async" loading="lazy"/><div class="w-box ccdo1v8 c1o768ho c1djcjaj ccxws9u czlac5t cw1hgdq cv8vzg6"><div class="w-box c1tnxhny c1je04uq ce9lonv cjrw7s3 c7qy5pm cnt8zja"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/julien-calenge" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"><div class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"><div href="https://www.linkedin.com/in/halil-bagdadi/" style="display:contents"><div style="display:contents"><div class="w-html-embed"><svg width="100%" height="100%" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.317757 17H3.81308V5.68438H0.317757V17Z" fill="currentColor"></path>
-<path d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z" fill="currentColor"></path>
-<path d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z" fill="currentColor"></path>
-</svg>
-</div></div></div></div></a></div><div class="w-box"><div class="w-text c44tjbl">Julien Calenge</div><div class="w-text">Spécialiste algorithmique &amp; Data</div></div></div></div><hr class="w-separator cv8vzg6 c1pyzt8a c10mfbj2 cx6x4m7"/><p class="w-paragraph c1bysqny">Ancien enseignant et directeur d&#x27;établissement, il est spécialisé des questions complexes et de la manipulation de données. Il a une facilité en gestion de projet et saura s&#x27;assurer que votre projet sera bien mené.<br/><br/>julien.calenge@methode.dev</p></div><div class="w-box ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1rmy1ym c1t9vn71 c1o768ho czlac5t cw1hgdq c2eoxx3 czfl3ei c1yil8bl c1evkju2 c10a7pw9 c4vau4b cqinskv"><div class="w-box ccdo1v8 c13rtvuj czlac5t cw1hgdq c1djcjaj csdn0eq ccxws9u"><img class="w-image c1002nz7 c1tnxhny c3jwhzn" alt="" width="1396" height="1403" sizes="100vw" srcSet="/assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 16w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 32w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 48w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 64w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 96w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 128w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 256w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 384w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 640w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 750w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 828w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 1080w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 1200w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 1920w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 2048w, /assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png 3840w" src="/assets/Mask_group_(1)_ufYbAfmGoibo65g9g0ab4.png" decoding="async" loading="lazy"/><div class="w-box ccdo1v8 c1o768ho c1djcjaj ccxws9u czlac5t cw1hgdq cv8vzg6"><div class="w-box c1tnxhny c1je04uq ce9lonv cjrw7s3 c7qy5pm cnt8zja"><a aria-label="LinkedIn" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av" href="#"></a></div><div class="w-box"><div class="w-text c44tjbl">Oreo</div><div class="w-text">Happiness Manager</div></div></div></div><hr class="w-separator cv8vzg6 c1pyzt8a c10mfbj2 cx6x4m7"/><p class="w-paragraph c1bysqny">Son manque d&#x27;expérience en informatique ne doit pas vous faire peur : il soutient sans égal le moral des équipes et leur permet de correctement se concentrer sur le plus important.<br/><br/><br/>oreo@methode.dev</p></div><img class="w-image c1wrkla5 c6a621j c1b6y396 cs0zans cj6xjp9 c83u98k cnopd54 c6rsq3t c18lfj9f car6jpv ckk4wli c15cod9s cbvgw7b c1e8j3as c1pfzmry c1czn0dy cln9c6r clj6jmy c11kh521" alt="" width="1153" height="743" sizes="100vw" srcSet="/assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 16w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 32w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 48w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 64w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 96w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 128w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 256w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 384w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 640w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 750w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 828w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 1080w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 1200w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 1920w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 2048w, /assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg 3840w" src="/assets/IMG_4154_1_(4)_ancmhf2Yq61rbFJRYxALI.jpg" decoding="async" loading="lazy"/></div></div></section><div class="w-element c1hzitv3 c1lb8i4l ctdocrn c1xucrmt c18yo5kt cm1pj c1ve8utp c1uheoy7"><div class="w-element cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"><div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3"><h2 class="w-heading chzf1zu c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1cbo8tb ccnlhb2 chzipor c1p0gz20 c9vu7ie c5u7zze">Pour les académiciens<br/>&amp; les curieux</h2></div><div class="w-element c1t9vn71 c1ve8utp c1uheoy7 c1xucrmt c18yo5kt c6hxj15 cr0yq4r cm1pj ct10b74 cy84l6z"><div class="w-element cr0yq4r c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"><div class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"><h3 class="w-heading c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9 cn2ddi">Vulgarisation</h3><p class="w-element">Retrouvez nos affiches libres de droit pour vos salles de classe ou bureaux</p><a href="https://methode.dev/affiches" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"><div class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1cbo8tb c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb cutt5rm c1h4j3zh ckwc04l"><div style="display:contents"><div style="display:contents"><div class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"><svg width="100%" height="100%" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z" fill="currentColor"></path>
-</svg>
-</div></div></div></div><span class="w-text">En savoir plus</span></a></div><img class="w-image" alt="" width="744" height="539" sizes="100vw" srcSet="/assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 16w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 32w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 48w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 64w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 96w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 128w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 256w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 384w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 640w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 750w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 828w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 1080w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 1200w, /assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg 1920w" src="/assets/undraw_education_3vwh_fBkZHgBazs-ky1NFyrwwb.svg" decoding="async" loading="lazy"/></div><div class="w-element cr0yq4r c1lv3mnb c16q3tqn c1wnvppo ckk4wli c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1t9vn71 c13rtvuj c1uup4ib c1x05l0l c1djcjaj c7qy5pm c1xucrmt c18yo5kt c6hxj15 c10a7pw9 cqinskv ct10b74 cy84l6z"><img class="w-image" alt="" width="802" height="772" sizes="100vw" srcSet="/assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 16w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 32w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 48w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 64w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 96w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 128w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 256w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 384w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 640w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 750w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 828w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 1080w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 1200w, /assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg 1920w" src="/assets/undraw_book-writer_ri5u_SFy8IWTMmNsHMJPRWeO8a.svg" decoding="async" loading="lazy"/><div class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq c1djcjaj clq98eg"><h3 class="w-heading c17s8ozv c10mfbj2 cx6x4m7 c1y4bwil csfzgl4 catjmko c1n4x4y0 cj6xjp9 c1tnox2n cn2ddi"><span class="w-element">N</span>otre <b class="w-element">BLOG</b></h3><p class="w-element">Apprenez-en davantage sur notre méthode et nos réalisations</p><a href="https://methode.dev/blog" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"><div class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1cbo8tb c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb cutt5rm c1h4j3zh ckwc04l"><div style="display:contents"><div style="display:contents"><div class="w-html-embed c1p6qchk c1ddacmu c1iqxm17 c1m29q1v c1cbo8tb"><svg width="100%" height="100%" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.25005 13.7009C0.532607 14.1151 0.286794 15.0325 0.701008 15.75C1.11522 16.4674 2.03261 16.7132 2.75005 16.299L1.25005 13.7009ZM20.7694 5.38818C20.9839 4.58799 20.509 3.76548 19.7088 3.55107L6.66878 0.0570104C5.86858 -0.157402 5.04608 0.317471 4.83167 1.11767C4.61725 1.91787 5.09213 2.74038 5.89233 2.95479L17.4834 6.06062L14.3776 17.6517C14.1632 18.4519 14.6381 19.2744 15.4383 19.4888C16.2385 19.7033 17.061 19.2284 17.2754 18.4282L20.7694 5.38818ZM2.75005 16.299L20.0706 6.29899L18.5706 3.70092L1.25005 13.7009L2.75005 16.299Z" fill="currentColor"></path>
-</svg>
-</div></div></div></div><span class="w-text">En savoir plus</span></a></div></div></div></div></div><section id="contact" class="w-box c1hzitv3 c1lb8i4l"><div class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c1buloke cmfd5ud"><div class="w-box ccdo1v8 c7qy5pm cveejg9 c1uup4ib c1x05l0l cf18q3"><h2 class="w-heading chzf1zu c10mfbj2 cx6x4m7 cnk39rm ckbu8xy c1lxlkk2 c147eutr c1t4ow3w c1sor9c9 c6a621j c6gmu9y c1ms63x0 c1cbo8tb ccnlhb2 chzipor c1p0gz20 c9vu7ie c5u7zze">Discutons</h2></div><div class="w-box c5vt19m cy4x23 cora95j c1v3bltv c1p24nhv c1k4bs8z cxlnvu4 coy6osm c6fjo42 c1o3jb42 clgb94u cef5mjv c1joije6 c1isgihs"><form state="initial" class="w-form c1w45uhm" action="https://redirect-methode.jcalenge.workers.dev/" encType="multipart/form-data" method="post"><div class="w-box ccdo1v8 c1o768ho c8bc689 cx1slgp"><div class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq"><div class="w-box ccdo1v8 ccxws9u cveejg9 c1o768ho ce9lonv cjrw7s3 c13o6rn9"><label class="w-label">Nom / Rôle</label><input placeholder="Nom" required="" id="Name" class="w-text-input c1ik3ey0 c105igfb cg3rl6h czjbzwh c1dfs4gc cw8b20n chgv85z cxxfh35 c10a7pw9 ci146ui ctp1rve c1kxq5yp cwdy4dc c1u7hdgw" name="Nom / Rôle"/></div><div class="w-box ccdo1v8 ccxws9u cveejg9 c1o768ho ce9lonv cjrw7s3 c13o6rn9"><label class="w-label">Email</label><input placeholder="Email" required="" type="email" id="email" class="w-text-input c1ik3ey0 c105igfb cg3rl6h czjbzwh c1dfs4gc cw8b20n chgv85z cxxfh35 c10a7pw9 ci146ui ctp1rve c1kxq5yp cwdy4dc c1u7hdgw" name="email"/></div><div class="w-box ccdo1v8 ccxws9u cveejg9 c1o768ho ce9lonv cjrw7s3 c13o6rn9"><label class="w-label">Message</label><textarea placeholder="Message" required="" name="message" id="message" class="w-text-area c1ik3ey0 c105igfb cg3rl6h czjbzwh c1dfs4gc cw8b20n chgv85z cxxfh35 cidk083 c10a7pw9 ci146ui ctp1rve c1kxq5yp cwdy4dc cuea9t2 c14xdfw1 chll6y7 cn1avnf c1jzcjja c1dr3307 c1tv8hzj"></textarea></div></div><button type="submit" class="w-button c9tqjor c1pyzt8a c13lg4le c1rxb296 c1brvc39 c1sldssk c4scbcq cingnp7 c129xu9s c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1cmte77 c1wrkla5 c1k77mya c1cgelw4 ctwn8xu ci146ui cv2l5av c122a9ww cjhjwdh cwlaefo c1wlopdx c1fm6mf0 cwomxg0 c13o6rn9 cgpvt0p">Envoyer</button></div></form></div></div></section></main><div style="display:contents"><div style="display:contents"><footer class="w-box cayvxmk c1g94nmz crvgmco c1tf9l6w cv8vzg6 c1ixtuxv c1t9vn71 c1o768ho c1ve8utp c1uheoy7 cv236i0 c18yo5kt cm1pj c9tqjor c1ukvq2x c1buloke cmfd5ud c76w5dv cjj8lsn"><div class="w-box c1mg0fms cnopd54 c6rsq3t c1czifmt c1vxw0rd ccdo1v8 c1o768ho c1p1oiur crsj5vb cef5mjv"><div class="w-box c1t9vn71 c1uup4ib c1x05l0l c2pinjm c18yo5kt c6hxj15 cr0yq4r c1wm1hiu ct10b74 cy84l6z"><a class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1cwnbqk c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av" href="/old-home"><img class="w-image ccdo1v8" alt="" width="200" height="342" sizes="100vw" srcSet="/assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 16w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 32w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 48w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 64w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 96w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 128w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 256w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 384w, /assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg 640w" src="/assets/undraw_cat_lqdj_abVu85dlIfswzPvVmmECp.svg" decoding="async" loading="lazy"/></a><div aria-label="footer navigation" class="w-box c1s05uw2 ccdo1v8 c13rtvuj c7qy5pm cnt8zja czlac5t cw1hgdq c19x3wtq c1j8oni9 ccf6y70 c7tfixs c1keu5a5 c1k3wwe7"><div style="display:contents"><div style="display:contents"><a class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av" href="/estimation">Estimez votre projet</a><a class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av" href="/#services">Services</a><a class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c1suzd87 c3s7c98 c1g6iaa7 cooi6gp cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av" href="/#team">L&#x27;équipe</a></div></div></div><div style="display:contents"><div style="display:contents"><div class="w-box ccdo1v8 c7qy5pm ce9lonv cjrw7s3 c1b9b2da c1keu5a5 c1k3wwe7"><a aria-label="LinkedIn" href="https://www.linkedin.com/company/120884002" class="w-link c1je04uq c7qy5pm cveejg9 ce9lonv cjrw7s3 c9tqjor c3s7c98 c6od58n cgeq41r cvnld01 ckrvz9r c1lsgh5b c1qcot4p cpta1gi c4scbcq cas8w64 clxubi1 cs2d5f8 ci146ui cv2l5av"><div class="w-box c1je04uq c8ajw69 c1djf8fx cmpfdrg cttp11i cjk7vll c1yyj8fu c1dojzps c1p2du6o c7qy5pm cnt8zja c6a621j c6gmu9y cssk3zr c1kmctzp c1khjqz8 c1dmftlc cl32jmb c1h4j3zh ckwc04l"><div style="display:contents"><div style="display:contents"><div class="w-html-embed"><svg width="100%" height="100%" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.317757 17H3.81308V5.68438H0.317757V17Z" fill="currentColor"></path>
-<path d="M0 2.07188C0 3.1875 0.900311 4.09062 2.06542 4.09062C3.17757 4.09062 4.07788 3.1875 4.07788 2.07188C4.07788 0.95625 3.17757 0 2.06542 0C0.900311 0 0 0.95625 0 2.07188Z" fill="currentColor"></path>
-<path d="M13.4517 17H17V10.7844C17 7.75625 16.3115 5.36562 12.7632 5.36562C11.0685 5.36562 9.90343 6.32188 9.42679 7.225H9.37383V5.68438H6.03738V17H9.53271V11.4219C9.53271 9.93437 9.79751 8.5 11.6511 8.5C13.4517 8.5 13.4517 10.2 13.4517 11.475V17Z" fill="currentColor"></path>
-</svg>
-</div></div></div></div></a></div></div></div></div><div class="w-box ccdo1v8 c1p1oiur crsj5vb c1djcjaj cy84l6z"><div class="w-box ccdo1v8 c1o768ho czlac5t cw1hgdq czfl3ei cveejg9"><div class="w-text">Méthode SAS au capital social de 1050€</div><div class="w-text">contact@methode.dev</div><span class="w-text c1ab7tt c1ujynhk">132 rue Bossuet, 69006, Lyon, France</span></div></div><hr class="w-separator cv8vzg6 c1e5o7b8 c10mfbj2 cx6x4m7"/><div class="w-box ccdo1v8 czlac5t cw1hgdq cg9rdh0"><div class="w-text">© 2026 Méthode. All Rights Reserved.<br/>Made with Webstudio.is</div></div></div></footer><div style="display:contents"><div style="display:contents"><div class="w-html-embed"><style>
-:root {
-  --ani-duration: var(--duration-default, .2s);
-  --ani-delay: 0s;
-  --ani-slide-offset: 20%;
-  --ani-zoom-in-scale: 1;
-  --ani-zoom-out-scale: .85;
-  --ani-flip-rotate: 30deg;
-  --ani-easing: var(--easing-default, ease);
-  --ani-fill-mode: forwards;
+    function aimante(){
+      var y=lenis.scroll,vh=window.innerHeight,cible=null,sens=y-repos,seuil=REGLAGES.aimantSeuil;
+      /* Photos : un léger geste suffit pour aller à la photo suivante ou précédente */
+      if(photosZone&&y>photosZone.start-seuil&&y<photosZone.end+seuil&&Math.abs(sens)>seuil){
+        var pa=photosZone.arrets;
+        if(sens>0){for(var i=0;i<pa.length;i++)if(pa[i]>=y-seuil){cible=pa[i];break;}}
+        else{for(var j=pa.length-1;j>=0;j--)if(pa[j]<=y+seuil){cible=pa[j];break;}}
+      }
+      /* Ailleurs, l'arrêt le plus proche, sans jamais ramener en arrière d'un geste franc */
+      if(cible===null)arrets.forEach(function(a){var d=Math.abs(a-y);
+        if((sens>seuil&&a<y-2)||(sens<-seuil&&a>y+2))return;
+        if(d<vh*REGLAGES.aimantZone&&(cible===null||d<Math.abs(cible-y)))cible=a;});
+      if(cible===null||Math.abs(cible-y)<2){repos=y;return;}
+      aimantEnCours=true;
+      lenis.scrollTo(cible,{duration:REGLAGES.aimantDuree,easing:function(t){return 1-Math.pow(1-t,3);},
+        onComplete:function(){aimantEnCours=false;repos=cible;}});
+    }
+
+    lenis.on('scroll',function(){
+      if(aimantEnCours)return;
+      clearTimeout(attente);
+      attente=setTimeout(aimante,REGLAGES.aimantDelai); /* attend que le geste soit vraiment fini */
+    });
+    /* Lenis remplace le glissement sans appeler onComplete si l'utilisateur reprend la main */
+    ['wheel','touchstart','keydown','pointerdown'].forEach(function(t){
+      window.addEventListener(t,function(){aimantEnCours=false;},{passive:true});});
+    ScrollTrigger.addEventListener('refresh',calculeArrets);
+    calculeArrets();
+  }
+
+  formulaire();faq(true);
+  ScrollTrigger.refresh();
+});
+
+/* ---------- Photos : ouverture du cadre, puis les trois images se succèdent ---------- */
+function etat(img){return new Promise(function(res){
+  if(img.complete)return res(img.naturalWidth>0);
+  img.addEventListener('load',function(){res(true);},{once:true});
+  img.addEventListener('error',function(){res(false);},{once:true});
+  setTimeout(function(){res(img.naturalWidth>0);},6000);});}
+function nettoiePhotos(){
+  var vues=$$('#revele .vue');
+  return Promise.all(vues.map(function(v){return etat(v.querySelector('img'));})).then(function(ok){
+    vues.forEach(function(v,i){if(!ok[i])v.remove();});
+    var reste=$$('#revele .vue');
+    if(!reste.length){$('#photos').style.display='none';return [];}
+    reste[0].classList.remove('suite');
+    return reste;});
 }
-[data-ani]:not([data-ani-children]),[data-ani-children]:not([data-ani-progress])>*{animation-duration:var(--ani-duration);animation-delay:var(--ani-delay);animation-timing-function:var(--ani-easing);animation-fill-mode:var(--ani-fill-mode);opacity:0}[data-ani-progress]:not([data-ani-children]),[data-ani-children]:not([data-ani])>*{transition-property:opacity,transform;transition-duration:var(--ani-duration);transition-timing-function:var(--ani-easing);opacity:0}
-@keyframes fadeIn{from{opacity:0}
-to{opacity:1}}
-@keyframes fadeOut{from{opacity:1}
-to{opacity:0}}[data-ani-children][data-ani='fade']>.in,[data-ani='fade']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation-name:fadeIn}[data-ani-children][data-ani='fade']>.out,[data-ani='fade']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation-name:fadeOut}
-@keyframes slideIn{from{opacity:0;translate:var(--ani-slide-transform)}
-to{opacity:1;translate:none}}
-@keyframes slideOut{from{opacity:1;translate:none}
-to{opacity:0;translate:var(--ani-slide-transform)}}[data-ani-children][data-ani|='slide']>.in,[data-ani|='slide']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation-name:slideIn}[data-ani-children][data-ani|='slide']>.out,[data-ani|='slide']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation-name:slideOut}[data-ani='slide-up']{--ani-slide-transform:0 var(--ani-slide-offset)}[data-ani='slide-down']{--ani-slide-transform:0 calc(-1*var(--ani-slide-offset))}[data-ani='slide-left']{--ani-slide-transform:var(--ani-slide-offset)}[data-ani='slide-right']{--ani-slide-transform:calc(-1*var(--ani-slide-offset))}
-@keyframes zoomIn{from{opacity:0;scale:var(--ani-zoom-out-scale)}
-to{opacity:1;scale:1}}
-@keyframes zoomOut{from{opacity:1;scale:1}
-to{opacity:0;scale:var(--ani-zoom-in-scale)}}[data-ani-children][data-ani='zoom']>.in,[data-ani|='zoom']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation-name:zoomIn}[data-ani-children][data-ani='zoom']>.out,[data-ani|='zoom']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation-name:zoomOut}[data-ani-children][data-ani-progress='zoom']>*,[data-ani-progress='zoom']:not([data-ani-children]){transform:scale(var(--ani-zoom-out-scale))}
-@keyframes flipInY{from{rotate:y var(--ani-flip-rotate);perspective:2000px;opacity:0}
-to{rotate:y 0;opacity:1}}
-@keyframes flipOutY{from{rotate:y 0;opacity:1}
-to{perspective:2000px;rotate:y var(--ani-flip-rotate);opacity:0}}
-@keyframes flipInX{from{perspective:2000px;rotate:x var(--ani-flip-rotate);opacity:0}
-to{rotate:x 0;opacity:1}}
-@keyframes flipOutX{from{rotate:x 0;opacity:1}
-to{perspective:2000px;rotate:x var(--ani-flip-rotate);opacity:0}}[data-ani-children][data-ani='flip-y']>.in,[data-ani='flip-y']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation-name:flipInY}[data-ani-children][data-ani='flip-x']>.in,[data-ani='flip-x']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation-name:flipInX}[data-ani-children][data-ani='flip-y']>.out,[data-ani='flip-y']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation-name:flipOutY}[data-ani-children][data-ani='flip-x']>.out,[data-ani='flip-x']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation-name:flipOutX}
-@keyframes expandDown{from{height:0}
-to{height:var(--newHeight)}}
-@keyframes expandUp{from{height:var(--newHeight)}
-to{height:0}}[data-ani='expand'],[data-ani='expand'][data-state='open'],[data-ani='expand'].in{--newHeight:var(--custom-height,var(--radix-accordion-content-height,var(--radix-collapsible-content-height,100%)));overflow:hidden;opacity:1}[data-ani-children][data-ani='expand']>.in,[data-ani='expand']:where(.in:not([data-state]),[data-state$='open'],[data-state='active']){animation:expandDown var(--ani-duration)var(--ani-easing)}[data-ani-children][data-ani='expand']>.out,[data-ani='expand']:where(.out:not([data-state]),[data-state='closed'],[data-state='inactive']){animation:expandUp var(--ani-duration)var(--ani-easing)}
-@media(prefers-reduced-motion:reduce){[data-ani]:not([data-ani-children]),[data-ani-progress]:not([data-ani-children]),[data-ani-children]>*{opacity:1;transform:none;animation:none;rotate:none;scale:none;translate:none}}
-</style></div></div></div></div></div></div><script id="vike_pageContext" type="application/json">{"_urlRewrite":null,"pageId":"/pages/index","routeParams":{},"data":{"url":"https://url/","system":{"params":{},"search":{},"origin":"https://url","pathname":"/"},"resources":{},"pageMeta":{"title":"Méthode — Progiciels & ERP Odoo sur mesure | Développement logiciel.","description":"Abandonnez les tableurs excels et la duplication de donnée, Méthode développe des logiciels profondément ancrés dans votre logique métier et prend en compte l'ensemble des problématiques qui vous sont propres","excludePageFromSearch":false,"language":"fr-FR","socialImageAssetName":"IMG_4154_1_(2)_i1M3ngM1bvJAhPKhqK5_i.jpg","socialImageUrl":"!undefined","status":"!undefined","redirect":"!undefined","content":"!undefined","custom":[]}}}</script><script id="vike_globalContext" type="application/json">{}</script><script src="/assets/entries/entry-server-routing.Bu4pB9oN.js" type="module" async></script><link rel="modulepreload" href="/assets/entries/pages_index.VHzHhoM1.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-CX9UW6xf.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-brzSMdsl.js" as="script" type="text/javascript"><link rel="modulepreload" href="/assets/chunks/chunk-DGDLrpnS.js" as="script" type="text/javascript"></body></html>
+function photos(){
+  nettoiePhotos().then(function(vues){
+    if(!vues.length){ScrollTrigger.refresh();return;}
+    function morceaux(v){return v.querySelectorAll('.qui,.legende p');}
+    gsap.to('#revele',{clipPath:'inset(0% 0% 0% 0% round 4px)',ease:'power2.out',scrollTrigger:{trigger:'#revele',start:'top 92%',end:'top 18%',scrub:1}});
+    gsap.fromTo(vues[0].querySelector('img'),{scale:1.18},{scale:1,ease:'power1.out',scrollTrigger:{trigger:'#revele',start:'top bottom',end:'center center',scrub:1}});
+    gsap.from(morceaux(vues[0]),{opacity:0,y:36,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'#revele',start:'top 46%',end:'top 16%',scrub:1}});
+    var suites=vues.slice(1);
+    if(suites.length){
+      var tp=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:'#photos',start:'center center',end:'+='+REGLAGES.photosDuree+'%',pin:true,scrub:1}});
+      suites.forEach(function(v,k){
+        var prec=vues[k];
+        tp.to(morceaux(prec),{opacity:0,y:-24,stagger:.05,duration:.3,ease:'power2.in'})
+          .to(v,{clipPath:'inset(0% 0 0 0)',duration:1},'<.1')
+          .fromTo(v.querySelector('img'),{scale:1.14},{scale:1,duration:1.4},'<')
+          .from(morceaux(v),{opacity:0,y:36,stagger:.1,duration:.45,ease:'power3.out'},'-=.75');
+        var c=v.querySelector('#compteur');
+        if(c){var o={n:0};tp.fromTo(o,{n:0},{n:350,duration:.9,ease:'power1.out',onUpdate:function(){c.textContent=Math.round(o.n).toLocaleString('fr-FR');}},'<');}
+        tp.addLabel('photo'+(k+1)); /* point d'arrêt de l'aimant : photo entièrement affichée */
+        tp.to({},{duration:.35,ease:'none'});});
+    }
+    ScrollTrigger.sort();ScrollTrigger.refresh();
+  });
+}
+
+/* ---------- Publications : rail glissant ---------- */
+function rail(anim){
+  var r=$('#rail');if(!r)return;
+  var cartes=$$('#rail .pub'),jg=$('#rail-jauge'),num=$('#rail-num'),pr=$('#rail-prec'),sv=$('#rail-suiv');
+  var n=cartes.length,pad=function(x){return (x<10?'0':'')+x;},att=false;
+  function pas(){return cartes[1]?cartes[1].offsetLeft-cartes[0].offsetLeft:r.clientWidth;}
+  function maj(){
+    att=false;
+    var max=r.scrollWidth-r.clientWidth,p=max>0?r.scrollLeft/max:0;
+    jg.style.transform='scaleX('+(.18+.82*p)+')';
+    var i=Math.min(n-1,Math.round(r.scrollLeft/pas()));
+    if(p>.985)i=n-1;
+    num.textContent=pad(i+1)+' / '+pad(n);
+    pr.disabled=r.scrollLeft<4;sv.disabled=r.scrollLeft>max-4;
+    if(!REDUIT){var rc=r.getBoundingClientRect(),cx=rc.left+rc.width/2;
+      cartes.forEach(function(c){var b=c.getBoundingClientRect(),d=(b.left+b.width/2-cx)/rc.width;
+        c.querySelector('.par').style.transform='translateX('+(-d*7).toFixed(2)+'%)';});}
+  }
+  function demande(){if(!att){att=true;requestAnimationFrame(maj);}}
+  r.addEventListener('scroll',demande,{passive:true});window.addEventListener('resize',demande);
+  pr.addEventListener('click',function(){r.scrollBy({left:-pas(),behavior:REDUIT?'auto':'smooth'});});
+  sv.addEventListener('click',function(){r.scrollBy({left:pas(),behavior:REDUIT?'auto':'smooth'});});
+  r.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();sv.click();}if(e.key==='ArrowLeft'){e.preventDefault();pr.click();}});
+
+  /* Glisser à la souris (le tactile et le trackpad restent natifs) */
+  var x0=0,l0=0,tire=false,bouge=false;
+  r.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0)return;tire=true;bouge=false;x0=e.clientX;l0=r.scrollLeft;});
+  window.addEventListener('pointermove',function(e){if(!tire)return;var dx=e.clientX-x0;
+    if(!bouge&&Math.abs(dx)>6){bouge=true;r.classList.add('tire');}
+    if(bouge)r.scrollLeft=l0-dx;});
+  window.addEventListener('pointerup',function(){if(!tire)return;tire=false;
+    if(bouge){var cible=Math.round(r.scrollLeft/pas())*pas();r.classList.remove('tire');r.scrollTo({left:cible,behavior:REDUIT?'auto':'smooth'});}});
+  r.addEventListener('click',function(e){if(bouge){e.preventDefault();e.stopPropagation();bouge=false;}},true);
+  r.addEventListener('dragstart',function(e){e.preventDefault();});
+
+  /* RAPTOR : l'animation ne se charge qu'au premier survol */
+  cartes.forEach(function(c){var src=c.dataset.anim;if(!src)return;
+    var im=c.querySelector('.anim'),pret=false,survol=false,ko=false;
+    im.addEventListener('load',function(){pret=true;if(survol)c.classList.add('joue');});
+    im.addEventListener('error',function(){ko=true;c.classList.remove('joue');});
+    c.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse'||ko)return;survol=true;
+      if(pret)c.classList.add('joue');else if(!im.getAttribute('src'))im.src=src;});
+    c.addEventListener('pointerleave',function(){survol=false;c.classList.remove('joue');});});
+
+  /* Sans survol (tactile), la carte la plus visible se met en mouvement */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('vu',e.intersectionRatio>.75);});},{root:r,threshold:[0,.75,1]});
+    cartes.forEach(function(c){io.observe(c);});}
+
+  maj();
+}
+
+/* ---------- FAQ : ouverture fluide ---------- */
+function faq(anim){
+  $$('.faq details').forEach(function(d){
+    var s=d.querySelector('summary'),r=d.querySelector('.rep');
+    s.addEventListener('click',function(e){
+      if(!anim||!window.gsap)return;
+      e.preventDefault();
+      if(d.open){gsap.to(r,{height:0,duration:.5,ease:'power3.inOut',onComplete:function(){d.open=false;r.style.height='';}});}
+      else{d.open=true;gsap.fromTo(r,{height:0},{height:r.scrollHeight,duration:.6,ease:'power3.out',onComplete:function(){r.style.height='';ScrollTrigger.refresh();}});}
+    });
+  });
+}
+
+/* ---------- Formulaire ---------- */
+function formulaire(){
+  var f=$('#form'),err=$('#err'),ok=$('#okbox'),x=$('#f-x');
+  x.addEventListener('input',function(){x.style.height='auto';x.style.height=x.scrollHeight+'px';});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=$('#f-p').value.trim(),n=$('#f-n').value.trim(),en=$('#f-e').value.trim(),m=$('#f-m').value.trim(),tx=x.value.trim(),a=$('#f-a').checked;
+    function ko(t,c){err.hidden=false;err.textContent=t;if(c)c.focus();}
+    if(!p)return ko("Indiquez votre prénom.",$('#f-p'));
+    if(!n)return ko("Indiquez votre nom.",$('#f-n'));
+    if(!en)return ko("Indiquez votre entreprise.",$('#f-e'));
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m))return ko("Adresse e-mail incomplète, par exemple nom@entreprise.fr",$('#f-m'));
+    if(!a)return ko("Cochez la case pour accepter la politique de confidentialité.",$('#f-a'));
+    err.hidden=true;
+    // Champs attendus par le worker de l'ancien formulaire
+    var d=new FormData();
+    d.append('Nom / Rôle',p+' '+n+' ('+en+')');
+    d.append('email',m);
+    d.append('message',tx);
+    fetch(f.action,{method:'POST',body:d,mode:'no-cors'});
+    f.hidden=true;ok.hidden=false;ok.className='ok';ok.setAttribute('aria-live','polite');
+    ok.innerHTML="Merci "+p.replace(/[<>&]/g,'')+", votre message a été envoyé. Nous revenons vers vous rapidement. Pour une demande urgente, appelez le <a href=\"tel:+33482533259\">04 82 53 32 59</a>.";
+    if(window.gsap)gsap.from(ok,{opacity:0,y:20,duration:.8,ease:'expo.out'});
+  });
+}
+})();
+</script>
+</body>
+</html>
