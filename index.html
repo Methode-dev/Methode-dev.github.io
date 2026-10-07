@@ -337,7 +337,9 @@ var REGLAGES={
   aimantZone:.4,    /* Distance d'attraction, en part de hauteur d'écran. .15 = discret, .5 = très présent */
   aimantDelai:160,  /* Pause (ms) après le geste avant que l'aimant agisse. Sous 100, il tire pendant le geste */
   aimantDuree:.9,   /* Durée du glissement vers le point d'arrêt, en secondes */
-  aimantSeuil:40    /* Photos : défilement (px) à partir duquel l'aimant mène à la photo suivante ou précédente */
+  aimantSeuil:40,   /* Photos : défilement (px) à partir duquel l'aimant mène à la photo suivante ou précédente */
+  herosSeuil:30,    /* Héros : défilement (px) à partir duquel le réseau se connecte d'un seul trait. En dessous, rien ne bouge */
+  herosAuto:2.2     /* Héros : durée de ce défilement automatique, en secondes */
 };
 var REDUIT=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var FIN=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
@@ -345,9 +347,10 @@ var OK=!!(window.gsap&&window.ScrollTrigger);
 if(OK){gsap.registerPlugin(ScrollTrigger);if(window.SplitText)gsap.registerPlugin(SplitText);ScrollTrigger.config({ignoreMobileResize:true});}
 
 /* ---------- Défilement fluide ---------- */
-var lenis=null;
+var lenis=null,porte=null; /* porte : filtre des gestes, installé par le héros */
 if(OK&&!REDUIT&&window.Lenis){
-  lenis=new Lenis({lerp:REGLAGES.lissage,wheelMultiplier:REGLAGES.molette});
+  lenis=new Lenis({lerp:REGLAGES.lissage,wheelMultiplier:REGLAGES.molette,
+    virtualScroll:function(d){return porte?porte(d):true;}});
   lenis.on('scroll',ScrollTrigger.update);
   gsap.ticker.add(function(t){lenis.raf(t*1000);});
   gsap.ticker.lagSmoothing(0);
@@ -471,12 +474,43 @@ document.fonts.ready.then(function(){
   gsap.from(s1.words,{yPercent:110,duration:1.2,ease:'expo.out',stagger:.06,delay:.15});
   gsap.set(s2.words,{yPercent:110});
   gsap.set('.heros h1',{visibility:'visible'});
-  var jauge=$('#jauge'),jt=$('#jauge-txt');
   var tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'.heros',start:'top top',end:'+='+REGLAGES.herosDuree+'%',pin:true,scrub:true,
-    onUpdate:function(s){P=s.progress;jauge.style.transform='scaleX('+s.progress+')';jt.textContent=s.progress>.97?'Connecté':'Faites défiler';}}});
+    onUpdate:function(s){P=s.progress;}}});
   tl.to(l1,{opacity:.3,duration:.3},.38)
     .to(s2.words,{yPercent:0,duration:.35,stagger:.05,ease:'power2.out'},.45)
     .to({},{duration:.1},.9);
+
+  /* Le héros reste immobile sous le seuil, puis se joue en entier d'un seul trait (dans les deux sens) */
+  var herosEnVol=false;
+  if(lenis)(function(){
+    var cumul=0,dernier=0,calme=false;
+    function bloque(d){if(d.event.cancelable)d.event.preventDefault();return false;}
+    function lance(cible){
+      herosEnVol=true;cumul=0;
+      lenis.scrollTo(cible,{duration:REGLAGES.herosAuto,lock:true,force:true,
+        easing:function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;},
+        onComplete:function(){herosEnVol=false;calme=true;}});
+    }
+    porte=function(d){
+      var st=tl.scrollTrigger,now=performance.now(),dt=now-dernier;dernier=now;
+      if(!st)return true;
+      if(d.event.type==='touchstart'){calme=false;cumul=0;return true;}
+      if(herosEnVol)return bloque(d);
+      /* l'inertie du geste qui a déclenché le trajet est ignorée jusqu'à une pause */
+      if(calme){if(dt<200)return bloque(d);calme=false;}
+      var y=lenis.targetScroll,dy=d.deltaY,a=st.start,b=st.end;
+      if(!dy)return true;
+      /* en remontant depuis la suite, la fin du héros fait butée */
+      if(dy<0&&y>b+1&&y+dy<b){lenis.scrollTo(b);calme=true;return bloque(d);}
+      if((dy>0&&y<b-1)||(dy<0&&y>a+1&&y<=b+1)){
+        if(dt>250||cumul*dy<0)cumul=0;
+        cumul+=dy;
+        if(Math.abs(cumul)>=REGLAGES.herosSeuil)lance(dy>0?b:a);
+        return bloque(d);
+      }
+      return true;
+    };
+  })();
 
   /* ---------- Titres : lignes qui montent ---------- */
   $$('.fendre').forEach(function(el){
@@ -585,6 +619,7 @@ document.fonts.ready.then(function(){
     }
 
     function aimante(){
+      if(herosEnVol)return;
       var y=lenis.scroll,vh=window.innerHeight,cible=null,sens=y-repos,seuil=REGLAGES.aimantSeuil;
       /* Photos : un léger geste suffit pour aller à la photo suivante ou précédente */
       if(photosZone&&y>photosZone.start-seuil&&y<photosZone.end+seuil&&Math.abs(sens)>seuil){
