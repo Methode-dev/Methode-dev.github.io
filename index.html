@@ -25,7 +25,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://methode.dev/#organization","name":"Méthode","url":"https://methode.dev/","logo":"https://methode.dev/images/icons/Logo.png","email":"halil.bagdadi@methode.dev","sameAs":["https://www.linkedin.com/company/methode-dev"],"description":"Méthode est le partenaire data de l'entreprise. Conseil data, plugins de logiciels propriétaires, passerelles ETL et tableaux de bord Power BI."},
+{"@type":"Organization","@id":"https://methode.dev/#organization","name":"Méthode","url":"https://methode.dev/","logo":"https://methode.dev/images/icons/Logo.png","email":"halil.bagdadi@methode.dev","sameAs":["https://www.linkedin.com/company/m%C3%A9thode-dev/"],"description":"Méthode est le partenaire data de l'entreprise. Conseil data, plugins de logiciels propriétaires, passerelles ETL et tableaux de bord Power BI."},
 {"@type":"ProfessionalService","@id":"https://methode.dev/#localbusiness","name":"Méthode","url":"https://methode.dev/","email":"halil.bagdadi@methode.dev","telephone":"+33482533259","address":{"@type":"PostalAddress","addressLocality":"Lyon","addressCountry":"FR"},"areaServed":"FR","priceRange":"€€€","description":"Conseil data, plugins logiciels propriétaires, passerelles ETL et tableaux de bord Power BI à Lyon.","parentOrganization":{"@id":"https://methode.dev/#organization"},
 "makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conseil data"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plugins de logiciels propriétaires"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Passerelles ETL"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Power BI"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Intégration Odoo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Analyse Python"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Formation"}}]},
 {"@type":"WebSite","@id":"https://methode.dev/#website","url":"https://methode.dev/","name":"Méthode","inLanguage":"fr-FR","publisher":{"@id":"https://methode.dev/#organization"}}]}
@@ -42,7 +42,10 @@
 <a class="evite" href="#principal">Aller au contenu</a>
 
 <header class="tete" id="tete">
-  <a class="logo" href="#haut" aria-label="Méthode, retour en haut"></a>
+  <div class="logo-container">
+    <a class="logo" href="#haut" aria-label="Méthode, retour en haut"></a>
+    <span class="logo-text">Méthode</span>
+  </div>
   <nav aria-label="Contact rapide">
     <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
     <a class="lien ecrire" href="#contact">Écrire</a>
@@ -86,7 +89,7 @@
     </figure>
     <figure class="vue suite">
       <img src="/assets/HERO_1.jpg" alt="Les couloirs des bureaux de Méthode" decoding="async" style="--pos:center 45%">
-      <figcaption class="legende"><span class="qui"><span class="chiffre"><span id="compteur">350</span>+</span><span class="role"> informaticiens dans notre réseau</span></span><p>Grâce à Epitech, nous disposons d'un réseau de plus de 350 alumnis aux expertises variées : aucune technologie ne nous fait peur.</p></figcaption>
+      <figcaption class="legende"><span class="qui"><span class="chiffre"><span id="compteur">350</span>+</span><span class="role"> informaticiens dans notre réseau</span></span><p>Nous disposons d'un réseau de plus de 350 alumnis aux expertises variées : aucune technologie ne nous fait peur.</p></figcaption>
     </figure>
   </div>
 </section>
@@ -212,7 +215,7 @@
   <div class="wrap">
     <span class="surtitre">Valeurs</span>
     <div class="liste">
-      <div class="valeur"><h3>Transmission</h3><p>Anciens enseignants, nous formons vos équipes pour votre autonomie.</p></div>
+      <div class="valeur"><h3>Transmettre</h3><p>Anciens enseignants, nous formons vos équipes pour votre autonomie.</p></div>
       <div class="valeur"><h3>Franchise</h3><p>Nous disons quand un modèle n'a pas de sens. Un mauvais chiffre coûte plus qu'aucun.</p></div>
       <div class="valeur"><h3>Propriété</h3><p>Code, modèles et tableaux de bord vous appartiennent. Réutilisables sans nous.</p></div>
       <div class="valeur"><h3>Continuité</h3><p>Pas d'outil à adopter. Nous travaillons dans vos logiciels, pas à côté.</p></div>
@@ -221,17 +224,19 @@
 </section>
 
 <!-- ============ RÉFÉRENCES ============ -->
+<!--
 <section class="refs" id="references">
   <div class="wrap">
     <span>Ils nous font confiance</span>
     <div class="rangee">
-      <img src="https://interport.fr/wp-content/uploads/2022/10/Interport-Crew-Services-Leader-company-in-France-specialized-with-organization-of-crew-change-arrangements-on-board-merchant-chips-1.svg" alt="Interport Crew Services" loading="lazy">
+      <img src="/assets/interport_logo.png" alt="Interport Crew Services" loading="lazy">
       <img src="https://yt3.googleusercontent.com/TY0bj9gn_NiYmLJkrwMEKfwpEidQcQvDfGhfCAuJR_pdQ1SxzIODN0oMfu_YaW1KogDATLw=s900-c-k-c0x00ffffff-no-rj" alt="SUPINFO International University" loading="lazy">
       <img src="https://schengen-marine.com/wp-content/uploads/2024/03/SCHENGEN-LOGO-1536x640.png" alt="Schengen Marine Services" loading="lazy">
       <img class="inv" src="https://www.epitech.eu/wp-content/uploads/logo-epitech-blanc.svg" alt="Epitech" loading="lazy">
     </div>
   </div>
 </section>
+-->
 
 <!-- ============ FAQ ============ -->
 <section class="sec faq" id="faq">
@@ -302,7 +307,7 @@ window.axeptioSettings = {
   <div class="wrap">
     <span>© <span id="an">2026</span> Méthode, Lyon</span>
     <nav aria-label="Informations légales">
-      <a href="https://www.linkedin.com/company/methode-dev">LinkedIn</a>
+      <a href="https://www.linkedin.com/company/m%C3%A9thode-dev/">LinkedIn</a>
       <a href="mailto:julien.calenge@methode.dev">Formation</a>
       <a href="/mentions-legales/">Mentions légales</a>
       <a href="/mentions-legales/#confidentialite">Confidentialité</a>

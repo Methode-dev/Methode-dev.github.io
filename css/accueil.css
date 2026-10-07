@@ -47,7 +47,9 @@ p,ul,ol{margin:0}
   transition:transform .6s var(--ease),background .4s,padding .4s}
 .tete.fond{background:rgba(22,21,20,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:14px}
 .tete.cache{transform:translateY(-110%)}
-.logo{display:block;width:var(--logo-w);aspect-ratio:var(--logo-ratio);background:var(--logo-src) left center/contain no-repeat}
+.logo-container{display:flex;align-items:center;gap:12px}
+.logo{display:block;width:var(--logo-w);aspect-ratio:var(--logo-ratio);background:var(--logo-src) left center/contain no-repeat;flex-shrink:0}
+.logo-text{font-family:var(--display);font-size:clamp(18px,2vw,24px);font-weight:600;color:#fff;letter-spacing:-.02em}
 .tete nav{display:flex;align-items:center;gap:clamp(18px,3vw,40px);font-family:var(--display);font-size:16px;font-weight:500}
 .tete .tel{font-variant-numeric:tabular-nums;letter-spacing:.01em}
 @media (max-width:560px){.tete .ecrire{display:none}}
