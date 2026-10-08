@@ -339,7 +339,9 @@ var REGLAGES={
   aimantDuree:.9,   /* Durée du glissement vers le point d'arrêt, en secondes */
   aimantSeuil:40,   /* Photos : défilement (px) à partir duquel l'aimant mène à la photo suivante ou précédente */
   herosSeuil:30,    /* Héros : défilement (px) à partir duquel le réseau se connecte d'un seul trait. En dessous, rien ne bouge */
-  herosAuto:2.2     /* Héros : durée de ce défilement automatique, en secondes */
+  herosAuto:2.2,    /* Héros : durée (approximative) de ce défilement automatique, en secondes */
+  photosSeuil:20,   /* Photos : défilement (px) à partir duquel on passe d'un trait à la photo suivante ou précédente */
+  photosAuto:1      /* Photos : durée fixe de chaque passage, en secondes. Un geste = une photo, jamais plus */
 };
 var REDUIT=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var FIN=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
@@ -480,35 +482,84 @@ document.fonts.ready.then(function(){
     .to(s2.words,{yPercent:0,duration:.35,stagger:.05,ease:'power2.out'},.45)
     .to({},{duration:.1},.9);
 
-  /* Le héros reste immobile sous le seuil, puis se joue en entier d'un seul trait (dans les deux sens) */
-  var herosEnVol=false;
+  /* Héros et photos restent immobiles sous le seuil, puis vont d'un trait au point d'arrêt suivant (dans les deux sens).
+     Un geste ne déclenche qu'un trajet : son inertie est ignorée, mais un nouveau geste est pris en compte aussitôt,
+     même pendant le trajet (pour enchaîner ou faire demi-tour). */
+  var porteEnVol=false;
   if(lenis)(function(){
-    var cumul=0,dernier=0,calme=false;
-    function bloque(d){if(d.event.cancelable)d.event.preventDefault();return false;}
-    function lance(cible){
-      herosEnVol=true;cumul=0;
-      lenis.scrollTo(cible,{duration:REGLAGES.herosAuto,lock:true,force:true,
-        easing:function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;},
-        onComplete:function(){herosEnVol=false;calme=true;}});
+    var cumul=0,dernier=0,precAbs=0,precSens=0,consomme=false,vol=null;
+    /* Haut des expertises : la dernière photo y mène d'un trait */
+    var apres=$('#services')?ScrollTrigger.create({trigger:'#services',start:'top top'}):null;
+    /* Zones à points d'arrêt, relues à chaque geste : leurs positions changent au redimensionnement */
+    function zones(){
+      var z=[],h=tl.scrollTrigger,ph=ScrollTrigger.getById('photos');
+      if(h)z.push({arrets:[h.start,h.end],seuil:REGLAGES.herosSeuil,duree:REGLAGES.herosAuto});
+      if(ph&&ph.animation){
+        var lab=ph.animation.labels,du=ph.animation.duration()||1,a=[ph.start];
+        Object.keys(lab).forEach(function(k){a.push(ph.start+(ph.end-ph.start)*lab[k]/du);});
+        if(apres&&apres.start>a[a.length-1])a.push(apres.start);
+        z.push({arrets:a,seuil:REGLAGES.photosSeuil,duree:REGLAGES.photosAuto,fixe:true});}
+      /* Démarche (grand écran) : simple butée sur l'étape 4, pour marquer une pause avant la suite */
+      var de=ScrollTrigger.getById('demarche');
+      if(de)z.push({arrets:[de.end]});
+      return z;
     }
+    function bloque(d){if(d.event.cancelable)d.event.preventDefault();return false;}
+    /* Trajet amorti par un ressort : départ en douceur, et la vitesse est conservée quand la cible change
+       (enchaînement ou demi-tour), donc aucun à-coup. La durée réglée correspond à l'arrivée à quelques pixels près ;
+       Lenis finit les derniers pixels et la main est rendue aussitôt. */
+    function lance(cible,z,sens){
+      porteEnVol=true;cumul=0;consomme=true;
+      /* Photos : trajet de durée fixe, repris à zéro à chaque photo, et sourd à tout geste tant qu'il dure */
+      if(z.fixe){
+        var f={fixe:true,cible:cible,sens:sens,fin:performance.now()+z.duree*1000+300};vol=f;
+        lenis.scrollTo(cible,{duration:z.duree,lock:true,force:true,
+          easing:function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;},
+          onComplete:function(){if(vol===f){vol=null;porteEnVol=false;}}});
+        return;}
+      if(!vol)vol={x:lenis.scroll,v:0};
+      vol.cible=cible;vol.sens=sens;vol.w=7/z.duree;
+    }
+    gsap.ticker.add(function(t,dtMs){
+      if(!vol||vol.fixe)return;
+      var dt=Math.min(dtMs,64)/1000,e=Math.exp(-vol.w*dt),d=vol.x-vol.cible,k=(vol.v+vol.w*d)*dt;
+      vol.x=vol.cible+(d+k)*e;vol.v=(vol.v-vol.w*k)*e;
+      if(Math.abs(vol.x-vol.cible)<4&&Math.abs(vol.v)<80){lenis.scrollTo(vol.cible,{force:true});vol=null;porteEnVol=false;return;}
+      lenis.scrollTo(vol.x,{immediate:true,force:true});
+    });
+    function butee(y){lenis.scrollTo(y);consomme=true;}
     porte=function(d){
-      var st=tl.scrollTrigger,now=performance.now(),dt=now-dernier;dernier=now;
-      if(!st)return true;
-      if(d.event.type==='touchstart'){calme=false;cumul=0;return true;}
-      if(herosEnVol)return bloque(d);
-      /* l'inertie du geste qui a déclenché le trajet est ignorée jusqu'à une pause */
-      if(calme){if(dt<200)return bloque(d);calme=false;}
-      var y=lenis.targetScroll,dy=d.deltaY,a=st.start,b=st.end;
-      if(!dy)return true;
-      /* en remontant depuis la suite, la fin du héros fait butée */
-      if(dy<0&&y>b+1&&y+dy<b){lenis.scrollTo(b);calme=true;return bloque(d);}
-      if((dy>0&&y<b-1)||(dy<0&&y>a+1&&y<=b+1)){
-        if(dt>250||cumul*dy<0)cumul=0;
-        cumul+=dy;
-        if(Math.abs(cumul)>=REGLAGES.herosSeuil)lance(dy>0?b:a);
-        return bloque(d);
+      /* horodatage du geste lui-même : un fil d'exécution chargé retarde la livraison, pas l'événement */
+      var te=d.event.timeStamp||performance.now(),dt=te-dernier,dy=d.deltaY,ab=Math.abs(dy),sens=dy>0?1:-1;
+      if(d.event.type==='touchstart'){consomme=false;cumul=0;precAbs=0;return true;}
+      if(!dy)return vol?bloque(d):true;
+      /* Nouveau geste : pause, demi-tour, ou relance (l'inertie, elle, ne fait que décroître) */
+      var nouveau=dt>200||sens!==precSens||(ab>precAbs*1.5&&ab>6);
+      dernier=te;precAbs=ab;precSens=sens;
+      if(vol&&vol.fixe){
+        if(performance.now()<vol.fin)return bloque(d); /* un geste commencé pendant le trajet reste sans effet */
+        vol=null;porteEnVol=false;} /* filet de sécurité si le trajet a été interrompu */
+      if(nouveau){consomme=false;cumul=0;}
+      if(consomme)return bloque(d);
+      /* pendant un trajet : on enchaîne depuis sa cible, ou on repart en arrière depuis la position actuelle */
+      var y=vol?(sens===vol.sens?vol.cible:lenis.scroll):lenis.targetScroll,zs=zones();
+      for(var i=0;i<zs.length;i++){
+        var z=zs[i],ar=z.arrets,a=ar[0],b=ar[ar.length-1],k;
+        /* en arrivant de l'extérieur, le bord de la zone fait butée */
+        if(!vol&&dy<0&&y>b+1&&y+dy<b){butee(b);return bloque(d);}
+        if(!vol&&dy>0&&y<a-1&&y+dy>a){butee(a);return bloque(d);}
+        if((dy>0&&y>=a-1&&y<b-1)||(dy<0&&y>a+1&&y<=b+1)){
+          cumul+=dy;
+          if(Math.abs(cumul)>=z.seuil){
+            var cible=null;
+            if(dy>0){for(k=0;k<ar.length;k++)if(ar[k]>y+1){cible=ar[k];break;}}
+            else{for(k=ar.length-1;k>=0;k--)if(ar[k]<y-1){cible=ar[k];break;}}
+            if(cible!==null)lance(cible,z,sens);}
+          return bloque(d);
+        }
       }
-      return true;
+      /* hors zone : libre, sauf pendant un trajet (le geste reprendra la main à l'arrivée) */
+      return vol?bloque(d):true;
     };
   })();
 
@@ -556,7 +607,7 @@ document.fonts.ready.then(function(){
   mm.add('(min-width: 901px)',function(){
     var piste=$('#piste');
     function dist(){return Math.max(0,piste.scrollWidth-window.innerWidth);}
-    var tw=gsap.to(piste,{x:function(){return -dist();},ease:'none',scrollTrigger:{trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
+    var tw=gsap.to(piste,{x:function(){return -dist();},ease:'none',scrollTrigger:{id:'demarche',trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
     gsap.fromTo('#fil',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
     gsap.utils.toArray('.etape').forEach(function(et){
       gsap.from(et.children,{opacity:0,y:40,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:et,containerAnimation:tw,start:'left 88%',end:'left 55%',scrub:true}});});
@@ -619,7 +670,7 @@ document.fonts.ready.then(function(){
     }
 
     function aimante(){
-      if(herosEnVol)return;
+      if(porteEnVol)return;
       var y=lenis.scroll,vh=window.innerHeight,cible=null,sens=y-repos,seuil=REGLAGES.aimantSeuil;
       /* Photos : un léger geste suffit pour aller à la photo suivante ou précédente */
       if(photosZone&&y>photosZone.start-seuil&&y<photosZone.end+seuil&&Math.abs(sens)>seuil){
@@ -677,7 +728,7 @@ function photos(){
     gsap.from(morceaux(vues[0]),{opacity:0,y:36,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'#revele',start:'top 46%',end:'center center',scrub:1}});
     var suites=vues.slice(1);
     if(suites.length){
-      var tp=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:'#photos',start:'center center',end:'+='+REGLAGES.photosDuree+'%',pin:true,scrub:1}});
+      var tp=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{id:'photos',trigger:'#photos',start:'center center',end:'+='+REGLAGES.photosDuree+'%',pin:true,scrub:true}});
       suites.forEach(function(v,k){
         var prec=vues[k];
         /* sortie sur le conteneur : l'entrée de la 1re légende anime déjà ses enfants */
