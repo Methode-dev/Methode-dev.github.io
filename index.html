@@ -339,7 +339,9 @@ var REGLAGES={
   aimantDuree:.9,   /* Durée du glissement vers le point d'arrêt, en secondes */
   aimantSeuil:40,   /* Photos : défilement (px) à partir duquel l'aimant mène à la photo suivante ou précédente */
   herosSeuil:30,    /* Héros : défilement (px) à partir duquel le réseau se connecte d'un seul trait. En dessous, rien ne bouge */
-  herosAuto:2.2,    /* Héros : durée (approximative) de ce défilement automatique, en secondes */
+  herosAuto:1.6,    /* Héros : durée (approximative) de ce défilement automatique, en secondes */
+  herosLache:.07,   /* Héros : part du trajet restante à laquelle la main est rendue (≈ fin visuelle de l'animation). 0 = attendre l'arrivée exacte */
+  herosFin:.2,      /* Héros : durée max (s) du glissement qui couvre ce reste, invisible puisque le héros est épinglé */
   photosSeuil:20,   /* Photos : défilement (px) à partir duquel on passe d'un trait à la photo suivante ou précédente */
   photosAuto:1      /* Photos : durée fixe de chaque passage, en secondes. Un geste = une photo, jamais plus */
 };
@@ -487,7 +489,7 @@ document.fonts.ready.then(function(){
      même pendant le trajet (pour enchaîner ou faire demi-tour). */
   var porteEnVol=false;
   if(lenis)(function(){
-    var cumul=0,dernier=0,precAbs=0,precSens=0,consomme=false,vol=null;
+    var cumul=0,dernier=0,precAbs=0,precSens=0,consomme=false,vol=null,atterri=null;
     /* Haut des expertises : la dernière photo y mène d'un trait */
     var apres=$('#services')?ScrollTrigger.create({trigger:'#services',start:'top top'}):null;
     /* Zones à points d'arrêt, relues à chaque geste : leurs positions changent au redimensionnement */
@@ -507,7 +509,7 @@ document.fonts.ready.then(function(){
     function bloque(d){if(d.event.cancelable)d.event.preventDefault();return false;}
     /* Trajet amorti par un ressort : départ en douceur, et la vitesse est conservée quand la cible change
        (enchaînement ou demi-tour), donc aucun à-coup. La durée réglée correspond à l'arrivée à quelques pixels près ;
-       Lenis finit les derniers pixels et la main est rendue aussitôt. */
+       la main est rendue dès qu'il ne reste que herosLache du trajet, et Lenis finit le reste. */
     function lance(cible,z,sens){
       porteEnVol=true;cumul=0;consomme=true;
       /* Photos : trajet de durée fixe, repris à zéro à chaque photo, et sourd à tout geste tant qu'il dure */
@@ -518,13 +520,18 @@ document.fonts.ready.then(function(){
           onComplete:function(){if(vol===f){vol=null;porteEnVol=false;}}});
         return;}
       if(!vol)vol={x:lenis.scroll,v:0};
-      vol.cible=cible;vol.sens=sens;vol.w=7/z.duree;
+      vol.cible=cible;vol.sens=sens;vol.w=7/z.duree;vol.reste=Math.max(4,Math.abs(vol.x-cible)*REGLAGES.herosLache);
     }
     gsap.ticker.add(function(t,dtMs){
       if(!vol||vol.fixe)return;
       var dt=Math.min(dtMs,64)/1000,e=Math.exp(-vol.w*dt),d=vol.x-vol.cible,k=(vol.v+vol.w*d)*dt;
       vol.x=vol.cible+(d+k)*e;vol.v=(vol.v-vol.w*k)*e;
-      if(Math.abs(vol.x-vol.cible)<4&&Math.abs(vol.v)<80){lenis.scrollTo(vol.cible,{force:true});vol=null;porteEnVol=false;return;}
+      if(Math.abs(vol.x-vol.cible)<vol.reste&&Math.abs(vol.v)<Math.max(80,vol.reste*vol.w)){
+        /* fin en décélération, courte : le reste du trajet ne change presque plus rien à l'écran */
+        var r=Math.abs(vol.x-vol.cible),v=Math.abs(vol.v),du=v>1?Math.min(REGLAGES.herosFin,3*r/v):REGLAGES.herosFin;
+        lenis.scrollTo(vol.cible,{duration:du,easing:function(t){return 1-Math.pow(1-t,3);},force:true});
+        atterri={cible:vol.cible,sens:vol.sens,fin:performance.now()+du*1000};
+        vol=null;porteEnVol=false;return;}
       lenis.scrollTo(vol.x,{immediate:true,force:true});
     });
     function butee(y){lenis.scrollTo(y);consomme=true;}
@@ -540,7 +547,12 @@ document.fonts.ready.then(function(){
         if(performance.now()<vol.fin)return bloque(d); /* un geste commencé pendant le trajet reste sans effet */
         vol=null;porteEnVol=false;} /* filet de sécurité si le trajet a été interrompu */
       if(nouveau){consomme=false;cumul=0;}
-      if(consomme)return bloque(d);
+      /* Fin du trajet du héros (glissement Lenis) : on est déjà considéré arrivé, et un geste dans le même sens
+         prolonge directement au-delà, au lieu de relancer un trajet vers ce même point */
+      if(atterri&&performance.now()>atterri.fin)atterri=null;
+      if(atterri){var ac=atterri.cible,as=atterri.sens;atterri=null;
+        if(sens===as){lenis.scrollTo(ac+dy*REGLAGES.molette,{force:true});consomme=true;return bloque(d);}}
+      /* un geste déjà utilisé (et son inertie) ne lance pas d'autre trajet, mais reste libre hors des zones */
       /* pendant un trajet : on enchaîne depuis sa cible, ou on repart en arrière depuis la position actuelle */
       var y=vol?(sens===vol.sens?vol.cible:lenis.scroll):lenis.targetScroll,zs=zones();
       for(var i=0;i<zs.length;i++){
@@ -549,6 +561,7 @@ document.fonts.ready.then(function(){
         if(!vol&&dy<0&&y>b+1&&y+dy<b){butee(b);return bloque(d);}
         if(!vol&&dy>0&&y<a-1&&y+dy>a){butee(a);return bloque(d);}
         if((dy>0&&y>=a-1&&y<b-1)||(dy<0&&y>a+1&&y<=b+1)){
+          if(consomme)return bloque(d);
           cumul+=dy;
           if(Math.abs(cumul)>=z.seuil){
             var cible=null;
