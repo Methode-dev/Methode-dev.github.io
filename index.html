@@ -79,15 +79,15 @@
   <h2 id="t-equipe" class="masque">L'équipe</h2>
   <div class="revele-cadre" id="revele">
     <figure class="vue">
-      <img src="/assets/HERO_3.png" alt="Julien Calenge" decoding="async" style="--pos:center 45%">
+      <img src="/assets/HERO_3.jpg" width="1080" height="810" alt="Julien Calenge" decoding="async" style="--pos:center 45%">
       <figcaption class="legende"><span class="qui">J. Calenge<span class="role">Président</span></span><p>Ex-directeur pédagogique d'Epitech Lyon.</p></figcaption>
     </figure>
     <figure class="vue suite">
-      <img src="/assets/HERO_2.jpg" alt="Halil Bagdadi et A. Cazalens" decoding="async" style="--pos:center 45%">
+      <img src="/assets/HERO_2-1200.jpg" srcset="/assets/HERO_2-1200.jpg 1200w, /assets/HERO_2-2400.jpg 2400w" sizes="(min-width: 1400px) 1320px, 100vw" width="2400" height="1800" alt="Halil Bagdadi et A. Cazalens" decoding="async" style="--pos:center 45%">
       <figcaption class="legende"><span class="qui">H. Bagdadi &amp; A. Cazalens<span class="role">DGD &amp; DG</span></span><p>Experts en data.</p></figcaption>
     </figure>
     <figure class="vue suite">
-      <img src="/assets/HERO_1.jpg" alt="Les couloirs des bureaux de Méthode" decoding="async" style="--pos:center 45%">
+      <img src="/assets/HERO_1-1200.jpg" srcset="/assets/HERO_1-1200.jpg 1200w, /assets/HERO_1-2400.jpg 2400w" sizes="(min-width: 1400px) 1320px, 100vw" width="2400" height="3200" alt="Les couloirs des bureaux de Méthode" decoding="async" style="--pos:center 45%">
       <figcaption class="legende"><span class="qui"><span class="chiffre"><span id="compteur">350</span>+</span><span class="role"> informaticiens dans notre réseau</span></span><p>Nous disposons d'un réseau de plus de 350 alumnis aux expertises variées : aucune technologie ne nous fait peur.</p></figcaption>
     </figure>
   </div>
@@ -137,12 +137,12 @@
   <div class="rail" id="rail" tabindex="-1">
     <a class="pub" href="https://methode.dev/affiches/">
       <div class="pub-media"><div class="par fan" aria-hidden="true">
-  <img src="/assets/affiche-algo-dijkstra.png" alt="Affiche sur l'algorithme de Dijkstra" style="--i:-2.5;--a:6">
-  <img src="/assets/affiche-hopper.png" alt="Affiche Biographique sur Mrs. Hopper" style="--i:-1.5;--a:2">
-  <img src="/assets/affiche-solid.png" alt="Affiche sur SOLID" style="--i:-.5;--a:0">
-  <img src="/assets/affiche-dijkstra.png" alt="Affiche biographique sur Dijkstra" style="--i:.5;--a:0">
-  <img src="/assets/affiche-greedy.png" alt="Affiche sur l'algorithme Greedy" style="--i:1.5;--a:2">
-  <img src="/assets/affiche-von-neumann.png" alt="Affiche sur Von Neumann" style="--i:2.5;--a:6">
+  <img src="/assets/affiche-algo-dijkstra.png" alt="Affiche sur l'algorithme de Dijkstra" loading="lazy" decoding="async" style="--i:-2.5;--a:6">
+  <img src="/assets/affiche-hopper.png" alt="Affiche Biographique sur Mrs. Hopper" loading="lazy" decoding="async" style="--i:-1.5;--a:2">
+  <img src="/assets/affiche-solid.png" alt="Affiche sur SOLID" loading="lazy" decoding="async" style="--i:-.5;--a:0">
+  <img src="/assets/affiche-dijkstra.png" alt="Affiche biographique sur Dijkstra" loading="lazy" decoding="async" style="--i:.5;--a:0">
+  <img src="/assets/affiche-greedy.png" alt="Affiche sur l'algorithme Greedy" loading="lazy" decoding="async" style="--i:1.5;--a:2">
+  <img src="/assets/affiche-von-neumann.png" alt="Affiche sur Von Neumann" loading="lazy" decoding="async" style="--i:2.5;--a:6">
       </div></div>
       <div class="pub-meta"><b>Affiches</b><span>Licence CC BY-NC</span></div>
       <h3>Affiches de vulgarisation</h3>
@@ -151,7 +151,7 @@
 
     <a class="pub" href="https://methode.dev/blog/raptor/" data-anim="/assets/raptor-anim.webp">
       <div class="pub-media"><div class="par raptor" aria-hidden="true">
-        <img class="fix" src="/assets/raptor-reseau.png" />
+        <img class="fixe" src="/assets/raptor-reseau.png" width="1400" height="786" alt="" loading="lazy" decoding="async">
         <img class="anim" alt="">
       </div></div>
       <div class="pub-meta"><b>Article</b><span>13 min de lecture</span></div>
@@ -455,16 +455,20 @@ var P=REDUIT?1:0; /* progression 0 → 1 pilotée par le défilement */
   }
   /* La taille réelle du canvas est vérifiée à chaque image : elle peut changer après un resize
      (plein écran, ScrollTrigger qui recalcule l'épinglage) sans qu'aucun événement ne le signale. */
+  /* Avec ResizeObserver, inutile de relire la taille à chaque image (lecture qui force un recalcul de mise en page). */
+  var RO='ResizeObserver' in window,enBoucle=false,pret=false;
   function verifTaille(){if(cv.clientWidth!==W||cv.clientHeight!==H||Math.min(window.devicePixelRatio||1,2)!==DPR)taille();}
-  function boucle(now){if(actif){verifTaille();dessine(now);}requestAnimationFrame(boucle);}
+  /* La boucle s'arrête hors écran et reprend quand le canvas redevient visible */
+  function boucle(now){if(!actif){enBoucle=false;return;}if(!RO)verifTaille();dessine(now);requestAnimationFrame(boucle);}
+  function relance(){if(pret&&actif&&!enBoucle&&!REDUIT){enBoucle=true;requestAnimationFrame(boucle);}}
   window.addEventListener('resize',taille);
-  if('ResizeObserver' in window)new ResizeObserver(function(){taille();}).observe(cv);
+  if(RO)new ResizeObserver(function(){taille();}).observe(cv);
   if(window.ScrollTrigger)ScrollTrigger.addEventListener('refresh',taille);
   document.addEventListener('fullscreenchange',function(){setTimeout(taille,60);});
   if(FIN)cv.parentNode.addEventListener('pointermove',function(e){var b=cv.getBoundingClientRect();souris.x=e.clientX-b.left;souris.y=e.clientY-b.top;});
   cv.parentNode.addEventListener('pointerleave',function(){souris.x=souris.y=-9999;});
-  if('IntersectionObserver' in window)new IntersectionObserver(function(es){actif=es[es.length-1].isIntersecting;}).observe(cv);
-  (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){taille();if(!REDUIT)requestAnimationFrame(boucle);});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){actif=es[es.length-1].isIntersecting;relance();}).observe(cv);
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(function(){taille();pret=true;relance();});
 })();
 
 if(!OK||REDUIT){$('.heros h1').style.visibility='visible';if(REDUIT){var j=$('#jauge');if(j)j.style.transform='scaleX(1)';}nettoiePhotos();rail(false);formulaire();faq(false);return;}
