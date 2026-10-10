@@ -213,6 +213,9 @@ p,ul,ol{margin:0}
 .fil{position:absolute;left:var(--lis);right:0;height:1px;background:var(--trait);top:calc(clamp(56px,7vw,96px) + clamp(88px,11vw,170px)*.85 + clamp(18px,2vw,28px))}
 .fil b{position:absolute;inset:0;background:var(--acc);transform-origin:left;transform:scaleX(0)}
 .fil b::after{content:"";position:absolute;right:-4px;top:-4px;width:9px;height:9px;border-radius:50%;background:var(--acc)}
+/* très grand écran : les quatre étapes tiennent sur une ligne fixe */
+.demarche.ligne .piste{width:auto}
+.demarche.ligne .etape{flex:1 1 0;width:auto;min-width:0}
 @media (max-width:900px){
   .piste{flex-direction:column;width:auto;gap:56px;padding-left:calc(var(--lis) + 28px)}
   .etape{width:auto;padding-right:0}

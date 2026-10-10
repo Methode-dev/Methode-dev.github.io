@@ -622,12 +622,31 @@ document.fonts.ready.then(function(){
   /* ---------- Démarche : horizontale sur grand écran, verticale sinon ---------- */
   var mm=gsap.matchMedia();
   mm.add('(min-width: 901px)',function(){
-    var piste=$('#piste');
+    var sec=$('#demarche'),piste=$('#piste'),ctx=null,horiz=null;
     function dist(){return Math.max(0,piste.scrollWidth-window.innerWidth);}
-    var tw=gsap.to(piste,{x:function(){return -dist();},ease:'none',scrollTrigger:{id:'demarche',trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
-    gsap.fromTo('#fil',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
-    gsap.utils.toArray('.etape').forEach(function(et){
-      gsap.from(et.children,{opacity:0,y:40,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:et,containerAnimation:tw,start:'left 88%',end:'left 55%',scrub:true}});});
+    /* Sur très grand écran la piste dépasse à peine (ou pas) : le défilement horizontal n'aurait aucune course
+       et les étapes resteraient invisibles. On les pose alors sur une ligne fixe, révélées à l'arrivée. */
+    function horizontale(){sec.classList.remove('ligne');return dist()>window.innerWidth*.25;}
+    function construit(h){
+      horiz=h;if(ctx)ctx.revert();
+      sec.classList.toggle('ligne',!h);
+      ctx=gsap.context(function(){
+        if(h){
+          var tw=gsap.to(piste,{x:function(){return -dist();},ease:'none',scrollTrigger:{id:'demarche',trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},pin:true,scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
+          gsap.fromTo('#fil',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#piste-zone',start:'top top',end:function(){return '+='+dist();},scrub:REGLAGES.demarcheInertie,invalidateOnRefresh:true}});
+          gsap.utils.toArray('.etape').forEach(function(et){
+            gsap.from(et.children,{opacity:0,y:40,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:et,containerAnimation:tw,start:'left 88%',end:'left 55%',scrub:true}});});
+        }else{
+          gsap.fromTo('#fil',{scaleX:0},{scaleX:1,ease:'none',scrollTrigger:{trigger:'#piste',start:'top 80%',end:'top 35%',scrub:true}});
+          gsap.utils.toArray('.etape').forEach(function(et,i){
+            gsap.from(et.children,{opacity:0,y:40,stagger:.08,duration:.9,delay:i*.12,ease:'power3.out',scrollTrigger:{trigger:'#piste',start:'top 75%',once:true}});});
+        }
+      });
+    }
+    construit(horizontale());
+    function auResize(){var h=horizontale();if(!h)sec.classList.add('ligne');if(h!==horiz){construit(h);ScrollTrigger.sort();ScrollTrigger.refresh();}}
+    window.addEventListener('resize',auResize);
+    return function(){window.removeEventListener('resize',auResize);if(ctx)ctx.revert();sec.classList.remove('ligne');};
   });
   mm.add('(max-width: 900px)',function(){
     gsap.fromTo('#fil',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'#piste',start:'top 70%',end:'bottom 70%',scrub:true}});
