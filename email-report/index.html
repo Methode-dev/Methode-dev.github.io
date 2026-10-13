@@ -1,0 +1,452 @@
+<title>Rapport relation client Méthode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: methode.dev's faces and palette, pushed to a night-first editorial page.
+   Hero = the product itself: shared mailboxes flowing into one reconstructed conversation,
+   then the four points of view as full-width chapters, then guarantees, onboarding, FAQ and contact. */
+:root {
+  --cream: #fdfaf6;
+  --sand: #f3ece2;
+  --night: #161514;
+  --night-2: #1f1d1b;
+  --ink: #1e1c1b;
+  --muted: #5a544e;
+  --hair: rgba(30, 28, 27, .14);
+  --ochre: #e0a05a;
+  --ochre-ink: #8a5112;
+  --on-night: #f3ece2;
+  --on-night-muted: rgba(243, 236, 226, .62);
+  --night-hair: rgba(243, 236, 226, .14);
+  --cell: rgba(243, 236, 226, .06);
+  --better: #087d40;
+  --worse: #a8510a;
+
+  --display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --text: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+
+  /* Type scale: one size per role, used everywhere that role appears */
+  --t-hero: clamp(46px, 7vw, 92px);     /* h1 only */
+  --t-h2: clamp(34px, 4.4vw, 56px);     /* section and chapter titles */
+  --t-numeral: clamp(72px, 9vw, 120px); /* outlined numerals */
+  --t-figure: clamp(32px, 3.6vw, 44px); /* every figure: stats, prices, phone */
+  --t-h3: 24px;                         /* item titles, FAQ questions */
+  --t-lead: 20px;                       /* one intro sentence per block */
+  --t-body: 17px;                       /* all running text */
+  --t-meta: 15px;                       /* captions, labels */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cream: #1b1a19; --sand: #24221f; --ink: #f3ece2; --muted: #b3aaa0;
+    --hair: rgba(243, 236, 226, .14); --ochre-ink: #e9b57a; --better: #3ed48a; --worse: #f0a55a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --cream: #1b1a19; --sand: #24221f; --ink: #f3ece2; --muted: #b3aaa0;
+  --hair: rgba(243, 236, 226, .14); --ochre-ink: #e9b57a; --better: #3ed48a; --worse: #f0a55a; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--text); font-size: var(--t-body); line-height: 1.6; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; text-wrap: balance; }
+h1 { font-size: var(--t-hero); line-height: .98; letter-spacing: -.045em; }
+h2 { font-size: var(--t-h2); line-height: 1.02; letter-spacing: -.035em; max-width: 18ch; }
+h3 { font-size: var(--t-h3); line-height: 1.15; letter-spacing: -.02em; }
+p, ul, ol, figure { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+.num { font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+em.o { font-style: normal; color: var(--ochre); }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 24px; }
+section { padding-block: 120px; }
+.night { background: var(--night); color: var(--on-night); }
+.sandy { background: var(--sand); }
+.night .lead { font-size: var(--t-lead); line-height: 1.5; color: var(--muted); max-width: 56ch; margin-top: 28px; }
+.night .lead { color: var(--on-night-muted); }
+.meta { font-family: var(--display); font-size: var(--t-meta); color: var(--muted); }
+.night .meta { color: var(--on-night-muted); }
+.figure { font-family: var(--display); font-weight: 500; font-size: var(--t-figure); letter-spacing: -.03em; line-height: 1; }
+.btn { display: inline-block; font-family: var(--display); font-weight: 500; font-size: var(--t-body); padding: 15px 26px; text-decoration: none; border: 1px solid currentColor; background: none; color: inherit; cursor: pointer; }
+.btn.solid { background: var(--ochre); color: #161514; border-color: var(--ochre); }
+
+/* ── Hero: shared mailboxes → one conversation followed across them ── */
+.hero { padding-block: 112px 104px; overflow: hidden; }
+.hero h1 { max-width: 17ch; }
+.flowviz { margin-top: 88px; display: grid; grid-template-columns: minmax(170px, 230px) 1fr minmax(0, 560px); align-items: center; }
+.flowviz > * { min-width: 0; }
+.boxes { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
+.boxes li { font-family: var(--display); font-size: var(--t-meta); color: var(--on-night); border: 1px solid var(--night-hair); background: var(--night-2); padding: 8px 12px; }
+.wires { position: relative; align-self: stretch; min-height: 200px; }
+.wires svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; }
+.wires path { fill: none; stroke: rgba(224, 160, 90, .3); stroke-width: 1; }
+.wires path.flow { stroke: var(--ochre); stroke-width: 1.5; stroke-dasharray: 3 14; animation: flow 2.4s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -34; } }
+@media (prefers-reduced-motion: reduce) { .wires path.flow { animation: none; } }
+.thread { background: #fdfaf6; color: #1e1c1b; position: relative; z-index: 1; box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .8); }
+.thread-head { padding: 18px 22px; border-bottom: 1px solid rgba(30, 28, 27, .14); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.thread-head b { font-family: var(--display); font-weight: 500; font-size: var(--t-h3); letter-spacing: -.02em; }
+.thread-head .meta { color: #5a544e; }
+.thread ol { list-style: none; padding: 0; }
+.thread li { padding: 14px 22px; border-bottom: 1px solid rgba(30, 28, 27, .14); display: grid; grid-template-columns: 76px 1fr auto; gap: 2px 14px; align-items: baseline; }
+.thread li:last-child { border-bottom: 0; }
+.thread .when, .thread .who { font-family: var(--display); font-size: var(--t-meta); color: #5a544e; }
+.thread .when { grid-row: 1 / span 2; }
+.thread .who { grid-column: 2; }
+.thread .who b { color: #1e1c1b; font-weight: 500; }
+.thread .said { grid-column: 2; }
+.thread .tag { grid-column: 3; grid-row: 1 / span 2; align-self: center; font-family: var(--display); font-size: var(--t-meta); font-weight: 500; padding: 3px 10px; white-space: nowrap; border: 1px solid currentColor; }
+.tag.worse { color: #a8510a; }
+.tag.better { color: #087d40; }
+.tag.neutral { color: #5a544e; }
+
+/* ── Manifesto + figures ─────────────────────────── */
+.manifesto h2 { max-width: 22ch; }
+
+/* ── Four points of view ─────────────────────────── */
+.views-intro h2 { max-width: 20ch; }
+.view { display: grid; grid-template-columns: 5fr 6fr; gap: 80px; align-items: center; padding-block: 104px; border-top: 1px solid var(--night-hair); }
+.view:first-of-type { margin-top: 72px; }
+.view:last-of-type { padding-bottom: 0; }
+.view > * { min-width: 0; }
+.view.flip > .view-text { order: 2; }
+.view .n { display: block; font-family: var(--display); font-weight: 400; font-size: var(--t-numeral); line-height: .9; letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1px var(--ochre); margin-bottom: 28px; }
+.view h3 { font-size: var(--t-h2); line-height: 1.02; letter-spacing: -.035em; }
+.view .lead { margin-top: 20px; }
+.view .chips { list-style: none; padding: 0; margin-top: 32px; display: flex; flex-wrap: wrap; gap: 10px; }
+.view .chips li { font-family: var(--display); font-weight: 500; font-size: var(--t-body); color: var(--on-night); border: 1px solid var(--night-hair); padding: 9px 16px; }
+.shot img { display: block; width: 100%; height: auto; box-shadow: 0 40px 80px -36px rgba(0, 0, 0, .9); }
+
+/* Planning heatmap (illustration) */
+.plan-card { background: var(--night-2); border: 1px solid var(--night-hair); padding: 24px; }
+.plan-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 20px; }
+.toggle { display: inline-flex; border: 1px solid var(--night-hair); }
+.toggle button { font-family: var(--display); font-size: var(--t-meta); font-weight: 500; background: none; color: var(--on-night-muted); border: 0; padding: 8px 16px; cursor: pointer; }
+.toggle button[aria-pressed="true"] { background: var(--ochre); color: #161514; }
+.heat-wrap { overflow-x: auto; }
+.heat { display: grid; grid-template-columns: 44px repeat(14, minmax(18px, 1fr)); gap: 3px; min-width: 360px; }
+.heat .h, .heat .d { font-family: var(--display); font-size: var(--t-meta); color: var(--on-night-muted); }
+.heat .h { text-align: center; }
+.heat .d { align-self: center; }
+.heat .c { aspect-ratio: 1; background: var(--cell); transition: background-color .35s ease; }
+@media (prefers-reduced-motion: reduce) { .heat .c { transition: none; } }
+.plan-insight { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--night-hair); display: flex; gap: 18px; align-items: baseline; }
+.plan-insight .figure { color: var(--ochre); white-space: nowrap; }
+.plan-insight p { color: var(--on-night-muted); }
+
+/* ── Two jobs ────────────────────────────────────── */
+.duo { margin-top: 72px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); }
+.duo > div { min-width: 0; padding: 36px 40px 8px 0; }
+.duo > div + div { padding-left: 40px; border-left: 1px solid var(--hair); }
+.duo ul { list-style: none; padding: 0; margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+.duo li { color: var(--ink); font-family: var(--display); font-size: var(--t-h3); letter-spacing: -.02em; padding-left: 24px; position: relative; }
+.duo li::before { content: "→"; position: absolute; left: 0; color: var(--ochre-ink); }
+.duo li b { color: var(--ink); font-weight: 500; }
+
+/* ── Guarantees ──────────────────────────────────── */
+.trio { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.trio > div { min-width: 0; border-top: 1px solid var(--night-hair); padding-top: 24px; }
+.trio p { margin-top: 10px; color: var(--on-night-muted); }
+
+/* ── Steps ───────────────────────────────────────── */
+.steps { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; list-style: none; padding: 0; }
+.steps li { min-width: 0; }
+.steps .n { display: block; font-family: var(--display); font-weight: 400; font-size: var(--t-numeral); line-height: .9; letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1px var(--ink); margin-bottom: 20px; }
+.steps p { margin-top: 8px; color: var(--muted); }
+
+/* ── FAQ ─────────────────────────────────────────── */
+.faq { margin-top: 56px; border-top: 1px solid var(--hair); max-width: 860px; }
+.faq details { border-bottom: 1px solid var(--hair); }
+.faq summary { cursor: pointer; list-style: none; padding: 24px 44px 24px 0; font-family: var(--display); font-weight: 500; font-size: var(--t-h3); line-height: 1.3; letter-spacing: -.01em; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 22px; color: var(--muted); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding-bottom: 24px; color: var(--muted); max-width: 64ch; }
+
+/* ── Contact ─────────────────────────────────────── */
+.contact h2 { max-width: 16ch; }
+.contact-lines { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 24px 72px; }
+.contact-lines div { display: flex; flex-direction: column; gap: 6px; }
+.contact-lines .figure { user-select: all; }
+.copy { margin-top: 12px; align-self: flex-start; font-size: var(--t-meta); padding: 8px 14px; }
+
+@media (max-width: 960px) {
+  section { padding-block: 84px; }
+  .hero { padding-block: 88px 72px; }
+  .flowviz { grid-template-columns: 1fr; gap: 28px; margin-top: 56px; }
+  .boxes { flex-direction: row; flex-wrap: wrap; }
+  .wires { display: none; }
+    .view { grid-template-columns: 1fr; gap: 44px; padding-block: 72px; }
+  .view.flip > .view-text { order: 0; }
+  .duo { grid-template-columns: 1fr; }
+  .duo > div, .duo > div + div { padding: 32px 0 8px; border-left: 0; }
+  .duo > div + div { border-top: 1px solid var(--hair); }
+  .steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .thread li { grid-template-columns: 1fr auto; padding: 14px 16px; }
+  .thread .when { grid-row: auto; grid-column: 1; }
+  .thread .who, .thread .said { grid-column: 1 / -1; }
+  .thread .tag { grid-column: 2; grid-row: 1; }
+  .wrap { padding-inline: 18px; }
+  .steps { grid-template-columns: 1fr; }
+  .plan-card { padding: 18px; }
+}
+</style>
+
+<main>
+  <!-- HERO -->
+  <section class="night hero">
+    <div class="wrap">
+      <h1>Toutes vos boîtes mail partagées, analysées. <em class="o">Voyez enfin ce qui vous fait perdre des clients.</em></h1>
+      <div class="flowviz" id="sync">
+        <div>
+          <ul class="boxes" aria-label="Boîtes partagées analysées ensemble">
+            <li>info@</li><li>exploitation@</li><li>equipages@</li><li>transferts@</li><li>visas@</li>
+            <li>hotels@</li><li>documents@</li><li>devis@</li><li>facturation@</li><li>direction@</li>
+          </ul>
+        </div>
+        <div class="wires" aria-hidden="true"><svg id="wires" preserveAspectRatio="none"></svg></div>
+<div class="thread">
+          <div class="thread-head"><b>Nordvik Shipping</b><span class="meta">1 conversation · 3 boîtes · 2 collaborateurs</span></div>
+          <ol>
+            <li><span class="when num">Lun. 9:12</span><span class="who"><b>Client</b> → visas@</span><span class="said">« Pouvez-vous confirmer le transfert de jeudi ? »</span><span class="tag neutral">Demande</span></li>
+            <li><span class="when num">Lun. 15:40</span><span class="who"><b>Client</b> → info@</span><span class="said">« Any update please? »</span><span class="tag worse">Relance</span></li>
+            <li><span class="when num">Lun. 16:05</span><span class="who"><b>Inès Moreau</b> via info@</span><span class="said">« Je reviens vers vous demain avec la confirmation. »</span><span class="tag neutral">Promesse</span></li>
+            <li><span class="when num">Mar. 10:20</span><span class="who"><b>Hugo Lemaire</b> via transferts@</span><span class="said">« Le transfert est confirmé pour jeudi 9 h. »</span><span class="tag better">Tenue</span></li>
+            <li><span class="when num">Mar. 10:48</span><span class="who"><b>Client</b> → transferts@</span><span class="said">« Merci beaucoup pour votre réactivité. »</span><span class="tag better">Satisfait</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="wrap">
+      <h2>Votre relation client se joue dans des boîtes partagées que personne ne lit en entier.</h2>
+    </div>
+  </section>
+
+  <!-- FOUR VIEWS -->
+  <section class="night" id="vues">
+    <div class="wrap">
+      <div class="views-intro">
+        <h2>Ce que votre messagerie ne vous montrera jamais.</h2>
+      </div>
+
+      <article class="view">
+        <div class="view-text">
+          <span class="n" aria-hidden="true">01</span>
+          <h3>Relances et reproches</h3>
+          <ul class="chips"><li>Multilingue</li><li>Alertes sur mesure</li><li>Phrase exacte citée</li></ul>
+        </div>
+        <figure class="shot">
+          <img src="signaux-email/vue-relances.png" width="1208" height="730" loading="lazy" alt="Extrait du rapport : relances et reproches de la semaine, avec le client, la date, le collaborateur qui suit le dossier et la phrase du client.">
+        </figure>
+      </article>
+
+      <article class="view flip">
+        <div class="view-text">
+          <span class="n" aria-hidden="true">02</span>
+          <h3>Le ton utilisé</h3>
+          <ul class="chips"><li>Note sur 10 par mail</li><li>Par collaborateur</li><li>Exemples cités</li></ul>
+        </div>
+        <figure class="shot">
+          <img src="signaux-email/vue-ton.png" width="1208" height="1228" loading="lazy" alt="Extrait du rapport : pour chaque collaborateur, la satisfaction de ses clients et le ton de ses mails, sur une même échelle de 0 à 10.">
+        </figure>
+      </article>
+
+      <article class="view">
+        <div class="view-text">
+          <span class="n" aria-hidden="true">03</span>
+          <h3>Le planning déduit</h3>
+          <ul class="chips"><li>Heure par heure</li><li>Équipe face aux clients</li><li>Rien à pointer</li></ul>
+        </div>
+        <div>
+          <div class="plan-card">
+            <div class="plan-top">
+              <span class="meta">Messages par heure, sur 4 semaines</span>
+              <div class="toggle" role="group" aria-label="Afficher les messages de">
+                <button type="button" id="show-team" aria-pressed="true">Équipe</button>
+                <button type="button" id="show-clients" aria-pressed="false">Clients</button>
+              </div>
+            </div>
+            <div class="heat-wrap"><div class="heat" id="heat" role="img" aria-label="Carte de chaleur des messages par jour et par heure"></div></div>
+            <div class="plan-insight"><span class="figure num" id="insight-figure"></span><p id="insight-text"></p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="view flip">
+        <div class="view-text">
+          <span class="n" aria-hidden="true">04</span>
+          <h3>Les promesses en suspens</h3>
+          <ul class="chips"><li>Échéance repérée</li><li>Auteur nommé</li><li>Jours de retard</li></ul>
+        </div>
+        <figure class="shot">
+          <img src="signaux-email/vue-promesses.png" width="1208" height="1024" loading="lazy" alt="Extrait du rapport : promesses de retour non tenues, avec leur évolution sur 13 semaines et la liste des promesses en retard.">
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- TWO JOBS -->
+  <section class="sandy">
+    <div class="wrap">
+      <h2>La relation client et l'équipe, sur la même page.</h2>
+      <div class="duo">
+        <div>
+          <h3>Pour la relation client</h3>
+          <ul><li>Comptes à risque</li><li>Clients de saison</li><li>Délai par client</li><li>Satisfaction sur 10</li></ul>
+        </div>
+        <div>
+          <h3>Pour le management d'équipe</h3>
+          <ul><li>Délai par collaborateur</li><li>Satisfaction et ton</li><li>Progressions de la semaine</li><li>Planning réel</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section class="night">
+    <div class="wrap">
+      <h2>Vos mails ne quittent pas votre serveur.</h2>
+      <div class="trio">
+        <div><h3>Aucune IA externe</h3><p>Les modèles tournent chez vous, ou sur notre serveur en France. Rien n'est envoyé à un service tiers.</p></div>
+        <div><h3>Lecture seule</h3><p>L'outil n'envoie, ne déplace et ne supprime aucun mail.</p></div>
+        <div><h3>Chiffres vérifiables</h3><p>Aucun chiffre n'est rédigé par un modèle. Chacun renvoie aux mails qui le composent.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section>
+    <div class="wrap">
+      <h2>Quatre semaines jusqu'au premier rapport.</h2>
+      <ol class="steps">
+        <li><span class="n" aria-hidden="true">01</span><h3>Connexion</h3><p>Vos boîtes partagées branchées en lecture seule, avec 13 mois d'historique.</p></li>
+        <li><span class="n" aria-hidden="true">02</span><h3>Calibrage</h3><p>Vos domaines, vos thèmes, le vocabulaire de votre métier.</p></li>
+        <li><span class="n" aria-hidden="true">03</span><h3>Revue</h3><p>Nous relisons les notes avec vous sur de vraies conversations.</p></li>
+        <li><span class="n" aria-hidden="true">04</span><h3>Premier rapport</h3><p>Il part le lundi suivant, avec l'application web.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sandy">
+    <div class="wrap">
+      <h2>Avant de nous appeler.</h2>
+      <div class="faq">
+        <details><summary>Vous ne fonctionnez que sur Outlook ?</summary><p>Non. Microsoft 365 se branche directement. Gmail, Google Workspace et les serveurs de messagerie internes passent par un export automatique des mails, chaque semaine.</p></details>
+        <details><summary>Copilot ou ChatGPT résument déjà nos mails. Qu'apportez-vous de plus ?</summary><p>Ils résument un fil quand on le leur demande. Notre outil lit toutes les boîtes, compare chaque semaine aux précédentes et compte. Aucun chiffre n'est rédigé par un modèle, et vos mails ne sortent pas de votre serveur.</p></details>
+        <details><summary>Nos équipes doivent-elles changer leurs habitudes ?</summary><p>Non. Rien à installer sur les postes, rien à saisir, aucun mail à classer. Le rapport arrive par mail et l'application s'ouvre dans le navigateur.</p></details>
+        <details><summary>Nos clients sont des particuliers. Ça fonctionne ?</summary><p>Oui. Par défaut, les clients sont regroupés par entreprise. Pour des particuliers, chaque adresse devient un client. Ce réglage se fait à la mise en place.</p></details>
+        <details><summary>Quelles langues sont prises en charge ?</summary><p>Le français et l'anglais, y compris quand les deux se mêlent dans une même conversation. Pour une autre langue, nous ajoutons ses formules de remerciement, de relance et de reproche à la mise en place.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="night contact" id="contact">
+    <div class="wrap">
+      <h2>Un appel suffit pour savoir ce que disent vos boîtes.</h2>
+      <div class="contact-lines">
+        <div><span class="meta">Téléphone</span><span class="figure num">04 82 53 32 59</span></div>
+        <div><span class="meta">E-mail</span><span class="figure">contact@methode.dev</span><button class="btn copy" type="button" id="copy-mail" data-v="contact@methode.dev">Copier l'adresse</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  /* Wires: one curve from each mailbox to the conversation card, each carrying the flow. */
+  var sync = document.getElementById('sync'), svg = document.getElementById('wires');
+  function drawWires() {
+    if (!sync || !svg || getComputedStyle(svg.parentNode).display === 'none') return;
+    var box = svg.getBoundingClientRect(), card = sync.querySelector('.thread').getBoundingClientRect();
+    var lis = sync.querySelectorAll('.boxes li');
+    var w = box.width, out = '';
+    var ty = card.top + card.height / 2 - box.top;
+    lis.forEach(function (li, i) {
+      var r = li.getBoundingClientRect(), y = r.top + r.height / 2 - box.top;
+      var ey = ty + (i - (lis.length - 1) / 2) * 7;
+      var d = 'M0 ' + y.toFixed(1) + ' C ' + (w * 0.55).toFixed(1) + ' ' + y.toFixed(1) + ', ' + (w * 0.45).toFixed(1) + ' ' + ey.toFixed(1) + ', ' + w.toFixed(1) + ' ' + ey.toFixed(1);
+      out += '<path d="' + d + '"></path>';
+      out += '<path class="flow" style="animation-delay:-' + (i * 0.37).toFixed(2) + 's" d="' + d + '"></path>';
+    });
+    svg.setAttribute('viewBox', '0 0 ' + w.toFixed(1) + ' ' + box.height.toFixed(1));
+    svg.innerHTML = out;
+  }
+  drawWires();
+  window.addEventListener('resize', drawWires);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawWires);
+
+  /* Planning heatmap, illustrative data: Mon–Fri + weekend, 7 h to 20 h. */
+  var hours = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  var days = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'W-E'];
+  var team = [
+    [4, 22, 48, 52, 46, 18, 14, 40, 44, 38, 24, 6, 2, 0],
+    [2, 18, 44, 50, 47, 16, 12, 42, 46, 36, 22, 5, 1, 0],
+    [3, 20, 46, 54, 44, 15, 13, 39, 41, 35, 20, 4, 2, 0],
+    [2, 19, 43, 49, 45, 17, 12, 41, 43, 37, 21, 5, 1, 0],
+    [3, 21, 45, 47, 40, 14, 10, 28, 22, 14, 6, 2, 0, 0],
+    [0, 0, 2, 3, 2, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+  ];
+  var clients = [
+    [14, 30, 42, 40, 36, 26, 22, 34, 36, 33, 28, 20, 15, 9],
+    [11, 27, 39, 38, 35, 24, 21, 33, 35, 31, 27, 19, 14, 8],
+    [12, 28, 40, 39, 34, 25, 20, 32, 34, 30, 26, 18, 13, 8],
+    [11, 26, 38, 37, 35, 24, 22, 33, 34, 31, 27, 21, 15, 9],
+    [13, 29, 41, 38, 33, 23, 19, 30, 31, 29, 25, 19, 12, 7],
+    [3, 5, 7, 8, 7, 5, 4, 5, 6, 5, 4, 4, 3, 2]
+  ];
+  var heat = document.getElementById('heat');
+  if (!heat) return;
+  var html = '<span></span>' + hours.map(function (h) { return '<span class="h">' + (h % 2 ? '' : h + 'h') + '</span>'; }).join('');
+  days.forEach(function (d, r) {
+    html += '<span class="d">' + d + '</span>';
+    hours.forEach(function (h, c) { html += '<span class="c" data-r="' + r + '" data-c="' + c + '"></span>'; });
+  });
+  heat.innerHTML = html;
+  var cells = heat.querySelectorAll('.c'), lateIdx = hours.indexOf(18);
+  function lateShare(grid) {
+    var all = 0, late = 0;
+    grid.forEach(function (row) { row.forEach(function (v, c) { all += v; if (c >= lateIdx) late += v; }); });
+    return Math.round(100 * late / all);
+  }
+  function paint(which) {
+    var grid = which === 'team' ? team : clients;
+    var top = Math.max.apply(null, grid.map(function (r) { return Math.max.apply(null, r); }));
+    cells.forEach(function (el) {
+      var v = grid[+el.dataset.r][+el.dataset.c];
+      el.style.backgroundColor = v === 0 ? '' : 'rgba(224, 160, 90, ' + (0.12 + 0.88 * Math.pow(v / top, 0.85)).toFixed(3) + ')';
+      el.title = days[+el.dataset.r] + ' ' + hours[+el.dataset.c] + ' h : ' + v + ' messages';
+    });
+    document.getElementById('insight-figure').textContent = lateShare(clients) + ' %';
+    document.getElementById('insight-text').textContent = "des messages clients arrivent après 18 h.";
+  }
+  var bTeam = document.getElementById('show-team'), bClients = document.getElementById('show-clients');
+  function select(which) {
+    bTeam.setAttribute('aria-pressed', String(which === 'team'));
+    bClients.setAttribute('aria-pressed', String(which === 'clients'));
+    paint(which);
+  }
+  bTeam.addEventListener('click', function () { select('team'); });
+  bClients.addEventListener('click', function () { select('clients'); });
+  select('team');
+})();
+
+document.getElementById('copy-mail').addEventListener('click', function () {
+  var b = this, target = b.previousElementSibling;
+  var pick = function () { window.getSelection().selectAllChildren(target); };
+  try {
+    navigator.clipboard.writeText(b.dataset.v).then(function () { b.textContent = 'Adresse copiée'; }, pick);
+  } catch (e) { pick(); }
+});
+</script>
