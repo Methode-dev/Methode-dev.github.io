@@ -1,0 +1,51 @@
+# Méthode
+
+> Méthode est un cabinet de conseil data basé à Lyon, partenaire des PME avec beaucoup d'opérations. Nous branchons les outils qui ne se parlent pas : conseil data, plugins pour logiciels propriétaires, passerelles ETL, tableaux de bord Power BI, intégration Odoo, analyse Python, modèles prédictifs et formation. Nous éditons aussi un produit, le rapport relation client, qui analyse les boîtes mail partagées d'une entreprise.
+
+Le site est en français. Nous intervenons dans toute la France, à distance ou sur place.
+
+Contact : 04 82 53 32 59 · contact@methode.dev · https://methode.dev/#contact
+
+## Expertises
+
+- [Accueil et expertises](https://methode.dev/): conseil data, plugin de logiciel propriétaire, Power BI, passerelles ETL, intégration Odoo, analyse Python, sauvetage de logiciel ancien, modèles prédictifs et formation.
+- [Estimation de projet](https://methode.dev/estimation): formulaire pour estimer un projet et recevoir un devis sous 24 h.
+
+## Produit : rapport relation client
+
+- [Rapport relation client](https://methode.dev/email-report/): toutes les boîtes mail partagées d'une entreprise (contact@, sav@, commandes@, facturation@…) analysées ensemble. Le rapport montre les relances et reproches des clients avec la phrase exacte, le ton des mails envoyés par chaque collaborateur, le planning réel de l'équipe déduit des horaires d'envoi, et les promesses de retour non tenues.
+
+Points clés du rapport relation client :
+
+- Pour toute équipe qui répond à ses clients depuis des boîtes partagées : service client, administration des ventes, SAV, agences, cabinets, négoce.
+- Lecture seule : l'outil n'envoie, ne déplace et ne supprime aucun mail.
+- Aucune IA externe : les modèles tournent chez le client ou sur notre serveur en France. Aucun chiffre n'est rédigé par un modèle ; chacun renvoie aux mails qui le composent.
+- Microsoft 365 se branche directement ; Gmail, Google Workspace et les serveurs internes passent par un export automatique hebdomadaire.
+- Français et anglais, y compris mêlés dans une même conversation.
+- Mise en place en quatre semaines (connexion avec 13 mois d'historique, calibrage, revue, premier rapport), sans rien à installer sur les postes.
+
+## Réalisations
+
+- [Toutes les réalisations](https://methode.dev/realisations): projets livrés par Méthode.
+- [ERP maritime sur mesure](https://methode.dev/realisations/erp): ERP pour un organisateur de relèves d'équipage.
+- [Automatisation de grilles tarifaires](https://methode.dev/realisations/automatisation-tarifaire): automatisation des tarifs d'un acteur de la logistique maritime.
+- [FastEmailParser](https://methode.dev/realisations/emailparsing): analyse automatique de longues chaînes d'e-mails clients.
+- [Add-in Outlook](https://methode.dev/realisations/outlook-addin): plugin d'annotation d'e-mails métier pour préparer leur automatisation.
+- [Résolution de litige informatique](https://methode.dev/realisations/litige): résolution d'un litige autour d'un ERP de gestion de flotte pour une société de transport.
+
+## Publications
+
+- [Blog](https://methode.dev/blog/): articles techniques de l'équipe.
+- [Parsing d'e-mails sans LLM](https://methode.dev/blog/fastemailparser): FastEmailParser, notre bibliothèque open source en C pour découper et analyser des chaînes d'e-mails à grand volume.
+- [Les coulisses d'un plugin d'annotation Outlook](https://methode.dev/blog/outlook-addin): SSO Microsoft, contrats OpenAPI et annotation en aveugle.
+- [Quel ERP choisir en 2026](https://methode.dev/blog/erp-comparatif): comparatif pour choisir un ERP.
+- [Odoo, l'ERP des PME](https://methode.dev/blog/erp-odoo): pourquoi et quand passer à un ERP comme Odoo.
+- [L'algorithme RAPTOR expliqué](https://methode.dev/blog/raptor): le plus court chemin dans les transports en commun, démontré sur le métro lyonnais.
+- [Chiffrements non sécurisés d'OpenSSL](https://methode.dev/blog/openssl): pourquoi il est presque impossible de réactiver des chiffrements dépréciés sur les versions récentes d'OpenSSL.
+- [La programmation compétitive](https://methode.dev/blog/competitiveprogramming): guide pour débuter et progresser.
+- [Affiches de vulgarisation](https://methode.dev/affiches/): Dijkstra, Grace Hopper, SOLID, Von Neumann ; affiches libres (licence CC BY-NC).
+
+## Optional
+
+- [Mentions légales et confidentialité](https://methode.dev/mentions-legales/)
+- [Déclaration d'accessibilité](https://methode.dev/accessibilite/)

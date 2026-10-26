@@ -27,7 +27,7 @@
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://methode.dev/#organization","name":"Méthode","url":"https://methode.dev/","logo":"https://methode.dev/images/icons/Logo.png","email":"halil.bagdadi@methode.dev","sameAs":["https://www.linkedin.com/company/m%C3%A9thode-dev/"],"description":"Méthode est le partenaire data de l'entreprise. Conseil data, plugins de logiciels propriétaires, passerelles ETL et tableaux de bord Power BI."},
 {"@type":"ProfessionalService","@id":"https://methode.dev/#localbusiness","name":"Méthode","url":"https://methode.dev/","email":"halil.bagdadi@methode.dev","telephone":"+33482533259","address":{"@type":"PostalAddress","addressLocality":"Lyon","addressCountry":"FR"},"areaServed":"FR","priceRange":"€€€","description":"Conseil data, plugins logiciels propriétaires, passerelles ETL et tableaux de bord Power BI à Lyon.","parentOrganization":{"@id":"https://methode.dev/#organization"},
-"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conseil data"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plugins de logiciels propriétaires"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Passerelles ETL"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Power BI"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Intégration Odoo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Analyse Python"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Formation"}}]},
+"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conseil data"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Plugins de logiciels propriétaires"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Passerelles ETL"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Power BI"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Intégration Odoo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Analyse Python"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Formation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Rapport relation client","url":"https://methode.dev/email-report/"}}]},
 {"@type":"WebSite","@id":"https://methode.dev/#website","url":"https://methode.dev/","name":"Méthode","inLanguage":"fr-FR","publisher":{"@id":"https://methode.dev/#organization"}}]}
 </script>
 <script type="application/ld+json">
@@ -124,6 +124,29 @@
   <svg viewBox="0 0 40 40"><path pathLength="1" d="M5 31h30"/><path pathLength="1" d="M8 26l7-7 6 4 10-12"/><path pathLength="1" d="M27 11h6v6"/></svg>
   <svg viewBox="0 0 40 40"><path pathLength="1" d="M4 15L20 8l16 7-16 7z"/><path pathLength="1" d="M11 19v7c0 3 4 5 9 5s9-2 9-5v-7"/><path pathLength="1" d="M33 17v9"/></svg>
 </div>
+
+<!-- ============ PRODUIT ============ -->
+<section class="sec produit" id="produit" aria-labelledby="t-produit">
+  <div class="wrap produit-grille">
+    <div class="produit-txt">
+      <span class="surtitre">Produit</span>
+      <h2 class="titre fendre" id="t-produit">Vos boîtes mail partagées, enfin lues en entier.</h2>
+      <p class="chapo">Relances, reproches, ton et promesses oubliées : un rapport sur ce qui se passe entre vos clients et votre équipe. Vos mails ne quittent pas votre serveur.</p>
+      <ul class="pr-vues">
+        <li>Relances et reproches</li><li>Le ton utilisé</li><li>Le planning déduit</li><li>Les promesses en suspens</li>
+      </ul>
+      <a class="lien pr-lien" href="/email-report/">Découvrir le rapport</a>
+    </div>
+    <a class="pr-carte" href="/email-report/" aria-label="Découvrir le rapport relation client">
+      <span class="pr-tete"><b>Atelier Ferrand</b><span>1 conversation · 3 boîtes · 2 collaborateurs</span></span>
+      <span class="pr-fil">
+        <span class="pr-msg"><span class="pr-qui"><b>Client</b> → contact@</span><span class="pr-dit">« Toujours sans nouvelles de votre part. »</span><span class="pr-tag jaune">Relance</span></span>
+        <span class="pr-msg"><span class="pr-qui"><b>Camille Roux</b> via contact@</span><span class="pr-dit">« Je vérifie avec l'entrepôt et vous réponds demain matin. »</span><span class="pr-tag bleu">Promesse</span></span>
+        <span class="pr-msg"><span class="pr-qui"><b>Thomas Girard</b> via livraisons@</span><span class="pr-dit">« Livraison confirmée jeudi, entre 8 h et 10 h. »</span><span class="pr-tag vert">Tenue</span></span>
+      </span>
+    </a>
+  </div>
+</section>
 
 <!-- ============ PUBLICATIONS ============ -->
 <section class="pubs" id="publications" aria-labelledby="t-pubs">
@@ -602,6 +625,13 @@ document.fonts.ready.then(function(){
 
   /* ---------- Index des expertises ---------- */
   gsap.from('#index li',{opacity:0,y:30,duration:1,ease:'expo.out',stagger:.06,scrollTrigger:{trigger:'#index',start:'top 82%',once:true}});
+
+  /* ---------- Produit : la conversation se déroule, puis les étiquettes tombent ---------- */
+  gsap.from('.pr-vues li, .pr-lien',{opacity:0,y:16,duration:.9,ease:'expo.out',stagger:.06,scrollTrigger:{trigger:'.pr-vues',start:'top 85%',once:true}});
+  var prTl=gsap.timeline({scrollTrigger:{trigger:'.pr-carte',start:'top 78%',once:true}});
+  prTl.from('.pr-carte',{opacity:0,y:40,duration:1.1,ease:'expo.out'})
+      .from('.pr-msg',{opacity:0,y:10,duration:.6,ease:'power3.out',stagger:.45},'-=.6')
+      .from('.pr-tag',{scale:.6,opacity:0,duration:.6,ease:'back.out(2.2)',stagger:.45},'<.2');
   if(FIN){
     var ap=$('#apercu'),icos=$$('#apercu svg');
     var qx=gsap.quickTo(ap,'x',{duration:.55,ease:'power3'}),qy=gsap.quickTo(ap,'y',{duration:.55,ease:'power3'});

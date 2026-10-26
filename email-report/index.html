@@ -1,6 +1,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rapport relation client Méthode</title>
+<meta name="description" content="Toutes vos boîtes mail partagées analysées : relances, reproches, ton et promesses oubliées. Voyez ce qui vous fait perdre des clients, sans que vos mails quittent votre serveur.">
+<link rel="canonical" href="https://methode.dev/email-report/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Méthode">
+<meta property="og:title" content="Rapport relation client | Méthode">
+<meta property="og:description" content="Toutes vos boîtes mail partagées, analysées. Voyez enfin ce qui vous fait perdre des clients.">
+<meta property="og:url" content="https://methode.dev/email-report/">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://methode.dev/email-report/#service", "name": "Rapport relation client", "serviceType": "Analyse des boîtes mail partagées", "description": "Toutes vos boîtes mail partagées analysées ensemble : relances et reproches des clients, ton des mails envoyés, planning réel de l'équipe et promesses de retour non tenues. Lecture seule, sans IA externe.", "url": "https://methode.dev/email-report/", "areaServed": "FR", "inLanguage": "fr-FR", "provider": {"@id": "https://methode.dev/#organization"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Pour quels métiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Toute équipe qui répond à ses clients depuis des boîtes partagées : service client, administration des ventes, SAV, agences, cabinets, négoce, services. Le vocabulaire de votre métier est appris à la mise en place."}}, {"@type": "Question", "name": "Vous ne fonctionnez que sur Outlook ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Microsoft 365 se branche directement. Gmail, Google Workspace et les serveurs de messagerie internes passent par un export automatique des mails, chaque semaine."}}, {"@type": "Question", "name": "Copilot ou ChatGPT résument déjà nos mails. Qu'apportez-vous de plus ?", "acceptedAnswer": {"@type": "Answer", "text": "Ils résument un fil quand on le leur demande. Notre outil lit toutes les boîtes, compare chaque semaine aux précédentes et compte. Aucun chiffre n'est rédigé par un modèle, et vos mails ne sortent pas de votre serveur."}}, {"@type": "Question", "name": "Nos équipes doivent-elles changer leurs habitudes ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Rien à installer sur les postes, rien à saisir, aucun mail à classer. Le rapport arrive par mail et l'application s'ouvre dans le navigateur."}}, {"@type": "Question", "name": "Nos clients sont des particuliers. Ça fonctionne ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Par défaut, les clients sont regroupés par entreprise. Pour des particuliers, chaque adresse devient un client. Ce réglage se fait à la mise en place."}}, {"@type": "Question", "name": "Quelles langues sont prises en charge ?", "acceptedAnswer": {"@type": "Answer", "text": "Le français et l'anglais, y compris quand les deux se mêlent dans une même conversation. Pour une autre langue, nous ajoutons ses formules de remerciement, de relance et de reproche à la mise en place."}}]}]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -11,6 +23,7 @@
    of flat white cards, each titled once, so the page reads like a document rather than a deck.
    Motion follows Morphin's tokens (morphin.dev, registry/morphin/lib/motion.tsx), ported to CSS + vanilla JS. */
 :root {
+  --lis: clamp(20px, 5vw, 80px);
   --canvas: #f7f6f3;
   --card: #ffffff;
   --ink: #111111;
@@ -261,6 +274,29 @@ section + section { padding-top: 0; }
 .btn:hover { background: #333; }
 .btn:active { transform: scale(.98); }
 
+/* ── Header and footer: the home page's (css/accueil.css), the header kept on its dark bar
+   since this page has no dark hero for the white logo to sit on ── */
+.evite { position: absolute; left: -9999px; background: var(--ink); color: #fff; padding: 12px 18px; z-index: 300; }
+.evite:focus { left: 12px; top: 12px; }
+.tete { position: fixed; inset: 0 0 auto 0; z-index: 100; color: #f3ece2; padding: calc(env(safe-area-inset-top, 0px) + 14px) var(--lis) 14px; display: flex; justify-content: space-between; align-items: center; gap: 24px; background: #1e1c1b; /* the logo's own black */ transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+.tete.cache { transform: translateY(-110%); }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+.logo { display: block; width: clamp(130px, 12vw, 176px); aspect-ratio: 3.2; background: url("/assets/logo_methode.svg") left center / contain no-repeat; flex-shrink: 0; }
+.logo-text { font-family: var(--display); font-size: clamp(18px, 2vw, 24px); font-weight: 600; color: #fff; letter-spacing: -.02em; }
+.tete nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 40px); font-family: var(--display); font-size: 16px; font-weight: 500; }
+.tete .tel { font-variant-numeric: tabular-nums; letter-spacing: .01em; }
+.lien { position: relative; text-decoration: none; display: inline-block; padding-bottom: 3px; }
+.lien::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform-origin: right; transform: scaleX(.35); transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+.lien:hover::after, .lien:focus-visible::after { transform-origin: left; transform: scaleX(1); }
+.tete a:focus-visible, .pied a:focus-visible { outline-color: var(--accent); }
+.pied { background: #1e1c1b; color: rgba(243, 236, 226, .55); padding: 28px var(--lis) calc(env(safe-area-inset-bottom, 0px) + 32px); font-size: 15px; }
+.pied .pied-in { max-width: 1320px; margin: 0 auto; display: flex; justify-content: space-between; gap: 16px 32px; flex-wrap: wrap; }
+.pied nav { display: flex; gap: 24px; flex-wrap: wrap; }
+.pied a { text-decoration: none; }
+.pied a:hover { color: #f3ece2; }
+@media (max-width: 560px) { .tete .ecrire { display: none; } }
+@media (prefers-reduced-motion: reduce) { .tete, .lien::after { transition: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   .js [data-reveal], .js .thread li, .js .thread li .tag, .js .view .row, .js .bars span, .js .dumb .bar { opacity: 1; transform: none; transition: none; }
   .js .manifesto .w { opacity: 1; transition: none; }
@@ -298,7 +334,20 @@ section + section { padding-top: 0; }
 }
 </style>
 
-<main>
+<a class="evite" href="#principal">Aller au contenu</a>
+
+<header class="tete cache" id="tete">
+  <div class="logo-container">
+    <a class="logo" href="/" aria-label="Méthode, page d'accueil"></a>
+    <span class="logo-text">Méthode</span>
+  </div>
+  <nav aria-label="Contact rapide">
+    <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
+    <a class="lien ecrire" href="#contact">Écrire</a>
+  </nav>
+</header>
+
+<main id="principal">
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
@@ -486,6 +535,19 @@ section + section { padding-top: 0; }
     </div>
   </section>
 </main>
+
+<footer class="pied">
+  <div class="pied-in">
+    <span>© <span id="an">2026</span> Méthode, Lyon</span>
+    <nav aria-label="Informations légales">
+      <a href="https://www.linkedin.com/company/m%C3%A9thode-dev/">LinkedIn</a>
+      <a href="mailto:julien.calenge@methode.dev">Formation</a>
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/mentions-legales/#confidentialite">Confidentialité</a>
+      <a href="/accessibilite/">Accessibilité</a>
+    </nav>
+  </div>
+</footer>
 
 <script>
 (function () {
@@ -684,6 +746,20 @@ section + section { padding-top: 0; }
       }
     });
   });
+})();
+
+/* Header: hidden until the reader scrolls up, hidden again as soon as they scroll down */
+(function () {
+  var t = document.getElementById('tete'), last = window.scrollY;
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (y > last + 4) t.classList.add('cache');
+    else if (y < last - 4) t.classList.remove('cache');
+    last = y;
+  }, { passive: true });
+  /* Keyboard users still reach it: it shows while focus is inside */
+  t.addEventListener('focusin', function () { t.classList.remove('cache'); });
+  document.getElementById('an').textContent = new Date().getFullYear();
 })();
 
 document.getElementById('copy-mail').addEventListener('click', function () {
