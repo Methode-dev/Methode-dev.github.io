@@ -9,7 +9,6 @@ Contact : 04 82 53 32 59 · contact@methode.dev · https://methode.dev/#contact
 ## Expertises
 
 - [Accueil et expertises](https://methode.dev/): conseil data, plugin de logiciel propriétaire, Power BI, passerelles ETL, intégration Odoo, analyse Python, sauvetage de logiciel ancien, modèles prédictifs et formation.
-- [Estimation de projet](https://methode.dev/estimation): formulaire pour estimer un projet et recevoir un devis sous 24 h.
 
 ## Produit : rapport relation client
 
