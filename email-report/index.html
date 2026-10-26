@@ -1,224 +1,325 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rapport relation client Méthode</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<script>document.documentElement.classList.add('js');</script>
 <style>
-/* Layout: methode.dev's faces and palette, pushed to a night-first editorial page.
-   Hero = the product itself: shared mailboxes flowing into one reconstructed conversation,
-   then the four points of view as full-width chapters, then guarantees, onboarding, FAQ and contact. */
+/* Layout: one warm off-white canvas from top to bottom, editorial serif headings, system sans for
+   reading and for the product itself. The four views of the report sit side by side in a bento grid
+   of flat white cards, each titled once, so the page reads like a document rather than a deck.
+   Motion follows Morphin's tokens (morphin.dev, registry/morphin/lib/motion.tsx), ported to CSS + vanilla JS. */
 :root {
-  --cream: #fdfaf6;
-  --sand: #f3ece2;
-  --night: #161514;
-  --night-2: #1f1d1b;
-  --ink: #1e1c1b;
-  --muted: #5a544e;
-  --hair: rgba(30, 28, 27, .14);
-  --ochre: #e0a05a;
-  --ochre-ink: #8a5112;
-  --on-night: #f3ece2;
-  --on-night-muted: rgba(243, 236, 226, .62);
-  --night-hair: rgba(243, 236, 226, .14);
-  --cell: rgba(243, 236, 226, .06);
-  --better: #087d40;
-  --worse: #a8510a;
+  --canvas: #f7f6f3;
+  --card: #ffffff;
+  --ink: #111111;
+  --ink-2: #2f3437;
+  --muted: #787774;
+  --line: #eaeaea;
+  --soft: #f1efeb;
+  --accent: #e0a05a;      /* home page --acc-clair: fills, wires, heatmap */
+  --accent-ink: #c0711b;  /* home page --acc: orange text on light backgrounds */
+  --accent-wash: rgba(224, 160, 90, .22);
+  --sat: #e39a4f;
+  --tone: #9a7cc7;
 
-  --display: "Space Grotesk", system-ui, -apple-system, sans-serif;
-  --text: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --red-bg: #fdebec;    --red: #9f2f2d;
+  --yellow-bg: #fbf3db; --yellow: #956400;
+  --blue-bg: #e1f3fe;   --blue: #1f6c9f;
+  --green-bg: #edf3ec;  --green: #346538;
+  --grey-bg: #f1f1ef;   --grey: #787774;
 
-  /* Type scale: one size per role, used everywhere that role appears */
-  --t-hero: clamp(46px, 7vw, 92px);     /* h1 only */
-  --t-h2: clamp(34px, 4.4vw, 56px);     /* section and chapter titles */
-  --t-numeral: clamp(72px, 9vw, 120px); /* outlined numerals */
-  --t-figure: clamp(32px, 3.6vw, 44px); /* every figure: stats, prices, phone */
-  --t-h3: 24px;                         /* item titles, FAQ questions */
-  --t-lead: 20px;                       /* one intro sentence per block */
-  --t-body: 17px;                       /* all running text */
-  --t-meta: 15px;                       /* captions, labels */
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --cream: #1b1a19; --sand: #24221f; --ink: #f3ece2; --muted: #b3aaa0;
-    --hair: rgba(243, 236, 226, .14); --ochre-ink: #e9b57a; --better: #3ed48a; --worse: #f0a55a; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --cream: #1b1a19; --sand: #24221f; --ink: #f3ece2; --muted: #b3aaa0;
-  --hair: rgba(243, 236, 226, .14); --ochre-ink: #e9b57a; --better: #3ed48a; --worse: #f0a55a; color-scheme: dark;
+  /* Same faces and size steps as the home page (css/accueil.css) */
+  --display: "Nunito", system-ui, -apple-system, sans-serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+
+  --t-hero: clamp(34px, 4.6vw, 68px);
+  --t-h2: clamp(28px, 3.4vw, 48px);
+  --t-manif: clamp(22px, 2.6vw, 36px);
+  --t-h3: clamp(22px, 2vw, 30px);        /* .pub h3 */
+  --t-step: clamp(24px, 2.2vw, 32px);    /* .etape h3 */
+  --t-faq-h2: var(--t-h2);
+  --t-faq: clamp(19px, 1.6vw, 23px);     /* .faq summary */
+  --t-body: 18px;                        /* body */
+  --t-text: 17px;                        /* paragraphs */
+  --t-kicker: 16px;                      /* .surtitre */
+  --t-meta: 15px;                        /* .pub-meta, captions */
+  --t-ui: 15px;                          /* text inside product components */
+  --t-small: 13px;                       /* meta inside product components */
+
+  /* Morphin motion tokens */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-hl: cubic-bezier(.215, .61, .355, 1);
+  --spring: cubic-bezier(.34, 1.35, .64, 1);     /* replaced by a true spring in JS when linear() is supported */
+  --spring-pop: cubic-bezier(.34, 1.56, .64, 1);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--text); font-size: var(--t-body); line-height: 1.6; }
-h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; text-wrap: balance; }
-h1 { font-size: var(--t-hero); line-height: .98; letter-spacing: -.045em; }
-h2 { font-size: var(--t-h2); line-height: 1.02; letter-spacing: -.035em; max-width: 18ch; }
-h3 { font-size: var(--t-h3); line-height: 1.15; letter-spacing: -.02em; }
+body { margin: 0; background: var(--canvas); color: var(--ink-2); font-family: var(--sans); font-size: var(--t-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; color: var(--ink); margin: 0; text-wrap: balance; }
+h1 { font-size: var(--t-hero); max-width: 18ch; }
+h1 span { color: var(--accent-ink); }
+h2 { font-size: var(--t-h2); max-width: 20ch; }
+h3 { font-size: var(--t-h3); line-height: 1.12; letter-spacing: -.02em; }
 p, ul, ol, figure { margin: 0; }
+ul, ol { list-style: none; padding: 0; }
 a { color: inherit; }
-a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .num { font-variant-numeric: tabular-nums; }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-em.o { font-style: normal; color: var(--ochre); }
+.idx { font-family: var(--display); font-size: var(--t-meta); font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
 
-.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 24px; }
-section { padding-block: 120px; }
-.night { background: var(--night); color: var(--on-night); }
-.sandy { background: var(--sand); }
-.night .lead { font-size: var(--t-lead); line-height: 1.5; color: var(--muted); max-width: 56ch; margin-top: 28px; }
-.night .lead { color: var(--on-night-muted); }
-.meta { font-family: var(--display); font-size: var(--t-meta); color: var(--muted); }
-.night .meta { color: var(--on-night-muted); }
-.figure { font-family: var(--display); font-weight: 500; font-size: var(--t-figure); letter-spacing: -.03em; line-height: 1; }
-.btn { display: inline-block; font-family: var(--display); font-weight: 500; font-size: var(--t-body); padding: 15px 26px; text-decoration: none; border: 1px solid currentColor; background: none; color: inherit; cursor: pointer; }
-.btn.solid { background: var(--ochre); color: #161514; border-color: var(--ochre); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 24px; }
+section { padding-block: 128px; }
+section + section { padding-top: 0; }
+.sec-head { display: flex; flex-direction: column; gap: 0; }
+
+/* Scroll entry: 12px rise over 600ms, cascaded by --i */
+.js [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(var(--i, 0) * 80ms); }
+.js [data-reveal].in { opacity: 1; transform: none; }
+
+/* Tags: muted pastel pills */
+.tag { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: .01em; padding: 3px 9px; border-radius: 9999px; white-space: nowrap; display: inline-block; line-height: 1.4; }
+.tag.red { background: var(--red-bg); color: var(--red); }
+.tag.yellow { background: var(--yellow-bg); color: var(--yellow); }
+.tag.blue { background: var(--blue-bg); color: var(--blue); }
+.tag.green { background: var(--green-bg); color: var(--green); }
+.tag.grey { background: var(--grey-bg); color: var(--grey); }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; min-width: 0; transition: box-shadow .2s ease; }
+.card:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, .04); }
 
 /* ── Hero: shared mailboxes → one conversation followed across them ── */
-.hero { padding-block: 112px 104px; overflow: hidden; }
-.hero h1 { max-width: 17ch; }
-.flowviz { margin-top: 88px; display: grid; grid-template-columns: minmax(170px, 230px) 1fr minmax(0, 560px); align-items: center; }
+.hero { padding-top: 120px; position: relative; }
+.hero::before { content: ""; position: absolute; inset: 0 0 auto; height: 720px; pointer-events: none; background: radial-gradient(60% 50% at 70% 40%, rgba(224, 160, 90, .10), transparent 70%); }
+.hero .wrap { position: relative; }
+.flowviz { margin-top: 80px; display: grid; grid-template-columns: minmax(150px, 190px) 1fr minmax(0, 580px); align-items: center; }
 .flowviz > * { min-width: 0; }
-.boxes { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
-.boxes li { font-family: var(--display); font-size: var(--t-meta); color: var(--on-night); border: 1px solid var(--night-hair); background: var(--night-2); padding: 8px 12px; }
+.boxes { display: flex; flex-direction: column; gap: 8px; position: relative; z-index: 1; }
+.boxes li { font-family: var(--display); font-size: 14px; font-weight: 500; color: var(--ink-2); background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 7px 11px; transition: border-color .4s var(--ease-hl), color .4s var(--ease-hl), background-color .4s var(--ease-hl); }
+.boxes li.hot { border-color: var(--accent); background: var(--accent-wash); color: #8a5112; }
 .wires { position: relative; align-self: stretch; min-height: 200px; }
 .wires svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; }
-.wires path { fill: none; stroke: rgba(224, 160, 90, .3); stroke-width: 1; }
-.wires path.flow { stroke: var(--ochre); stroke-width: 1.5; stroke-dasharray: 3 14; animation: flow 2.4s linear infinite; }
+.wires path { fill: none; stroke: #d8d1c6; stroke-width: 1; }
+.wires path.flow { stroke: var(--accent-ink); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 0.1 16.9; animation: flow 2.4s linear infinite; opacity: .8; }
+.wires path.flow.hot { opacity: 1; stroke-width: 3.5; }
 @keyframes flow { to { stroke-dashoffset: -34; } }
 @media (prefers-reduced-motion: reduce) { .wires path.flow { animation: none; } }
-.thread { background: #fdfaf6; color: #1e1c1b; position: relative; z-index: 1; box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .8); }
-.thread-head { padding: 18px 22px; border-bottom: 1px solid rgba(30, 28, 27, .14); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
-.thread-head b { font-family: var(--display); font-weight: 500; font-size: var(--t-h3); letter-spacing: -.02em; }
-.thread-head .meta { color: #5a544e; }
-.thread ol { list-style: none; padding: 0; }
-.thread li { padding: 14px 22px; border-bottom: 1px solid rgba(30, 28, 27, .14); display: grid; grid-template-columns: 76px 1fr auto; gap: 2px 14px; align-items: baseline; }
+
+/* Faux window around the reconstructed conversation */
+.window { position: relative; z-index: 1; overflow: hidden; }
+.window, .window:hover { box-shadow: 0 1px 2px rgba(0, 0, 0, .03), 0 16px 40px -20px rgba(0, 0, 0, .05); }
+.chrome { display: flex; align-items: center; gap: 6px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.chrome i { width: 10px; height: 10px; border-radius: 50%; background: #e5e3df; }
+.thread-head { padding: 16px 22px 6px; display: flex; justify-content: space-between; gap: 4px 14px; flex-wrap: wrap; align-items: baseline; }
+.thread-head b { font-size: 17px; font-weight: 600; color: var(--ink); }
+.thread-head span { font-size: var(--t-small); color: var(--muted); }
+.thread { font-size: var(--t-ui); line-height: 1.45; }
+.thread li { padding: 13px 22px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 74px 1fr auto; gap: 2px 14px; align-items: baseline; }
 .thread li:last-child { border-bottom: 0; }
-.thread .when, .thread .who { font-family: var(--display); font-size: var(--t-meta); color: #5a544e; }
+.thread .when, .thread .who { font-size: var(--t-small); color: var(--muted); }
 .thread .when { grid-row: 1 / span 2; }
 .thread .who { grid-column: 2; }
-.thread .who b { color: #1e1c1b; font-weight: 500; }
-.thread .said { grid-column: 2; }
-.thread .tag { grid-column: 3; grid-row: 1 / span 2; align-self: center; font-family: var(--display); font-size: var(--t-meta); font-weight: 500; padding: 3px 10px; white-space: nowrap; border: 1px solid currentColor; }
-.tag.worse { color: #a8510a; }
-.tag.better { color: #087d40; }
-.tag.neutral { color: #5a544e; }
+.thread .who b { color: var(--ink); font-weight: 600; }
+.thread .said { grid-column: 2; color: var(--ink-2); }
+.thread .tag { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+/* Messages arrive one after another and the tag pops on a spring */
+.js .thread li { opacity: 0; transform: translateY(6px); transition: opacity .35s var(--ease-hl), transform .45s var(--ease-out); }
+.js .thread li .tag { transform: scale(.6); opacity: 0; transition: transform .7s var(--spring-pop), opacity .2s linear; transition-delay: .18s; }
+.js .thread li.in { opacity: 1; transform: none; }
+.js .thread li.in .tag { transform: none; opacity: 1; }
 
-/* ── Manifesto + figures ─────────────────────────── */
-.manifesto h2 { max-width: 22ch; }
+/* ── Manifesto: words settle in a cascade ── */
+/* Its own band: a warm orange-washed panel, centred, the key phrase in brand orange */
+.band { background: #fbf1e6; border: 1px solid rgba(224, 160, 90, .28); border-radius: 12px; padding: clamp(44px, 6vw, 80px) clamp(24px, 6vw, 80px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+.band::before { content: ""; width: 48px; height: 3px; border-radius: 2px; background: var(--accent); }
+.manifesto h2 { font-size: var(--t-manif); line-height: 1.15; letter-spacing: -.02em; max-width: 24ch; }
+.manifesto h2 em { font-style: normal; color: var(--accent-ink); }
+.js .manifesto .w { opacity: .15; transition: opacity .5s var(--ease-hl); transition-delay: calc(var(--w) * 35ms); }
+.js .manifesto.in .w { opacity: 1; }
 
-/* ── Four points of view ─────────────────────────── */
-.views-intro h2 { max-width: 20ch; }
-.view { display: grid; grid-template-columns: 5fr 6fr; gap: 80px; align-items: center; padding-block: 104px; border-top: 1px solid var(--night-hair); }
-.view:first-of-type { margin-top: 72px; }
-.view:last-of-type { padding-bottom: 0; }
-.view > * { min-width: 0; }
-.view.flip > .view-text { order: 2; }
-.view .n { display: block; font-family: var(--display); font-weight: 400; font-size: var(--t-numeral); line-height: .9; letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1px var(--ochre); margin-bottom: 28px; }
-.view h3 { font-size: var(--t-h2); line-height: 1.02; letter-spacing: -.035em; }
-.view .lead { margin-top: 20px; }
-.view .chips { list-style: none; padding: 0; margin-top: 32px; display: flex; flex-wrap: wrap; gap: 10px; }
-.view .chips li { font-family: var(--display); font-weight: 500; font-size: var(--t-body); color: var(--on-night); border: 1px solid var(--night-hair); padding: 9px 16px; }
-.shot img { display: block; width: 100%; height: auto; box-shadow: 0 40px 80px -36px rgba(0, 0, 0, .9); }
+/* ── The report, as a bento of four cards ── */
+.bento { margin-top: 56px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.bento > .card { grid-column: span var(--span, 6); display: flex; flex-direction: column; }
+.card-head { padding: 26px 28px 18px; display: flex; flex-direction: column; gap: 8px; }
+.card-body { padding: 0 28px 24px; font-size: var(--t-ui); line-height: 1.45; flex: 1; }
+.card-body .m { font-size: var(--t-small); color: var(--muted); }
 
-/* Planning heatmap (illustration) */
-.plan-card { background: var(--night-2); border: 1px solid var(--night-hair); padding: 24px; }
-.plan-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 20px; }
-.toggle { display: inline-flex; border: 1px solid var(--night-hair); }
-.toggle button { font-family: var(--display); font-size: var(--t-meta); font-weight: 500; background: none; color: var(--on-night-muted); border: 0; padding: 8px 16px; cursor: pointer; }
-.toggle button[aria-pressed="true"] { background: var(--ochre); color: #161514; }
+.js .view .row { opacity: 0; transform: translateY(12px); transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(.15s + var(--i, 0) * 80ms); }
+.js .view.in .row { opacity: 1; transform: none; }
+
+/* 01 · Complaints and chasers */
+.quotes li { padding: 16px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; }
+.quotes .client { font-weight: 600; color: var(--ink); }
+.quotes .tag { grid-column: 2; grid-row: 1; align-self: start; }
+.quotes .m { grid-column: 1 / -1; }
+.quotes q { grid-column: 1 / -1; font-size: var(--t-ui); font-style: italic; color: var(--ink); quotes: "« " " »"; margin-top: 4px; line-height: 1.4; }
+.quotes mark { color: inherit; background: linear-gradient(var(--accent-wash), var(--accent-wash)) no-repeat 0 0 / 100% 100%; padding: 0 2px; }
+.js .quotes mark { background-size: 0% 100%; transition: background-size .8s cubic-bezier(.32, .72, 0, 1); transition-delay: calc(.6s + var(--i, 0) * 80ms); }
+.js .view.in .quotes mark { background-size: 100% 100%; }
+.lang { font-family: var(--display); font-size: 10px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; margin-left: 8px; vertical-align: 2px; font-weight: 400; }
+
+/* 02 · Satisfaction vs tone, one dumbbell per person */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: var(--t-small); color: var(--muted); padding-bottom: 8px; }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.dumb .scale, .dumb li { display: grid; grid-template-columns: 120px 1fr 72px; gap: 16px; align-items: center; }
+.dumb .scale { font-size: 11px; color: var(--muted); padding: 10px 0 6px; border-bottom: 1px solid var(--line); }
+.dumb .ticks { display: flex; justify-content: space-between; margin-inline: 7px; }
+.dumb li { padding: 13px 0; border-bottom: 1px solid var(--line); }
+.dumb li:last-child { border-bottom: 0; }
+.dumb .who b { display: block; font-weight: 600; color: var(--ink); }
+.dumb .track { position: relative; height: 14px; margin-inline: 7px; }
+.dumb .track::before { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; border-left: 1px dashed var(--line); }
+.dumb .bar { position: absolute; top: 6px; height: 2px; background: #dcd8d2; left: calc(var(--lo) * 10%); width: calc((var(--hi) - var(--lo)) * 10%); }
+/* Each dot rides a track-wide layer, so it moves with transform only */
+.dumb .pos { position: absolute; inset: 0; transform: translateX(calc((var(--v) - 5) * 10%)); }
+.dumb .dot { position: absolute; left: 50%; top: 0; width: 14px; height: 14px; border-radius: 50%; margin-left: -7px; }
+.dumb .dot.s { background: var(--sat); }
+.dumb .dot.t { background: var(--tone); }
+.dumb .vals { text-align: right; font-size: var(--t-small); color: var(--muted); font-variant-numeric: tabular-nums; }
+.dumb .vals b { font-size: var(--t-ui); color: var(--ink); font-weight: 600; }
+.up { color: var(--green); }
+.down { color: var(--red); }
+/* Dots leave the neutral 5 and settle on a spring; the bar draws once they land */
+.js .dumb .pos { transform: none; transition: transform 1s var(--spring); transition-delay: calc(.35s + var(--i, 0) * 80ms); }
+.js .view.in .dumb .pos { transform: translateX(calc((var(--v) - 5) * 10%)); }
+.js .dumb .bar { opacity: 0; transform: scaleX(.3); transition: opacity .3s linear, transform .5s var(--ease-out); transition-delay: calc(1s + var(--i, 0) * 80ms); }
+.js .view.in .dumb .bar { opacity: 1; transform: none; }
+
+/* 03 · Planning heatmap */
+.plan-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 18px; }
+/* Morphin tabs: a sliding indicator under the active choice */
+.toggle { display: inline-flex; position: relative; background: var(--soft); padding: 3px; border-radius: 6px; }
+.toggle button { position: relative; z-index: 1; font-family: var(--display); font-size: var(--t-small); font-weight: 600; background: none; color: var(--muted); border: 0; padding: 6px 16px; cursor: pointer; transition: color .24s var(--ease-hl); }
+.toggle button[aria-pressed="true"] { color: var(--ink); }
+.toggle .ind { position: absolute; top: 3px; bottom: 3px; left: 0; background: var(--card); border-radius: 4px; box-shadow: 0 1px 2px rgba(0, 0, 0, .06); transition: transform .24s var(--ease-hl); }
 .heat-wrap { overflow-x: auto; }
-.heat { display: grid; grid-template-columns: 44px repeat(14, minmax(18px, 1fr)); gap: 3px; min-width: 360px; }
-.heat .h, .heat .d { font-family: var(--display); font-size: var(--t-meta); color: var(--on-night-muted); }
+.heat { display: grid; grid-template-columns: 40px repeat(14, minmax(16px, 1fr)); gap: 3px; min-width: 340px; }
+.heat .h, .heat .d { font-size: 11px; color: var(--muted); }
 .heat .h { text-align: center; }
 .heat .d { align-self: center; }
-.heat .c { aspect-ratio: 1; background: var(--cell); transition: background-color .35s ease; }
-@media (prefers-reduced-motion: reduce) { .heat .c { transition: none; } }
-.plan-insight { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--night-hair); display: flex; gap: 18px; align-items: baseline; }
-.plan-insight .figure { color: var(--ochre); white-space: nowrap; }
-.plan-insight p { color: var(--on-night-muted); }
+.heat .c { aspect-ratio: 1; background: var(--soft); border-radius: 2px; transition: background-color .45s var(--ease-hl); transition-delay: calc(var(--c) * 22ms); }
+.plan-insight { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; gap: 14px; align-items: baseline; }
+.plan-insight .big { font-family: var(--display); font-weight: 500; letter-spacing: -.03em; font-size: 40px; line-height: 1; color: var(--accent-ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.plan-insight p { color: var(--muted); }
+
+/* 04 · Promises left hanging */
+.prom-top { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: end; padding-bottom: 20px; }
+.bars { display: grid; grid-template-columns: repeat(13, 1fr); gap: 4px; align-items: end; height: 84px; }
+.bars span { display: block; height: calc(var(--v) * 100%); background: #e6e2dc; border-radius: 2px 2px 0 0; transform-origin: bottom; }
+.bars span.now { background: var(--accent); }
+.weeks { display: grid; grid-template-columns: repeat(13, 1fr); gap: 4px; margin-top: 6px; font-size: 10px; color: var(--muted); text-align: center; }
+.weeks b { color: var(--ink); font-weight: 600; }
+.js .bars span { transform: scaleY(0); transition: transform .7s var(--ease-out); transition-delay: calc(.2s + var(--i) * 40ms); }
+.js .view.in .bars span { transform: none; }
+.late-n .big { display: block; font-family: var(--display); font-weight: 500; letter-spacing: -.04em; font-size: 64px; line-height: .9; color: var(--red); font-variant-numeric: tabular-nums; }
+.late-n p { font-size: var(--t-small); color: var(--muted); margin-top: 8px; max-width: 13ch; }
+.late-n p b { color: var(--ink); }
+.promises li { padding: 15px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 3px 16px; align-items: center; }
+.promises .client { font-weight: 600; color: var(--ink); }
+.promises q { font-size: var(--t-ui); font-style: italic; color: var(--ink-2); quotes: "« " " »"; line-height: 1.4; }
+.promises .days { grid-column: 2; grid-row: 1 / span 3; font-family: var(--display); font-size: 13px; font-weight: 600; color: var(--red); background: var(--red-bg); border-radius: 9999px; padding: 3px 10px; }
 
 /* ── Two jobs ────────────────────────────────────── */
-.duo { margin-top: 72px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); }
-.duo > div { min-width: 0; padding: 36px 40px 8px 0; }
-.duo > div + div { padding-left: 40px; border-left: 1px solid var(--hair); }
-.duo ul { list-style: none; padding: 0; margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
-.duo li { color: var(--ink); font-family: var(--display); font-size: var(--t-h3); letter-spacing: -.02em; padding-left: 24px; position: relative; }
-.duo li::before { content: "→"; position: absolute; left: 0; color: var(--ochre-ink); }
-.duo li b { color: var(--ink); font-weight: 500; }
+.duo { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.duo .card { padding: 32px; }
+.duo ul { margin-top: 20px; display: flex; flex-direction: column; }
+.duo li { padding: 12px 0; border-top: 1px solid var(--line); color: var(--ink-2); font-size: var(--t-text); }
 
 /* ── Guarantees ──────────────────────────────────── */
-.trio { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-.trio > div { min-width: 0; border-top: 1px solid var(--night-hair); padding-top: 24px; }
-.trio p { margin-top: 10px; color: var(--on-night-muted); }
+.trio { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.trio .card { padding: 32px; }
+.trio p { margin-top: 10px; color: var(--muted); font-size: var(--t-text); }
 
 /* ── Steps ───────────────────────────────────────── */
-.steps { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; list-style: none; padding: 0; }
-.steps li { min-width: 0; }
-.steps .n { display: block; font-family: var(--display); font-weight: 400; font-size: var(--t-numeral); line-height: .9; letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1px var(--ink); margin-bottom: 20px; }
-.steps p { margin-top: 8px; color: var(--muted); }
+.steps { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.steps li { min-width: 0; border-top: 1px solid var(--ink); padding-top: 20px; }
+.steps h3 { font-size: var(--t-step); letter-spacing: -.02em; }
+.steps p { margin-top: 8px; color: var(--muted); font-size: var(--t-text); }
 
-/* ── FAQ ─────────────────────────────────────────── */
-.faq { margin-top: 56px; border-top: 1px solid var(--hair); max-width: 860px; }
-.faq details { border-bottom: 1px solid var(--hair); }
-.faq summary { cursor: pointer; list-style: none; padding: 24px 44px 24px 0; font-family: var(--display); font-weight: 500; font-size: var(--t-h3); line-height: 1.3; letter-spacing: -.01em; position: relative; }
+/* ── FAQ: Morphin accordion, the panel eases open ── */
+.faq-h { font-size: var(--t-faq-h2); }
+.faq { margin-top: 48px; border-top: 1px solid var(--line); max-width: 820px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; padding: 26px 48px 26px 0; font-family: var(--display); font-size: var(--t-faq); font-weight: 500; line-height: 1.3; letter-spacing: -.015em; color: var(--ink); position: relative; }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 4px; top: 22px; color: var(--muted); }
-.faq details[open] summary::after { content: "–"; }
-.faq details p { padding-bottom: 24px; color: var(--muted); max-width: 64ch; }
+.faq summary::before, .faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 14px; height: 1.5px; background: var(--ink); transition: transform .35s var(--spring); }
+.faq summary::after { transform: rotate(90deg); }
+.faq details.is-open summary::after { transform: rotate(0deg); }
+.faq .ans { overflow: hidden; }
+.faq .ans p { padding-bottom: 24px; color: var(--muted); max-width: 64ch; font-size: var(--t-text); }
 
 /* ── Contact ─────────────────────────────────────── */
-.contact h2 { max-width: 16ch; }
-.contact-lines { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 24px 72px; }
+.contact .card { padding: clamp(32px, 6vw, 72px); }
+.contact-lines { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 28px 72px; }
 .contact-lines div { display: flex; flex-direction: column; gap: 6px; }
-.contact-lines .figure { user-select: all; }
-.copy { margin-top: 12px; align-self: flex-start; font-size: var(--t-meta); padding: 8px 14px; }
+.contact-lines .val { font-family: var(--display); font-weight: 500; letter-spacing: -.03em; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.1; color: var(--ink); text-decoration: none; }
+.contact-lines span.val { user-select: all; }
+.btn { margin-top: 12px; align-self: flex-start; font-family: var(--display); font-size: var(--t-meta); font-weight: 600; padding: 10px 16px; border: 0; border-radius: 6px; background: var(--ink); color: #fff; cursor: pointer; transition: background-color .2s ease, transform .2s ease; }
+.btn:hover { background: #333; }
+.btn:active { transform: scale(.98); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal], .js .thread li, .js .thread li .tag, .js .view .row, .js .bars span, .js .dumb .bar { opacity: 1; transform: none; transition: none; }
+  .js .manifesto .w { opacity: 1; transition: none; }
+  .js .quotes mark { background-size: 100% 100%; transition: none; }
+  .js .dumb .pos { transform: translateX(calc((var(--v) - 5) * 10%)); transition: none; }
+  .heat .c, .toggle .ind, .faq summary::after { transition: none; }
+}
 
 @media (max-width: 960px) {
-  section { padding-block: 84px; }
-  .hero { padding-block: 88px 72px; }
-  .flowviz { grid-template-columns: 1fr; gap: 28px; margin-top: 56px; }
+  section { padding-block: 96px; }
+  .hero { padding-top: 88px; }
+  .flowviz { grid-template-columns: 1fr; gap: 24px; margin-top: 56px; }
   .boxes { flex-direction: row; flex-wrap: wrap; }
   .wires { display: none; }
-    .view { grid-template-columns: 1fr; gap: 44px; padding-block: 72px; }
-  .view.flip > .view-text { order: 0; }
-  .duo { grid-template-columns: 1fr; }
-  .duo > div, .duo > div + div { padding: 32px 0 8px; border-left: 0; }
-  .duo > div + div { border-top: 1px solid var(--hair); }
+  .bento > .card { grid-column: 1 / -1; }
+  .duo, .trio { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
-  .thread li { grid-template-columns: 1fr auto; padding: 14px 16px; }
+  .wrap { padding-inline: 16px; }
+  .thread li { grid-template-columns: 1fr auto; padding: 13px 16px; }
   .thread .when { grid-row: auto; grid-column: 1; }
   .thread .who, .thread .said { grid-column: 1 / -1; }
   .thread .tag { grid-column: 2; grid-row: 1; }
-  .wrap { padding-inline: 18px; }
+  .thread-head { padding-inline: 16px; }
+  .card-head { padding: 22px 18px 14px; }
+  .card-body { padding: 0 18px 20px; }
+  .dumb .scale, .dumb li { grid-template-columns: 1fr 72px; }
+  .dumb .scale > :first-child { display: none; }
+  .dumb .scale .ticks { grid-column: 1 / -1; }
+  .dumb .track { grid-column: 1 / -1; grid-row: 2; }
+  .prom-top { grid-template-columns: 1fr; }
+  .duo .card, .trio .card { padding: 24px; }
   .steps { grid-template-columns: 1fr; }
-  .plan-card { padding: 18px; }
 }
 </style>
 
 <main>
   <!-- HERO -->
-  <section class="night hero">
+  <section class="hero">
     <div class="wrap">
-      <h1>Toutes vos boîtes mail partagées, analysées. <em class="o">Voyez enfin ce qui vous fait perdre des clients.</em></h1>
+      <h1>Toutes vos boîtes mail partagées, analysées. <span>Voyez enfin ce qui vous fait perdre des clients.</span></h1>
       <div class="flowviz" id="sync">
         <div>
           <ul class="boxes" aria-label="Boîtes partagées analysées ensemble">
-            <li>info@</li><li>exploitation@</li><li>equipages@</li><li>transferts@</li><li>visas@</li>
-            <li>hotels@</li><li>documents@</li><li>devis@</li><li>facturation@</li><li>direction@</li>
+            <li>contact@</li><li>commercial@</li><li>devis@</li><li>commandes@</li><li>livraisons@</li>
+            <li>sav@</li><li>support@</li><li>facturation@</li><li>compta@</li><li>direction@</li>
           </ul>
         </div>
         <div class="wires" aria-hidden="true"><svg id="wires" preserveAspectRatio="none"></svg></div>
-<div class="thread">
-          <div class="thread-head"><b>Nordvik Shipping</b><span class="meta">1 conversation · 3 boîtes · 2 collaborateurs</span></div>
-          <ol>
-            <li><span class="when num">Lun. 9:12</span><span class="who"><b>Client</b> → visas@</span><span class="said">« Pouvez-vous confirmer le transfert de jeudi ? »</span><span class="tag neutral">Demande</span></li>
-            <li><span class="when num">Lun. 15:40</span><span class="who"><b>Client</b> → info@</span><span class="said">« Any update please? »</span><span class="tag worse">Relance</span></li>
-            <li><span class="when num">Lun. 16:05</span><span class="who"><b>Inès Moreau</b> via info@</span><span class="said">« Je reviens vers vous demain avec la confirmation. »</span><span class="tag neutral">Promesse</span></li>
-            <li><span class="when num">Mar. 10:20</span><span class="who"><b>Hugo Lemaire</b> via transferts@</span><span class="said">« Le transfert est confirmé pour jeudi 9 h. »</span><span class="tag better">Tenue</span></li>
-            <li><span class="when num">Mar. 10:48</span><span class="who"><b>Client</b> → transferts@</span><span class="said">« Merci beaucoup pour votre réactivité. »</span><span class="tag better">Satisfait</span></li>
+        <div class="card window">
+          <div class="chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="thread-head"><b>Atelier Ferrand</b><span>1 conversation · 3 boîtes · 2 collaborateurs</span></div>
+          <ol class="thread">
+            <li data-box="commandes@"><span class="when num">Lun. 9:12</span><span class="who"><b>Client</b> → commandes@</span><span class="said">« Pouvez-vous nous confirmer la date de livraison ? »</span><span class="tag grey">Demande</span></li>
+            <li data-box="contact@"><span class="when num">Lun. 16:40</span><span class="who"><b>Client</b> → contact@</span><span class="said">« Toujours sans nouvelles de votre part. »</span><span class="tag yellow">Relance</span></li>
+            <li data-box="contact@"><span class="when num">Lun. 17:05</span><span class="who"><b>Camille Roux</b> via contact@</span><span class="said">« Je vérifie avec l'entrepôt et vous réponds demain matin. »</span><span class="tag blue">Promesse</span></li>
+            <li data-box="livraisons@"><span class="when num">Mar. 9:30</span><span class="who"><b>Thomas Girard</b> via livraisons@</span><span class="said">« Livraison confirmée jeudi, entre 8 h et 10 h. »</span><span class="tag green">Tenue</span></li>
+            <li data-box="livraisons@"><span class="when num">Mar. 9:52</span><span class="who"><b>Client</b> → livraisons@</span><span class="said">« Parfait, merci pour le suivi. »</span><span class="tag green">Satisfait</span></li>
           </ol>
         </div>
       </div>
@@ -226,85 +327,105 @@ section { padding-block: 120px; }
   </section>
 
   <!-- MANIFESTO -->
-  <section class="manifesto">
+  <section class="manifesto" id="manifesto">
     <div class="wrap">
-      <h2>Votre relation client se joue dans des boîtes partagées que personne ne lit en entier.</h2>
+      <div class="band" data-reveal>
+        <h2>Votre relation client se joue dans des boîtes partagées <em>que personne ne lit en entier.</em></h2>
+      </div>
     </div>
   </section>
 
-  <!-- FOUR VIEWS -->
-  <section class="night" id="vues">
+  <!-- THE REPORT -->
+  <section id="vues">
     <div class="wrap">
-      <div class="views-intro">
+      <div class="sec-head">
         <h2>Ce que votre messagerie ne vous montrera jamais.</h2>
       </div>
 
-      <article class="view">
-        <div class="view-text">
-          <span class="n" aria-hidden="true">01</span>
-          <h3>Relances et reproches</h3>
-          <ul class="chips"><li>Multilingue</li><li>Alertes sur mesure</li><li>Phrase exacte citée</li></ul>
-        </div>
-        <figure class="shot">
-          <img src="signaux-email/vue-relances.png" width="1208" height="730" loading="lazy" alt="Extrait du rapport : relances et reproches de la semaine, avec le client, la date, le collaborateur qui suit le dossier et la phrase du client.">
-        </figure>
-      </article>
+      <div class="bento">
+        <article class="card view" style="--span:5">
+          <header class="card-head">
+            <h3>Relances et reproches</h3>
+          </header>
+          <div class="card-body">
+            <ul class="quotes">
+              <li class="row" style="--i:0"><span class="client">Pharmacie Delorme</span><span class="tag red">Reproche</span><span class="m">Mardi 6/10 · suivi par Léa Fontaine</span><q>Troisième erreur sur la facture ce mois-ci, <mark style="--i:0">ce n'est pas sérieux</mark>.</q></li>
+              <li class="row" style="--i:1"><span class="client">Kessler GmbH<span class="lang">EN</span></span><span class="tag yellow">Relance</span><span class="m">Mercredi 7/10 · suivi par Hugo Lemaire</span><q><mark style="--i:1">Any update on our order?</mark> We were promised it for Monday.</q></li>
+              <li class="row" style="--i:2"><span class="client">Cabinet Morel</span><span class="tag red">Reproche</span><span class="m">Vendredi 9/10 · suivi par Nathan Dubois</span><q><mark style="--i:2">Personne ne nous a rappelés</mark>, malgré deux messages.</q></li>
+            </ul>
+          </div>
+        </article>
 
-      <article class="view flip">
-        <div class="view-text">
-          <span class="n" aria-hidden="true">02</span>
-          <h3>Le ton utilisé</h3>
-          <ul class="chips"><li>Note sur 10 par mail</li><li>Par collaborateur</li><li>Exemples cités</li></ul>
-        </div>
-        <figure class="shot">
-          <img src="signaux-email/vue-ton.png" width="1208" height="1228" loading="lazy" alt="Extrait du rapport : pour chaque collaborateur, la satisfaction de ses clients et le ton de ses mails, sur une même échelle de 0 à 10.">
-        </figure>
-      </article>
+        <article class="card view" style="--span:7">
+          <header class="card-head">
+            <h3>Le ton utilisé</h3>
+          </header>
+          <figure class="card-body" aria-label="Pour chaque collaborateur, la satisfaction de ses clients et le ton de ses mails, sur une même échelle de 0 à 10">
+            <div class="legend"><span><i style="background:var(--sat)"></i>Satisfaction client</span><span><i style="background:var(--tone)"></i>Ton des mails envoyés</span><span>5 = neutre</span></div>
+            <div class="dumb">
+              <div class="scale"><span>Personne</span><span class="ticks"><span>0</span><span>5</span><span>10</span></span><span></span></div>
+              <ul>
+                <li class="row" style="--i:0"><span class="who"><b>Camille Roux</b><span class="m">34 mails</span></span><span class="track"><span class="bar" style="--lo:7.2;--hi:9.4"></span><span class="pos" style="--v:7.2"><i class="dot t"></i></span><span class="pos" style="--v:9.4"><i class="dot s"></i></span></span><span class="vals"><span class="up">▲0,6</span> <b>9,4</b><br>7,2</span></li>
+                <li class="row" style="--i:1"><span class="who"><b>Léa Fontaine</b><span class="m">29 mails</span></span><span class="track"><span class="bar" style="--lo:6.1;--hi:8.7"></span><span class="pos" style="--v:6.1"><i class="dot t"></i></span><span class="pos" style="--v:8.7"><i class="dot s"></i></span></span><span class="vals"><span class="down">▼0,3</span> <b>8,7</b><br>6,1</span></li>
+                <li class="row" style="--i:2"><span class="who"><b>Thomas Girard</b><span class="m">41 mails</span></span><span class="track"><span class="bar" style="--lo:4.9;--hi:6.8"></span><span class="pos" style="--v:4.9"><i class="dot t"></i></span><span class="pos" style="--v:6.8"><i class="dot s"></i></span></span><span class="vals"><span class="up">▲1,2</span> <b>6,8</b><br>4,9</span></li>
+                <li class="row" style="--i:3"><span class="who"><b>Hugo Lemaire</b><span class="m">26 mails</span></span><span class="track"><span class="bar" style="--lo:4.6;--hi:5.4"></span><span class="pos" style="--v:4.6"><i class="dot s"></i></span><span class="pos" style="--v:5.4"><i class="dot t"></i></span></span><span class="vals"><span class="down">▼1,8</span> <b>4,6</b><br>5,4</span></li>
+                <li class="row" style="--i:4"><span class="who"><b>Nathan Dubois</b><span class="m">37 mails</span></span><span class="track"><span class="bar" style="--lo:2.9;--hi:3.5"></span><span class="pos" style="--v:2.9"><i class="dot s"></i></span><span class="pos" style="--v:3.5"><i class="dot t"></i></span></span><span class="vals"><span class="down">▼2,4</span> <b>2,9</b><br>3,5</span></li>
+              </ul>
+            </div>
+          </figure>
+        </article>
 
-      <article class="view">
-        <div class="view-text">
-          <span class="n" aria-hidden="true">03</span>
-          <h3>Le planning déduit</h3>
-          <ul class="chips"><li>Heure par heure</li><li>Équipe face aux clients</li><li>Rien à pointer</li></ul>
-        </div>
-        <div>
-          <div class="plan-card">
+        <article class="card view" style="--span:7">
+          <header class="card-head">
+            <h3>Le planning déduit</h3>
+          </header>
+          <div class="card-body">
             <div class="plan-top">
-              <span class="meta">Messages par heure, sur 4 semaines</span>
+              <span class="m">Messages par heure</span>
               <div class="toggle" role="group" aria-label="Afficher les messages de">
+                <span class="ind" aria-hidden="true"></span>
                 <button type="button" id="show-team" aria-pressed="true">Équipe</button>
                 <button type="button" id="show-clients" aria-pressed="false">Clients</button>
               </div>
             </div>
             <div class="heat-wrap"><div class="heat" id="heat" role="img" aria-label="Carte de chaleur des messages par jour et par heure"></div></div>
-            <div class="plan-insight"><span class="figure num" id="insight-figure"></span><p id="insight-text"></p></div>
+            <div class="plan-insight"><span class="big" id="insight-figure"></span><p id="insight-text"></p></div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="view flip">
-        <div class="view-text">
-          <span class="n" aria-hidden="true">04</span>
-          <h3>Les promesses en suspens</h3>
-          <ul class="chips"><li>Échéance repérée</li><li>Auteur nommé</li><li>Jours de retard</li></ul>
-        </div>
-        <figure class="shot">
-          <img src="signaux-email/vue-promesses.png" width="1208" height="1024" loading="lazy" alt="Extrait du rapport : promesses de retour non tenues, avec leur évolution sur 13 semaines et la liste des promesses en retard.">
-        </figure>
-      </article>
+        <article class="card view" style="--span:5">
+          <header class="card-head">
+            <h3>Les promesses en suspens</h3>
+          </header>
+          <figure class="card-body" aria-label="Promesses de retour non tenues, leur évolution sur 13 semaines et la liste des promesses en retard">
+            <div class="prom-top">
+              <div class="late-n"><span class="big" data-count="9">9</span><p>en retard sur <b>26</b> échues cette semaine</p></div>
+              <div>
+                <div class="bars" id="bars" aria-hidden="true"></div>
+                <div class="weeks" id="weeks" aria-hidden="true"></div>
+              </div>
+            </div>
+            <ul class="promises">
+              <li class="row" style="--i:0"><span class="client">Garage Vidal</span><q>Je vous envoie le devis corrigé demain.</q><span class="m">Attendu le 6 oct. · Thomas Girard</span><span class="days">6 j</span></li>
+              <li class="row" style="--i:1"><span class="client">Résidence Les Iris</span><q>Je relance le technicien et je vous rappelle cet après-midi.</q><span class="m">Attendu le 8 oct. · Hugo Lemaire</span><span class="days">4 j</span></li>
+              <li class="row" style="--i:2"><span class="client">Imprimerie Bastide</span><q>Vous aurez l'avoir avant vendredi.</q><span class="m">Attendu le 9 oct. · Nathan Dubois</span><span class="days">3 j</span></li>
+            </ul>
+          </figure>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- TWO JOBS -->
-  <section class="sandy">
+  <section>
     <div class="wrap">
       <h2>La relation client et l'équipe, sur la même page.</h2>
       <div class="duo">
-        <div>
+        <div class="card" data-reveal>
           <h3>Pour la relation client</h3>
-          <ul><li>Comptes à risque</li><li>Clients de saison</li><li>Délai par client</li><li>Satisfaction sur 10</li></ul>
+          <ul><li>Comptes à risque</li><li>Clients saisonniers</li><li>Délai par client</li><li>Satisfaction sur 10</li></ul>
         </div>
-        <div>
+        <div class="card" data-reveal style="--i:1">
           <h3>Pour le management d'équipe</h3>
           <ul><li>Délai par collaborateur</li><li>Satisfaction et ton</li><li>Progressions de la semaine</li><li>Planning réel</li></ul>
         </div>
@@ -313,13 +434,13 @@ section { padding-block: 120px; }
   </section>
 
   <!-- GUARANTEES -->
-  <section class="night">
+  <section>
     <div class="wrap">
       <h2>Vos mails ne quittent pas votre serveur.</h2>
       <div class="trio">
-        <div><h3>Aucune IA externe</h3><p>Les modèles tournent chez vous, ou sur notre serveur en France. Rien n'est envoyé à un service tiers.</p></div>
-        <div><h3>Lecture seule</h3><p>L'outil n'envoie, ne déplace et ne supprime aucun mail.</p></div>
-        <div><h3>Chiffres vérifiables</h3><p>Aucun chiffre n'est rédigé par un modèle. Chacun renvoie aux mails qui le composent.</p></div>
+        <div class="card" data-reveal><h3>Aucune IA externe</h3><p>Les modèles tournent chez vous, ou sur notre serveur en France. Rien n'est envoyé à un service tiers.</p></div>
+        <div class="card" data-reveal style="--i:1"><h3>Lecture seule</h3><p>L'outil n'envoie, ne déplace et ne supprime aucun mail.</p></div>
+        <div class="card" data-reveal style="--i:2"><h3>Chiffres vérifiables</h3><p>Aucun chiffre n'est rédigé par un modèle. Chacun renvoie aux mails qui le composent.</p></div>
       </div>
     </div>
   </section>
@@ -329,35 +450,38 @@ section { padding-block: 120px; }
     <div class="wrap">
       <h2>Quatre semaines jusqu'au premier rapport.</h2>
       <ol class="steps">
-        <li><span class="n" aria-hidden="true">01</span><h3>Connexion</h3><p>Vos boîtes partagées branchées en lecture seule, avec 13 mois d'historique.</p></li>
-        <li><span class="n" aria-hidden="true">02</span><h3>Calibrage</h3><p>Vos domaines, vos thèmes, le vocabulaire de votre métier.</p></li>
-        <li><span class="n" aria-hidden="true">03</span><h3>Revue</h3><p>Nous relisons les notes avec vous sur de vraies conversations.</p></li>
-        <li><span class="n" aria-hidden="true">04</span><h3>Premier rapport</h3><p>Il part le lundi suivant, avec l'application web.</p></li>
+        <li data-reveal><h3>Connexion</h3><p>Vos boîtes partagées branchées en lecture seule, avec 13 mois d'historique.</p></li>
+        <li data-reveal style="--i:1"><h3>Calibrage</h3><p>Vos domaines, vos thèmes, le vocabulaire de votre métier.</p></li>
+        <li data-reveal style="--i:2"><h3>Revue</h3><p>Nous relisons les notes avec vous sur de vraies conversations.</p></li>
+        <li data-reveal style="--i:3"><h3>Premier rapport</h3><p>Il part le lundi suivant, avec l'application web.</p></li>
       </ol>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="sandy">
+  <section>
     <div class="wrap">
-      <h2>Avant de nous appeler.</h2>
+      <h2 class="faq-h">Avant de nous appeler.</h2>
       <div class="faq">
-        <details><summary>Vous ne fonctionnez que sur Outlook ?</summary><p>Non. Microsoft 365 se branche directement. Gmail, Google Workspace et les serveurs de messagerie internes passent par un export automatique des mails, chaque semaine.</p></details>
-        <details><summary>Copilot ou ChatGPT résument déjà nos mails. Qu'apportez-vous de plus ?</summary><p>Ils résument un fil quand on le leur demande. Notre outil lit toutes les boîtes, compare chaque semaine aux précédentes et compte. Aucun chiffre n'est rédigé par un modèle, et vos mails ne sortent pas de votre serveur.</p></details>
-        <details><summary>Nos équipes doivent-elles changer leurs habitudes ?</summary><p>Non. Rien à installer sur les postes, rien à saisir, aucun mail à classer. Le rapport arrive par mail et l'application s'ouvre dans le navigateur.</p></details>
-        <details><summary>Nos clients sont des particuliers. Ça fonctionne ?</summary><p>Oui. Par défaut, les clients sont regroupés par entreprise. Pour des particuliers, chaque adresse devient un client. Ce réglage se fait à la mise en place.</p></details>
-        <details><summary>Quelles langues sont prises en charge ?</summary><p>Le français et l'anglais, y compris quand les deux se mêlent dans une même conversation. Pour une autre langue, nous ajoutons ses formules de remerciement, de relance et de reproche à la mise en place.</p></details>
+        <details><summary>Pour quels métiers ?</summary><div class="ans"><p>Toute équipe qui répond à ses clients depuis des boîtes partagées : service client, administration des ventes, SAV, agences, cabinets, négoce, services. Le vocabulaire de votre métier est appris à la mise en place.</p></div></details>
+        <details><summary>Vous ne fonctionnez que sur Outlook ?</summary><div class="ans"><p>Non. Microsoft 365 se branche directement. Gmail, Google Workspace et les serveurs de messagerie internes passent par un export automatique des mails, chaque semaine.</p></div></details>
+        <details><summary>Copilot ou ChatGPT résument déjà nos mails. Qu'apportez-vous de plus ?</summary><div class="ans"><p>Ils résument un fil quand on le leur demande. Notre outil lit toutes les boîtes, compare chaque semaine aux précédentes et compte. Aucun chiffre n'est rédigé par un modèle, et vos mails ne sortent pas de votre serveur.</p></div></details>
+        <details><summary>Nos équipes doivent-elles changer leurs habitudes ?</summary><div class="ans"><p>Non. Rien à installer sur les postes, rien à saisir, aucun mail à classer. Le rapport arrive par mail et l'application s'ouvre dans le navigateur.</p></div></details>
+        <details><summary>Nos clients sont des particuliers. Ça fonctionne ?</summary><div class="ans"><p>Oui. Par défaut, les clients sont regroupés par entreprise. Pour des particuliers, chaque adresse devient un client. Ce réglage se fait à la mise en place.</p></div></details>
+        <details><summary>Quelles langues sont prises en charge ?</summary><div class="ans"><p>Le français et l'anglais, y compris quand les deux se mêlent dans une même conversation. Pour une autre langue, nous ajoutons ses formules de remerciement, de relance et de reproche à la mise en place.</p></div></details>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="night contact" id="contact">
+  <section class="contact" id="contact">
     <div class="wrap">
-      <h2>Un appel suffit pour savoir ce que disent vos boîtes.</h2>
-      <div class="contact-lines">
-        <div><span class="meta">Téléphone</span><span class="figure num">04 82 53 32 59</span></div>
-        <div><span class="meta">E-mail</span><span class="figure">contact@methode.dev</span><button class="btn copy" type="button" id="copy-mail" data-v="contact@methode.dev">Copier l'adresse</button></div>
+      <div class="card" data-reveal>
+        <h2>Un appel suffit pour savoir ce que disent vos boîtes.</h2>
+        <div class="contact-lines">
+          <div><span class="idx">Téléphone</span><a class="val num" href="tel:+33482533259">04 82 53 32 59</a></div>
+          <div><span class="idx">E-mail</span><span class="val">contact@methode.dev</span><button class="btn" type="button" id="copy-mail" data-v="contact@methode.dev">Copier l'adresse</button></div>
+        </div>
       </div>
     </div>
   </section>
@@ -365,20 +489,71 @@ section { padding-block: 120px; }
 
 <script>
 (function () {
-  /* Wires: one curve from each mailbox to the conversation card, each carrying the flow. */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Morphin's springEase (registry/morphin/lib/motion.tsx), sampled into a CSS linear() easing
+     so transitions ride a real damped spring instead of a bezier approximation. */
+  function springEase(k, c, m, dur) {
+    var w = Math.sqrt(k / m), z = c / (2 * Math.sqrt(k * m)), d = z * w, r = w * Math.sqrt(Math.max(1 - z * z, 0));
+    return function (p) {
+      if (p <= 0) return 0; if (p >= 1) return 1;
+      var t = p * dur;
+      if (r === 0) return 1 - Math.exp(-d * t) * (1 + d * t);
+      return 1 - Math.exp(-d * t) * (Math.cos(r * t) + (d / r) * Math.sin(r * t));
+    };
+  }
+  function toLinear(f) {
+    var pts = [];
+    for (var i = 0; i <= 40; i++) pts.push(f(i / 40).toFixed(4));
+    return 'linear(' + pts.join(', ') + ')';
+  }
+  if (window.CSS && CSS.supports('transition-timing-function', 'linear(0, 1)')) {
+    document.documentElement.style.setProperty('--spring', toLinear(springEase(300, 20, 0.8, 1)));
+    document.documentElement.style.setProperty('--spring-pop', toLinear(springEase(300, 15, 0.8, 0.7)));
+  }
+
+  /* One observer for everything that plays once on entering the screen */
+  var io = 'IntersectionObserver' in window && !reduced ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.dispatchEvent(new CustomEvent('enter'));
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' }) : null;
+  function watch(el) {
+    if (io) io.observe(el);
+    else { el.classList.add('in'); el.dispatchEvent(new CustomEvent('enter')); }
+  }
+
+  /* Count-up for figures */
+  function countTo(el, to, from) {
+    from = from || 0;
+    var suffix = el.dataset.suffix || '';
+    if (reduced) { el.textContent = to + suffix; return; }
+    var t0 = null, dur = 900;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(from + (to - from) * e) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ── Hero: wires from each mailbox, then the conversation plays out ── */
   var sync = document.getElementById('sync'), svg = document.getElementById('wires');
+  var boxEls = sync.querySelectorAll('.boxes li');
   function drawWires() {
-    if (!sync || !svg || getComputedStyle(svg.parentNode).display === 'none') return;
-    var box = svg.getBoundingClientRect(), card = sync.querySelector('.thread').getBoundingClientRect();
-    var lis = sync.querySelectorAll('.boxes li');
-    var w = box.width, out = '';
-    var ty = card.top + card.height / 2 - box.top;
-    lis.forEach(function (li, i) {
+    if (getComputedStyle(svg.parentNode).display === 'none') return;
+    var box = svg.getBoundingClientRect(), card = sync.querySelector('.window').getBoundingClientRect();
+    var w = box.width, out = '', ty = card.top + card.height / 2 - box.top;
+    boxEls.forEach(function (li, i) {
       var r = li.getBoundingClientRect(), y = r.top + r.height / 2 - box.top;
-      var ey = ty + (i - (lis.length - 1) / 2) * 7;
+      var ey = ty + (i - (boxEls.length - 1) / 2) * 7;
       var d = 'M0 ' + y.toFixed(1) + ' C ' + (w * 0.55).toFixed(1) + ' ' + y.toFixed(1) + ', ' + (w * 0.45).toFixed(1) + ' ' + ey.toFixed(1) + ', ' + w.toFixed(1) + ' ' + ey.toFixed(1);
       out += '<path d="' + d + '"></path>';
-      out += '<path class="flow" style="animation-delay:-' + (i * 0.37).toFixed(2) + 's" d="' + d + '"></path>';
+      out += '<path class="flow" data-box="' + li.textContent + '" style="animation-delay:-' + (i * 0.37).toFixed(2) + 's" d="' + d + '"></path>';
     });
     svg.setAttribute('viewBox', '0 0 ' + w.toFixed(1) + ' ' + box.height.toFixed(1));
     svg.innerHTML = out;
@@ -387,7 +562,44 @@ section { padding-block: 120px; }
   window.addEventListener('resize', drawWires);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawWires);
 
-  /* Planning heatmap, illustrative data: Mon–Fri + weekend, 7 h to 20 h. */
+  /* While a message lands, its mailbox and wire light up */
+  function light(name) {
+    boxEls.forEach(function (li) { li.classList.toggle('hot', li.textContent === name); });
+    svg.querySelectorAll('path.flow').forEach(function (p) { p.classList.toggle('hot', p.dataset.box === name); });
+  }
+  var msgs = sync.querySelectorAll('.thread li');
+  if (reduced) msgs.forEach(function (li) { li.classList.add('in'); });
+  else msgs.forEach(function (li, i) {
+    setTimeout(function () {
+      li.classList.add('in');
+      light(li.dataset.box);
+      if (i === msgs.length - 1) setTimeout(function () { light(null); }, 1400);
+    }, 500 + i * 650);
+  });
+
+  /* ── Manifesto: words settle one after another when the line enters ── */
+  var manH = document.querySelector('#manifesto h2');
+  if (!reduced) {
+    var wi = 0;
+    var split = function (text) { return text.trim().split(/\s+/).map(function (w) { return '<span class="w" style="--w:' + (wi++) + '">' + w + '</span>'; }).join(' '); };
+    manH.innerHTML = Array.prototype.map.call(manH.childNodes, function (n) {
+      return n.nodeType === 3 ? split(n.textContent) : '<em>' + split(n.textContent) + '</em>';
+    }).join(' ');
+  }
+
+  /* ── 04: thirteen weeks of broken promises, current week highlighted ── */
+  var weekly = [7, 6, 10, 8, 11, 5, 12, 8, 4, 6, 7, 5, 9], first = 29, top = Math.max.apply(null, weekly);
+  document.getElementById('bars').innerHTML = weekly.map(function (v, i) {
+    return '<span' + (i === weekly.length - 1 ? ' class="now"' : '') + ' style="--v:' + (v / top).toFixed(3) + ';--i:' + i + '"></span>';
+  }).join('');
+  document.getElementById('weeks').innerHTML = weekly.map(function (v, i) {
+    return i === weekly.length - 1 ? '<b>' + (first + i) + '</b>' : '<span>' + (i % 2 ? '' : first + i) + '</span>';
+  }).join('');
+  var lateN = document.querySelector('[data-count]');
+  if (!reduced) lateN.textContent = '0';
+  lateN.closest('.view').addEventListener('enter', function () { setTimeout(function () { countTo(lateN, +lateN.dataset.count); }, 350); });
+
+  /* ── 03: planning heatmap, illustrative data: Mon–Fri + weekend, 7 h to 20 h ── */
   var hours = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   var days = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'W-E'];
   var team = [
@@ -407,11 +619,10 @@ section { padding-block: 120px; }
     [3, 5, 7, 8, 7, 5, 4, 5, 6, 5, 4, 4, 3, 2]
   ];
   var heat = document.getElementById('heat');
-  if (!heat) return;
   var html = '<span></span>' + hours.map(function (h) { return '<span class="h">' + (h % 2 ? '' : h + 'h') + '</span>'; }).join('');
   days.forEach(function (d, r) {
     html += '<span class="d">' + d + '</span>';
-    hours.forEach(function (h, c) { html += '<span class="c" data-r="' + r + '" data-c="' + c + '"></span>'; });
+    hours.forEach(function (h, c) { html += '<span class="c" style="--c:' + c + '" data-r="' + r + '" data-c="' + c + '"></span>'; });
   });
   heat.innerHTML = html;
   var cells = heat.querySelectorAll('.c'), lateIdx = hours.indexOf(18);
@@ -420,26 +631,59 @@ section { padding-block: 120px; }
     grid.forEach(function (row) { row.forEach(function (v, c) { all += v; if (c >= lateIdx) late += v; }); });
     return Math.round(100 * late / all);
   }
+  var insights = {
+    team: { n: lateShare(team), text: "des réponses de l'équipe partent après 18 h." },
+    clients: { n: lateShare(clients), text: 'des messages clients arrivent après 18 h.' }
+  };
+  var fig = document.getElementById('insight-figure'), shown = 0;
+  fig.dataset.suffix = ' %';
   function paint(which) {
     var grid = which === 'team' ? team : clients;
-    var top = Math.max.apply(null, grid.map(function (r) { return Math.max.apply(null, r); }));
+    var max = Math.max.apply(null, grid.map(function (r) { return Math.max.apply(null, r); }));
     cells.forEach(function (el) {
       var v = grid[+el.dataset.r][+el.dataset.c];
-      el.style.backgroundColor = v === 0 ? '' : 'rgba(224, 160, 90, ' + (0.12 + 0.88 * Math.pow(v / top, 0.85)).toFixed(3) + ')';
+      el.style.backgroundColor = v === 0 ? '' : 'rgba(224, 160, 90, ' + (0.12 + 0.88 * Math.pow(v / max, 0.85)).toFixed(3) + ')';
       el.title = days[+el.dataset.r] + ' ' + hours[+el.dataset.c] + ' h : ' + v + ' messages';
     });
-    document.getElementById('insight-figure').textContent = lateShare(clients) + ' %';
-    document.getElementById('insight-text').textContent = "des messages clients arrivent après 18 h.";
+    countTo(fig, insights[which].n, shown);
+    shown = insights[which].n;
+    document.getElementById('insight-text').textContent = insights[which].text;
   }
   var bTeam = document.getElementById('show-team'), bClients = document.getElementById('show-clients');
+  var ind = document.querySelector('.toggle .ind');
+  function moveInd(btn) { ind.style.width = btn.offsetWidth + 'px'; ind.style.transform = 'translateX(' + btn.offsetLeft + 'px)'; }
   function select(which) {
+    var btn = which === 'team' ? bTeam : bClients;
     bTeam.setAttribute('aria-pressed', String(which === 'team'));
     bClients.setAttribute('aria-pressed', String(which === 'clients'));
+    moveInd(btn);
     paint(which);
   }
   bTeam.addEventListener('click', function () { select('team'); });
   bClients.addEventListener('click', function () { select('clients'); });
-  select('team');
+  ind.style.transition = 'none'; moveInd(bTeam); ind.offsetWidth; ind.style.transition = '';
+  window.addEventListener('resize', function () { moveInd(bTeam.getAttribute('aria-pressed') === 'true' ? bTeam : bClients); });
+  heat.closest('.view').addEventListener('enter', function () { select('team'); });
+
+  document.querySelectorAll('[data-reveal], .view, #manifesto').forEach(watch);
+
+  /* ── FAQ: Morphin accordion; height eases open on the morph curve, closes on power3.inOut ── */
+  document.querySelectorAll('.faq details').forEach(function (d) {
+    var ans = d.querySelector('.ans'), anim = null;
+    d.querySelector('summary').addEventListener('click', function (e) {
+      if (reduced || !ans.animate) { d.classList.toggle('is-open', !d.open); return; }
+      e.preventDefault();
+      if (anim) anim.cancel();
+      if (!d.open || d.classList.contains('closing')) {
+        d.classList.remove('closing'); d.classList.add('is-open'); d.open = true;
+        anim = ans.animate([{ height: '0px', opacity: 0 }, { height: ans.scrollHeight + 'px', opacity: 1 }], { duration: 500, easing: 'cubic-bezier(.32, .72, 0, 1)' });
+      } else {
+        d.classList.remove('is-open'); d.classList.add('closing');
+        anim = ans.animate([{ height: ans.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 320, easing: 'cubic-bezier(.645, .045, .355, 1)' });
+        anim.onfinish = function () { d.open = false; d.classList.remove('closing'); };
+      }
+    });
+  });
 })();
 
 document.getElementById('copy-mail').addEventListener('click', function () {
