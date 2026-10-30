@@ -25,23 +25,23 @@ Points clés du rapport relation client :
 
 ## Réalisations
 
-- [Toutes les réalisations](https://methode.dev/realisations): projets livrés par Méthode.
-- [ERP maritime sur mesure](https://methode.dev/realisations/erp): ERP pour un organisateur de relèves d'équipage.
-- [Automatisation de grilles tarifaires](https://methode.dev/realisations/automatisation-tarifaire): automatisation des tarifs d'un acteur de la logistique maritime.
-- [FastEmailParser](https://methode.dev/realisations/emailparsing): analyse automatique de longues chaînes d'e-mails clients.
-- [Add-in Outlook](https://methode.dev/realisations/outlook-addin): plugin d'annotation d'e-mails métier pour préparer leur automatisation.
-- [Résolution de litige informatique](https://methode.dev/realisations/litige): résolution d'un litige autour d'un ERP de gestion de flotte pour une société de transport.
+- [Toutes les réalisations](https://methode.dev/realisations/): projets livrés par Méthode.
+- [ERP maritime sur mesure](https://methode.dev/realisations/erp/): ERP pour un organisateur de relèves d'équipage.
+- [Automatisation de grilles tarifaires](https://methode.dev/realisations/automatisation-tarifaire/): automatisation des tarifs d'un acteur de la logistique maritime.
+- [FastEmailParser](https://methode.dev/realisations/emailparsing/): analyse automatique de longues chaînes d'e-mails clients.
+- [Add-in Outlook](https://methode.dev/realisations/outlook-addin/): plugin d'annotation d'e-mails métier pour préparer leur automatisation.
+- [Résolution de litige informatique](https://methode.dev/realisations/litige/): résolution d'un litige autour d'un ERP de gestion de flotte pour une société de transport.
 
 ## Publications
 
 - [Blog](https://methode.dev/blog/): articles techniques de l'équipe.
-- [Parsing d'e-mails sans LLM](https://methode.dev/blog/fastemailparser): FastEmailParser, notre bibliothèque open source en C pour découper et analyser des chaînes d'e-mails à grand volume.
-- [Les coulisses d'un plugin d'annotation Outlook](https://methode.dev/blog/outlook-addin): SSO Microsoft, contrats OpenAPI et annotation en aveugle.
-- [Quel ERP choisir en 2026](https://methode.dev/blog/erp-comparatif): comparatif pour choisir un ERP.
-- [Odoo, l'ERP des PME](https://methode.dev/blog/erp-odoo): pourquoi et quand passer à un ERP comme Odoo.
-- [L'algorithme RAPTOR expliqué](https://methode.dev/blog/raptor): le plus court chemin dans les transports en commun, démontré sur le métro lyonnais.
-- [Chiffrements non sécurisés d'OpenSSL](https://methode.dev/blog/openssl): pourquoi il est presque impossible de réactiver des chiffrements dépréciés sur les versions récentes d'OpenSSL.
-- [La programmation compétitive](https://methode.dev/blog/competitiveprogramming): guide pour débuter et progresser.
+- [Parsing d'e-mails sans LLM](https://methode.dev/blog/fastemailparser/): FastEmailParser, notre bibliothèque open source en C pour découper et analyser des chaînes d'e-mails à grand volume.
+- [Les coulisses d'un plugin d'annotation Outlook](https://methode.dev/blog/outlook-addin/): SSO Microsoft, contrats OpenAPI et annotation en aveugle.
+- [Quel ERP choisir en 2026](https://methode.dev/blog/erp-comparatif/): comparatif pour choisir un ERP.
+- [Odoo, l'ERP des PME](https://methode.dev/blog/erp-odoo/): pourquoi et quand passer à un ERP comme Odoo.
+- [L'algorithme RAPTOR expliqué](https://methode.dev/blog/raptor/): le plus court chemin dans les transports en commun, démontré sur le métro lyonnais.
+- [Chiffrements non sécurisés d'OpenSSL](https://methode.dev/blog/openssl/): pourquoi il est presque impossible de réactiver des chiffrements dépréciés sur les versions récentes d'OpenSSL.
+- [La programmation compétitive](https://methode.dev/blog/competitiveprogramming/): guide pour débuter et progresser.
 - [Affiches de vulgarisation](https://methode.dev/affiches/): Dijkstra, Grace Hopper, SOLID, Von Neumann ; affiches libres (licence CC BY-NC).
 
 ## Optional
