@@ -18,8 +18,8 @@
 
   --lis:clamp(20px,5vw,80px);
   --max:1320px;
-  --display:'Space Grotesk',system-ui,-apple-system,sans-serif;
-  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --display:'Charis SIL',Georgia,'Times New Roman',serif; /* essais précédents, pour revenir en arrière : --display:'Nunito',system-ui,-apple-system,sans-serif; ou, d'origine : --display:'Space Grotesk',system-ui,-apple-system,sans-serif; (adapter ou supprimer le bloc « Titres » en fin de fichier) */
+  --sans:'Nunito',system-ui,-apple-system,sans-serif; /* police précédente, pour revenir en arrière : --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif; */
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -247,7 +247,7 @@ p,ul,ol{margin:0}
 @media (max-width:760px){.refs .wrap{grid-template-columns:1fr}.rangee{justify-content:flex-start}}
 
 /* ================= FAQ ================= */
-.faq{padding-top:0}
+.faq{} /* padding-top:0 retiré : la FAQ suit maintenant les publications (fond sombre) et a besoin de son propre espace */
 .faq .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px}
 @media (max-width:900px){.faq .wrap{grid-template-columns:1fr}}
 .faq h2{font-size:clamp(32px,3.6vw,54px)}
@@ -319,6 +319,17 @@ p,ul,ol{margin:0}
 @media (max-width:560px){.pr-tete,.pr-msg{padding-inline:16px}}
 @media (prefers-reduced-motion:reduce){.pr-carte{transition:none}.pr-carte:hover{transform:none}}
 
+/* ================= RÉALISATIONS : même rail que les publications, cartes photo ================= */
+.reals-tout{font-family:var(--display);font-weight:500;font-size:17px;color:var(--acc-clair)}
+.photo-carte{background:var(--nuit-2)}
+.photo-carte::before{content:"";position:absolute;inset:0;background:var(--photo) center/cover no-repeat;opacity:.5;filter:grayscale(.35);transform:scale(1.02);transition:opacity .8s var(--ease),filter .8s var(--ease),transform 1.2s var(--ease)}
+.photo-carte::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,21,20,.05) 30%,rgba(22,21,20,.7) 100%)}
+.photo-n{position:absolute;z-index:1;left:calc(7% + clamp(18px,2vw,28px));bottom:clamp(16px,2vw,26px);font-family:var(--display);font-weight:500;font-size:clamp(36px,4vw,64px);letter-spacing:-.04em;line-height:1;color:var(--lait)}
+.pub:hover .photo-carte::before,.pub:focus-visible .photo-carte::before,.pub.vu .photo-carte::before{opacity:.78;filter:grayscale(0);transform:scale(1.06)}
+@media (hover:hover){.pub.vu:not(:hover) .photo-carte::before{opacity:.5;filter:grayscale(.35);transform:scale(1.02)}}
+@media (max-width:420px){.tete .reals-nav{display:none}}
+@media (prefers-reduced-motion:reduce){.photo-carte::before{transition:none}}
+
 /* ================= PIED ================= */
 .pied{background:var(--noir-logo);color:rgba(243,236,226,.55);padding:0 var(--lis) calc(env(safe-area-inset-bottom,0px) + 32px);font-size:15px}
 .pied .wrap{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;border-top:1px solid rgba(243,236,226,.16);padding-top:28px}
@@ -337,3 +348,19 @@ p,ul,ol{margin:0}
   .js .valeur h3{background:none;color:var(--ink)}
   .lien::after{transition:none}
 }
+
+/* ================= Titres en Charis SIL =================
+   Charis SIL n'existe qu'en 400 et 700 : 400 pour les grands titres, 700 pour la navigation et les petits libellés.
+   Pour revenir à Nunito : voir le commentaire de --display ; graisses Nunito d'avant = 700 (titres), 600 (libellés), 800 (logo).
+   Pour revenir à Space Grotesk : remettre --display d'origine et supprimer ce bloc. */
+h1,h2,h3,.manif p,.legende .qui,.index .nom,.etape .n,.grand-tel,.photo-n{font-weight:400;letter-spacing:-.01em}
+.faq summary,.ok,.pr-vues li,.parse .stat{font-weight:400;letter-spacing:0}
+.tete nav,.surtitre,.pub-meta,.rail-nav,.pr-lien,.reals-tout,.envoi,.refs span,.legende .role,.mail b{font-weight:700;letter-spacing:0}
+.logo-text{font-weight:700}
+/* Navigation et nom « Méthode » : restent en Nunito */
+.logo-text,.tete nav,.rail-nav{font-family:var(--sans)}
+.tete nav,.rail-nav{font-weight:600}
+.logo-text{font-weight:800}
+/* Charis a des jambages plus longs : les masques de ligne (SplitText) coupaient le bas des « q », « p », « g ». */
+h1,h2,h3,.titre{line-height:1.14}
+.faq h2{padding-bottom:.06em}

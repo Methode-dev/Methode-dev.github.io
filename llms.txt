@@ -26,11 +26,14 @@ Points clés du rapport relation client :
 ## Réalisations
 
 - [Toutes les réalisations](https://methode.dev/realisations/): projets livrés par Méthode.
+- [Rapport relation client](https://methode.dev/realisations/rapport-relation-client/): analyse des boîtes mail partagées d'un agent maritime, avec un rapport chaque lundi.
+- [Une grille tarifaire tirée du GPS](https://methode.dev/realisations/grille-tarifaire-gps/): grille de transport reconstruite à partir des coûts réels mesurés par GPS.
 - [ERP maritime sur mesure](https://methode.dev/realisations/erp/): ERP pour un organisateur de relèves d'équipage.
 - [Automatisation de grilles tarifaires](https://methode.dev/realisations/automatisation-tarifaire/): automatisation des tarifs d'un acteur de la logistique maritime.
 - [FastEmailParser](https://methode.dev/realisations/emailparsing/): analyse automatique de longues chaînes d'e-mails clients.
 - [Add-in Outlook](https://methode.dev/realisations/outlook-addin/): plugin d'annotation d'e-mails métier pour préparer leur automatisation.
 - [Résolution de litige informatique](https://methode.dev/realisations/litige/): résolution d'un litige autour d'un ERP de gestion de flotte pour une société de transport.
+- [Facturation électronique](https://methode.dev/realisations/facturation-electronique/): audit des flux, choix d'une plateforme agréée et automatisation de la conformité pour les PME.
 
 ## Publications
 

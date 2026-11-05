@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Analyser les boîtes mail partagées d&#x27;un agent maritime : le rapport du lundi | Méthode</title>
+<meta name="description" content="311 000 e-mails, 530 boîtes, 13 mois : comment on a construit pour un agent maritime un rapport hebdomadaire sur ses relances, ses promesses et ses clients qui attendent.">
+<link rel="canonical" href="https://methode.dev/realisations/rapport-relation-client/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#161514">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Méthode">
+<meta property="og:title" content="Analyser les boîtes mail partagées d&#x27;un agent maritime : le rapport du lundi | Méthode">
+<meta property="og:description" content="311 000 e-mails, 530 boîtes, 13 mois : comment on a construit pour un agent maritime un rapport hebdomadaire sur ses relances, ses promesses et ses clients qui attendent.">
+<meta property="og:url" content="https://methode.dev/realisations/rapport-relation-client/">
+<meta property="og:image" content="https://methode.dev/assets/HERO_2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/realisations.css">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Le rapport relation client", "description": "311 000 e-mails, 530 boîtes, 13 mois : comment on a construit pour un agent maritime un rapport hebdomadaire sur ses relances, ses promesses et ses clients qui attendent.", "url": "https://methode.dev/realisations/rapport-relation-client/", "inLanguage": "fr-FR", "mainEntityOfPage": "https://methode.dev/realisations/rapport-relation-client/", "image": "https://methode.dev/assets/HERO_2.jpg", "author": {"@id": "https://methode.dev/#organization"}, "publisher": {"@id": "https://methode.dev/#organization"}, "isPartOf": {"@type": "CollectionPage", "@id": "https://methode.dev/realisations/"}}
+</script>
+<script src="/js/mesure.js" defer></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<header class="tete">
+  <a class="logo-container" href="/" aria-label="Méthode, page d'accueil">
+    <span class="logo" aria-hidden="true"></span>
+    <span class="logo-text" aria-hidden="true">Méthode</span>
+  </a>
+  <nav aria-label="Navigation rapide">
+    <a class="lien nav-reals" href="/realisations/">Réalisations</a>
+    <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
+    <a class="lien ecrire" href="/#contact">Écrire</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<section class="heros photo" style="--photo:url('https://images.unsplash.com/photo-1579719558505-ad4a5fee0847?auto=format&amp;fit=crop&amp;w=2400&amp;q=70')" aria-labelledby="t-cas">
+  <div class="wrap">
+    <a class="retour" href="/realisations/">← Toutes les réalisations</a>
+    <h1 id="t-cas">Le rapport relation client</h1>
+    <p class="chapo">311 000 e-mails, 530 boîtes partagées et 13 mois d'historique, résumés chaque lundi matin pour les responsables d'un agent maritime.</p>
+  </div>
+</section>
+
+<article class="cas">
+  <section aria-labelledby="s01">
+    <h2 id="s01">01. Personne ne lit une boîte partagée en entier</h2>
+      <p>Chez un agent maritime, la relation client passe par des boîtes partagées. Une demande arrive sur l'une, la relance sur une autre. Chacun voit son morceau de la conversation. Personne ne la voit en entier.</p>
+      <p>Quand on a commencé, l'historique faisait 13 mois : 311 000 e-mails, répartis sur 530 boîtes. Le client voulait savoir ce qui s'y passait vraiment, sans demander à ses équipes de remplir quoi que ce soit de plus.</p>
+  </section>
+  <section aria-labelledby="s02">
+    <h2 id="s02">02. Lire, sans rien toucher</h2>
+      <p>L'outil se connecte à Microsoft 365 en lecture seule, boîtes partagées comprises. Il importe l'historique une fois, puis se synchronise toutes les 5 minutes. Il ne peut rien envoyer, et rien supprimer.</p>
+      <p>Chaque e-mail est rattaché à sa conversation, même quand elle a changé de boîte en route, et les clients sont regroupés par entreprise. Tout tourne sur le serveur du client : aucun e-mail n'est envoyé à un service d'IA externe.</p>
+  </section>
+  <section aria-labelledby="s03">
+    <h2 id="s03">03. Les modèles notaient la nouvelle, pas la manière</h2>
+      <p>Pour mesurer la satisfaction des clients et le ton de l'équipe, on a d'abord comparé plusieurs modèles, du classifieur de sentiment au petit modèle de langage. Ils faisaient tous la même erreur. Une annulation annoncée poliment, et la note s'effondrait : ils jugeaient la mauvaise nouvelle, pas la façon de l'annoncer.</p>
+      <p>On est donc revenus à des grilles de phrases. « Toujours pas de nouvelles » retire des points, « merci pour votre réactivité » en ajoute, et un e-mail de routine reste à 5 sur 10. Chaque note renvoie à la phrase qui l'a produite. Si un responsable n'est pas d'accord avec un score, il peut aller lire l'e-mail.</p>
+      <p>Même chose pour l'urgence. Le modèle signalait un quart des messages clients, soit environ 130 par jour. Une alerte qui sonne 130 fois par jour n'en est plus une, alors on l'a sortie des incidents.</p>
+  </section>
+  <section aria-labelledby="s04">
+    <h2 id="s04">04. « Je reviens vers vous », et après ?</h2>
+      <p>Le rapport repère les promesses de l'équipe, puis vérifie qu'elles ont été tenues. Une promesse datée (« demain », « lundi ») est due ce jour-là. Une promesse sans date devient due 3 jours ouvrés plus tard. On avait commencé par le lendemain, mais c'était trop serré.</p>
+      <p>Elle compte comme tenue dès que quelqu'un réécrit dans la conversation avant la fin du jour dû, quel que soit le contenu. C'est une limite, et on préfère la dire : un « toujours en attente » passe pour une promesse tenue.</p>
+      <p>Les relances suivent une règle du même genre. Un message du client ne compte comme relance que s'il arrive au moins 4 heures après le sien, sans réponse de notre côté entre les deux.</p>
+  </section>
+  <section aria-labelledby="s05">
+    <h2 id="s05">05. Ce qui arrive le lundi</h2>
+      <p>Chaque lundi matin, une lettre arrive dans la boîte des responsables. En haut, les délais de réponse par personne et par client. Juste en dessous, les clients qui attendent depuis plus de 24 heures, et les promesses non tenues, citées mot pour mot.</p>
+      <p>Plus bas, ce qu'on ne verrait pas autrement : les mots qui doivent alerter, comme « résilier » ou « avocat », et les clients réguliers qui ont cessé d'écrire. Le rapport signale aussi les clients que suit une seule personne. C'est là qu'est le vrai risque quand elle part en congés.</p>
+      <p>Tous les chiffres et toutes les citations viennent des e-mails. Le seul texte généré est une courte description dans le résumé, écrite par un petit modèle installé sur le serveur, et supprimée d'office si elle cite un nombre ou un nom absent des données. Pour qui veut vérifier, une application web remonte jusqu'à chaque conversation, et la <a href="/crm-methodologie/">méthode de calcul de chaque section</a> est publique.</p>
+  </section>
+  <section aria-labelledby="s06">
+    <h2 id="s06">06. Ce qu'on ne sait pas encore</h2>
+      <p>Une partie des signaux, l'urgence notamment, vient encore d'un classifieur qui n'a pas été validé sur des échanges aussi opérationnels. Il a tendance à lire une demande de routine comme urgente ou négative. La lettre le dit en bas de page, et c'est pour ça que les incidents reposent sur des règles et pas sur lui.</p>
+      <p>Si on devait retenir une chose de ce projet : un score qu'on ne peut pas relire, personne ne s'en sert. Le <a href="/email-report/">rapport relation client</a> est maintenant proposé à d'autres entreprises, sur la même règle.</p>
+  </section>
+</article>
+
+<section class="fin" aria-labelledby="t-fin">
+  <div class="wrap fin-grille">
+    <div>
+      <span class="surtitre">Parlons-en</span>
+      <h2 id="t-fin">Un projet similaire&nbsp;?</h2>
+      <p class="note">Deux lignes sur votre situation suffisent. Nous revenons vers vous rapidement.</p>
+      <div class="fin-liens">
+        <a class="lien acc" href="/#contact">Décrivez votre situation →</a>
+        <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
+      </div>
+    </div>
+    <a class="suivant" href="/realisations/grille-tarifaire-gps/">
+      <span class="surtitre">Réalisation suivante</span>
+      <b>Une grille tarifaire tirée du GPS</b>
+      <span class="desc">Des dizaines de milliers de trajets et le GPS de toute une flotte, pour fixer les prix à partir de ce que coûte vraiment chaque trajet.</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <span>© <span id="an">2026</span> Méthode, Lyon</span>
+    <nav aria-label="Informations légales">
+      <a href="/realisations/">Réalisations</a>
+      <a href="https://www.linkedin.com/company/m%C3%A9thode-dev/">LinkedIn</a>
+      <a href="mailto:julien.calenge@methode.dev">Formation</a>
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/mentions-legales/#confidentialite">Confidentialité</a>
+      <a href="/accessibilite/">Accessibilité</a>
+      <a href="#cookies" onclick="if(window.openAxeptioCookies){openAxeptioCookies();}return false;">Gérer les cookies</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('an').textContent=new Date().getFullYear();</script>
+</body>
+</html>

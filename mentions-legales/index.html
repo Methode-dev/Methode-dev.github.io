@@ -9,8 +9,10 @@
 <meta name="theme-color" content="#161514">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<!-- police précédente, pour revenir en arrière : <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/mentions-legales.css">
+<script src="/js/mesure.js" defer></script>
 </head>
 <body>
 <a class="evite" href="#contenu">Aller au contenu</a>
@@ -74,13 +76,15 @@
         <h3>Réponse à vos demandes de contact</h3>
         <dl><dt>Base légale</dt><dd>Intérêt légitime (art. 6.1.f RGPD)</dd><dt>Durée</dt><dd>3 ans après le dernier contact</dd></dl>
       </div>
-      <!-- À VÉRIFIER : le site n'intègre aujourd'hui ni outil d'audience ni bandeau cookies.
-           Supprimez ce bloc, ou ajoutez l'outil et le bandeau avant publication. -->
       <div class="traitement">
         <h3>Mesure d'audience et statistiques de fréquentation</h3>
-        <dl><dt>Base légale</dt><dd>Consentement via le bandeau cookies (art. 6.1.a RGPD)</dd><dt>Durée</dt><dd>13 mois maximum, selon la recommandation de la CNIL</dd></dl>
+        <dl><dt>Outil</dt><dd>Google Analytics (Google Ireland Ltd)</dd><dt>Base légale</dt><dd>Consentement via le bandeau cookies (art. 6.1.a RGPD)</dd><dt>Durée</dt><dd>13 mois maximum, selon la recommandation de la CNIL</dd></dl>
       </div>
-      <p>Aucune donnée ne sera cédée à des tiers sans votre consentement préalable, sauf obligation légale.</p>
+      <div class="traitement">
+        <h3>Mesure de l'efficacité de nos annonces</h3>
+        <dl><dt>Outils</dt><dd>Google Ads (Google Ireland Ltd) et LinkedIn Insight Tag (LinkedIn Ireland Unlimited Company)</dd><dt>Base légale</dt><dd>Consentement via le bandeau cookies (art. 6.1.a RGPD)</dd><dt>Durée</dt><dd>13 mois maximum, selon la recommandation de la CNIL</dd></dl>
+      </div>
+      <p>Ces outils ne sont chargés qu'après votre accord, service par service. Google et LinkedIn peuvent transférer des données hors de l'Union européenne, dans le cadre du Data Privacy Framework UE–États-Unis. Aucune autre donnée ne sera cédée à des tiers sans votre consentement préalable, sauf obligation légale.</p>
     </section>
 
     <section aria-labelledby="t-droits">
@@ -104,7 +108,7 @@
         <li>un bandeau vous informe de la présence de cookies ;</li>
         <li>vous pouvez accepter ou refuser les cookies non essentiels ;</li>
         <li>aucun cookie non essentiel n'est déposé sans votre choix ;</li>
-        <li>vous pouvez modifier vos préférences à tout moment.</li>
+        <li>vous pouvez modifier vos préférences à tout moment : <a href="#cookies" onclick="if(window.openAxeptioCookies){openAxeptioCookies();}return false;">gérer les cookies</a>.</li>
       </ul>
     </section>
   </div>

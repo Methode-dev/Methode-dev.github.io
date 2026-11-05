@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <!-- Illustration dans le style de l'atlas tarifaire. Géographie, lieux et chiffres inventés : aucune donnée client. -->
+  <defs>
+    <pattern id="ilots" width="46" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+      <rect width="46" height="34" fill="#111a2c"/>
+      <rect x="4" y="4" width="17" height="11" rx="1.5" fill="#18243d"/>
+      <rect x="25" y="4" width="16" height="11" rx="1.5" fill="#152038"/>
+      <rect x="4" y="19" width="12" height="11" rx="1.5" fill="#152038"/>
+      <rect x="20" y="19" width="21" height="11" rx="1.5" fill="#18243d"/>
+    </pattern>
+    <marker id="pt" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5"><circle cx="5" cy="5" r="4" fill="#6fe3b4"/></marker>
+  </defs>
+
+  <!-- fond de carte -->
+  <rect width="1600" height="900" fill="#111a2c"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#ilots)" opacity=".85"/>
+  <!-- rivière et plan d’eau (inventés) -->
+  <path d="M0 610 C160 590 260 640 380 690 C470 728 520 790 640 820 C760 850 900 838 1000 900 L0 900 Z" fill="#090e1a"/>
+  <path d="M0 520 C120 540 210 560 300 600 C340 618 360 640 380 690 C260 640 160 590 0 610 Z" fill="#0c1424"/>
+  <!-- plans d’eau -->
+  <path d="M250 640 L330 600 L345 640 L268 678 Z M360 662 L430 628 L448 672 L380 704 Z" fill="#090e1a"/>
+  <!-- parcs -->
+  <path d="M760 210 C820 190 880 205 900 250 C910 290 860 320 800 312 C750 300 735 240 760 210 Z" fill="#132038"/>
+  <path d="M1040 610 C1100 590 1160 610 1170 650 C1150 690 1080 700 1045 670 Z" fill="#132038"/>
+
+  <!-- routes -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 560 C300 520 420 470 560 440 C700 410 860 380 1000 300 C1080 254 1150 190 1230 120" stroke="rgba(70,88,128,.9)" stroke-width="13"/>
+    <path d="M120 560 C300 520 420 470 560 440 C700 410 860 380 1000 300 C1080 254 1150 190 1230 120" stroke="#34456a" stroke-width="6"/>
+    <path d="M380 690 C430 600 470 520 560 440 M560 440 C600 360 620 280 700 160" stroke="rgba(46,61,94,.9)" stroke-width="8"/>
+    <path d="M380 690 C430 600 470 520 560 440 M560 440 C600 360 620 280 700 160" stroke="#26344f" stroke-width="3.5"/>
+    <path d="M560 440 C650 470 760 520 900 560 C980 584 1060 600 1130 640" stroke="rgba(46,61,94,.9)" stroke-width="8"/>
+    <path d="M560 440 C650 470 760 520 900 560 C980 584 1060 600 1130 640" stroke="#26344f" stroke-width="3.5"/>
+    <path d="M200 420 L520 330 M300 760 L520 520 M820 120 L900 560 M1000 300 L1180 470 M660 640 L1000 460" stroke="#1f2b45" stroke-width="3"/>
+    <path d="M140 300 L420 250 M700 640 L780 820 M1060 180 L1320 260" stroke="#1a2540" stroke-width="2.5"/>
+  </g>
+
+  <!-- aéroport : pistes -->
+  <g transform="rotate(-18 1230 150)">
+    <rect x="1130" y="110" width="250" height="16" rx="3" fill="#2a3858"/>
+    <rect x="1150" y="168" width="200" height="12" rx="3" fill="#1f2b45"/>
+  </g>
+
+  <!-- zones dessinées à la main -->
+  <g stroke-width="2.4" stroke-linejoin="round">
+    <path d="M236 600 L348 548 L470 610 L452 690 L330 726 L248 690 Z" fill="rgba(255,178,92,.10)" stroke="#ffb25c"/>
+    <path d="M1100 70 L1370 40 L1410 170 L1300 230 L1140 210 Z" fill="rgba(79,163,217,.10)" stroke="#4fa3d9"/>
+    <path d="M700 470 L800 452 L838 528 L770 580 L690 548 Z" fill="rgba(111,227,180,.10)" stroke="#6fe3b4"/>
+  </g>
+  <g font-size="15" font-weight="600" fill="#e8ecf4">
+    <text x="250" y="756">Zone A · gare</text>
+    <text x="1150" y="98">Zone B · aéroport</text>
+    <text x="704" y="606">Zone C · hôtels</text>
+  </g>
+
+  <!-- trajet prévu (saisie) contre trace GPS -->
+  <path d="M352 640 C470 560 620 470 760 500 C900 520 1030 330 1230 150" fill="none" stroke="#8b97b0" stroke-width="3" stroke-dasharray="10 9"/>
+  <path d="M352 640 C400 600 440 520 520 470 C590 430 640 452 700 470 C760 488 790 520 812 540 C860 585 930 560 960 470 C985 400 1010 320 1080 260 C1140 210 1190 180 1230 150"
+        fill="none" stroke="#6fe3b4" stroke-width="4" stroke-linecap="round" marker-mid="url(#pt)"/>
+  <!-- détour signalé -->
+  <path d="M960 470 C985 400 1010 320 1080 260" fill="none" stroke="#ffb25c" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+  <g>
+    <circle cx="352" cy="640" r="9" fill="#ffb25c" stroke="#0b1020" stroke-width="3"/>
+    <circle cx="760" cy="508" r="9" fill="#6fe3b4" stroke="#0b1020" stroke-width="3"/>
+    <circle cx="1230" cy="150" r="9" fill="#4fa3d9" stroke="#0b1020" stroke-width="3"/>
+  </g>
+  <g>
+    <rect x="980" y="384" width="160" height="30" rx="15" fill="#172038" stroke="#ffb25c" stroke-width="1.5"/>
+    <text x="1060" y="404" text-anchor="middle" font-size="14" font-weight="600" fill="#ffd99a">détour · +6,8 km</text>
+  </g>
+
+  <!-- barre du haut -->
+  <rect x="0" y="0" width="1600" height="52" fill="#0b1020" opacity=".92"/>
+  <text x="28" y="33" font-size="18" font-weight="700" fill="#e8ecf4">Atlas</text>
+  <g font-size="15" fill="#8b97b0">
+    <text x="104" y="33" fill="#ffd99a" font-weight="600">Carte</text>
+    <text x="168" y="33">Matrice</text>
+    <text x="248" y="33">Liaisons</text>
+    <text x="330" y="33">Anomalies</text>
+  </g>
+  <rect x="104" y="44" width="44" height="2" fill="#ffb25c"/>
+  <text x="1572" y="33" text-anchor="end" font-size="14" fill="#8b97b0">Données d'exemple · aucune donnée client</text>
+
+  <!-- panneau latéral -->
+  <g transform="translate(1196 300)">
+    <rect width="376" height="560" rx="12" fill="#172038" stroke="#2e3d5e"/>
+    <text x="24" y="40" font-size="13" fill="#8b97b0" letter-spacing="1">LIAISON</text>
+    <text x="24" y="70" font-size="24" font-weight="700" fill="#e8ecf4">Zone A ↔ Zone B</text>
+    <text x="24" y="96" font-size="14" fill="#8b97b0">212 occurrences · 41,5 km en charge</text>
+    <line x1="24" y1="118" x2="352" y2="118" stroke="#2e3d5e"/>
+
+    <g font-size="15">
+      <text x="24" y="152" fill="#8b97b0">Arrêts localisés</text><text x="352" y="152" text-anchor="end" fill="#e8ecf4" font-weight="600">98 %</text>
+      <text x="24" y="188" fill="#8b97b0">Km roulés à vide</text><text x="352" y="188" text-anchor="end" fill="#ffd99a" font-weight="600">31 %</text>
+      <text x="24" y="224" fill="#8b97b0">Écart prévu / roulé</text><text x="352" y="224" text-anchor="end" fill="#ff9a9a" font-weight="600">+14 %</text>
+      <text x="24" y="260" fill="#8b97b0">Coût au km (indice réseau)</text><text x="352" y="260" text-anchor="end" fill="#e8ecf4" font-weight="600">1,06</text>
+    </g>
+    <line x1="24" y1="282" x2="352" y2="282" stroke="#2e3d5e"/>
+
+    <text x="24" y="314" font-size="13" fill="#8b97b0" letter-spacing="1">OCCURRENCES PAR MOIS</text>
+    <g fill="#4fa3d9">
+      <rect x="24"  y="410" width="20" height="40" rx="2"/>
+      <rect x="54"  y="396" width="20" height="54" rx="2"/>
+      <rect x="84"  y="388" width="20" height="62" rx="2"/>
+      <rect x="114" y="402" width="20" height="48" rx="2"/>
+      <rect x="144" y="372" width="20" height="78" rx="2"/>
+      <rect x="174" y="364" width="20" height="86" rx="2"/>
+      <rect x="204" y="380" width="20" height="70" rx="2"/>
+      <rect x="234" y="392" width="20" height="58" rx="2"/>
+      <rect x="264" y="418" width="20" height="32" rx="2" fill="#2e3d5e"/>
+    </g>
+    <g font-size="11" fill="#8b97b0" text-anchor="middle">
+      <text x="34" y="468">J</text><text x="64" y="468">F</text><text x="94" y="468">M</text><text x="124" y="468">A</text><text x="154" y="468">M</text><text x="184" y="468">J</text><text x="214" y="468">J</text><text x="244" y="468">A</text><text x="274" y="468">S</text>
+    </g>
+
+    <rect x="24" y="494" width="328" height="42" rx="8" fill="rgba(255,178,92,.12)" stroke="#ffb25c"/>
+    <text x="40" y="520" font-size="14" font-weight="600" fill="#ffd99a">À revoir : détour régulier côté zone C</text>
+  </g>
+
+  <!-- légende -->
+  <g transform="translate(28 800)">
+    <rect width="420" height="72" rx="10" fill="#0b1020" opacity=".9" stroke="#2e3d5e"/>
+    <line x1="20" y1="26" x2="60" y2="26" stroke="#8b97b0" stroke-width="3" stroke-dasharray="8 7"/>
+    <text x="70" y="31" font-size="14" fill="#e8ecf4">Trajet prévu</text>
+    <line x1="196" y1="26" x2="236" y2="26" stroke="#6fe3b4" stroke-width="4"/>
+    <text x="246" y="31" font-size="14" fill="#e8ecf4">Trace GPS</text>
+    <rect x="20" y="42" width="40" height="18" rx="3" fill="rgba(255,178,92,.10)" stroke="#ffb25c" stroke-width="2"/>
+    <text x="70" y="56" font-size="14" fill="#e8ecf4">Zone dessinée à la main</text>
+  </g>
+</svg>

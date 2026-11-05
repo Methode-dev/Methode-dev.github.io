@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reconstruire une grille tarifaire de transport à partir du GPS | Méthode</title>
+<meta name="description" content="Des dizaines de milliers de trajets et le GPS d&#x27;une flotte entière : comment on a reconstruit la grille tarifaire d&#x27;un transporteur à partir de ce que coûte vraiment chaque trajet.">
+<link rel="canonical" href="https://methode.dev/realisations/grille-tarifaire-gps/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="theme-color" content="#161514">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Méthode">
+<meta property="og:title" content="Reconstruire une grille tarifaire de transport à partir du GPS | Méthode">
+<meta property="og:description" content="Des dizaines de milliers de trajets et le GPS d&#x27;une flotte entière : comment on a reconstruit la grille tarifaire d&#x27;un transporteur à partir de ce que coûte vraiment chaque trajet.">
+<meta property="og:url" content="https://methode.dev/realisations/grille-tarifaire-gps/">
+<meta property="og:image" content="https://methode.dev/assets/HERO_2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/realisations.css">
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Une grille tarifaire tirée du GPS", "description": "Des dizaines de milliers de trajets et le GPS d'une flotte entière : comment on a reconstruit la grille tarifaire d'un transporteur à partir de ce que coûte vraiment chaque trajet.", "url": "https://methode.dev/realisations/grille-tarifaire-gps/", "inLanguage": "fr-FR", "mainEntityOfPage": "https://methode.dev/realisations/grille-tarifaire-gps/", "image": "https://methode.dev/assets/HERO_2.jpg", "author": {"@id": "https://methode.dev/#organization"}, "publisher": {"@id": "https://methode.dev/#organization"}, "isPartOf": {"@type": "CollectionPage", "@id": "https://methode.dev/realisations/"}}
+</script>
+<script src="/js/mesure.js" defer></script>
+</head>
+<body>
+<a class="evite" href="#contenu">Aller au contenu</a>
+
+<header class="tete">
+  <a class="logo-container" href="/" aria-label="Méthode, page d'accueil">
+    <span class="logo" aria-hidden="true"></span>
+    <span class="logo-text" aria-hidden="true">Méthode</span>
+  </a>
+  <nav aria-label="Navigation rapide">
+    <a class="lien nav-reals" href="/realisations/">Réalisations</a>
+    <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
+    <a class="lien ecrire" href="/#contact">Écrire</a>
+  </nav>
+</header>
+
+<main id="contenu">
+<section class="heros photo" style="--photo:url('/assets/realisations/atlas-grille.svg')" aria-labelledby="t-cas">
+  <div class="wrap">
+    <a class="retour" href="/realisations/">← Toutes les réalisations</a>
+    <h1 id="t-cas">Une grille tarifaire tirée du GPS</h1>
+    <p class="chapo">Des dizaines de milliers de trajets et les traceurs de toute une flotte, pour reconstruire une grille tarifaire à partir des coûts réels.</p>
+  </div>
+</section>
+
+<article class="cas">
+  <section aria-labelledby="s01">
+    <h2 id="s01">01. Des prix dont personne ne connaissait plus l'origine</h2>
+      <p>Notre client transporte des passagers avec sa propre flotte, depuis plusieurs agences. Ses prix s'étaient construits liaison par liaison, au fil des années, et plus personne ne savait vraiment d'où venait chacun. Pour sa prochaine grille, il voulait repartir de ce que lui coûte réellement chaque trajet.</p>
+      <p>On avait de quoi faire : plusieurs mois de réservations, soit quelques dizaines de milliers de trajets, et les traceurs GPS de la flotte, avec le kilométrage et le carburant.</p>
+  </section>
+  <section aria-labelledby="s02">
+    <h2 id="s02">02. Le même lieu, sous des dizaines de noms</h2>
+      <p>Dans l'outil de réservation, l'itinéraire est une case de texte libre. On y trouve pêle-mêle le nom d'un hôtel, son adresse, un numéro de téléphone et un horaire. Un modèle de langage a découpé la quasi-totalité de ces itinéraires en arrêts propres. C'est le seul moment du projet où on s'en est servi.</p>
+      <p>Il fallait ensuite placer chaque arrêt sur la carte. L'outil connaissait déjà des milliers de lieux, mais rarement sous le même nom : une seule gare apparaissait sous des dizaines d'orthographes différentes. On a donc cherché du plus sûr au moins sûr, du nom exact jusqu'à l'adresse seule, avec beaucoup de corrections faites à la main. Au bout du compte, presque tous les arrêts ont trouvé leur point.</p>
+  </section>
+  <section aria-labelledby="s03">
+    <h2 id="s03">03. C'est le GPS qui tranche</h2>
+      <p>Même bien écrit, un nom ne dit pas où le véhicule s'est vraiment arrêté. On a dessiné à la main quelque deux cents zones autour des vrais points GPS : gares, aéroports, quartiers d'hôtels, zones d'activité. Quand un véhicule s'arrête dans une zone, c'est elle qui compte, quel que soit le nom saisi.</p>
+      <p>Le GPS a aussi montré ce que l'outil de réservation ne voyait pas : des milliers de trajets à vide entre deux missions. Plus d'un kilomètre sur quatre se fait sans personne à bord.</p>
+  </section>
+  <section aria-labelledby="s04">
+    <h2 id="s04">04. Toutes les agences coûtent pareil, à vide près</h2>
+      <p>Une fois chaque trajet rattaché à son coût réel (carburant, chauffeur, véhicule, péages), on s'attendait à trouver une agence plus chère que les autres. Avec des passagers à bord, elles coûtent toutes à peu près la même chose au kilomètre. L'écart vient presque entièrement du roulage à vide.</p>
+      <p>Autre surprise : plus de la moitié des liaisons n'avaient été faites qu'une poignée de fois, pour une toute petite part de l'activité. Sur un trajet fait une seule fois, le coût au kilomètre peut varier du simple au décuple, parce qu'une attente ou un détour suffit. Impossible de fixer un prix sérieux sur un historique pareil.</p>
+      <p>Et côté flotte, la majorité des trajets partent avec un seul passager, alors que la plupart d'entre eux accepteraient de partager la voiture.</p>
+  </section>
+  <section aria-labelledby="s05">
+    <h2 id="s05">05. Une grille qui tient en une ligne</h2>
+      <p>D'où l'idée d'arrêter de fixer les prix liaison par liaison. La nouvelle grille tient en une formule : une prise en charge, plus les kilomètres en charge multipliés par le coût au kilomètre de l'agence et par un coefficient qui dépend de la distance. Les valeurs, elles, restent chez le client.</p>
+      <p>La grande majorité des cases de la grille n'avaient jamais été roulées. La distance sur la carte les complète, et l'export les affiche en italique, pour que le client sache toujours ce qui est mesuré et ce qui est estimé.</p>
+      <p>Chaque case qui paraît anormale s'ouvre sur la carte, avec le trajet prévu à côté de la trace GPS réelle. Quelques dizaines de liaisons sont à reprendre une par une, et certaines étaient carrément vendues à perte. Au final, la marge progresse légèrement, malgré une hausse sensible du carburant.</p>
+  </section>
+  <section aria-labelledby="s06">
+    <h2 id="s06">06. Ce que les données ne voient pas</h2>
+      <p>Une partie des véhicules n'avait pas de GPS : pour leurs trajets, on n'a que le nom saisi. Des chauffeurs manquaient dans le système de suivi, et une bonne partie des heures de conduite a dû être estimée à partir de quelques mois déclarés. Tout ça figure dans la méthodologie remise au client, chiffres à l'appui.</p>
+      <p>Si on devait retenir une chose de ce projet : un prix qu'on peut ouvrir sur une carte se défend beaucoup mieux qu'un prix hérité.</p>
+  </section>
+</article>
+
+<section class="fin" aria-labelledby="t-fin">
+  <div class="wrap fin-grille">
+    <div>
+      <span class="surtitre">Parlons-en</span>
+      <h2 id="t-fin">Un projet similaire&nbsp;?</h2>
+      <p class="note">Deux lignes sur votre situation suffisent. Nous revenons vers vous rapidement.</p>
+      <div class="fin-liens">
+        <a class="lien acc" href="/#contact">Décrivez votre situation →</a>
+        <a class="lien tel" href="tel:+33482533259">04 82 53 32 59</a>
+      </div>
+    </div>
+    <a class="suivant" href="/realisations/erp/">
+      <span class="surtitre">Réalisation suivante</span>
+      <b>ERP maritime sur mesure</b>
+      <span class="desc">Devis, planification des transports et factures d'un organisateur de relèves d'équipage, réunis dans Odoo par-dessus son ERP existant.</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <span>© <span id="an">2026</span> Méthode, Lyon</span>
+    <nav aria-label="Informations légales">
+      <a href="/realisations/">Réalisations</a>
+      <a href="https://www.linkedin.com/company/m%C3%A9thode-dev/">LinkedIn</a>
+      <a href="mailto:julien.calenge@methode.dev">Formation</a>
+      <a href="/mentions-legales/">Mentions légales</a>
+      <a href="/mentions-legales/#confidentialite">Confidentialité</a>
+      <a href="/accessibilite/">Accessibilité</a>
+      <a href="#cookies" onclick="if(window.openAxeptioCookies){openAxeptioCookies();}return false;">Gérer les cookies</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('an').textContent=new Date().getFullYear();</script>
+</body>
+</html>

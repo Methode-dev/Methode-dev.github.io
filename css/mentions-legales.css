@@ -3,8 +3,8 @@
   --bg:#FDFAF6;--creme:#F3ECE2;--nuit:#161514;--ink:#1E1C1B;--ink-2:#55504A;
   --trait:rgba(30,28,27,.16);--acc:#C0711B;--acc-txt:#8A5112;--acc-clair:#E0A05A;--lait:#F3ECE2;
   --lis:clamp(20px,5vw,80px);
-  --display:'Space Grotesk',system-ui,-apple-system,sans-serif;
-  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --display:'Charis SIL',Georgia,'Times New Roman',serif; /* essais précédents, pour revenir en arrière : --display:'Nunito',system-ui,-apple-system,sans-serif; ou, d'origine : --display:'Space Grotesk',system-ui,-apple-system,sans-serif; (adapter ou supprimer le bloc « Titres » en fin de fichier) */
+  --sans:'Nunito',system-ui,-apple-system,sans-serif; /* police précédente, pour revenir en arrière : --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif; */
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:24px;scroll-behavior:smooth}
@@ -46,3 +46,12 @@ address{font-style:normal}
 .pied{background:var(--nuit);color:rgba(243,236,226,.7);padding:28px var(--lis) calc(env(safe-area-inset-bottom,0px) + 28px);font-size:15px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pied nav{display:flex;gap:24px;flex-wrap:wrap}
 .pied a{color:var(--lait)}
+
+/* ================= Titres en Charis SIL =================
+   Charis SIL n'existe qu'en 400 et 700 : 400 pour les grands titres, 700 pour la navigation et les petits libellés.
+   Pour revenir à Nunito : voir le commentaire de --display ; graisses Nunito d'avant = 700 (titres), 600 (libellés), 800 (logo).
+   Pour revenir à Space Grotesk : remettre --display d'origine et supprimer ce bloc. */
+h1,h2,h3{font-weight:400;letter-spacing:-.005em}
+.tete a.retour,.sommaire{font-weight:700}
+/* Navigation et nom « Méthode » : restent en Nunito */
+.tete a.retour{font-family:var(--sans);font-weight:600}
